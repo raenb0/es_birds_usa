@@ -15,7 +15,7 @@ library(dplyr)
 library(tictoc)
 library(beepr)
 
-#load the percent population per species raster (code adapted from Courtney)
+# load the percent population per species raster --------------------
 
 sps_sel_all_vars <- readRDS("data/final_species_selection.rds") #update filepath
 pct_pop_files <- list.files("data/pct_pop_sps",  #update filepath
@@ -35,7 +35,7 @@ res(pct_pop_per_sp_rast) #2962.807 (3 km)
 # plot one layer
 plot(pct_pop_per_sp_rast, "acafly") #Acadian flycatcher?
 
-# load the CNA layer (local NCP, 90% target, prioritized within USA)
+# load the CNA layer (local NCP, 90% target, prioritized within USA) ----------------
 cna <- rast("data/critical_natural_assets/solution_scenario-A_usa_target-90.tif")
 
 # check projection
@@ -45,7 +45,7 @@ res(cna) #2 km
 # look at it
 plot(cna) #note it includes offshore territories so might need to mask the extent to match the birds data
 
-#re-project and resample to get CNA layer to match birds data
+#re-project and resample to get CNA layer to match birds data ------------------
 cna_3km <- project(cna, pct_pop_per_sp_rast, method="near")
 cna_3km <- resample(cna_3km, pct_pop_per_sp_rast, method="near")
 crs(cna_3km, describe=F, proj=T) #good
@@ -61,7 +61,7 @@ plot(pct_pop_mask, "acafly")
 
 #save masked version (takes 20 min, only do this once)
 #tic()
-#writeRaster(pct_pop_mask, "outputs/rasters/pct_pop_mask_cna.tif", overwrite=TRUE)
+#writeRaster(pct_pop_mask, "outputs/rasters/pct_pop_mask_cna.tif", overwrite=F)
 #toc()
 #beep()
 
@@ -153,11 +153,7 @@ pct_pop_per_group_cna_sum$sum_all <- pct_pop_per_group_all_sum$sum #total pct_po
 pct_pop_per_group_cna_sum$pct_cna <- pct_pop_per_group_cna_sum$sum_cna / pct_pop_per_group_all_sum$sum
 
 
-#filter tipping point species
-sps_vars_tipping_point <- sps_sel_all_vars %>%
-  filter(sps_groups=="Tipping Point")
-
-#plot tipping point spp
+#plot individual tipping point spp (examples)
 plot(pct_pop_per_sp_rast$snoowl1, main="Snowy owl % population per pixel")
 plot(pct_pop_per_sp_rast$cerwar, main="Cerulean warbler % population per pixel")
 
@@ -174,3 +170,54 @@ snowy_owl_sum_cna <- global(pct_pop_mask$snoowl1, fun="sum", na.rm=TRUE)
 snowy_owl_sum_cna #0.1492723 so 15%
 cerulean_warbler_sum_cna <- global(pct_pop_mask$cerwar, fun="sum", na.rm=TRUE)
 cerulean_warbler_sum_cna #0.9057386
+
+# calculate pct of population within CNA for all tipping point spp ------------------
+
+#filter tipping point species, forest spp, etc.
+sps_vars_tipping_point <- sps_sel_all_vars %>%
+  filter(sps_groups=="Tipping Point")
+sps_vars_forest <- sps_sel_all_vars %>%
+  filter(sps_groups=="Forest")
+sps_vars_grassland <- sps_sel_all_vars %>%
+  filter(sps_groups=="Grasslands")
+sps_vars_aridland <- sps_sel_all_vars %>%
+  filter(sps_groups=="Aridlands")
+sps_vars_wetland <- sps_sel_all_vars %>%
+  filter(sps_groups=="Water/wetland")
+
+# pct pop of tipping point spp within CNA
+tipping_pt_spp <- unique(sps_vars_tipping_point$species_code) #unique tipping pt spp codes
+raster_names <- names(pct_pop_mask) #masked to CNA
+sel_species <- raster_names[raster_names %in% tipping_pt_spp] #select tipping pt spp
+spp_raster <- subset(pct_pop_mask, sel_species) #subset tipping pt spp rasters only
+pct_pop_tipping_pt_spp_cna <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for tipping pt spp
+pct_pop_tipping_pt_spp_cna <- tibble::rownames_to_column(pct_pop_tipping_pt_spp_cna, "species_code")
+
+library(tidyverse)
+write_csv(pct_pop_tipping_pt_spp_cna, "outputs/pct_pop_tipping_pt_spp_cna.csv")
+
+# calculate pct of population within CNA for all Grassland spp ------------------
+#NOTE overwrites objects with same names
+
+grassland_spp <- unique(sps_vars_grassland$species_code) #unique tipping pt spp codes
+raster_names <- names(pct_pop_mask) #masked to CNA
+sel_species <- raster_names[raster_names %in% grassland_spp] #select grassland spp
+spp_raster <- subset(pct_pop_mask, sel_species) #subset tipping pt spp rasters only
+pct_pop_grassland_spp_cna <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for grassland spp
+pct_pop_grassland_spp_cna <- tibble::rownames_to_column(pct_pop_grassland_spp_cna, "species_code")
+
+library(tidyverse)
+write_csv(pct_pop_grassland_spp_cna, "outputs/pct_pop_grassland_spp_cna.csv")
+
+# calculate pct of population within CNA for all Aridland spp ------------------
+#NOTE overwrites objects with same names
+
+aridland_spp <- unique(sps_vars_aridland$species_code) #unique tipping pt spp codes
+raster_names <- names(pct_pop_mask) #masked to CNA
+sel_species <- raster_names[raster_names %in% aridland_spp] #select grassland spp
+spp_raster <- subset(pct_pop_mask, sel_species) #subset tipping pt spp rasters only
+pct_pop_aridland_spp_cna <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for aridland spp
+pct_pop_aridland_spp_cna <- tibble::rownames_to_column(pct_pop_aridland_spp_cna, "species_code")
+
+library(tidyverse)
+write_csv(pct_pop_aridland_spp_cna, "outputs/pct_pop_aridland_spp_cna.csv")

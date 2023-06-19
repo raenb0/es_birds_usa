@@ -35,3 +35,24 @@ for (i in seq_along(pct_pop_per_group_list_all)) {
 
 row.names(guild_results_all) <- NULL
 print(guild_results_all) #these appear to be counts of species, not percentages of populations
+
+#identify threshold value to define top 30% by land area ---------------
+#threshold_top30_usa <- as_tibble(vuln_carbon_usa, na.rm = TRUE) %>%
+#  slice_max(order_by = vuln_carbon_global, prop = .3) %>% #note layer name is still vuln_carbon_global
+#  min()
+#top30 threshold in USA: 66
+
+# filter carbon data to only include top 30% #takes a long time, terminated
+# tic()
+# vuln_carbon_top30 <- vuln_carbon_usa %>% tidyterra::filter(vuln_carbon_global > threshold_top30_usa)
+# toc()
+# beep()
+
+# check area
+# area_usa <- expanse(vuln_carbon_usa, unit = "km")
+# area_30perc <- expanse(vuln_carbon_top30, unit = "km")
+# area_30perc / area_usa
+# beep()
+
+# save resulting raster
+# writeRaster(vuln_carbon_top30, "outputs/rasters/vuln_carbon_top30_landarea.tif", overwrite=TRUE)
