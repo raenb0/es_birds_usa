@@ -286,9 +286,319 @@ pct_pop_per_group_carbon_top30 <- rast(pct_pop_per_group_list_carbon_top30)
 writeRaster(pct_pop_per_group_carbon_top30, "outputs/rasters/pct_pop_per_guild_carbon_top30.tif", overwrite=TRUE)
 
 # look at outputs (carbon 90% areas)
-plot(pct_pop_per_group_carbon_90pct, "Water/wetland", main="Sum of Water/wetland bird populations % within carbon 90% areas")
-plot(pct_pop_per_group_carbon_90pct, "Forest", main="Sum of Forest bird populations % within carbon 90% areas")
-plot(pct_pop_per_group_carbon_90pct, "Aridlands", main="Sum of Aridlands bird populations % within carbon 90% areas")
-plot(pct_pop_per_group_carbon_90pct, "Grasslands", main="Sum of Grasslands bird populations % within carbon 90% areas")
-plot(pct_pop_per_group_carbon_90pct, "Habitat Generalist", main="Sum of Habitat Generalist bird populations % within carbon 90% areas")
-plot(pct_pop_per_group_cna, "Tipping Point", main="Sum of Tipping Point bird populations % within carbon 90% areas")
+plot(pct_pop_per_group_carbon_90pct, "Water/wetland", main="Sum of Water/wetland bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Forest", main="Sum of Forest bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Aridlands", main="Sum of Aridlands bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Grasslands", main="Sum of Grasslands bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Habitat Generalist", main="Sum of Habitat Generalist bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Tipping Point", main="Sum of Tipping Point bird populations % within carbon 90% areas", axes=F)
+
+# calculate pct of population within high carbon areas for individual spp ------------------
+library(tidyverse)
+
+#filter tipping point species, forest spp, etc.
+sps_vars_tipping_point <- sps_sel_all_vars %>%
+  filter(sps_groups=="Tipping Point")
+sps_vars_forest <- sps_sel_all_vars %>%
+  filter(sps_groups=="Forest")
+sps_vars_grassland <- sps_sel_all_vars %>%
+  filter(sps_groups=="Grasslands")
+sps_vars_aridland <- sps_sel_all_vars %>%
+  filter(sps_groups=="Aridlands")
+sps_vars_wetland <- sps_sel_all_vars %>%
+  filter(sps_groups=="Water/wetland")
+sps_vars_generalist <- sps_sel_all_vars %>%
+  filter(sps_groups=="Habitat Generalist")
+
+# pct pop of tipping point spp within carbon 90% areas
+
+tipping_pt_spp <- unique(sps_vars_tipping_point$species_code) #unique tipping pt spp codes
+raster_names <- names(pct_pop_carbon_90pct_mask) #masked to 90% carbon areas
+sel_species <- raster_names[raster_names %in% tipping_pt_spp] #select tipping pt spp
+spp_raster <- subset(pct_pop_carbon_90pct_mask, sel_species) #subset tipping pt spp rasters only
+pct_pop_tipping_pt_spp_carbon_90pct <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for tipping pt spp
+pct_pop_tipping_pt_spp_carbon_90pct <- tibble::rownames_to_column(pct_pop_tipping_pt_spp_carbon_90pct, "species_code")
+
+write_csv(pct_pop_tipping_pt_spp_carbon_90pct, "outputs/pct_pop_tipping_pt_spp_carbon_90pct.csv")
+
+# pct pop of forest spp within carbon 90% areas #NOTE overwrites objects
+
+forest_spp <- unique(sps_vars_forest$species_code) #unique forest spp codes
+raster_names <- names(pct_pop_carbon_90pct_mask) #masked to 90% carbon areas
+sel_species <- raster_names[raster_names %in% forest_spp] #select forest spp
+spp_raster <- subset(pct_pop_carbon_90pct_mask, sel_species) #subset forest spp rasters only
+pct_pop_forest_spp_carbon_90pct <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for forest spp
+pct_pop_forest_spp_carbon_90pct <- tibble::rownames_to_column(pct_pop_forest_spp_carbon_90pct, "species_code")
+
+write_csv(pct_pop_forest_spp_carbon_90pct, "outputs/pct_pop_forest_spp_carbon_90pct.csv")
+
+# pct pop of grassland spp within carbon 90% areas #NOTE overwrites objects
+
+grassland_spp <- unique(sps_vars_grassland$species_code)
+raster_names <- names(pct_pop_carbon_90pct_mask)
+sel_species <- raster_names[raster_names %in% grassland_spp]
+spp_raster <- subset(pct_pop_carbon_90pct_mask, sel_species)
+pct_pop_grassland_spp_carbon_90pct <- global(spp_raster, fun='sum', na.rm=T)
+pct_pop_grassland_spp_carbon_90pct <- tibble::rownames_to_column(pct_pop_grassland_spp_carbon_90pct, "species_code")
+
+write_csv(pct_pop_grassland_spp_carbon_90pct, "outputs/pct_pop_grassland_spp_carbon_90pct.csv")
+
+# pct pop of aridland spp within carbon 90% areas #NOTE overwrites objects
+
+aridland_spp <- unique(sps_vars_aridland$species_code)
+raster_names <- names(pct_pop_carbon_90pct_mask)
+sel_species <- raster_names[raster_names %in% aridland_spp]
+spp_raster <- subset(pct_pop_carbon_90pct_mask, sel_species)
+pct_pop_aridland_spp_carbon_90pct <- global(spp_raster, fun='sum', na.rm=T)
+pct_pop_aridland_spp_carbon_90pct <- tibble::rownames_to_column(pct_pop_aridland_spp_carbon_90pct, "species_code")
+
+write_csv(pct_pop_aridland_spp_carbon_90pct, "outputs/pct_pop_aridland_spp_carbon_90pct.csv")
+
+# pct pop of wetland spp within carbon 90% areas #NOTE overwrites objects
+
+wetland_spp <- unique(sps_vars_wetland$species_code)
+raster_names <- names(pct_pop_carbon_90pct_mask)
+sel_species <- raster_names[raster_names %in% wetland_spp]
+spp_raster <- subset(pct_pop_carbon_90pct_mask, sel_species)
+pct_pop_wetland_spp_carbon_90pct <- global(spp_raster, fun='sum', na.rm=T)
+pct_pop_wetland_spp_carbon_90pct <- tibble::rownames_to_column(pct_pop_wetland_spp_carbon_90pct, "species_code")
+
+write_csv(pct_pop_wetland_spp_carbon_90pct, "outputs/pct_pop_wetland_spp_carbon_90pct.csv")
+
+# pct pop of generalist spp within carbon 90% areas #NOTE overwrites objects
+
+generalist_spp <- unique(sps_vars_generalist$species_code)
+raster_names <- names(pct_pop_carbon_90pct_mask)
+sel_species <- raster_names[raster_names %in% generalist_spp]
+spp_raster <- subset(pct_pop_carbon_90pct_mask, sel_species)
+pct_pop_generalist_spp_carbon_90pct <- global(spp_raster, fun='sum', na.rm=T)
+pct_pop_generalist_spp_carbon_90pct <- tibble::rownames_to_column(pct_pop_generalist_spp_carbon_90pct, "species_code")
+
+write_csv(pct_pop_generalist_spp_carbon_90pct, "outputs/pct_pop_generalist_spp_carbon_90pct.csv")
+
+# repeat for top 30% of land areas for carbon ---------------
+
+# pct pop of tipping point spp within top 30% carbon areas
+
+tipping_pt_spp <- unique(sps_vars_tipping_point$species_code) #unique tipping pt spp codes
+raster_names <- names(pct_pop_carbon_top30_mask) #masked to 90% carbon areas
+sel_species <- raster_names[raster_names %in% tipping_pt_spp] #select tipping pt spp
+spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species) #subset tipping pt spp rasters only
+pct_pop_tipping_pt_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for tipping pt spp
+pct_pop_tipping_pt_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_tipping_pt_spp_carbon_top30, "species_code")
+
+write_csv(pct_pop_tipping_pt_spp_carbon_top30, "outputs/pct_pop_tipping_pt_spp_carbon_top30.csv")
+
+# pct pop of forest spp within top 30% carbon areas #NOTE overwrites objects
+
+forest_spp <- unique(sps_vars_forest$species_code) #unique forest spp codes
+raster_names <- names(pct_pop_carbon_top30_mask) #masked to 90% carbon areas
+sel_species <- raster_names[raster_names %in% forest_spp] #select forest spp
+spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species) #subset forest spp rasters only
+pct_pop_forest_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for forest spp
+pct_pop_forest_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_forest_spp_carbon_top30, "species_code")
+
+write_csv(pct_pop_forest_spp_carbon_top30, "outputs/pct_pop_forest_spp_carbon_top30.csv")
+
+# pct pop of grassland spp within top 30% carbon areas #NOTE overwrites objects
+
+grassland_spp <- unique(sps_vars_grassland$species_code)
+raster_names <- names(pct_pop_carbon_top30_mask)
+sel_species <- raster_names[raster_names %in% grassland_spp]
+spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species)
+pct_pop_grassland_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T)
+pct_pop_grassland_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_grassland_spp_carbon_top30, "species_code")
+
+write_csv(pct_pop_grassland_spp_carbon_top30, "outputs/pct_pop_grassland_spp_carbon_top30.csv")
+
+# pct pop of aridland spp within top 30% carbon areas #NOTE overwrites objects
+
+aridland_spp <- unique(sps_vars_aridland$species_code)
+raster_names <- names(pct_pop_carbon_top30_mask)
+sel_species <- raster_names[raster_names %in% aridland_spp]
+spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species)
+pct_pop_aridland_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T)
+pct_pop_aridland_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_aridland_spp_carbon_top30, "species_code")
+
+write_csv(pct_pop_aridland_spp_carbon_top30, "outputs/pct_pop_aridland_spp_carbon_top30.csv")
+
+# pct pop of wetland spp within top 30% carbon areas #NOTE overwrites objects
+
+wetland_spp <- unique(sps_vars_wetland$species_code)
+raster_names <- names(pct_pop_carbon_top30_mask)
+sel_species <- raster_names[raster_names %in% wetland_spp]
+spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species)
+pct_pop_wetland_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T)
+pct_pop_wetland_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_wetland_spp_carbon_top30, "species_code")
+
+write_csv(pct_pop_wetland_spp_carbon_top30, "outputs/pct_pop_wetland_spp_carbon_top30.csv")
+
+# pct pop of generalist spp within top 30% carbon areas #NOTE overwrites objects
+
+generalist_spp <- unique(sps_vars_generalist$species_code)
+raster_names <- names(pct_pop_carbon_top30_mask)
+sel_species <- raster_names[raster_names %in% generalist_spp]
+spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species)
+pct_pop_generalist_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T)
+pct_pop_generalist_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_generalist_spp_carbon_top30, "species_code")
+
+write_csv(pct_pop_generalist_spp_carbon_top30, "outputs/pct_pop_generalist_spp_carbon_top30.csv")
+
+# calculate percent of spp that are >90 >75 >50 pct represented -----------------
+
+# tipping point spp
+pct_pop_tipping_pt_spp_carbon_90pct <- pct_pop_tipping_pt_spp_carbon_90pct %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_tipping_pt_spp_carbon_90pct <- pct_pop_tipping_pt_spp_carbon_90pct %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="tipping_point")
+
+# forest spp
+pct_pop_forest_spp_carbon_90pct <- pct_pop_forest_spp_carbon_90pct %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_forest_spp_carbon_90pct <- pct_pop_forest_spp_carbon_90pct %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="forest")
+
+# grassland spp
+pct_pop_grassland_spp_carbon_90pct <- pct_pop_grassland_spp_carbon_90pct %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_grassland_spp_carbon_90pct <- pct_pop_grassland_spp_carbon_90pct %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="grassland")
+
+# aridland spp
+pct_pop_aridland_spp_carbon_90pct <- pct_pop_aridland_spp_carbon_90pct %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_aridland_spp_carbon_90pct <- pct_pop_aridland_spp_carbon_90pct %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="aridland")
+
+# wetland spp
+pct_pop_wetland_spp_carbon_90pct <- pct_pop_wetland_spp_carbon_90pct %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_wetland_spp_carbon_90pct <- pct_pop_wetland_spp_carbon_90pct %>%
+  summarize(more90 = mean(more90, na.rm=T), more75 = mean(more75, na.rm=T), more50 = mean(more50, na.rm=T)) %>%
+  mutate(guild="wetland")
+
+# generalist spp
+pct_pop_generalist_spp_carbon_90pct <- pct_pop_generalist_spp_carbon_90pct %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_generalist_spp_carbon_90pct <- pct_pop_generalist_spp_carbon_90pct %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="generalist")
+
+# combine rows into single table
+summary_pct_pop_guild_carbon_90pct <- rbind(summary_tipping_pt_spp_carbon_90pct, summary_forest_spp_carbon_90pct, summary_grassland_spp_carbon_90pct, summary_aridland_spp_carbon_90pct, summary_wetland_spp_carbon_90pct, summary_generalist_spp_carbon_90pct)
+
+write_csv(summary_pct_pop_guild_carbon_90pct, "outputs/summary_pct_pop_guild_carbon_90pct.csv")
+
+# pivot to make tidy and plot 90pct results
+library(ggplot2)
+
+summary_longer_90pct <- pivot_longer(summary_pct_pop_guild_carbon_90pct, cols=1:3, names_to="category", values_to="pct_spp")
+
+plot_90pct <- ggplot(summary_longer, aes(x=guild, y=pct_spp, fill=category)) +
+  geom_bar(stat="identity", position=position_dodge()) +
+  ggtitle("Percent of spp represented in areas containing 90% of vulnerable carbon") +
+  xlab("Guild") +
+  ylab("Percent of spp")
+plot_90pct
+
+# repeat for top 30% of areas for carbon -----------------
+# calculate percent of spp that are >90 >75 >50 pct represented
+
+# tipping point spp
+pct_pop_tipping_pt_spp_carbon_top30 <- pct_pop_tipping_pt_spp_carbon_top30 %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_tipping_pt_spp_carbon_top30 <- pct_pop_tipping_pt_spp_carbon_top30 %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="tipping_point")
+
+# forest spp
+pct_pop_forest_spp_carbon_top30 <- pct_pop_forest_spp_carbon_top30 %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_forest_spp_carbon_top30 <- pct_pop_forest_spp_carbon_top30 %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="forest")
+
+# grassland spp
+pct_pop_grassland_spp_carbon_top30 <- pct_pop_grassland_spp_carbon_top30 %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_grassland_spp_carbon_top30 <- pct_pop_grassland_spp_carbon_top30 %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="grassland")
+
+# aridland spp
+pct_pop_aridland_spp_carbon_top30 <- pct_pop_aridland_spp_carbon_top30 %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_aridland_spp_carbon_top30 <- pct_pop_aridland_spp_carbon_top30 %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="aridland")
+
+# wetland spp
+pct_pop_wetland_spp_carbon_top30 <- pct_pop_wetland_spp_carbon_top30 %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_wetland_spp_carbon_top30 <- pct_pop_wetland_spp_carbon_top30 %>%
+  summarize(more90 = mean(more90, na.rm=T), more75 = mean(more75, na.rm=T), more50 = mean(more50, na.rm=T)) %>%
+  mutate(guild="wetland")
+
+# generalist spp
+pct_pop_generalist_spp_carbon_top30 <- pct_pop_generalist_spp_carbon_top30 %>%
+  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+  mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+  mutate(more50 = ifelse(sum>0.5,1,0))
+
+summary_generalist_spp_carbon_top30 <- pct_pop_generalist_spp_carbon_top30 %>%
+  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  mutate(guild="generalist")
+
+# combine rows into single table
+summary_pct_pop_guild_carbon_top30 <- rbind(summary_tipping_pt_spp_carbon_top30, summary_forest_spp_carbon_top30, summary_grassland_spp_carbon_top30, summary_aridland_spp_carbon_top30, summary_wetland_spp_carbon_top30, summary_generalist_spp_carbon_top30)
+
+write_csv(summary_pct_pop_guild_carbon_top30, "outputs/summary_pct_pop_guild_carbon_top30.csv")
+
+# pivot to make tidy and plot top30 results
+library(ggplot2)
+
+summary_longer_top30 <- pivot_longer(summary_pct_pop_guild_carbon_top30, cols=1:3, names_to="category", values_to="pct_spp")
+
+plot_top30 <- ggplot(summary_longer_top30, aes(x=guild, y=pct_spp, fill=category)) +
+  geom_bar(stat="identity", position=position_dodge()) +
+  ggtitle("Percent of spp represented in top 30% of areas for vulnerable carbon") +
+  xlab("Guild") +
+  ylab("Percent of spp")
+plot_top30

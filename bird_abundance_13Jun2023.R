@@ -171,7 +171,7 @@ snowy_owl_sum_cna #0.1492723 so 15%
 cerulean_warbler_sum_cna <- global(pct_pop_mask$cerwar, fun="sum", na.rm=TRUE)
 cerulean_warbler_sum_cna #0.9057386
 
-# calculate pct of population within CNA for all tipping point spp ------------------
+# calculate pct of population within CNA for individual spp ------------------
 
 #filter tipping point species, forest spp, etc.
 sps_vars_tipping_point <- sps_sel_all_vars %>%
