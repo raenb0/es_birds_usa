@@ -1,6 +1,7 @@
 # Identify top 30% of areas in USA for vulnerable carbon (30% of land area)
 # Also, identify areas containing 90% of USA's vulnerable carbon (not by land area)
-# June 15 2023
+# Bird populations represented in high carbon areas
+# June 20 2023
 
 library(terra)
 library(tidyterra)

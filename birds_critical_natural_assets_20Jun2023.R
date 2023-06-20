@@ -1,4 +1,4 @@
-# Bird abundance within CNA areas within USA
+# Bird populations represented within Critical Natural Assets (CNA) areas within USA
 # June 13 2023
 # Rachel Neugarten
 
