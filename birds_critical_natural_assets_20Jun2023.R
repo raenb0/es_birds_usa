@@ -344,12 +344,22 @@ write_csv(summary_pct_pop_guild_cna, "outputs/summary_pct_pop_guild_cna.csv")
 # pivot to make tidy and plot CNA results
 library(ggplot2)
 
-summary_longer_cna <- pivot_longer(summary_pct_pop_guild_cna, cols=1:3, names_to="category", values_to="pct_spp")
+# make mutually exclusive categories for stacked bar chart
+summary_pct_pop_guild_cna_mutuallyexclusive <- summary_pct_pop_guild_cna %>%
+  mutate(more50_only = more50 - more75, more75_only = more75 - more90)
+summary_pct_pop_guild_cna_select <- summary_pct_pop_guild_cna_mutuallyexclusive %>%
+  select(guild, n, more50_only, more75_only, more90)
+
+summary_longer_cna <- pivot_longer(summary_pct_pop_guild_cna_select, cols=3:5, names_to="category", values_to="pct_spp")
 
 plot_cna <- ggplot(summary_longer_cna, aes(x=guild, y=pct_spp, fill=category)) +
-  geom_bar(stat="identity", position=position_dodge()) +
-  ggtitle("Percent of spp represented within Critical Natural Assets") +
+  geom_bar(stat="identity", position="stack") +
+  ggtitle("Percent of species represented within Critical Natural Assets, by guild") +
   xlab("Guild") +
-  ylab("Percent of spp")
+  ylab("Percent of species") +
+  scale_fill_discrete(labels=c('More than 50%', 'More than 75%', 'More than 90%')) +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal() +
+  theme(legend.title=element_blank())
 plot_cna
 

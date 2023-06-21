@@ -261,6 +261,16 @@ pct_pop_per_group_carbon_90pct <- rast(pct_pop_per_group_list_carbon_90pct)
 # save resulting raster
 writeRaster(pct_pop_per_group_carbon_90pct, "outputs/rasters/pct_pop_per_guild_carbon_90pct.tif", overwrite=TRUE)
 
+# look at outputs (carbon 90% areas)
+# load data if necessary
+pct_pop_per_group_carbon_90pct  <- rast("outputs/rasters/pct_pop_per_guild_carbon_90pct.tif")
+plot(pct_pop_per_group_carbon_90pct, "Water/wetland", main="Sum of Water/wetland bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Forest", main="Sum of Forest bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Aridlands", main="Sum of Aridlands bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Grasslands", main="Sum of Grasslands bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Habitat Generalist", main="Sum of Habitat Generalist bird populations % within carbon 90% areas", axes=F)
+plot(pct_pop_per_group_carbon_90pct, "Tipping Point", main="Sum of Tipping Point bird populations % within carbon 90% areas", axes=F)
+
 ## top 30% of land area for carbon
 sps_groups <- unique(sps_sel_all_vars$sps_groups)
 
@@ -286,13 +296,6 @@ pct_pop_per_group_carbon_top30 <- rast(pct_pop_per_group_list_carbon_top30)
 # save resulting raster
 writeRaster(pct_pop_per_group_carbon_top30, "outputs/rasters/pct_pop_per_guild_carbon_top30.tif", overwrite=TRUE)
 
-# look at outputs (carbon 90% areas)
-plot(pct_pop_per_group_carbon_90pct, "Water/wetland", main="Sum of Water/wetland bird populations % within carbon 90% areas", axes=F)
-plot(pct_pop_per_group_carbon_90pct, "Forest", main="Sum of Forest bird populations % within carbon 90% areas", axes=F)
-plot(pct_pop_per_group_carbon_90pct, "Aridlands", main="Sum of Aridlands bird populations % within carbon 90% areas", axes=F)
-plot(pct_pop_per_group_carbon_90pct, "Grasslands", main="Sum of Grasslands bird populations % within carbon 90% areas", axes=F)
-plot(pct_pop_per_group_carbon_90pct, "Habitat Generalist", main="Sum of Habitat Generalist bird populations % within carbon 90% areas", axes=F)
-plot(pct_pop_per_group_carbon_90pct, "Tipping Point", main="Sum of Tipping Point bird populations % within carbon 90% areas", axes=F)
 
 # calculate pct of population within high carbon areas for individual spp ------------------
 library(tidyverse)
@@ -524,6 +527,28 @@ plot_90pct <- ggplot(summary_longer, aes(x=guild, y=pct_spp, fill=category)) +
   ylab("Percent of spp")
 plot_90pct
 
+#load data if necessary
+summary_pct_pop_guild_carbon_90pct <- read_csv("outputs/summary_pct_pop_guild_carbon_90pct.csv")
+
+# make mutually exclusive categories for stacked bar chart
+summary_pct_pop_90pct_mutuallyexclusive <- summary_pct_pop_guild_carbon_90pct %>%
+  mutate(more50_only = more50 - more75, more75_only = more75 - more90)
+summary_pct_pop_90pct_select <- summary_pct_pop_90pct_mutuallyexclusive %>%
+  select(guild, more50_only, more75_only, more90)
+
+summary_longer_90pct <- pivot_longer(summary_pct_pop_90pct_select, cols=2:4, names_to="category", values_to="pct_spp") #check column numbers!
+
+plot_90pct <- ggplot(summary_longer_90pct, aes(x=guild, y=pct_spp, fill=category)) +
+  geom_bar(stat="identity", position="stack") +
+  ggtitle("Percent of species represented within areas containing 90% of vulnerable carbon") +
+  xlab("Guild") +
+  ylab("Percent of species") +
+  scale_fill_discrete(labels=c('More than 50%', 'More than 75%', 'More than 90%')) +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal() +
+  theme(legend.title=element_blank())
+plot_90pct
+
 # repeat for top 30% of areas for carbon -----------------
 # calculate percent of spp that are >90 >75 >50 pct represented
 
@@ -595,11 +620,24 @@ write_csv(summary_pct_pop_guild_carbon_top30, "outputs/summary_pct_pop_guild_car
 # pivot to make tidy and plot top30 results
 library(ggplot2)
 
-summary_longer_top30 <- pivot_longer(summary_pct_pop_guild_carbon_top30, cols=1:3, names_to="category", values_to="pct_spp")
+#load data if necessary
+summary_pct_pop_guild_carbon_top30 <- read_csv("outputs/summary_pct_pop_guild_carbon_top30.csv")
+
+# make mutually exclusive categories for stacked bar chart
+summary_pct_pop_top30_mutuallyexclusive <- summary_pct_pop_guild_carbon_top30 %>%
+  mutate(more50_only = more50 - more75, more75_only = more75 - more90)
+summary_pct_pop_top30_select <- summary_pct_pop_top30_mutuallyexclusive %>%
+  select(guild, more50_only, more75_only, more90)
+
+summary_longer_top30 <- pivot_longer(summary_pct_pop_top30_select, cols=2:4, names_to="category", values_to="pct_spp") #check column numbers!
 
 plot_top30 <- ggplot(summary_longer_top30, aes(x=guild, y=pct_spp, fill=category)) +
-  geom_bar(stat="identity", position=position_dodge()) +
-  ggtitle("Percent of spp represented in top 30% of areas for vulnerable carbon") +
+  geom_bar(stat="identity", position="stack") +
+  ggtitle("Percent of species represented within top 30% of areas for vulnerable carbon") +
   xlab("Guild") +
-  ylab("Percent of spp")
+  ylab("Percent of species") +
+  scale_fill_discrete(labels=c('More than 50%', 'More than 75%', 'More than 90%')) +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal() +
+  theme(legend.title=element_blank())
 plot_top30
