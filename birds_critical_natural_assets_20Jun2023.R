@@ -1,5 +1,5 @@
 # Bird populations represented within Critical Natural Assets (CNA) areas within USA
-# June 13 2023
+# June 22 2023
 # Rachel Neugarten
 
 # Notes from Courtney:
@@ -15,7 +15,7 @@ library(dplyr)
 library(tictoc)
 library(beepr)
 
-# load the percent population per species raster --------------------
+# load the birds (percent population per species) raster --------------------
 
 sps_sel_all_vars <- readRDS("data/final_species_selection.rds") #update filepath
 pct_pop_files <- list.files("data/pct_pop_sps",  #update filepath
@@ -31,29 +31,46 @@ names(pct_pop_per_sp_rast) <- sps_sel
 # check projection, resolution
 crs(pct_pop_per_sp_rast, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
 res(pct_pop_per_sp_rast) #2962.807 (3 km)
+ext(pct_pop_per_sp_rast) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax)
 
 # plot one layer
 plot(pct_pop_per_sp_rast, "acafly") #Acadian flycatcher?
 
-# load the CNA layer (local NCP, 90% target, prioritized within USA) ----------------
+# load the CNA layer (local NCP, 90% target, prioritized within USA) -----------------
 cna <- rast("data/critical_natural_assets/solution_scenario-A_usa_target-90.tif")
 
-# check projection
+# check projection, resolution
 crs(cna, describe=F, proj=T) # "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 res(cna) #2 km
 
 # look at it
 plot(cna) #note it includes offshore territories so might need to mask the extent to match the birds data
 
-#re-project and resample to get CNA layer to match birds data ------------------
+#re-project and resample CNA layer to match birds data ------------------
 cna_3km <- project(cna, pct_pop_per_sp_rast, method="near")
 cna_3km <- resample(cna_3km, pct_pop_per_sp_rast, method="near")
 crs(cna_3km, describe=F, proj=T) #good
 res(cna_3km) #2962.809 good
 
 plot(cna_3km) #looks distorted but matches bird data
+ext(cna_3km) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax) #matches bird data
 
-# mask bird data with CNA data (takes a few minutes) -------------------
+# load CNA for USA, 5%-95% targets, summed (for visualization) ---------------------
+cna_usa_sum <- rast("data/critical_natural_assets/usa_targets_5_95_sum.tif")
+plot(cna_usa_sum) #includes offshore territories
+
+# load USA boundary vector created in birds_high_carbon_areas_20June2023.R script
+usa_vect <- vect("outputs/rasters/usa_vect_eck4.shp")
+
+# crop CNA data to USA (for visualization)
+cna_usa_90_crop = crop(cna, usa_vect, mask=TRUE) #90% target version
+cna_usa_sum_crop = crop(cna_usa_sum, usa_vect, mask=TRUE) #summed version
+plot(cna_usa_90_crop) #looks good
+plot(cna_usa_sum_crop) #looks good
+writeRaster(cna_usa_90_crop, "outputs/rasters/cna_usa_90_crop.tif", overwrite=F)
+writeRaster(cna_usa_sum_crop, "outputs/rasters/cna_usa_sum_crop.tif", overwrite=F)
+
+# mask bird data with CNA 90% target data (takes a few minutes) -------------------
 pct_pop_mask <- mask(pct_pop_per_sp_rast, cna_3km, maskvalues=c(0,NA)) #trying to mask in values=1 only
 beep()
 
@@ -86,22 +103,50 @@ names(pct_pop_per_group_list_all) <- sps_groups
 
 #rasterize
 pct_pop_per_group_all <- rast(pct_pop_per_group_list_all)
+names(pct_pop_per_group_all) <- sps_groups
 #pct_pop_tipping_point <- rast(pct_pop_per_group_list_all$`Tipping Point`) #raster for just tipping pt spp
 
 #save resulting raster
 writeRaster(pct_pop_per_group_all, "outputs/rasters/pct_pop_per_guild_all.tif", overwrite=TRUE)
 
 # look at outputs
-plot(pct_pop_per_group_all, "Water/wetland", main="Sum of Water/wetland bird populations % per pixel")
-plot(pct_pop_per_group_all, "Forest", main="Sum of Forest bird populations % per pixel")
-plot(pct_pop_per_group_all, "Aridlands", main="Sum of Aridlands bird populations % per pixel")
-plot(pct_pop_per_group_all, "Grasslands", main="Sum of Grasslands bird populations % per pixel")
-plot(pct_pop_per_group_all, "Habitat Generalist", main="Sum of Habitat Generalist bird populations % per pixel")
-plot(pct_pop_per_group_all, "Tipping Point", main="Percent of Tipping Point bird populations per pixel")
+plot(pct_pop_per_group_all, "Water/wetland", main="Sum of Water/wetland bird populations % per pixel", axes=F)
+plot(pct_pop_per_group_all, "Forest", main="Forest bird populations sum per pixel", axes=F)
+plot(pct_pop_per_group_all, "Aridlands", main="Aridlands bird populations sum per pixel", axes=F)
+plot(pct_pop_per_group_all, "Grasslands", main="Grasslands bird populations sum per pixel", axes=F)
+plot(pct_pop_per_group_all, "Habitat Generalist", main="Habitat Generalist bird populations sum per pixel", axes=F)
+plot(pct_pop_per_group_all, "Tipping Point", main="Tipping Point bird populations sum per pixel", axes=F)
 
 #calculate the pct of each guild population  -----------
 pct_pop_per_group_all_sum <- global(pct_pop_per_group_all, fun='sum', na.rm=T)
 pct_pop_per_group_all_sum <- tibble::rownames_to_column(pct_pop_per_group_all_sum, "Guild")
+
+
+# re-project bird guild data for visualization -----------
+
+# load data if necessary
+pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_guild_all.tif")
+crs(pct_pop_per_group_all, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
+ext(pct_pop_per_group_all)
+
+#project to match CNA data (Eckert IV) "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
+pct_pop_per_group_eck4 <- project(pct_pop_per_group_all, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method="near")
+names(pct_pop_per_group_eck4) <- sps_groups #name layers
+ext(pct_pop_per_group_eck4)
+
+#extent of USA -14025202.923, -5517202.923, 3175398.539, 7831398.539 (xmin, xmax, ymin, ymax)
+#ext(pct_pop_per_group_eck4) <- ext(-14025202.923, -5517202.923, 3175398.539, 7831398.539) #doesn't work
+
+# look at outputs
+plot(pct_pop_per_group_eck4, "Water/wetland", main="Water/wetland bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
+plot(pct_pop_per_group_eck4, "Forest", main="Forest bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
+plot(pct_pop_per_group_eck4, "Aridlands", main="Aridlands bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
+plot(pct_pop_per_group_eck4, "Grasslands", main="Grasslands bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
+plot(pct_pop_per_group_eck4, "Habitat Generalist", main="Habitat Generalist bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
+plot(pct_pop_per_group_eck4, "Tipping Point", main="Tipping Point bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
+
+#save re-projected raster
+writeRaster(pct_pop_per_group_eck4, "outputs/rasters/pct_pop_per_group_eck4.tif", overwrite=TRUE)
 
 
 # group bird tifs, masked to CNA, by guild -----------------------

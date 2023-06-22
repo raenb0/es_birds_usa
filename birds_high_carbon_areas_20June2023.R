@@ -10,19 +10,12 @@ library(beepr)
 library(tictoc)
 
 #load vulnerable carbon (global) ---------------------------
-setwd("C:/Users/raenb/Box/Documents/GIS/EcosystemServices_ChaplinKramer/reprojected_resampled_Eckert2km")
-vuln_carbon_global <- rast("Vulnerable_C_Total_2018_WARPED_average_MASKED_md5_3233d4cc77cd819670e69881b5db50d4.tif")
-setwd("C:/Users/raenb/Documents/GitHub/es_birds_usa") #reset wd
+vuln_carbon_global <- rast("data/carbon/Vulnerable_C_Total_2018.tif")
 
 #check resolution, projection
 res(vuln_carbon_global) # 2km
 crs(vuln_carbon_global, describe=F, proj=T) #"+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
 names(vuln_carbon_global) <- "vuln_carbon_global" #rename layer
-
-#identify threshold value (30%) #note this is global 30% threshold
-min_value <- as_tibble(vuln_carbon_global, na.rm = TRUE) %>%
-  slice_max(order_by = vuln_carbon_global, prop = .3) %>%
-  min()
 
 # mask vulnerable carbon to USA ------------------------
 
@@ -43,6 +36,7 @@ st_crs(usa_boundary) #epsg 4326  WGS84
 usa_transform <- st_transform(usa_boundary, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs")
 plot(usa_transform)
 st_bbox(usa_transform)
+
 # ebird projection
 # usa_ebird <- st_transform(usa_boundary, "+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs")
 # plot(usa_ebird)
@@ -51,15 +45,21 @@ st_bbox(usa_transform)
 usa_vect = vect(usa_transform)
 plot(usa_vect)
 ext(usa_vect)
+crs(usa_vect)
+crs(vuln_carbon_global)
 
-#   Masking in terra (use crop instead of mask to get correct spatial extent)
+# save vector
+writeVector(usa_vect, "outputs/rasters/usa_vect_eck4.shp", filetype="ESRI Shapefile", overwrite=TRUE)
+
+#  Crop global vulnerable carbon to USA (use crop instead of mask to get correct spatial extent)
 vuln_carbon_usa = crop(vuln_carbon_global, usa_vect, mask=TRUE)
+names(vuln_carbon_usa) <- "vuln_carbon_usa" #rename layer
+ext(vuln_carbon_usa) #-14025202.923, -5517202.923, 3175398.539, 7831398.539 (xmin, xmax, ymin, ymax)
 plot(vuln_carbon_global)
 plot(vuln_carbon_usa, axes=F, main = "Vulnerable carbon in USA (tonnes / ha)")
 
 # save USA vulnerable carbon raster
-writeRaster(vuln_carbon_usa, "outputs/rasters/vuln_carbon_usa.tif", overwrite=FALSE)
-
+writeRaster(vuln_carbon_usa, "outputs/rasters/vuln_carbon_usa.tif", overwrite=TRUE)
 
 #identify areas containing 90% of total USA vulnerable carbon ---------------------
 sum_vuln_carbon_usa <- global(vuln_carbon_usa, fun="sum",  na.rm=TRUE)
@@ -73,15 +73,18 @@ vuln_carbon_usa_df <- as.data.frame(vuln_carbon_usa)
 
 # sort the dataframe by pixel value
 vuln_carbon_usa_df_sort <- vuln_carbon_usa_df %>%
-  arrange(desc(vuln_carbon_global))
+  arrange(desc(vuln_carbon_usa))
 
 #create a new column with a cumulative sum of the pixel values
 vuln_carbon_usa_df_sort <- vuln_carbon_usa_df_sort %>%
-  mutate(cum_sum = cumsum(vuln_carbon_global))
+  mutate(cum_sum = cumsum(vuln_carbon_usa))
+
+#plot curve #takes time
+plot(vuln_carbon_usa_df_sort$cum_sum, main="Cumulative sum of vulnerable carbon value")
 
 #find the pixel value where you reach the 90% of the overall sum
 which(vuln_carbon_usa_df_sort$cum_sum > sum_vuln_carbon_usa_90pct) #first position 1055054
-threshold_90pct_usa <- vuln_carbon_usa_df_sort$vuln_carbon_global[1055054]
+threshold_90pct_usa <- vuln_carbon_usa_df_sort$vuln_carbon_usa[1055054]
 threshold_90pct_usa #31 tonnes per ha is threshold
 
 # reclassify USA vulnerable carbon to include only pixels with value greater than 31 (threshold)
@@ -123,6 +126,7 @@ area_vuln_carbon_90pct <- area_vuln_carbon_90pct_binary[2,3]
 area_vuln_carbon_90pct <- unname(area_vuln_carbon_90pct) #removes name
 area_vuln_carbon_90pct / area_usa #0.4439892 or 44% of the land area
 
+
 # identify top 30% of USA land areas, by carbon value ------------------
 
 # calculate how much land area is 30% of area of USA
@@ -133,7 +137,7 @@ area_usa_30pct # 2,831,240 sq km
 area_usa_30pct / 4 #707810 2km pixels
 
 #identify which carbon value corresponds to the 707810th pixel
-vuln_carbon_usa_df_sort$vuln_carbon_global[707810] #51 tonnes (threshold for top30)
+vuln_carbon_usa_df_sort$vuln_carbon_usa[707810] #51 tonnes (threshold for top30)
 
 # reclassify USA vulnerable carbon to include only pixels with value greater than 51 (threshold)
 range(vuln_carbon_usa) #0, 535
