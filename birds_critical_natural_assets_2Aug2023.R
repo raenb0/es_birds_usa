@@ -219,8 +219,6 @@ writeRaster(pct_pop_per_group_cna_eck4, "outputs/rasters/pct_pop_per_group_cna_e
 pct_pop_per_group_cna_eck4
 
 
-
-
 #calculate the pct of each guild population contained with CNA areas -----------
 
 # load data if necessary

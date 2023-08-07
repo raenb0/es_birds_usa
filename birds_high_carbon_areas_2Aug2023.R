@@ -283,6 +283,23 @@ plot(pct_pop_per_group_carbon_90pct, "Grasslands", main="Sum of Grasslands bird 
 plot(pct_pop_per_group_carbon_90pct, "Habitat Generalist", main="Sum of Habitat Generalist bird populations % within carbon 90% areas", axes=F)
 plot(pct_pop_per_group_carbon_90pct, "Tipping Point", main="Sum of Tipping Point bird populations % within carbon 90% areas", axes=F)
 
+
+# re-project bird guild data, masked to carbon 90%, to Eckert IV (for visualization) -----------
+
+# load data if necessary
+pct_pop_per_group_carbon_90pct <- rast("outputs/rasters/pct_pop_per_guild_carbon_90pct.tif")
+crs(pct_pop_per_group_carbon_90pct, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
+ext(pct_pop_per_group_carbon_90pct)
+
+#project to Eckert IV "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
+pct_pop_per_group_carbon_90pct_eck4 <- project(pct_pop_per_group_carbon_90pct, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method="near")
+names(pct_pop_per_group_carbon_90pct_eck4) <- sps_groups #name layers
+ext(pct_pop_per_group_carbon_90pct_eck4)
+
+#save re-projected raster
+writeRaster(pct_pop_per_group_carbon_90pct_eck4, "outputs/rasters/pct_pop_per_group_carbon_90pct_eck4.tif", overwrite=TRUE)
+pct_pop_per_group_carbon_90pct_eck4
+
 # ## top 30% of land area for carbon
 # sps_groups <- unique(sps_sel_all_vars$sps_groups)
 # 
