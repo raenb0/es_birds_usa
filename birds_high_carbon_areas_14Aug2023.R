@@ -283,34 +283,10 @@ pct_pop_per_group_carbon_90pct <- rast(pct_pop_per_group_list_carbon_90pct)
 # save resulting raster
 writeRaster(pct_pop_per_group_carbon_90pct, "outputs/rasters/pct_pop_per_group_carbon_90pct.tif", overwrite=TRUE)
 
-# #repeat for tipping point spp
-# tic()
-# pct_pop_per_group_list_carbon_90pct_tp <- lapply(tp_sps_groups,
-#                                               function(group_name){
-#                                                 tp_group_sps <- subset(
-#                                                   tp_sps_sel_all_vars, tp_sps_groups == group_name)$species_code |> sort()
-#                                                 raster_names <- names(pct_pop_carbon_90pct_mask) #replace
-#                                                 tp_sel_species <- raster_names[raster_names %in% tp_group_sps]
-#                                                 group_raster <- subset(pct_pop_carbon_90pct_mask, tp_sel_species) #replace
-#                                                 pct_sps_per_group_cell <- app(group_raster, "sum", na.rm = T)
-#                                                 return(pct_sps_per_group_cell)
-#                                               })
-# names(pct_pop_per_group_list_carbon_90pct_tp) <- tp_sps_groups
-# toc()
-# beep()
-# 
-# # rasterize
-# pct_pop_per_group_carbon_90pct_tp <- rast(pct_pop_per_group_list_carbon_90pct_tp)
-# names(pct_pop_per_group_carbon_90pct_tp) <- tp_sps_groups
-# 
-# # save resulting raster
-# writeRaster(pct_pop_per_group_carbon_90pct_tp, "outputs/rasters/pct_pop_per_guild_carbon_90pct_tp.tif", overwrite=TRUE)
-
 # look at outputs (carbon 90% areas)
 
 # load data if necessary
 pct_pop_per_group_carbon_90pct  <- rast("outputs/rasters/pct_pop_per_group_carbon_90pct.tif")
-#pct_pop_per_group_carbon_90pct_tp <- rast("outputs/rasters/pct_pop_per_guild_carbon_90pct_tp.tif") #tipping pointt spp
 
 plot(pct_pop_per_group_carbon_90pct, "Water/wetland", main="Sum of Water/wetland bird populations % within carbon 90% areas", axes=F)
 plot(pct_pop_per_group_carbon_90pct, "Forest", main="Sum of Forest bird populations % within carbon 90% areas", axes=F)
@@ -324,7 +300,6 @@ plot(pct_pop_per_group_carbon_90pct, "Tipping Point", main="Sum of Tipping Point
 
 # load data if necessary
 pct_pop_per_group_carbon_90pct <- rast("outputs/rasters/pct_pop_per_group_carbon_90pct.tif")
-#pct_pop_per_group_carbon_90pct_tp <- rast("outputs/rasters/pct_pop_per_guild_carbon_90pct_tp.tif") #tp spp
 crs(pct_pop_per_group_carbon_90pct, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
 ext(pct_pop_per_group_carbon_90pct)
 
@@ -332,13 +307,9 @@ ext(pct_pop_per_group_carbon_90pct)
 pct_pop_per_group_carbon_90pct_eck4 <- project(pct_pop_per_group_carbon_90pct, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method="near")
 names(pct_pop_per_group_carbon_90pct_eck4) <- sps_groups #name layers
 ext(pct_pop_per_group_carbon_90pct_eck4)
-#pct_pop_per_group_carbon_90pct_tp_eck4 <- project(pct_pop_per_group_carbon_90pct_tp, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method="near") #tipping pt spp
-#names(pct_pop_per_group_carbon_90pct_tp_eck4) <- tp_sps_groups #name tipping pt spp layer
-
 
 #save re-projected raster
 writeRaster(pct_pop_per_group_carbon_90pct_eck4, "outputs/rasters/pct_pop_per_group_carbon_90pct_eck4.tif", overwrite=TRUE)
-#writeRaster(pct_pop_per_group_carbon_90pct_tp_eck4, "outputs/rasters/pct_pop_per_group_carbon_90pct_tp_eck4.tif", overwrite=TRUE)
 pct_pop_per_group_carbon_90pct_eck4
 
 # ## top 30% of land area for carbon

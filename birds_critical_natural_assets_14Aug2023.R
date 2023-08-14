@@ -24,7 +24,6 @@ library(beepr)
 # sps_sel_all_vars <- readRDS("data/final_species_selection.rds") #old RDS file
 biome_sps_sel_all_vars <- readRDS("data/biome_final_species_selection.rds") #updated with biome groups
 tp_sps_sel_all_vars <- readRDS("data/tp_final_species_selection.rds") #updated with tipping point spp
-
 #bind these two tables
 sps_sel_all_vars <- rbind(biome_sps_sel_all_vars, tp_sps_sel_all_vars)
 
