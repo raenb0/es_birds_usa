@@ -1,5 +1,5 @@
 # Bird populations represented within Critical Natural Assets (CNA) areas within USA
-# Aug 2 2023
+# Aug 14 2023
 # Rachel Neugarten
 
 # Notes from Courtney:
@@ -22,8 +22,12 @@ library(beepr)
 # load the birds (percent population per species) raster --------------------
 
 # sps_sel_all_vars <- readRDS("data/final_species_selection.rds") #old RDS file
-sps_sel_all_vars <- readRDS("data/biome_final_species_selection.rds") #updated with biome groups
+biome_sps_sel_all_vars <- readRDS("data/biome_final_species_selection.rds") #updated with biome groups
 tp_sps_sel_all_vars <- readRDS("data/tp_final_species_selection.rds") #updated with tipping point spp
+
+#bind these two tables
+sps_sel_all_vars <- rbind(biome_sps_sel_all_vars, tp_sps_sel_all_vars)
+
 pct_pop_files <- list.files("data/pct_pop_sps",
                             pattern = ".tif", full.names = T) #lists spp tiffs filenames
 
@@ -35,60 +39,61 @@ pct_pop_per_sp_rast <- rast(tifs_path_sel) #creates raster
 names(pct_pop_per_sp_rast) <- sps_sel #names layers in raster by spp codes
 
 # check projection, resolution
-crs(pct_pop_per_sp_rast, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
-res(pct_pop_per_sp_rast) #2962.807 (3 km)
-ext(pct_pop_per_sp_rast) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax)
+# crs(pct_pop_per_sp_rast, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
+# res(pct_pop_per_sp_rast) #2962.807 (3 km)
+# ext(pct_pop_per_sp_rast) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax)
 
 # plot one layer
 plot(pct_pop_per_sp_rast, "acafly") #Acadian flycatcher?
 
-# load the CNA layer (local NCP, 90% target, prioritized within USA) -----------------
-cna <- rast("data/critical_natural_assets/solution_scenario-A_usa_target-90.tif")
-
-# check projection, resolution
-crs(cna, describe=F, proj=T) # "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
-res(cna) #2 km
-
-# look at it
-plot(cna) #note it includes offshore territories so might need to mask the extent to match the birds data
-
-#re-project and resample CNA layer to match birds data ------------------
-cna_3km <- project(cna, pct_pop_per_sp_rast, method="near")
-cna_3km <- resample(cna_3km, pct_pop_per_sp_rast, method="near")
-crs(cna_3km, describe=F, proj=T) #good
-res(cna_3km) #2962.809 good
-
-plot(cna_3km) #looks distorted but matches bird data
-ext(cna_3km) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax) #matches bird data
-
-# load CNA for USA, 5%-95% targets, summed (for visualization) ---------------------
-cna_usa_sum <- rast("data/critical_natural_assets/usa_targets_5_95_sum.tif")
-plot(cna_usa_sum) #includes offshore territories
-
-# load USA boundary vector created in birds_high_carbon_areas_20June2023.R script
-usa_vect <- vect("outputs/rasters/usa_vect_eck4.shp")
-
-# crop CNA data to USA (for visualization)
-cna_usa_90_crop = crop(cna, usa_vect, mask=TRUE) #90% target version
-cna_usa_sum_crop = crop(cna_usa_sum, usa_vect, mask=TRUE) #summed version
-plot(cna_usa_90_crop) #looks good
-plot(cna_usa_sum_crop) #looks good
-#writeRaster(cna_usa_90_crop, "outputs/rasters/cna_usa_90_crop.tif", overwrite=F)
-#writeRaster(cna_usa_sum_crop, "outputs/rasters/cna_usa_sum_crop.tif", overwrite=F)
-
-# mask bird data with CNA 90% target data (takes a few minutes) -------------------
-tic()
-pct_pop_mask <- mask(pct_pop_per_sp_rast, cna_3km, maskvalues=c(0,NA)) #trying to mask in values=1 only
-toc()
-beep()
-
-plot(pct_pop_mask, "acafly")
-
-#save masked version (takes 2 min)
-tic()
-writeRaster(pct_pop_mask, "outputs/rasters/pct_pop_mask_cna.tif", overwrite=T)
-toc()
-beep()
+# below code only needs to be run once --------------------
+# # load the CNA layer (local NCP, 90% target, prioritized within USA) -----------------
+# cna <- rast("data/critical_natural_assets/solution_scenario-A_usa_target-90.tif")
+# 
+# # check projection, resolution
+# crs(cna, describe=F, proj=T) # "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
+# res(cna) #2 km
+# 
+# # look at it
+# plot(cna) #note it includes offshore territories so might need to mask the extent to match the birds data
+# 
+# #re-project and resample CNA layer to match birds data ------------------
+# cna_3km <- project(cna, pct_pop_per_sp_rast, method="near")
+# cna_3km <- resample(cna_3km, pct_pop_per_sp_rast, method="near")
+# crs(cna_3km, describe=F, proj=T) #good
+# res(cna_3km) #2962.809 good
+# 
+# plot(cna_3km) #looks distorted but matches bird data
+# ext(cna_3km) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax) #matches bird data
+# 
+# # load CNA for USA, 5%-95% targets, summed (for visualization) ---------------------
+# cna_usa_sum <- rast("data/critical_natural_assets/usa_targets_5_95_sum.tif")
+# plot(cna_usa_sum) #includes offshore territories
+# 
+# # load USA boundary vector created in birds_high_carbon_areas_20June2023.R script
+# usa_vect <- vect("outputs/rasters/usa_vect_eck4.shp")
+# 
+# # crop CNA data to USA (for visualization)
+# cna_usa_90_crop = crop(cna, usa_vect, mask=TRUE) #90% target version
+# cna_usa_sum_crop = crop(cna_usa_sum, usa_vect, mask=TRUE) #summed version
+# plot(cna_usa_90_crop) #looks good
+# plot(cna_usa_sum_crop) #looks good
+# #writeRaster(cna_usa_90_crop, "outputs/rasters/cna_usa_90_crop.tif", overwrite=F)
+# #writeRaster(cna_usa_sum_crop, "outputs/rasters/cna_usa_sum_crop.tif", overwrite=F)
+# 
+# # mask bird data with CNA 90% target data (takes a few minutes) -------------------
+# tic()
+# pct_pop_mask <- mask(pct_pop_per_sp_rast, cna_3km, maskvalues=c(0,NA)) #trying to mask in values=1 only
+# toc()
+# beep()
+# 
+# plot(pct_pop_mask, "acafly")
+# 
+# #save masked version (takes 2 min)
+# tic()
+# writeRaster(pct_pop_mask, "outputs/rasters/pct_pop_mask_cna.tif", overwrite=T)
+# toc()
+# beep()
 
 # group bird tifs by guild, unmasked version ----------------
 
@@ -115,37 +120,37 @@ names(pct_pop_per_group_all) <- sps_groups
 #pct_pop_tipping_point <- rast(pct_pop_per_group_list_all$`Tipping Point`) #raster for just tipping pt spp
 
 #save resulting raster
-writeRaster(pct_pop_per_group_all, "outputs/rasters/pct_pop_per_guild_all.tif", overwrite=TRUE)
+writeRaster(pct_pop_per_group_all, "outputs/rasters/pct_pop_per_group_all.tif", overwrite=TRUE)
 
-# repeat for tipping point spp ---------------------
-
-tp_sps_groups <- unique(tp_sps_sel_all_vars$sps_groups)
-
-pct_pop_per_group_list_tp <- lapply(tp_sps_groups,
-                                     function(group_name){
-                                       tp_group_sps <- subset(
-                                         tp_sps_sel_all_vars, tp_sps_groups == group_name)$species_code |>
-                                         sort()
-                                       raster_names <- names(pct_pop_per_sp_rast) #replaced this raster
-                                       tp_sel_species <- raster_names[raster_names %in% tp_group_sps]
-                                       group_raster <- subset(pct_pop_per_sp_rast, tp_sel_species)
-                                       pct_sps_per_group_cell <- app(group_raster, "sum", na.rm = T)
-                                       return(pct_sps_per_group_cell)
-                                     })
-names(pct_pop_per_group_list_tp) <- tp_sps_groups
-
-#rasterize
-pct_pop_per_group_tp <- rast(pct_pop_per_group_list_tp)
-names(pct_pop_per_group_tp) <- tp_sps_groups
-
-#save resulting raster
-writeRaster(pct_pop_per_group_tp, "outputs/rasters/pct_pop_per_guild_tp.tif", overwrite=TRUE)
+# # repeat for tipping point spp (no longer necessary?) ---------------------
+# 
+# tp_sps_groups <- unique(tp_sps_sel_all_vars$sps_groups)
+# 
+# pct_pop_per_group_list_tp <- lapply(tp_sps_groups,
+#                                      function(group_name){
+#                                        tp_group_sps <- subset(
+#                                          tp_sps_sel_all_vars, tp_sps_groups == group_name)$species_code |>
+#                                          sort()
+#                                        raster_names <- names(pct_pop_per_sp_rast) #replaced this raster
+#                                        tp_sel_species <- raster_names[raster_names %in% tp_group_sps]
+#                                        group_raster <- subset(pct_pop_per_sp_rast, tp_sel_species)
+#                                        pct_sps_per_group_cell <- app(group_raster, "sum", na.rm = T)
+#                                        return(pct_sps_per_group_cell)
+#                                      })
+# names(pct_pop_per_group_list_tp) <- tp_sps_groups
+# 
+# #rasterize
+# pct_pop_per_group_tp <- rast(pct_pop_per_group_list_tp)
+# names(pct_pop_per_group_tp) <- tp_sps_groups
+# 
+# #save resulting raster
+# writeRaster(pct_pop_per_group_tp, "outputs/rasters/pct_pop_per_guild_tp.tif", overwrite=TRUE)
 
 # visualize bird guild rasters ---------------------
 
 #load rasters if necessary
-pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_guild_all.tif")
-pct_pop_per_group_tp <- rast("outputs/rasters/pct_pop_per_guild_tp.tif")
+pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
+#pct_pop_per_group_tp <- rast("outputs/rasters/pct_pop_per_guild_tp.tif")
 
 # look at outputs
 plot(pct_pop_per_group_all, "Water/wetland", main="Sum of Water/wetland bird populations % per pixel", axes=F)
@@ -153,20 +158,20 @@ plot(pct_pop_per_group_all, "Forest", main="Forest bird populations sum per pixe
 plot(pct_pop_per_group_all, "Aridlands", main="Aridlands bird populations sum per pixel", axes=F)
 plot(pct_pop_per_group_all, "Grasslands", main="Grasslands bird populations sum per pixel", axes=F)
 plot(pct_pop_per_group_all, "Habitat Generalist", main="Habitat Generalist bird populations sum per pixel", axes=F)
-plot(pct_pop_per_group_tp, "Tipping Point", main="Tipping Point bird populations sum per pixel", axes=F)
+plot(pct_pop_per_group_all, "Tipping Point", main="Tipping Point bird populations sum per pixel", axes=F)
 
 #calculate the count of spp in each guild  -----------
 pct_pop_per_group_all_sum <- global(pct_pop_per_group_all, fun='sum', na.rm=T)
 pct_pop_per_group_all_sum <- tibble::rownames_to_column(pct_pop_per_group_all_sum, "Guild")
-pct_pop_per_group_tp_sum <- global(pct_pop_per_group_tp, fun='sum', na.rm=T) #repeat for TP spp
-pct_pop_per_group_tp_sum <- tibble::rownames_to_column(pct_pop_per_group_tp_sum, "Guild") #repeat for TP
-pct_pop_per_group_combined_sum <- bind_rows(pct_pop_per_group_all_sum, pct_pop_per_group_tp_sum)
+#pct_pop_per_group_tp_sum <- global(pct_pop_per_group_tp, fun='sum', na.rm=T) #repeat for TP spp
+#pct_pop_per_group_tp_sum <- tibble::rownames_to_column(pct_pop_per_group_tp_sum, "Guild") #repeat for TP
+#pct_pop_per_group_combined_sum <- bind_rows(pct_pop_per_group_all_sum, pct_pop_per_group_tp_sum)
 
 # re-project bird guild data to Eckert IV (for visualization) -----------
 
 # load rasters if necessary
-pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_guild_all.tif")
-pct_pop_per_group_tp <- rast("outputs/rasters/pct_pop_per_guild_tp.tif")
+pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
+#pct_pop_per_group_tp <- rast("outputs/rasters/pct_pop_per_guild_tp.tif")
 
 #check CRS
 crs(pct_pop_per_group_all, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
@@ -177,9 +182,9 @@ pct_pop_per_group_eck4 <- project(pct_pop_per_group_all, "+proj=eck4 +lon_0=0 +x
 names(pct_pop_per_group_eck4) <- sps_groups #name layers
 ext(pct_pop_per_group_eck4)
 
-#project tipping point spp raster to Eckert IV
-pct_pop_per_group_tp_eck4 <- project(pct_pop_per_group_tp, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method="near")
-names(pct_pop_per_group_tp_eck4) <- tp_sps_groups #name layer
+# #project tipping point spp raster to Eckert IV
+# pct_pop_per_group_tp_eck4 <- project(pct_pop_per_group_tp, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method="near")
+# names(pct_pop_per_group_tp_eck4) <- tp_sps_groups #name layer
 
 #extent of USA -14025202.923, -5517202.923, 3175398.539, 7831398.539 (xmin, xmax, ymin, ymax)
 #ext(pct_pop_per_group_eck4) <- ext(-14025202.923, -5517202.923, 3175398.539, 7831398.539) #doesn't work
@@ -190,13 +195,13 @@ plot(pct_pop_per_group_eck4, "Forest", main="Forest bird populations sum per pix
 plot(pct_pop_per_group_eck4, "Aridlands", main="Aridlands bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
 plot(pct_pop_per_group_eck4, "Grasslands", main="Grasslands bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
 plot(pct_pop_per_group_eck4, "Habitat Generalist", main="Habitat Generalist bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
-plot(pct_pop_per_group_tp_eck4, "Tipping Point", main="Tipping Point bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
+plot(pct_pop_per_group_eck4, "Tipping Point", main="Tipping Point bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
 
 #save re-projected rasters
 writeRaster(pct_pop_per_group_eck4, "outputs/rasters/pct_pop_per_group_eck4.tif", overwrite=TRUE)
-writeRaster(pct_pop_per_group_tp_eck4, "outputs/rasters/pct_pop_per_group_tp_eck4.tif", overwrite=TRUE)
+#writeRaster(pct_pop_per_group_tp_eck4, "outputs/rasters/pct_pop_per_group_tp_eck4.tif", overwrite=TRUE)
 pct_pop_per_group_eck4
-pct_pop_per_group_tp_eck4
+#pct_pop_per_group_tp_eck4
 
 # group bird tifs, masked to CNA, by guild -----------------------
 
@@ -225,32 +230,32 @@ beep()
 pct_pop_per_group_cna <- rast(pct_pop_per_group_list_cna)
 
 # save resulting raster
-writeRaster(pct_pop_per_group_cna, "outputs/rasters/pct_pop_per_guild_cna.tif", overwrite=TRUE)
+writeRaster(pct_pop_per_group_cna, "outputs/rasters/pct_pop_per_group_cna.tif", overwrite=TRUE)
 
 
-# repeat for tipping point spp ---------------------
-
-tp_sps_groups <- unique(tp_sps_sel_all_vars$sps_groups)
-
-pct_pop_per_group_list_tp_cna <- lapply(tp_sps_groups,
-                                    function(group_name){
-                                      tp_group_sps <- subset(
-                                        tp_sps_sel_all_vars, tp_sps_groups == group_name)$species_code |>
-                                        sort()
-                                      raster_names <- names(pct_pop_mask) #replaced this raster
-                                      tp_sel_species <- raster_names[raster_names %in% tp_group_sps]
-                                      group_raster <- subset(pct_pop_mask, tp_sel_species)
-                                      pct_sps_per_group_cell <- app(group_raster, "sum", na.rm = T)
-                                      return(pct_sps_per_group_cell)
-                                    })
-names(pct_pop_per_group_list_tp_cna) <- tp_sps_groups
-
-#rasterize
-pct_pop_per_group_tp_cna <- rast(pct_pop_per_group_list_tp_cna)
-names(pct_pop_per_group_tp_cna) <- tp_sps_groups
-
-#save resulting raster
-writeRaster(pct_pop_per_group_tp_cna, "outputs/rasters/pct_pop_per_guild_tp_cna.tif", overwrite=TRUE)
+# # repeat for tipping point spp ---------------------
+# 
+# tp_sps_groups <- unique(tp_sps_sel_all_vars$sps_groups)
+# 
+# pct_pop_per_group_list_tp_cna <- lapply(tp_sps_groups,
+#                                     function(group_name){
+#                                       tp_group_sps <- subset(
+#                                         tp_sps_sel_all_vars, tp_sps_groups == group_name)$species_code |>
+#                                         sort()
+#                                       raster_names <- names(pct_pop_mask) #replaced this raster
+#                                       tp_sel_species <- raster_names[raster_names %in% tp_group_sps]
+#                                       group_raster <- subset(pct_pop_mask, tp_sel_species)
+#                                       pct_sps_per_group_cell <- app(group_raster, "sum", na.rm = T)
+#                                       return(pct_sps_per_group_cell)
+#                                     })
+# names(pct_pop_per_group_list_tp_cna) <- tp_sps_groups
+# 
+# #rasterize
+# pct_pop_per_group_tp_cna <- rast(pct_pop_per_group_list_tp_cna)
+# names(pct_pop_per_group_tp_cna) <- tp_sps_groups
+# 
+# #save resulting raster
+# writeRaster(pct_pop_per_group_tp_cna, "outputs/rasters/pct_pop_per_guild_tp_cna.tif", overwrite=TRUE)
 
 
 # visualize bird guilds, masked to CNA ----------------
@@ -259,13 +264,13 @@ plot(pct_pop_per_group_cna, "Forest", main="Sum of Forest bird populations % wit
 plot(pct_pop_per_group_cna, "Aridlands", main="Sum of Aridlands bird populations % within CNA")
 plot(pct_pop_per_group_cna, "Grasslands", main="Sum of Grasslands bird populations % within CNA")
 plot(pct_pop_per_group_cna, "Habitat Generalist", main="Sum of Habitat Generalist bird populations % within CNA")
-plot(pct_pop_per_group_tp_cna, "Tipping Point", main="Sum of Tipping Point bird populations % within CNA")
+plot(pct_pop_per_group_cna, "Tipping Point", main="Sum of Tipping Point bird populations % within CNA")
 
 # re-project bird guild data, masked to CNA, to Eckert IV (for visualization) -----------
 
 # load data if necessary
-pct_pop_per_group_cna <- rast("outputs/rasters/pct_pop_per_guild_cna.tif")
-pct_pop_per_group_tp_cna <- rast("outputs/rasters/pct_pop_per_guild_tp_cna.tif") #tipping pt spp
+pct_pop_per_group_cna <- rast("outputs/rasters/pct_pop_per_group_cna.tif")
+#pct_pop_per_group_tp_cna <- rast("outputs/rasters/pct_pop_per_guild_tp_cna.tif") #tipping pt spp
 crs(pct_pop_per_group_cna, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
 ext(pct_pop_per_group_cna)
 
@@ -274,9 +279,9 @@ pct_pop_per_group_cna_eck4 <- project(pct_pop_per_group_cna, "+proj=eck4 +lon_0=
 names(pct_pop_per_group_cna_eck4) <- sps_groups #name layers
 ext(pct_pop_per_group_cna_eck4)
 
-#repeat for tipping pt spp
-pct_pop_per_group_tp_cna_eck4 <- project(pct_pop_per_group_tp_cna, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method="near")
-names(pct_pop_per_group_tp_cna_eck4) <- tp_sps_groups
+# #repeat for tipping pt spp
+# pct_pop_per_group_tp_cna_eck4 <- project(pct_pop_per_group_tp_cna, "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs", method="near")
+# names(pct_pop_per_group_tp_cna_eck4) <- tp_sps_groups
 
 # look at outputs
 plot(pct_pop_per_group_cna_eck4, "Water/wetland", main="Water/wetland bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
@@ -284,19 +289,19 @@ plot(pct_pop_per_group_cna_eck4, "Forest", main="Forest bird populations sum per
 plot(pct_pop_per_group_cna_eck4, "Aridlands", main="Aridlands bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
 plot(pct_pop_per_group_cna_eck4, "Grasslands", main="Grasslands bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
 plot(pct_pop_per_group_cna_eck4, "Habitat Generalist", main="Habitat Generalist bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
-plot(pct_pop_per_group_tp_cna_eck4, "Tipping Point", main="Tipping Point bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
+plot(pct_pop_per_group_cna_eck4, "Tipping Point", main="Tipping Point bird populations sum per pixel", axes=F, xlim = c(-13000000, -5000000), ylim = c(3175399, 7831399))
 
 #save re-projected rasters
 writeRaster(pct_pop_per_group_cna_eck4, "outputs/rasters/pct_pop_per_group_cna_eck4.tif", overwrite=TRUE)
-writeRaster(pct_pop_per_group_tp_cna_eck4, "outputs/rasters/pct_pop_per_group_tp_cna_eck4.tif", overwrite=TRUE)
+#writeRaster(pct_pop_per_group_tp_cna_eck4, "outputs/rasters/pct_pop_per_group_tp_cna_eck4.tif", overwrite=TRUE)
 pct_pop_per_group_cna_eck4
 
 
 #calculate the pct of each guild population contained with CNA areas -----------
 
 # load data if necessary
-pct_pop_per_group_cna <- rast("outputs/rasters/pct_pop_per_guild_cna.tif")
-pct_pop_per_group_tp_cna <- rast("outputs/rasters/pct_pop_per_group_tp_cna.tif") #tipping pt spp
+pct_pop_per_group_cna <- rast("outputs/rasters/pct_pop_per_group_cna.tif")
+#pct_pop_per_group_tp_cna <- rast("outputs/rasters/pct_pop_per_group_tp_cna.tif") #tipping pt spp
 
 #calculate sums of pixels
 pct_pop_per_group_cna_sum <- global(pct_pop_per_group_cna, fun='sum', na.rm=T)
@@ -308,15 +313,15 @@ pct_pop_per_group_cna_sum <- pct_pop_per_group_cna_sum %>%
 pct_pop_per_group_cna_sum$sum_all <- pct_pop_per_group_all_sum$sum #total pct_pop by group
 pct_pop_per_group_cna_sum$pct_cna <- pct_pop_per_group_cna_sum$sum_cna / pct_pop_per_group_all_sum$sum
 
-#repeat for tipping pt spp
-pct_pop_per_group_tp_cna_sum <- global(pct_pop_per_group_tp_cna, fun='sum', na.rm=T)
-pct_pop_per_group_tp_cna_sum <- tibble::rownames_to_column(pct_pop_per_group_tp_cna_sum, "Guild")
-pct_pop_per_group_tp_cna_sum <- pct_pop_per_group_tp_cna_sum %>%
-  rename("sum_cna" = "sum") #rename "sum" to "sum_cna" for clarity
-
-# calculate the sum of pct_pop within CNA divided by the sum of pct_pop total
-pct_pop_per_group_tp_cna_sum$sum_all <- pct_pop_per_group_tp_sum$sum #total pct_pop by group
-pct_pop_per_group_tp_cna_sum$pct_cna <- pct_pop_per_group_tp_cna_sum$sum_cna / pct_pop_per_group_tp_sum$sum
+# #repeat for tipping pt spp
+# pct_pop_per_group_tp_cna_sum <- global(pct_pop_per_group_tp_cna, fun='sum', na.rm=T)
+# pct_pop_per_group_tp_cna_sum <- tibble::rownames_to_column(pct_pop_per_group_tp_cna_sum, "Guild")
+# pct_pop_per_group_tp_cna_sum <- pct_pop_per_group_tp_cna_sum %>%
+#   rename("sum_cna" = "sum") #rename "sum" to "sum_cna" for clarity
+# 
+# # calculate the sum of pct_pop within CNA divided by the sum of pct_pop total
+# pct_pop_per_group_tp_cna_sum$sum_all <- pct_pop_per_group_tp_sum$sum #total pct_pop by group
+# pct_pop_per_group_tp_cna_sum$pct_cna <- pct_pop_per_group_tp_cna_sum$sum_cna / pct_pop_per_group_tp_sum$sum
 
 
 #plot individual tipping point spp (examples)
@@ -341,8 +346,8 @@ cerulean_warbler_sum_cna #0.9057386
 library(tidyverse)
 
 #filter tipping point species, forest spp, etc.
-sps_vars_tipping_point <- tp_sps_sel_all_vars %>%
-  filter(tp_sps_groups=="Tipping Point") #note this category is now mutually exclusive with habitats
+sps_vars_tipping_point <- sps_sel_all_vars %>%
+  filter(sps_groups=="Tipping Point") #note this category is now mutually exclusive with habitats
 sps_vars_forest <- sps_sel_all_vars %>%
   filter(sps_groups=="Forest")
 sps_vars_grassland <- sps_sel_all_vars %>%
@@ -365,7 +370,7 @@ library(tidyverse)
 write_csv(pct_pop_tipping_pt_spp_cna, "outputs/pct_pop_tipping_pt_spp_cna.csv")
 
 # skip the above step and load original tipping pt csv
-pct_pop_tipping_pt_spp_cna <- read_csv("outputs/pct_pop_tipping_pt_spp_cna.csv")
+#pct_pop_tipping_pt_spp_cna <- read_csv("outputs/pct_pop_tipping_pt_spp_cna.csv")
 
 # calculate pct of population within CNA for all forest spp ------------------
 #NOTE overwrites objects with same names
