@@ -37,6 +37,12 @@ sps_sel <- tiffs_sps[tiffs_sps %in% sps_sel_all_vars$species_code] #selects 479 
 pct_pop_per_sp_rast <- rast(tifs_path_sel) #creates raster
 names(pct_pop_per_sp_rast) <- sps_sel #names layers in raster by spp codes
 
+#save resulting raster (only do this once!)
+tic()
+writeRaster(pct_pop_per_sp_rast, "outputs/rasters/pct_pop_per_sp_rast.tif", overwrite=FALSE)
+toc()
+beep()
+
 # check projection, resolution
 # crs(pct_pop_per_sp_rast, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
 # res(pct_pop_per_sp_rast) #2962.807 (3 km)
@@ -457,4 +463,5 @@ plot_cna <- ggplot(summary_longer_cna, aes(x=guild, y=pct_spp, fill=category)) +
   theme_minimal() +
   theme(legend.title=element_blank())
 plot_cna
+
 
