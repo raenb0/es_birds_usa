@@ -19,7 +19,7 @@ library(beepr) #alerts you when run is complete
 # https://cornell.box.com/s/4tun1x451b2f96phq0o2acvjk3eyq524
 
 #load raster with bird pct population per group (6 groups)
-pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
+# pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
 
 #load raster with bird pct population per species (479 species)
 pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
@@ -73,7 +73,7 @@ pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
 # load blank USA raster
 usa_raster <- rast("data/usa_raster.tif")
 
-dir_path <- "outputs/sampling_data"
+dir_path <- "outputs/sampling_data/"
 
 sampling_function <- function(i, dir_path, input_raster, sample_size, usa_raster){
   sample_usa <- spatSample(
@@ -100,7 +100,7 @@ sampling_function <- function(i, dir_path, input_raster, sample_size, usa_raster
   
   samples_dt_long$iteration_n <- i
   data.table::fwrite(samples_dt_long,
-                     paste0(dir_path, "/iteration_", i, ".csv"))
+                     paste0(dir_path, "iteration_", i, ".csv"))
   return(samples_dt_long)
 }
 
@@ -117,13 +117,18 @@ toc()
 beep()
 
 #test outside parallelization
+tic()
 sampling_function(i = 1, 
                   dir_path = dir_path, 
                   input_raster = pct_pop_per_sp_rast,
                   sample_size = 397109,
                   usa_raster = usa_raster)
+toc()
+beep()
 
 # try old version ------------------------
+plan(multisession) ## Run in parallel on local computer
+dir_path <- "outputs/sampling_data/"
 
 sampling_function <- function(i, input_raster, sample_size){
   sample_usa <- spatSample(
@@ -134,7 +139,7 @@ sampling_function <- function(i, input_raster, sample_size){
   sample_usa_vect <- vect(sample_usa, geom=c("x", "y"),
                           crs = crs(usa_raster))
   
-  samples_dt <-  terra::extract(input_raster, sample_usa_vect) |> 
+  samples_dt <-  extract(input_raster, sample_usa_vect) |> 
     as.data.table()
   
   cols <- colnames(samples_dt)
@@ -154,12 +159,62 @@ sampling_function <- function(i, input_raster, sample_size){
   return(samples_dt_long)
 }
 
-plan(multisession) ## Run in parallel on local computer
 tic()
 test_list <- future_lapply(
   1:3, sampling_function, 
   input_raster = pct_pop_per_sp_rast,
-  sample_size = 397109
+  sample_size = sample_size_37pct
 )
 toc()
 beep()
+
+
+# try using raster algebra -------------------
+
+library(terra)
+library(data.table)
+library(tictoc)
+
+sampling_function <- function(i, dir_path, input_raster_path, sample_size, usa_raster_path){
+  input_raster <- rast(input_raster_path)
+  usa_raster <- rast(usa_raster_path)
+  
+  sample_usa <- spatSample(
+    usa_raster, size=sample_size, method="random", replace = F, na.rm = T,
+    as.points = T, values = T, warn = T, exhaustive = T)
+  
+  sample_usa_raster <- rasterize(sample_usa, usa_raster)
+  
+  samples_raster <- sample_usa_raster * input_raster
+  samples_summaries_dt <- data.table(
+    sps = names(input_raster),
+    values = global(samples_raster, "sum", na.rm = T))
+  
+  samples_summaries_dt$iteration_n <- i
+  fwrite(samples_summaries_dt,
+         paste0(dir_path, "/iteration_", i, ".csv"))
+  return(samples_summaries_dt)
+}
+
+tic()
+test_list <- parallel::mclapply(
+  1:30, sampling_function, 
+  dir_path = "~/temp/", 
+  input_raster_path = "~/temp/pct_pop_per_sp_rast.tif",
+  sample_size = 397108.8,
+  usa_raster_path = "~/temp/usa_raster.tif",
+  mc.cores = 24
+)
+toc()
+#1380.04 sec elapsed
+
+
+tic()
+sampling_function(
+  i = 1, 
+  dir_path = "~/temp/", 
+  input_raster_path = "~/temp/pct_pop_per_sp_rast.tif",
+  sample_size = 397108.8,
+  usa_raster_path = "~/temp/usa_raster.tif")
+toc()
+#489.952 sec elapsed

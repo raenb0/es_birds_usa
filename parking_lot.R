@@ -163,3 +163,33 @@ sampling_function <- function(i, input_raster, sample_size){
                      paste0(dir_path, "iteration_", i, ".csv"))
   return(samples_dt_long)
 }
+
+# third old version:
+sampling_function <- function(i, input_raster, sample_size){
+  sample_usa <- spatSample(
+    usa_raster, size=sample_size, method="random", replace=FALSE, na.rm=TRUE,
+    as.raster=FALSE, as.df=TRUE, as.points=FALSE, values=TRUE, cells=FALSE, 
+    xy=TRUE, ext=NULL, warn=TRUE, weights=NULL, exp=1, exhaustive=FALSE)
+  
+  sample_usa_vect <- vect(sample_usa, geom=c("x", "y"),
+                          crs = crs(usa_raster))
+  
+  samples_dt <-  extract(input_raster, sample_usa_vect) |> 
+    as.data.table()
+  
+  cols <- colnames(samples_dt)
+  cols_sel <- cols[2:length(cols)]
+  
+  samples_dt_summary <- samples_dt[
+    , lapply(.SD, sum, na.rm = T), .SDcols = cols_sel
+  ] 
+  
+  samples_dt_long <- melt(
+    samples_dt_summary, measure.vars = cols_sel, 
+    variable.name = "species", value.name = "summary")
+  
+  samples_dt_long$iteration_n <- i
+  data.table::fwrite(samples_dt_long,
+                     paste0(dir_path, "/iteration_", i, ".csv"))
+  return(samples_dt_long)
+}
