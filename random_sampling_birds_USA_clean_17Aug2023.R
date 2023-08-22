@@ -76,7 +76,31 @@ myfiles_df <- data.table::rbindlist(myfiles, idcol=T) #to put them into a single
 myfiles_mean_sd <- myfiles_df[, .(mean_var = mean(values.sum, na.rm = T), stdev_var = sd(values.sum, na.rm = T)), by = sps] 
 #the group by is for species, not for each iteration... so instead of the by = column_with_teration_unique_id, it will be with the column of species_code
 
+# read in tables with habitat groups, tipping point spp
+library(tidyverse)
+biome_sps_vars <- readRDS("data/biome_final_species_selection.rds") #updated with biome groups
+tp_sps_vars <- readRDS("data/tp_final_species_selection.rds") #updated with tipping point spp
+#bind these two tables
+#sps_sel_all_vars <- rbind(biome_sps_sel_all_vars, tp_sps_sel_all_vars)
 
+#select only columns of interest
+names(biome_sps_vars)
+biome_sps <- biome_sps_vars %>%
+  select(species_code, sps_groups)
+tp_sps <- tp_sps_vars %>%
+  select(species_code, sps_groups)
 
+#join tables
+sampling_mean_sd_habitat <- left_join(myfiles_mean_sd, biome_sps, by=join_by(sps == species_code))
+sampling_mean_sd_habitat_tp <- left_join(sampling_mean_sd_habitat, tp_sps, by=join_by(sps==species_code))
 
+#write to csv
+write.csv(sampling_mean_sd_habitat_tp, "outputs/sampling_mean_sd_habitat_tp.csv")
 
+#bring in results from CNA analysis
+pct_pop_tipping_pt_spp_cna <- read_csv("outputs/pct_pop_tipping_pt_spp_cna.csv")
+sampling_cna_comparison_tp <- left_join(sampling_mean_sd_habitat_tp, pct_pop_tipping_pt_spp_cna, by=join_by(sps==species_code))
+tp_sps_comparison <- sampling_cna_comparison_tp %>%
+  filter(sps_groups.y=="Tipping Point")
+
+#sampling_cna_comparison_habitat <- left_join()
