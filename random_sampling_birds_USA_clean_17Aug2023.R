@@ -9,13 +9,39 @@ library(data.table)
 library(tictoc) #calculates time to run
 library(beepr)
 
-# try using raster algebra -------------------
-
 #load raster with bird pct population per species (479 species)
 pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
 
+#load raster with bird pct population per group
+pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
+
 # load blank USA raster
 usa_raster <- rast("data/usa_raster.tif")
+
+#compare counts of non-NA pixels
+freq_usa <- freq(usa_raster) # 1,073,267 pixels, but misses some coastal areas
+freq_birds_groups <- freq(pct_pop_per_group_all) #different numbers of non-NA pixels in each group
+freq_birds_abetow <- freq(pct_pop_per_sp_rast$abetow) #889,119 pixels in a single bird raster
+
+#create a blank USA sampling raster that covers full extent of all bird species TIFs
+new_US <- c(pct_pop_per_group_all, usa_raster)
+new_US_added <- app(new_US, "sum", na.rm = T)
+new_US_reclass <- ifel(new_US_added > 0, 1, NA)
+freq_new_USA <- freq(new_US_reclass) #1,084,595 pixels so added about 10,000 pixels
+
+#save raster as TIF file
+writeRaster(new_US_reclass, "outputs/rasters/new_USA_raster.tif", overwrite=FALSE)
+
+#calculate 37% (and 44%) of new USA raster
+count_pixels_USA <- freq_new_USA[1,3] #1,084,595 pixels
+sample_size_37pct <- 0.37*count_pixels_USA
+sample_size_37pct #401300.2 pixels represent 37% of USA land area
+sample_size_44pct <- 0.44*count_pixels_USA
+sample_size_44pct #477221.8 pixels represent 44% of USA land area
+
+# try using raster algebra -------------------
+
+# create sampling function
 
 dir_path <- "outputs/sampling_data/"
 
@@ -54,9 +80,10 @@ toc()
 library(future.apply)
 plan(multisession) ## Run in parallel on local computer
 
+# try 30 iterations
 tic()
 test_list <- future_lapply(
-  1:20, sampling_function, 
+  1:30, sampling_function, 
   dir_path = "outputs/sampling_data/", 
   input_raster_path = "outputs/rasters/pct_pop_per_sp_rast.tif",
   sample_size = 397109,
@@ -102,5 +129,8 @@ pct_pop_tipping_pt_spp_cna <- read_csv("outputs/pct_pop_tipping_pt_spp_cna.csv")
 sampling_cna_comparison_tp <- left_join(sampling_mean_sd_habitat_tp, pct_pop_tipping_pt_spp_cna, by=join_by(sps==species_code))
 tp_sps_comparison <- sampling_cna_comparison_tp %>%
   filter(sps_groups.y=="Tipping Point")
+
+#write to csv
+write.csv(tp_sps_comparison, "outputs/tp_sps_sampling_cna_comparison.csv")
 
 #sampling_cna_comparison_habitat <- left_join()

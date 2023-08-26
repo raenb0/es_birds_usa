@@ -1,480 +1,480 @@
-,sps,mean_var,stdev_var,sps_groups.x,sps_groups.y
-1,abetow,0.367125758,0.008758551,Aridlands,NA
-2,acafly,0.36938256,0.001372506,Forest,NA
-3,acowoo,0.370055313,0.004671055,Forest,NA
-4,aldfly,0.366763578,0.001408911,Forest,NA
-5,allhum,0.358495662,0.010874425,Aridlands,Tipping Point
-6,ambduc,0.296851495,0.007203952,Water/wetland,NA
-7,ameavo,0.365410326,0.015299704,Water/wetland,NA
-8,amebit,0.367091017,0.001539148,Water/wetland,NA
-9,amecro,0.365637187,0.001017802,Habitat Generalist,NA
-10,amedip,0.36757785,0.003621584,Water/wetland,NA
-11,amegfi,0.368357801,0.000497604,Forest,NA
-12,amekes,0.368290345,0.000507164,Habitat Generalist,NA
-13,amepip,0.367314506,0.00108952,Water/wetland,NA
-14,amered,0.367099736,0.000763941,Forest,NA
-15,amerob,0.367466604,0.001612543,Forest,NA
-16,amewig,0.362026224,0.003834491,Water/wetland,NA
-17,amewoo,0.368792188,0.001030244,Forest,NA
-18,amgplo,0.369167065,0.004253977,Water/wetland,Tipping Point
-19,amtspa,0.369422659,0.000948233,Water/wetland,NA
-20,amwpel,0.360149005,0.005556795,Water/wetland,NA
-21,anhing,0.365217635,0.003303536,Water/wetland,NA
-22,annhum,0.364083124,0.00316669,Aridlands,NA
-23,arcter,0.055063361,0.043988646,Water/wetland,NA
-24,arcwar1,NA,NA,Water/wetland,NA
-25,astfly,0.368963727,0.001185156,Aridlands,NA
-26,attwoo1,0.368989493,0.002451692,Forest,NA
-27,babwar,0.367926375,0.001257316,Forest,NA
-28,bacspa,0.369649056,0.006734443,Forest,Tipping Point
-29,baisan,0.36930541,0.002106066,Water/wetland,NA
-30,baispa,0.366801038,0.003038359,Grasslands,Tipping Point
-31,baleag,0.351691484,0.001234172,Water/wetland,NA
-32,balori,0.368679689,0.000876013,Forest,NA
-33,banswa,0.368285612,0.004446924,Habitat Generalist,NA
-34,bargol,0.260401905,0.00403362,Water/wetland,NA
-35,barswa,0.366459925,0.005564139,Habitat Generalist,NA
-36,batpig1,0.36730976,0.003450744,Forest,NA
-37,bawwar,0.367373366,0.000892414,Forest,NA
-38,bcnher,0.36209672,0.002898526,Water/wetland,NA
-39,belkin1,0.36306974,0.000658782,Water/wetland,NA
-40,belspa2,0.369492861,0.005034111,Aridlands,NA
-41,belvir,0.368381142,0.001483338,Aridlands,NA
-42,benthr,0.368050349,0.005347955,Aridlands,Tipping Point
-43,bewwre,0.368086988,0.001191016,Aridlands,NA
-44,bkbcuc,0.367842191,0.001911071,Forest,Tipping Point
-45,bkbmag1,0.367274971,0.001359392,Habitat Generalist,NA
-46,bkbplo,0.309724483,0.010940575,Water/wetland,NA
-47,bkbwar,0.36754908,0.001353958,Forest,NA
-48,bkbwoo,0.368101829,0.004397266,Forest,NA
-49,bkcchi,0.367224747,0.001204523,Forest,NA
-50,bkchum,0.368552857,0.001841635,Forest,NA
-51,bkcspa,0.369321758,0.004195515,Aridlands,Tipping Point
-52,bkhgro,0.369212477,0.001181463,Forest,NA
-53,bknsti,0.368068297,0.010705452,Water/wetland,NA
-54,bkpwar,0.365053747,0.00100268,Forest,NA
-55,bktgna,0.367035445,0.003375575,Aridlands,NA
-56,bktspa,0.368469878,0.001604523,Aridlands,NA
-57,bkwvir,0.189803723,0.031736154,Forest,NA
-58,blctit4,0.369361389,0.003403168,Aridlands,NA
-59,blkpho,0.364144445,0.002472476,Water/wetland,NA
-60,blksco2,0.172222951,0.006241394,Water/wetland,Tipping Point
-61,blkswi,0.363408398,0.006805036,Forest,Tipping Point
-62,blkter,0.327140539,0.003831835,Water/wetland,NA
-63,blkvul,0.368040015,0.001444269,Habitat Generalist,NA
-64,blugrb1,0.368493076,0.000788356,Forest,NA
-65,blujay,0.368343198,0.000671073,Forest,NA
-66,bncfly,0.366837764,0.003143549,Aridlands,NA
-67,bnhcow,0.36875472,0.002482226,Habitat Generalist,NA
-68,bnhnut,0.368030398,0.002525816,Forest,NA
-69,boboli,0.365523433,0.003693256,Grasslands,Tipping Point
-70,bohwax,0.368604737,0.003201732,Forest,NA
-71,bongul,0.326306219,0.007701801,Water/wetland,NA
-72,borchi2,0.367581913,0.001958701,Forest,NA
-73,botgra,0.354154469,0.009160989,Water/wetland,NA
-74,brant,0.189442786,0.018832582,Water/wetland,NA
-75,brdowl,0.369577353,0.001039648,Forest,NA
-76,brebla,0.369099878,0.001126511,Habitat Generalist,NA
-77,brespa,0.368986189,0.001071016,Aridlands,NA
-78,britit,0.368450554,0.007936322,Forest,NA
-79,brncre,0.366907982,0.00078207,Forest,NA
-80,brnowl,0.368475485,0.002800614,Habitat Generalist,NA
-81,brnthr,0.369036731,0.000651879,Forest,NA
-82,brocow,0.363017551,0.006523793,Aridlands,NA
-83,brthum,0.369873939,0.002300267,Forest,NA
-84,brwhaw,0.367254408,0.003257331,Forest,NA
-85,btbwar,0.365180743,0.001984875,Forest,NA
-86,btnwar,0.36717793,0.001220559,Forest,NA
-87,btywar,0.368763691,0.001603481,Forest,NA
-88,bubsan,0.369001435,0.008128966,Water/wetland,Tipping Point
-89,buffle,0.338158967,0.002699861,Water/wetland,NA
-90,buggna,0.368584541,0.000773564,Habitat Generalist,NA
-91,buhvir,0.367518223,0.001133107,Forest,NA
-92,bulori,0.369480787,0.001006066,Forest,NA
-93,burowl,0.369279708,0.001809207,Grasslands,NA
-94,bushti,0.368859223,0.002149448,Forest,NA
-95,buwtea,0.367567528,0.001344416,Water/wetland,NA
-96,buwwar,0.369367042,0.001797536,Forest,NA
-97,cacgoo1,0.36695668,0.003762436,Water/wetland,NA
-98,cacwre,0.367650307,0.002524723,Aridlands,NA
-99,calgul,0.350797972,0.051122532,Water/wetland,NA
-100,calhum,0.369835904,0.002423446,Forest,NA
-101,calqua,0.369469627,0.002647856,Aridlands,NA
-102,calthr,0.36849085,0.006591745,Aridlands,NA
-103,caltow,0.36815098,0.004885596,Aridlands,NA
-104,camwar,0.365017862,0.001356178,Forest,NA
-105,cangoo,0.367353464,0.001110888,Water/wetland,NA
-106,cantow,0.368173643,0.003094262,Aridlands,NA
-107,canvas,0.360962292,0.018496981,Water/wetland,NA
-108,canwar,0.366486668,0.001681475,Forest,Tipping Point
-109,canwre,0.368071133,0.002697881,Aridlands,NA
-110,carchi,0.369271068,0.00105736,Forest,NA
-111,carwre,0.368617711,0.000976765,Forest,NA
-112,casfin,0.369927374,0.001574911,Forest,NA
-113,caskin,0.368713361,0.002019218,Forest,NA
-114,casspa,0.369182314,0.001903199,Grasslands,NA
-115,caster1,0.275576837,0.008670303,Water/wetland,NA
-116,casvir,0.369593289,0.001531498,Forest,NA
-117,categr,0.36770938,0.005207182,Water/wetland,NA
-118,cavswa,0.367529085,0.002239068,Aridlands,NA
-119,cedwax,0.367816021,0.000606665,Forest,NA
-120,cerwar,0.369853565,0.003598264,Forest,Tipping Point
-121,chbchi,0.357168515,0.003146304,Forest,NA
-122,chclon,0.368738624,0.002069476,Grasslands,Tipping Point
-123,chirav,0.368185599,0.003169959,Aridlands,NA
-124,chispa,0.369178159,0.000501644,Forest,NA
-125,chiswi,0.368441948,0.003510879,Forest,Tipping Point
-126,chswar,0.367899935,0.001270824,Forest,NA
-127,chwwid,0.368937133,0.00160621,Forest,NA
-128,cintea,0.36928265,0.002840459,Water/wetland,NA
-129,clagre,0.361431195,0.013803989,Water/wetland,Tipping Point
-130,clanut,0.369928646,0.002183042,Forest,NA
-131,clcspa,0.368735003,0.000997626,Grasslands,NA
-132,cliswa,0.368696512,0.00078712,Habitat Generalist,NA
-133,cogdov,0.365327995,0.003381587,Aridlands,NA
-134,comgal1,0.365374726,0.006196987,Water/wetland,NA
-135,comgol,0.355012208,0.004441099,Water/wetland,NA
-136,comgra,0.366407686,0.0123844,Habitat Generalist,NA
-137,comloo,0.310987514,0.00447051,Water/wetland,NA
-138,commer,0.356379779,0.007553961,Water/wetland,NA
-139,comnig,0.368963889,0.000658725,Habitat Generalist,NA
-140,compoo,0.369151936,0.001391679,Aridlands,NA
-141,comrav,0.366294128,0.000683401,Habitat Generalist,NA
-142,comred,0.367005159,0.001175415,Water/wetland,NA
-143,comter,0.17138523,0.013932898,Water/wetland,NA
-144,comyel,0.36748444,0.000597049,Habitat Generalist,NA
-145,conwar,0.364583646,0.005291777,Forest,NA
-146,coohaw,0.367638667,0.000465555,Forest,NA
-147,corfly,0.369889837,0.002392396,Forest,NA
-148,coshum,0.368413413,0.003512692,Aridlands,NA
-149,coukin,0.364320616,0.005412079,Aridlands,NA
-150,cowscj1,0.369383156,0.004039863,Forest,NA
-151,crithr,0.367316012,0.002934037,Aridlands,NA
-152,cubthr,0.367993443,0.002734292,Aridlands,NA
-153,daejun,0.368467775,0.000440626,Forest,NA
-154,dickci,0.369388413,0.001205222,Grasslands,NA
-155,doccor,0.31279915,0.005980785,Water/wetland,NA
-156,dowwoo,0.369031162,0.00069844,Forest,NA
-157,dunlin,0.28123612,0.009396783,Water/wetland,NA
-158,dusfly,0.369796097,0.001282471,Forest,NA
-159,dusgro,0.369948378,0.002679037,Forest,NA
-160,eargre,0.368979915,0.018216686,Water/wetland,NA
-161,easblu,0.36905183,0.000774525,Forest,NA
-162,easkin,0.36796504,0.000817077,Grasslands,NA
-163,easmea,0.368790671,0.001042705,Grasslands,NA
-164,easowl1,0.36857972,0.00116179,Forest,NA
-165,easpho,0.368189602,0.00074885,Forest,NA
-166,eastow,0.368640277,0.001043651,Forest,NA
-167,easwpw1,0.369430839,0.001958479,Forest,Tipping Point
-168,eawpew,0.369045831,0.000772861,Forest,NA
-169,evegro,0.367805116,0.001509474,Forest,Tipping Point
-170,ferhaw,0.369366076,0.001336083,Grasslands,NA
-171,fiespa,0.36944771,0.000842717,Forest,NA
-172,fiscro,0.360668786,0.002588958,Habitat Generalist,NA
-173,forter,0.294211358,0.005022307,Water/wetland,NA
-174,foxspa,0.361996446,0.001015156,Forest,NA
-175,fragul,0.36824843,0.008583988,Water/wetland,NA
-176,fuwduc,0.36528644,0.007915605,Water/wetland,NA
-177,gadwal,0.367808792,0.001865154,Water/wetland,NA
-178,gamqua,0.36777388,0.002959501,Aridlands,NA
-179,gbbgul,0.152895284,0.010605485,Water/wetland,Tipping Point
-180,gilfli,0.36827812,0.006319204,Aridlands,NA
-181,gilwoo,0.367545144,0.004998085,Aridlands,NA
-182,gloibi,0.359240817,0.007599007,Water/wetland,NA
-183,gnttow,0.369307434,0.001284977,Aridlands,NA
-184,gnwtea,0.36676975,0.002929167,Water/wetland,NA
-185,gockin,0.364445011,0.00078462,Forest,NA
-186,gocspa,0.361996149,0.002518524,Water/wetland,NA
-187,gofwoo,0.367243346,0.003519745,Aridlands,NA
-188,goleag,0.369708207,0.001090306,Habitat Generalist,NA
-189,gowwar,0.369572048,0.002260778,Forest,Tipping Point
-190,graspa,0.369359238,0.001073336,Grasslands,NA
-191,grawar,0.369886682,0.004823246,Forest,Tipping Point
-192,grbani,0.362418831,0.007857516,Habitat Generalist,NA
-193,grbher3,0.36243123,0.000856869,Water/wetland,NA
-194,grcfly,0.368491745,0.000778669,Forest,NA
-195,greegr,0.363705975,0.002359759,Water/wetland,NA
-196,greroa,0.367815679,0.00188502,Aridlands,NA
-197,gresca,0.308848684,0.00888517,Water/wetland,NA
-198,greyel,0.36567549,0.002000879,Water/wetland,NA
-199,grhowl,0.368895548,0.000627031,Habitat Generalist,NA
-200,grnher,0.365873683,0.001041101,Water/wetland,NA
-201,grnjay,0.367587977,0.005989543,Aridlands,NA
-202,grpchi,0.369999657,0.003581396,Grasslands,NA
-203,grtgra,0.359975015,0.004001829,Habitat Generalist,NA
-204,grycat,0.367026253,0.000778815,Forest,NA
-205,gryfly,0.36949163,0.001260868,Forest,NA
-206,gryjay,0.367823108,0.001473648,Forest,NA
-207,grykin,0.228362636,0.020209361,Forest,NA
-208,gryvir,0.369556308,0.002930021,Forest,NA
-209,gwfgoo,0.369158695,0.002138793,Water/wetland,NA
-210,gycthr,0.368763262,0.001127972,Forest,NA
-211,haiwoo,0.368624715,0.000721434,Forest,NA
-212,hamfly,0.369533355,0.001601429,Forest,NA
-213,harduc,0.208595447,0.006059511,Water/wetland,NA
-214,harspa,0.36971326,0.001572834,Water/wetland,Tipping Point
-215,henspa,0.369889708,0.003033381,Grasslands,Tipping Point
-216,heptan,0.36981144,0.004906527,Forest,NA
-217,hergul,0.306168328,0.009755591,Water/wetland,NA
-218,herthr,0.367868877,0.000675539,Forest,NA
-219,herwar,0.369207143,0.003474309,Forest,NA
-220,hoared,0.366239416,0.004632468,Water/wetland,NA
-221,hoomer,0.365032966,0.002298084,Water/wetland,NA
-222,hooori,0.366156485,0.003002896,Aridlands,NA
-223,hoowar,0.36955782,0.00167025,Forest,NA
-224,horgre,0.303191273,0.005137495,Water/wetland,NA
-225,horlar,0.369611464,0.001191916,Grasslands,NA
-226,houfin,0.367052271,0.001453744,Habitat Generalist,NA
-227,houwre,0.368779907,0.000528331,Forest,NA
-228,hrshaw,0.365915841,0.005611421,Aridlands,NA
-229,hudgod,0.369451808,0.003955736,Water/wetland,Tipping Point
-230,hutvir,0.366395485,0.003474927,Forest,NA
-231,incdov,0.359985988,0.014371223,Aridlands,NA
-232,indbun,0.368607475,0.00090628,Forest,NA
-233,juntit1,0.370024935,0.002981618,Forest,NA
-234,kenwar,0.369859669,0.001674319,Forest,NA
-235,killde,0.368756147,0.000975871,Habitat Generalist,NA
-236,kineid,0.231349181,0.053419353,Water/wetland,Tipping Point
-237,kinrai4,0.360138888,0.005674252,Water/wetland,Tipping Point
-238,labwoo,0.368151882,0.001708059,Aridlands,NA
-239,laplon,0.369325411,0.00279568,Water/wetland,NA
-240,larbun,0.36911132,0.001769322,Grasslands,NA
-241,larspa,0.369438133,0.000828733,Grasslands,NA
-242,lawgol,0.368699215,0.003844749,Aridlands,NA
-243,lazbun,0.369381928,0.000956005,Forest,NA
-244,leabit,0.360745919,0.004030742,Water/wetland,NA
-245,leafly,0.368129551,0.000868629,Forest,NA
-246,leasan,0.360146246,0.002819193,Water/wetland,NA
-247,lecspa,0.369545122,0.001753933,Grasslands,Tipping Point
-248,lecthr,0.369341217,0.006311904,Aridlands,Tipping Point
-249,lesgol,0.368831264,0.001442814,Forest,NA
-250,lesnig,0.366410866,0.002323724,Aridlands,NA
-251,lessca,0.345358249,0.003579459,Water/wetland,NA
-252,lesyel,0.367878137,0.00304173,Water/wetland,Tipping Point
-253,lewwoo,0.370101032,0.002629452,Forest,NA
-254,libher,0.366039132,0.002863542,Water/wetland,NA
-255,limpki,0.36912927,0.010155077,Water/wetland,NA
-256,linspa,0.368906963,0.000525614,Forest,NA
-257,lobcur,0.365383912,0.004199664,Grasslands,NA
-258,lobdow,0.36732094,0.004646137,Water/wetland,Tipping Point
-259,lobthr,0.36626693,0.005234861,Aridlands,NA
-260,loeowl,0.369149642,0.001816587,Forest,NA
-261,logshr,0.368321139,0.000836824,Grasslands,NA
-262,lotduc,0.189959933,0.009417759,Water/wetland,NA
-263,louwat,0.36974461,0.001410543,Forest,NA
-264,lucwar,0.367353337,0.003273759,Aridlands,NA
-265,macwar,0.369431605,0.001007442,Forest,NA
-266,magwar,0.367438331,0.000966432,Forest,NA
-267,mallar3,0.366558918,0.003275211,Water/wetland,NA
-268,margod,0.355427364,0.019865128,Water/wetland,NA
-269,marwre,0.365758879,0.001401668,Water/wetland,NA
-270,mcclon,0.369629387,0.003745056,Grasslands,Tipping Point
-271,merlin,0.363070762,0.000702685,Habitat Generalist,NA
-272,mewgul,0.332457319,0.161252159,Water/wetland,NA
-273,mexjay4,0.368560913,0.010528315,Forest,NA
-274,miskit,0.369086965,0.001682175,Forest,NA
-275,motduc,0.351301443,0.007808743,Water/wetland,Tipping Point
-276,moublu,0.369647141,0.000992819,Forest,NA
-277,mouchi,0.369905695,0.001813776,Forest,NA
-278,moudov,0.368496669,0.000570538,Habitat Generalist,NA
-279,mouplo,0.369114066,0.01014722,Grasslands,Tipping Point
-280,mouqua,0.369794655,0.003979499,Forest,NA
-281,mouwar,0.367388931,0.002248077,Forest,Tipping Point
-282,naswar,0.368513869,0.00083282,Forest,NA
-283,nopowl,0.368224585,0.00248453,Forest,NA
-284,norbob,0.369615364,0.001230397,Forest,NA
-285,norcar,0.36889533,0.000744614,Forest,NA
-286,norfli,0.368470609,0.000333037,Forest,NA
-287,norgos,0.365965037,0.001017012,Forest,NA
-288,norhar2,0.367799274,0.000788056,Habitat Generalist,NA
-289,normoc,0.366938593,0.00076806,Habitat Generalist,NA
-290,norpar,0.367278753,0.001129538,Forest,NA
-291,norpin,0.365534706,0.002374289,Water/wetland,NA
-292,norsho,0.368675468,0.004407895,Water/wetland,NA
-293,norshr4,0.368038692,0.00081459,Water/wetland,NA
-294,norwat,0.366757893,0.000892796,Forest,NA
-295,nrwswa,0.366070547,0.001346232,Habitat Generalist,NA
-296,nstspa,0.36250547,0.002329243,Water/wetland,NA
-297,nswowl,0.368478993,0.001622268,Forest,NA
-298,nutwoo,0.36972469,0.004952101,Forest,NA
-299,oaktit,0.370098036,0.005494746,Forest,NA
-300,olispa,0.365837476,0.005184999,Aridlands,NA
-301,olsfly,0.368655471,0.000807002,Forest,Tipping Point
-302,orcori,0.368496314,0.000823719,Forest,NA
-303,orcwar,0.368031563,0.000596454,Forest,NA
-304,osprey,0.327476142,0.002171738,Water/wetland,NA
-305,ovenbi1,0.368040718,0.001383526,Forest,NA
-306,pacwre1,0.35086631,0.002888642,Forest,NA
-307,pagplo,0.259518536,0.032657909,Water/wetland,NA
-308,paibun,0.368625999,0.001767637,Forest,NA
-309,palwar,0.364705564,0.001336295,Forest,NA
-310,pasfly,0.364562253,0.002680516,Forest,NA
-311,pecsan,0.369372962,0.003661704,Water/wetland,Tipping Point
-312,perfal,0.355191457,0.001201119,Habitat Generalist,NA
-313,phaino,0.368447367,0.003184294,Aridlands,NA
-314,phivir,0.3679521,0.000923811,Forest,NA
-315,pibgre,0.366921573,0.001357692,Water/wetland,NA
-316,pilwoo,0.369114852,0.000935151,Forest,NA
-317,pingro,0.366576147,0.00139847,Forest,NA
-318,pinjay,0.369799566,0.002666517,Forest,Tipping Point
-319,pinsis,0.361720603,0.000844443,Forest,NA
-320,pinwar,0.368833008,0.00136264,Forest,NA
-321,plsvir,0.369837977,0.002192268,Forest,NA
-322,prafal,0.369510178,0.000829644,Aridlands,NA
-323,prawar,0.36690127,0.001573426,Forest,Tipping Point
-324,prowar,0.36883498,0.002688548,Forest,NA
-325,purfin,0.36698809,0.000916018,Forest,NA
-326,purgal2,0.367707695,0.006993936,Water/wetland,NA
-327,purmar,0.366819107,0.028102935,Habitat Generalist,NA
-328,pursan,0.089632377,0.01869597,Water/wetland,NA
-329,pygnut,0.369423822,0.004352869,Forest,NA
-330,pyrrhu,0.367136291,0.003424787,Aridlands,NA
-331,rebmer,0.313283995,0.018890616,Water/wetland,NA
-332,rebnut,0.36800282,0.000954906,Forest,NA
-333,rebsap,0.363153061,0.002711716,Forest,NA
-334,rebwoo,0.369119962,0.000819136,Forest,NA
-335,recwoo,0.37025933,0.011181659,Forest,NA
-336,redcro,0.363860253,0.001272838,Forest,NA
-337,redhea,0.318783377,0.006359318,Water/wetland,NA
-338,redkno,0.143416894,0.02048622,Water/wetland,Tipping Point
-339,reevir1,0.368345109,0.000860159,Forest,NA
-340,refwar,0.369245367,0.009492905,Forest,NA
-341,rehwoo,0.369663811,0.000905231,Forest,Tipping Point
-342,rengre,0.275396891,0.00474055,Water/wetland,NA
-343,renpha,0.347208587,0.018558738,Water/wetland,NA
-344,rensap,0.369679408,0.001328492,Forest,NA
-345,reshaw,0.36897798,0.001014406,Forest,NA
-346,rethaw,0.368874876,0.000479033,Habitat Generalist,NA
-347,retloo,0.147114862,0.009056656,Water/wetland,NA
-348,rewbla,0.36847793,0.006354148,Habitat Generalist,NA
-349,ribgul,0.357274619,0.00429361,Water/wetland,NA
-350,rinduc,0.367808577,0.002318148,Water/wetland,NA
-351,robgro,0.368886724,0.000927917,Forest,NA
-352,rocsan,0.173189111,0.026692145,Water/wetland,Tipping Point
-353,rocwre,0.369140313,0.001114038,Aridlands,NA
-354,rolhaw,0.369529065,0.000957399,Water/wetland,NA
-355,rosgoo,0.369409516,0.004605132,Water/wetland,NA
-356,rosspo1,0.346336298,0.004749872,Water/wetland,NA
-357,rthhum,0.368792994,0.000827826,Forest,NA
-358,ruckin,0.368298965,0.000432991,Forest,NA
-359,rucspa,0.36825734,0.003305518,Aridlands,NA
-360,rudduc,0.36129995,0.004469218,Water/wetland,NA
-361,rudtur,0.217328191,0.01262705,Water/wetland,Tipping Point
-362,rufgro,0.367652167,0.001996055,Forest,NA
-363,rufhum,0.36769548,0.001408939,Forest,Tipping Point
-364,rusbla,0.36871007,0.001248217,Forest,NA
-365,saggro,0.369719802,0.002790794,Aridlands,Tipping Point
-366,sagspa1,0.369347915,0.00183594,Aridlands,NA
-367,sagthr,0.369641589,0.001290454,Aridlands,NA
-368,sancra,0.369640577,0.003749636,Water/wetland,NA
-369,sander,0.197012307,0.00901128,Water/wetland,NA
-370,savspa,0.36741489,0.000872217,Grasslands,NA
-371,saypho,0.368632834,0.000903018,Habitat Generalist,NA
-372,scaqua,0.368352105,0.002580243,Aridlands,NA
-373,scatan,0.368749132,0.001251199,Forest,NA
-374,scoori,0.368360309,0.002263864,Forest,NA
-375,sctfly,0.368914936,0.001776381,Grasslands,NA
-376,sedwre1,0.36757023,0.001362359,Grasslands,NA
-377,semplo,0.297925335,0.006821086,Water/wetland,NA
-378,semsan,0.342319743,0.005343935,Water/wetland,Tipping Point
-379,shbdow,0.280785717,0.01532555,Water/wetland,Tipping Point
-380,sheowl,0.368439769,0.00130957,Habitat Generalist,NA
-381,shshaw,0.365991061,0.000622616,Forest,NA
-382,shtgro,0.368334619,0.002024481,Grasslands,NA
-383,smilon,0.369452521,0.004459617,Water/wetland,NA
-384,snobun,0.366655643,0.00193951,Water/wetland,NA
-385,snoegr,0.354413755,0.003828719,Water/wetland,NA
-386,snogoo,0.368913512,0.002868671,Water/wetland,NA
-387,snoowl1,0.365149229,0.002959812,Water/wetland,Tipping Point
-388,solsan,0.368639151,0.000934998,Water/wetland,NA
-389,sonspa,0.366499833,0.000504866,Habitat Generalist,NA
-390,soogro1,0.34843214,0.004621801,Forest,NA
-391,sora,0.36789356,0.001307053,Water/wetland,NA
-392,sposan,0.365380569,0.000867992,Water/wetland,NA
-393,spotow,0.368697341,0.000938758,Forest,NA
-394,sprgro,0.367864948,0.00186525,Forest,NA
-395,sprpip,0.367608736,0.002009728,Grasslands,Tipping Point
-396,steeid,0.370304796,0.428390647,Water/wetland,NA
-397,stejay,0.366744931,0.001939347,Forest,NA
-398,stisan,0.367351723,0.002763232,Water/wetland,Tipping Point
-399,sumtan,0.369137272,0.001112479,Forest,NA
-400,surfbi,0.103680043,0.010014761,Water/wetland,Tipping Point
-401,sursco,0.102744805,0.004909935,Water/wetland,NA
-402,swahaw,0.368406457,0.002127345,Grasslands,NA
-403,swaspa,0.367213738,0.000874311,Water/wetland,NA
-404,swathr,0.367821883,0.001101452,Forest,NA
-405,swawar,0.369706392,0.002294244,Forest,NA
-406,swtkit,0.368515579,0.00699624,Forest,NA
-407,tenwar,0.368872628,0.000829073,Forest,NA
-408,towsol,0.369806792,0.001200872,Forest,NA
-409,towwar,0.36848039,0.001665052,Forest,NA
-410,treswa,0.355550928,0.028308859,Habitat Generalist,NA
-411,tribla,0.370610337,0.019028762,Water/wetland,Tipping Point
-412,triher,0.316417861,0.01167926,Water/wetland,NA
-413,truswa,0.367962111,0.002766355,Water/wetland,NA
-414,tuftit,0.36945945,0.000998113,Forest,NA
-415,tunswa,0.366014388,0.004511643,Water/wetland,NA
-416,turvul,0.367211525,0.000590589,Habitat Generalist,NA
-417,uplsan,0.369248968,0.001237275,Grasslands,NA
-418,varbun,0.363795979,0.006026412,Aridlands,NA
-419,varthr,0.354369316,0.002280651,Forest,NA
-420,vauswi,0.363969143,0.00686403,Forest,NA
-421,veery,0.367447646,0.001478686,Forest,NA
-422,verdin,0.366823262,0.002603641,Aridlands,NA
-423,verfly,0.366190044,0.002549711,Aridlands,NA
-424,vesspa,0.369177525,0.000826925,Grasslands,NA
-425,vigswa,0.368452153,0.001216368,Forest,NA
-426,virrai,0.366420415,0.001398416,Water/wetland,NA
-427,virwar,0.369716787,0.002149766,Forest,NA
-428,wantat1,0.08093862,0.014307419,Water/wetland,Tipping Point
-429,warvir,0.369150367,0.000679934,Forest,NA
-430,wesblu,0.369619048,0.001683579,Forest,NA
-431,wesgre,0.339616235,0.011780529,Water/wetland,Tipping Point
-432,weskin,0.369386274,0.00129602,Grasslands,NA
-433,wesmea,0.369290107,0.000939959,Grasslands,NA
-434,wesowl1,0.368155102,0.002904248,Forest,NA
-435,wessan,0.307777827,0.012268318,Water/wetland,NA
-436,westan,0.369263065,0.00095244,Forest,NA
-437,wewpew,0.369617787,0.000893134,Forest,NA
-438,whbnut,0.369510857,0.000869426,Forest,NA
-439,whcspa,0.368604951,0.000690985,Habitat Generalist,NA
-440,whevir,0.369054736,0.001154114,Forest,NA
-441,whfibi,0.368577062,0.005147996,Water/wetland,NA
-442,whhwoo,0.370001709,0.006699474,Forest,NA
-443,whiibi,0.347542181,0.003919223,Water/wetland,NA
-444,whimbr,0.327766239,0.008861214,Water/wetland,Tipping Point
-445,whrsan,0.367696154,0.002734985,Water/wetland,NA
-446,whtkit,0.356601305,0.008410277,Habitat Generalist,NA
-447,whtspa,0.367859082,0.000773353,Forest,NA
-448,whtswi,0.368066064,0.001877552,Aridlands,NA
-449,whwcro,0.364794341,0.001612858,Forest,NA
-450,whwdov,0.366630188,0.002423028,Aridlands,NA
-451,whwsco2,0.183486507,0.007251437,Water/wetland,NA
-452,wilfly,0.368774333,0.000851762,Forest,NA
-453,willet1,0.306133792,0.005778045,Water/wetland,NA
-454,wilpha,0.369459018,0.018464901,Water/wetland,NA
-455,wilpta,0.367780944,0.001836998,Water/wetland,NA
-456,wilsap,0.369933256,0.002159071,Forest,NA
-457,wilsni1,0.368385399,0.001272213,Water/wetland,NA
-458,wiltur,0.36944857,0.000822447,Forest,NA
-459,winwre3,0.367283706,0.001039546,Forest,NA
-460,wlswar,0.368687584,0.000801449,Forest,NA
-461,woewar1,0.368629156,0.002026287,Forest,NA
-462,wooduc,0.369183532,0.000807354,Water/wetland,NA
-463,wooscj2,0.36996107,0.002406937,Forest,NA
-464,woosto,0.368084758,0.005850884,Water/wetland,NA
-465,woothr,0.369429055,0.001146522,Forest,Tipping Point
-466,wrenti,0.36558962,0.005429852,Aridlands,NA
-467,y00475,0.366948992,0.003658926,Water/wetland,NA
-468,y00678,0.366482955,0.003669491,Aridlands,NA
-469,yebcha,0.36922091,0.00093921,Forest,NA
-470,yebcuc,0.369230943,0.000799921,Forest,NA
-471,yebfly,0.366832159,0.001900424,Forest,NA
-472,yebloo,0.314824704,0.028321728,Water/wetland,Tipping Point
-473,yebmag,0.370148518,0.013370357,Forest,Tipping Point
-474,yebsap,0.368087546,0.000851924,Forest,NA
-475,yehbla,0.368800765,0.004339627,Water/wetland,NA
-476,yelwar,0.368140788,0.000508268,Forest,NA
-477,yerwar,0.365859382,0.000428875,Forest,NA
-478,yetvir,0.369496801,0.001001509,Forest,NA
-479,yetwar,0.368379123,0.001495387,Forest,NA
+,sps,mean_var,stdev_var,sps_groups.x,sps_groups.y,,Count of spp less than 10% represented,3
+23,arcter,0.06,4.4%,Water/wetland,NA,,Count of spp 10-20% represented,13
+428,wantat1,0.08,1.4%,Water/wetland,Tipping Point,,Count of spp 20-30% represented,13
+328,pursan,0.09,1.9%,Water/wetland,NA,,Count of spp 30-40% represented,449
+401,sursco,0.10,0.5%,Water/wetland,NA,,Count of spp 36-38% represented,405
+400,surfbi,0.10,1.0%,Water/wetland,Tipping Point,,Count of spp more than 40% represented,0
+338,redkno,0.14,2.0%,Water/wetland,Tipping Point,,Total spp,479
+347,retloo,0.15,0.9%,Water/wetland,NA,,,
+179,gbbgul,0.15,1.1%,Water/wetland,Tipping Point,,,
+143,comter,0.17,1.4%,Water/wetland,NA,,,
+60,blksco2,0.17,0.6%,Water/wetland,Tipping Point,,,
+352,rocsan,0.17,2.7%,Water/wetland,Tipping Point,,,
+451,whwsco2,0.18,0.7%,Water/wetland,NA,,,
+74,brant,0.19,1.9%,Water/wetland,NA,,,
+57,bkwvir,0.19,3.2%,Forest,NA,,,
+262,lotduc,0.19,0.9%,Water/wetland,NA,,,
+369,sander,0.20,0.9%,Water/wetland,NA,,,
+213,harduc,0.21,0.6%,Water/wetland,NA,,,
+361,rudtur,0.22,1.3%,Water/wetland,Tipping Point,,,
+207,grykin,0.23,2.0%,Forest,NA,,,
+236,kineid,0.23,5.3%,Water/wetland,Tipping Point,,,
+307,pagplo,0.26,3.3%,Water/wetland,NA,,,
+34,bargol,0.26,0.4%,Water/wetland,NA,,,
+342,rengre,0.28,0.5%,Water/wetland,NA,,,
+115,caster1,0.28,0.9%,Water/wetland,NA,,,
+379,shbdow,0.28,1.5%,Water/wetland,Tipping Point,,,
+157,dunlin,0.28,0.9%,Water/wetland,NA,,,
+173,forter,0.29,0.5%,Water/wetland,NA,,,
+6,ambduc,0.30,0.7%,Water/wetland,NA,,,
+377,semplo,0.30,0.7%,Water/wetland,NA,,,
+224,horgre,0.30,0.5%,Water/wetland,NA,,,
+453,willet1,0.31,0.6%,Water/wetland,NA,,,
+217,hergul,0.31,1.0%,Water/wetland,NA,,,
+435,wessan,0.31,1.2%,Water/wetland,NA,,,
+197,gresca,0.31,0.9%,Water/wetland,NA,,,
+46,bkbplo,0.31,1.1%,Water/wetland,NA,,,
+137,comloo,0.31,0.4%,Water/wetland,NA,,,
+155,doccor,0.31,0.6%,Water/wetland,NA,,,
+331,rebmer,0.31,1.9%,Water/wetland,NA,,,
+472,yebloo,0.31,2.8%,Water/wetland,Tipping Point,,,
+412,triher,0.32,1.2%,Water/wetland,NA,,,
+337,redhea,0.32,0.6%,Water/wetland,NA,,,
+71,bongul,0.33,0.8%,Water/wetland,NA,,,
+62,blkter,0.33,0.4%,Water/wetland,NA,,,
+304,osprey,0.33,0.2%,Water/wetland,NA,,,
+444,whimbr,0.33,0.9%,Water/wetland,Tipping Point,,,
+272,mewgul,0.33,16.1%,Water/wetland,NA,,,
+89,buffle,0.34,0.3%,Water/wetland,NA,,,
+431,wesgre,0.34,1.2%,Water/wetland,Tipping Point,,,
+378,semsan,0.34,0.5%,Water/wetland,Tipping Point,,,
+251,lessca,0.35,0.4%,Water/wetland,NA,,,
+356,rosspo1,0.35,0.5%,Water/wetland,NA,,,
+343,renpha,0.35,1.9%,Water/wetland,NA,,,
+443,whiibi,0.35,0.4%,Water/wetland,NA,,,
+390,soogro1,0.35,0.5%,Forest,NA,,,
+99,calgul,0.35,5.1%,Water/wetland,NA,,,
+306,pacwre1,0.35,0.3%,Forest,NA,,,
+275,motduc,0.35,0.8%,Water/wetland,Tipping Point,,,
+31,baleag,0.35,0.1%,Water/wetland,NA,,,
+73,botgra,0.35,0.9%,Water/wetland,NA,,,
+419,varthr,0.35,0.2%,Forest,NA,,,
+385,snoegr,0.35,0.4%,Water/wetland,NA,,,
+135,comgol,0.36,0.4%,Water/wetland,NA,,,
+312,perfal,0.36,0.1%,Habitat Generalist,NA,,,
+268,margod,0.36,2.0%,Water/wetland,NA,,,
+410,treswa,0.36,2.8%,Habitat Generalist,NA,,,
+138,commer,0.36,0.8%,Water/wetland,NA,,,
+446,whtkit,0.36,0.8%,Habitat Generalist,NA,,,
+121,chbchi,0.36,0.3%,Forest,NA,,,
+349,ribgul,0.36,0.4%,Water/wetland,NA,,,
+5,allhum,0.36,1.1%,Aridlands,Tipping Point,,,
+182,gloibi,0.36,0.8%,Water/wetland,NA,,,
+203,grtgra,0.36,0.4%,Habitat Generalist,NA,,,
+231,incdov,0.36,1.4%,Aridlands,NA,,,
+237,kinrai4,0.36,0.6%,Water/wetland,Tipping Point,,,
+246,leasan,0.36,0.3%,Water/wetland,NA,,,
+20,amwpel,0.36,0.6%,Water/wetland,NA,,,
+172,fiscro,0.36,0.3%,Habitat Generalist,NA,,,
+244,leabit,0.36,0.4%,Water/wetland,NA,,,
+107,canvas,0.36,1.8%,Water/wetland,NA,,,
+360,rudduc,0.36,0.4%,Water/wetland,NA,,,
+129,clagre,0.36,1.4%,Water/wetland,Tipping Point,,,
+319,pinsis,0.36,0.1%,Forest,NA,,,
+186,gocspa,0.36,0.3%,Water/wetland,NA,,,
+174,foxspa,0.36,0.1%,Forest,NA,,,
+16,amewig,0.36,0.4%,Water/wetland,NA,,,
+38,bcnher,0.36,0.3%,Water/wetland,NA,,,
+192,grbani,0.36,0.8%,Habitat Generalist,NA,,,
+193,grbher3,0.36,0.1%,Water/wetland,NA,,,
+296,nstspa,0.36,0.2%,Water/wetland,NA,,,
+82,brocow,0.36,0.7%,Aridlands,NA,,,
+39,belkin1,0.36,0.1%,Water/wetland,NA,,,
+271,merlin,0.36,0.1%,Habitat Generalist,NA,,,
+333,rebsap,0.36,0.3%,Forest,NA,,,
+61,blkswi,0.36,0.7%,Forest,Tipping Point,,,
+195,greegr,0.36,0.2%,Water/wetland,NA,,,
+418,varbun,0.36,0.6%,Aridlands,NA,,,
+336,redcro,0.36,0.1%,Forest,NA,,,
+420,vauswi,0.36,0.7%,Forest,NA,,,
+22,annhum,0.36,0.3%,Aridlands,NA,,,
+59,blkpho,0.36,0.2%,Water/wetland,NA,,,
+149,coukin,0.36,0.5%,Aridlands,NA,,,
+185,gockin,0.36,0.1%,Forest,NA,,,
+310,pasfly,0.36,0.3%,Forest,NA,,,
+145,conwar,0.36,0.5%,Forest,NA,,,
+309,palwar,0.36,0.1%,Forest,NA,,,
+449,whwcro,0.36,0.2%,Forest,NA,,,
+104,camwar,0.37,0.1%,Forest,NA,,,
+221,hoomer,0.37,0.2%,Water/wetland,NA,,,
+54,bkpwar,0.37,0.1%,Forest,NA,,,
+387,snoowl1,0.37,0.3%,Water/wetland,Tipping Point,,,
+85,btbwar,0.37,0.2%,Forest,NA,,,
+21,anhing,0.37,0.3%,Water/wetland,NA,,,
+176,fuwduc,0.37,0.8%,Water/wetland,NA,,,
+133,cogdov,0.37,0.3%,Aridlands,NA,,,
+134,comgal1,0.37,0.6%,Water/wetland,NA,,,
+392,sposan,0.37,0.1%,Water/wetland,NA,,,
+257,lobcur,0.37,0.4%,Grasslands,NA,,,
+7,ameavo,0.37,1.5%,Water/wetland,NA,,,
+69,boboli,0.37,0.4%,Grasslands,Tipping Point,,,
+291,norpin,0.37,0.2%,Water/wetland,NA,,,
+466,wrenti,0.37,0.5%,Aridlands,NA,,,
+9,amecro,0.37,0.1%,Habitat Generalist,NA,,,
+198,greyel,0.37,0.2%,Water/wetland,NA,,,
+269,marwre,0.37,0.1%,Water/wetland,NA,,,
+300,olispa,0.37,0.5%,Aridlands,NA,,,
+477,yerwar,0.37,0.0%,Forest,NA,,,
+200,grnher,0.37,0.1%,Water/wetland,NA,,,
+228,hrshaw,0.37,0.6%,Aridlands,NA,,,
+287,norgos,0.37,0.1%,Forest,NA,,,
+381,shshaw,0.37,0.1%,Forest,NA,,,
+415,tunswa,0.37,0.5%,Water/wetland,NA,,,
+254,libher,0.37,0.3%,Water/wetland,NA,,,
+295,nrwswa,0.37,0.1%,Habitat Generalist,NA,,,
+222,hooori,0.37,0.3%,Aridlands,NA,,,
+423,verfly,0.37,0.3%,Aridlands,NA,,,
+220,hoared,0.37,0.5%,Water/wetland,NA,,,
+259,lobthr,0.37,0.5%,Aridlands,NA,,,
+141,comrav,0.37,0.1%,Habitat Generalist,NA,,,
+230,hutvir,0.37,0.3%,Forest,NA,,,
+136,comgra,0.37,1.2%,Habitat Generalist,NA,,,
+250,lesnig,0.37,0.2%,Aridlands,NA,,,
+426,virrai,0.37,0.1%,Water/wetland,NA,,,
+35,barswa,0.37,0.6%,Habitat Generalist,NA,,,
+468,y00678,0.37,0.4%,Aridlands,NA,,,
+108,canwar,0.37,0.2%,Forest,Tipping Point,,,
+389,sonspa,0.37,0.1%,Habitat Generalist,NA,,,
+267,mallar3,0.37,0.3%,Water/wetland,NA,,,
+317,pingro,0.37,0.1%,Forest,NA,,,
+450,whwdov,0.37,0.2%,Aridlands,NA,,,
+384,snobun,0.37,0.2%,Water/wetland,NA,,,
+397,stejay,0.37,0.2%,Forest,NA,,,
+294,norwat,0.37,0.1%,Forest,NA,,,
+4,aldfly,0.37,0.1%,Forest,NA,,,
+184,gnwtea,0.37,0.3%,Water/wetland,NA,,,
+30,baispa,0.37,0.3%,Grasslands,Tipping Point,,,
+327,purmar,0.37,2.8%,Habitat Generalist,NA,,,
+422,verdin,0.37,0.3%,Aridlands,NA,,,
+471,yebfly,0.37,0.2%,Forest,NA,,,
+66,bncfly,0.37,0.3%,Aridlands,NA,,,
+323,prawar,0.37,0.2%,Forest,Tipping Point,,,
+79,brncre,0.37,0.1%,Forest,NA,,,
+315,pibgre,0.37,0.1%,Water/wetland,NA,,,
+289,normoc,0.37,0.1%,Habitat Generalist,NA,,,
+467,y00475,0.37,0.4%,Water/wetland,NA,,,
+97,cacgoo1,0.37,0.4%,Water/wetland,NA,,,
+325,purfin,0.37,0.1%,Forest,NA,,,
+142,comred,0.37,0.1%,Water/wetland,NA,,,
+204,grycat,0.37,0.1%,Forest,NA,,,
+55,bktgna,0.37,0.3%,Aridlands,NA,,,
+226,houfin,0.37,0.1%,Habitat Generalist,NA,,,
+8,amebit,0.37,0.2%,Water/wetland,NA,,,
+14,amered,0.37,0.1%,Forest,NA,,,
+1,abetow,0.37,0.9%,Aridlands,NA,,,
+330,pyrrhu,0.37,0.3%,Aridlands,NA,,,
+86,btnwar,0.37,0.1%,Forest,NA,,,
+416,turvul,0.37,0.1%,Habitat Generalist,NA,,,
+403,swaspa,0.37,0.1%,Water/wetland,NA,,,
+49,bkcchi,0.37,0.1%,Forest,NA,,,
+187,gofwoo,0.37,0.4%,Aridlands,NA,,,
+84,brwhaw,0.37,0.3%,Forest,NA,,,
+45,bkbmag1,0.37,0.1%,Habitat Generalist,NA,,,
+290,norpar,0.37,0.1%,Forest,NA,,,
+459,winwre3,0.37,0.1%,Forest,NA,,,
+36,batpig1,0.37,0.3%,Forest,NA,,,
+13,amepip,0.37,0.1%,Water/wetland,NA,,,
+151,crithr,0.37,0.3%,Aridlands,NA,,,
+258,lobdow,0.37,0.5%,Water/wetland,Tipping Point,,,
+398,stisan,0.37,0.3%,Water/wetland,Tipping Point,,,
+264,lucwar,0.37,0.3%,Aridlands,NA,,,
+105,cangoo,0.37,0.1%,Water/wetland,NA,,,
+37,bawwar,0.37,0.1%,Forest,NA,,,
+281,mouwar,0.37,0.2%,Forest,Tipping Point,,,
+370,savspa,0.37,0.1%,Grasslands,NA,,,
+266,magwar,0.37,0.1%,Forest,NA,,,
+421,veery,0.37,0.1%,Forest,NA,,,
+15,amerob,0.37,0.2%,Forest,NA,,,
+144,comyel,0.37,0.1%,Habitat Generalist,NA,,,
+91,buhvir,0.37,0.1%,Forest,NA,,,
+118,cavswa,0.37,0.2%,Aridlands,NA,,,
+181,gilwoo,0.37,0.5%,Aridlands,NA,,,
+47,bkbwar,0.37,0.1%,Forest,NA,,,
+95,buwtea,0.37,0.1%,Water/wetland,NA,,,
+376,sedwre1,0.37,0.1%,Grasslands,NA,,,
+10,amedip,0.37,0.4%,Water/wetland,NA,,,
+72,borchi2,0.37,0.2%,Forest,NA,,,
+201,grnjay,0.37,0.6%,Aridlands,NA,,,
+395,sprpip,0.37,0.2%,Grasslands,Tipping Point,,,
+146,coohaw,0.37,0.0%,Forest,NA,,,
+98,cacwre,0.37,0.3%,Aridlands,NA,,,
+362,rufgro,0.37,0.2%,Forest,NA,,,
+363,rufhum,0.37,0.1%,Forest,Tipping Point,,,
+445,whrsan,0.37,0.3%,Water/wetland,NA,,,
+326,purgal2,0.37,0.7%,Water/wetland,NA,,,
+117,categr,0.37,0.5%,Water/wetland,NA,,,
+178,gamqua,0.37,0.3%,Aridlands,NA,,,
+455,wilpta,0.37,0.2%,Water/wetland,NA,,,
+288,norhar2,0.37,0.1%,Habitat Generalist,NA,,,
+169,evegro,0.37,0.2%,Forest,Tipping Point,,,
+350,rinduc,0.37,0.2%,Water/wetland,NA,,,
+177,gadwal,0.37,0.2%,Water/wetland,NA,,,
+196,greroa,0.37,0.2%,Aridlands,NA,,,
+119,cedwax,0.37,0.1%,Forest,NA,,,
+404,swathr,0.37,0.1%,Forest,NA,,,
+206,gryjay,0.37,0.1%,Forest,NA,,,
+44,bkbcuc,0.37,0.2%,Forest,Tipping Point,,,
+447,whtspa,0.37,0.1%,Forest,NA,,,
+394,sprgro,0.37,0.2%,Forest,NA,,,
+218,herthr,0.37,0.1%,Forest,NA,,,
+252,lesyel,0.37,0.3%,Water/wetland,Tipping Point,,,
+391,sora,0.37,0.1%,Water/wetland,NA,,,
+126,chswar,0.37,0.1%,Forest,NA,,,
+27,babwar,0.37,0.1%,Forest,NA,,,
+314,phivir,0.37,0.1%,Forest,NA,,,
+413,truswa,0.37,0.3%,Water/wetland,NA,,,
+162,easkin,0.37,0.1%,Grasslands,NA,,,
+152,cubthr,0.37,0.3%,Aridlands,NA,,,
+332,rebnut,0.37,0.1%,Forest,NA,,,
+68,bnhnut,0.37,0.3%,Forest,NA,,,
+303,orcwar,0.37,0.1%,Forest,NA,,,
+293,norshr4,0.37,0.1%,Water/wetland,NA,,,
+63,blkvul,0.37,0.1%,Habitat Generalist,NA,,,
+305,ovenbi1,0.37,0.1%,Forest,NA,,,
+42,benthr,0.37,0.5%,Aridlands,Tipping Point,,,
+448,whtswi,0.37,0.2%,Aridlands,NA,,,
+53,bknsti,0.37,1.1%,Water/wetland,NA,,,
+109,canwre,0.37,0.3%,Aridlands,NA,,,
+464,woosto,0.37,0.6%,Water/wetland,NA,,,
+43,bewwre,0.37,0.1%,Aridlands,NA,,,
+474,yebsap,0.37,0.1%,Forest,NA,,,
+48,bkbwoo,0.37,0.4%,Forest,NA,,,
+245,leafly,0.37,0.1%,Forest,NA,,,
+476,yelwar,0.37,0.1%,Forest,NA,,,
+103,caltow,0.37,0.5%,Aridlands,NA,,,
+238,labwoo,0.37,0.2%,Aridlands,NA,,,
+434,wesowl1,0.37,0.3%,Forest,NA,,,
+106,cantow,0.37,0.3%,Aridlands,NA,,,
+123,chirav,0.37,0.3%,Aridlands,NA,,,
+165,easpho,0.37,0.1%,Forest,NA,,,
+283,nopowl,0.37,0.2%,Forest,NA,,,
+175,fragul,0.37,0.9%,Water/wetland,NA,,,
+359,rucspa,0.37,0.3%,Aridlands,NA,,,
+180,gilfli,0.37,0.6%,Aridlands,NA,,,
+33,banswa,0.37,0.4%,Habitat Generalist,NA,,,
+12,amekes,0.37,0.1%,Habitat Generalist,NA,,,
+358,ruckin,0.37,0.0%,Forest,NA,,,
+261,logshr,0.37,0.1%,Grasslands,NA,,,
+382,shtgro,0.37,0.2%,Grasslands,NA,,,
+65,blujay,0.37,0.1%,Forest,NA,,,
+339,reevir1,0.37,0.1%,Forest,NA,,,
+372,scaqua,0.37,0.3%,Aridlands,NA,,,
+11,amegfi,0.37,0.0%,Forest,NA,,,
+374,scoori,0.37,0.2%,Forest,NA,,,
+479,yetwar,0.37,0.1%,Forest,NA,,,
+41,belvir,0.37,0.1%,Aridlands,NA,,,
+457,wilsni1,0.37,0.1%,Water/wetland,NA,,,
+402,swahaw,0.37,0.2%,Grasslands,NA,,,
+148,coshum,0.37,0.4%,Aridlands,NA,,,
+380,sheowl,0.37,0.1%,Habitat Generalist,NA,,,
+125,chiswi,0.37,0.4%,Forest,Tipping Point,,,
+313,phaino,0.37,0.3%,Aridlands,NA,,,
+78,britit,0.37,0.8%,Forest,NA,,,
+425,vigswa,0.37,0.1%,Forest,NA,,,
+153,daejun,0.37,0.0%,Forest,NA,,,
+56,bktspa,0.37,0.2%,Aridlands,NA,,,
+286,norfli,0.37,0.0%,Forest,NA,,,
+80,brnowl,0.37,0.3%,Habitat Generalist,NA,,,
+348,rewbla,0.37,0.6%,Habitat Generalist,NA,,,
+297,nswowl,0.37,0.2%,Forest,NA,,,
+409,towwar,0.37,0.2%,Forest,NA,,,
+102,calthr,0.37,0.7%,Aridlands,NA,,,
+194,grcfly,0.37,0.1%,Forest,NA,,,
+64,blugrb1,0.37,0.1%,Forest,NA,,,
+302,orcori,0.37,0.1%,Forest,NA,,,
+278,moudov,0.37,0.1%,Habitat Generalist,NA,,,
+282,naswar,0.37,0.1%,Forest,NA,,,
+406,swtkit,0.37,0.7%,Forest,NA,,,
+50,bkchum,0.37,0.2%,Forest,NA,,,
+273,mexjay4,0.37,1.1%,Forest,NA,,,
+441,whfibi,0.37,0.5%,Water/wetland,NA,,,
+164,easowl1,0.37,0.1%,Forest,NA,,,
+90,buggna,0.37,0.1%,Habitat Generalist,NA,,,
+70,bohwax,0.37,0.3%,Forest,NA,,,
+439,whcspa,0.37,0.1%,Habitat Generalist,NA,,,
+232,indbun,0.37,0.1%,Forest,NA,,,
+111,carwre,0.37,0.1%,Forest,NA,,,
+211,haiwoo,0.37,0.1%,Forest,NA,,,
+308,paibun,0.37,0.2%,Forest,NA,,,
+461,woewar1,0.37,0.2%,Forest,NA,,,
+371,saypho,0.37,0.1%,Habitat Generalist,NA,,,
+388,solsan,0.37,0.1%,Water/wetland,NA,,,
+166,eastow,0.37,0.1%,Forest,NA,,,
+301,olsfly,0.37,0.1%,Forest,Tipping Point,,,
+292,norsho,0.37,0.4%,Water/wetland,NA,,,
+32,balori,0.37,0.1%,Forest,NA,,,
+460,wlswar,0.37,0.1%,Forest,NA,,,
+132,cliswa,0.37,0.1%,Habitat Generalist,NA,,,
+393,spotow,0.37,0.1%,Forest,NA,,,
+242,lawgol,0.37,0.4%,Aridlands,NA,,,
+364,rusbla,0.37,0.1%,Forest,NA,,,
+113,caskin,0.37,0.2%,Forest,NA,,,
+131,clcspa,0.37,0.1%,Grasslands,NA,,,
+122,chclon,0.37,0.2%,Grasslands,Tipping Point,,,
+373,scatan,0.37,0.1%,Forest,NA,,,
+67,bnhcow,0.37,0.2%,Habitat Generalist,NA,,,
+235,killde,0.37,0.1%,Habitat Generalist,NA,,,
+210,gycthr,0.37,0.1%,Forest,NA,,,
+87,btywar,0.37,0.2%,Forest,NA,,,
+452,wilfly,0.37,0.1%,Forest,NA,,,
+227,houwre,0.37,0.1%,Forest,NA,,,
+163,easmea,0.37,0.1%,Grasslands,NA,,,
+17,amewoo,0.37,0.1%,Forest,NA,,,
+357,rthhum,0.37,0.1%,Forest,NA,,,
+475,yehbla,0.37,0.4%,Water/wetland,NA,,,
+249,lesgol,0.37,0.1%,Forest,NA,,,
+320,pinwar,0.37,0.1%,Forest,NA,,,
+324,prowar,0.37,0.3%,Forest,NA,,,
+94,bushti,0.37,0.2%,Forest,NA,,,
+407,tenwar,0.37,0.1%,Forest,NA,,,
+346,rethaw,0.37,0.0%,Habitat Generalist,NA,,,
+351,robgro,0.37,0.1%,Forest,NA,,,
+285,norcar,0.37,0.1%,Forest,NA,,,
+199,grhowl,0.37,0.1%,Habitat Generalist,NA,,,
+256,linspa,0.37,0.1%,Forest,NA,,,
+386,snogoo,0.37,0.3%,Water/wetland,NA,,,
+375,sctfly,0.37,0.2%,Grasslands,NA,,,
+127,chwwid,0.37,0.2%,Forest,NA,,,
+25,astfly,0.37,0.1%,Aridlands,NA,,,
+139,comnig,0.37,0.1%,Habitat Generalist,NA,,,
+345,reshaw,0.37,0.1%,Forest,NA,,,
+160,eargre,0.37,1.8%,Water/wetland,NA,,,
+77,brespa,0.37,0.1%,Aridlands,NA,,,
+26,attwoo1,0.37,0.2%,Forest,NA,,,
+88,bubsan,0.37,0.8%,Water/wetland,Tipping Point,,,
+156,dowwoo,0.37,0.1%,Forest,NA,,,
+81,brnthr,0.37,0.1%,Forest,NA,,,
+168,eawpew,0.37,0.1%,Forest,NA,,,
+161,easblu,0.37,0.1%,Forest,NA,,,
+440,whevir,0.37,0.1%,Forest,NA,,,
+274,miskit,0.37,0.2%,Forest,NA,,,
+76,brebla,0.37,0.1%,Habitat Generalist,NA,,,
+240,larbun,0.37,0.2%,Grasslands,NA,,,
+279,mouplo,0.37,1.0%,Grasslands,Tipping Point,,,
+316,pilwoo,0.37,0.1%,Forest,NA,,,
+334,rebwoo,0.37,0.1%,Forest,NA,,,
+255,limpki,0.37,1.0%,Water/wetland,NA,,,
+399,sumtan,0.37,0.1%,Forest,NA,,,
+353,rocwre,0.37,0.1%,Aridlands,NA,,,
+260,loeowl,0.37,0.2%,Forest,NA,,,
+429,warvir,0.37,0.1%,Forest,NA,,,
+140,compoo,0.37,0.1%,Aridlands,NA,,,
+209,gwfgoo,0.37,0.2%,Water/wetland,NA,,,
+18,amgplo,0.37,0.4%,Water/wetland,Tipping Point,,,
+424,vesspa,0.37,0.1%,Grasslands,NA,,,
+124,chispa,0.37,0.1%,Forest,NA,,,
+114,casspa,0.37,0.2%,Grasslands,NA,,,
+462,wooduc,0.37,0.1%,Water/wetland,NA,,,
+219,herwar,0.37,0.3%,Forest,NA,,,
+52,bkhgro,0.37,0.1%,Forest,NA,,,
+469,yebcha,0.37,0.1%,Forest,NA,,,
+470,yebcuc,0.37,0.1%,Forest,NA,,,
+340,refwar,0.37,0.9%,Forest,NA,,,
+417,uplsan,0.37,0.1%,Grasslands,NA,,,
+436,westan,0.37,0.1%,Forest,NA,,,
+110,carchi,0.37,0.1%,Forest,NA,,,
+93,burowl,0.37,0.2%,Grasslands,NA,,,
+128,cintea,0.37,0.3%,Water/wetland,NA,,,
+433,wesmea,0.37,0.1%,Grasslands,NA,,,
+29,baisan,0.37,0.2%,Water/wetland,NA,,,
+183,gnttow,0.37,0.1%,Aridlands,NA,,,
+51,bkcspa,0.37,0.4%,Aridlands,Tipping Point,,,
+239,laplon,0.37,0.3%,Water/wetland,NA,,,
+248,lecthr,0.37,0.6%,Aridlands,Tipping Point,,,
+366,sagspa1,0.37,0.2%,Aridlands,NA,,,
+190,graspa,0.37,0.1%,Grasslands,NA,,,
+58,blctit4,0.37,0.3%,Aridlands,NA,,,
+170,ferhaw,0.37,0.1%,Grasslands,NA,,,
+96,buwwar,0.37,0.2%,Forest,NA,,,
+311,pecsan,0.37,0.4%,Water/wetland,Tipping Point,,,
+243,lazbun,0.37,0.1%,Forest,NA,,,
+2,acafly,0.37,0.1%,Forest,NA,,,
+150,cowscj1,0.37,0.4%,Forest,NA,,,
+432,weskin,0.37,0.1%,Grasslands,NA,,,
+154,dickci,0.37,0.1%,Grasslands,NA,,,
+355,rosgoo,0.37,0.5%,Water/wetland,NA,,,
+19,amtspa,0.37,0.1%,Water/wetland,NA,,,
+329,pygnut,0.37,0.4%,Forest,NA,,,
+465,woothr,0.37,0.1%,Forest,Tipping Point,,,
+167,easwpw1,0.37,0.2%,Forest,Tipping Point,,,
+265,macwar,0.37,0.1%,Forest,NA,,,
+241,larspa,0.37,0.1%,Grasslands,NA,,,
+171,fiespa,0.37,0.1%,Forest,NA,,,
+458,wiltur,0.37,0.1%,Forest,NA,,,
+229,hudgod,0.37,0.4%,Water/wetland,Tipping Point,,,
+383,smilon,0.37,0.4%,Water/wetland,NA,,,
+454,wilpha,0.37,1.8%,Water/wetland,NA,,,
+414,tuftit,0.37,0.1%,Forest,NA,,,
+101,calqua,0.37,0.3%,Aridlands,NA,,,
+92,bulori,0.37,0.1%,Forest,NA,,,
+205,gryfly,0.37,0.1%,Forest,NA,,,
+40,belspa2,0.37,0.5%,Aridlands,NA,,,
+478,yetvir,0.37,0.1%,Forest,NA,,,
+322,prafal,0.37,0.1%,Aridlands,NA,,,
+438,whbnut,0.37,0.1%,Forest,NA,,,
+354,rolhaw,0.37,0.1%,Water/wetland,NA,,,
+212,hamfly,0.37,0.2%,Forest,NA,,,
+247,lecspa,0.37,0.2%,Grasslands,Tipping Point,,,
+208,gryvir,0.37,0.3%,Forest,NA,,,
+223,hoowar,0.37,0.2%,Forest,NA,,,
+189,gowwar,0.37,0.2%,Forest,Tipping Point,,,
+75,brdowl,0.37,0.1%,Forest,NA,,,
+116,casvir,0.37,0.2%,Forest,NA,,,
+225,horlar,0.37,0.1%,Grasslands,NA,,,
+284,norbob,0.37,0.1%,Forest,NA,,,
+437,wewpew,0.37,0.1%,Forest,NA,,,
+430,wesblu,0.37,0.2%,Forest,NA,,,
+270,mcclon,0.37,0.4%,Grasslands,Tipping Point,,,
+368,sancra,0.37,0.4%,Water/wetland,NA,,,
+367,sagthr,0.37,0.1%,Aridlands,NA,,,
+276,moublu,0.37,0.1%,Forest,NA,,,
+28,bacspa,0.37,0.7%,Forest,Tipping Point,,,
+341,rehwoo,0.37,0.1%,Forest,Tipping Point,,,
+344,rensap,0.37,0.1%,Forest,NA,,,
+405,swawar,0.37,0.2%,Forest,NA,,,
+188,goleag,0.37,0.1%,Habitat Generalist,NA,,,
+214,harspa,0.37,0.2%,Water/wetland,Tipping Point,,,
+427,virwar,0.37,0.2%,Forest,NA,,,
+365,saggro,0.37,0.3%,Aridlands,Tipping Point,,,
+298,nutwoo,0.37,0.5%,Forest,NA,,,
+263,louwat,0.37,0.1%,Forest,NA,,,
+280,mouqua,0.37,0.4%,Forest,NA,,,
+158,dusfly,0.37,0.1%,Forest,NA,,,
+318,pinjay,0.37,0.3%,Forest,Tipping Point,,,
+408,towsol,0.37,0.1%,Forest,NA,,,
+216,heptan,0.37,0.5%,Forest,NA,,,
+100,calhum,0.37,0.2%,Forest,NA,,,
+321,plsvir,0.37,0.2%,Forest,NA,,,
+120,cerwar,0.37,0.4%,Forest,Tipping Point,,,
+234,kenwar,0.37,0.2%,Forest,NA,,,
+83,brthum,0.37,0.2%,Forest,NA,,,
+191,grawar,0.37,0.5%,Forest,Tipping Point,,,
+215,henspa,0.37,0.3%,Grasslands,Tipping Point,,,
+147,corfly,0.37,0.2%,Forest,NA,,,
+277,mouchi,0.37,0.2%,Forest,NA,,,
+112,casfin,0.37,0.2%,Forest,NA,,,
+130,clanut,0.37,0.2%,Forest,NA,,,
+456,wilsap,0.37,0.2%,Forest,NA,,,
+159,dusgro,0.37,0.3%,Forest,NA,,,
+463,wooscj2,0.37,0.2%,Forest,NA,,,
+202,grpchi,0.37,0.4%,Grasslands,NA,,,
+442,whhwoo,0.37,0.7%,Forest,NA,,,
+233,juntit1,0.37,0.3%,Forest,NA,,,
+3,acowoo,0.37,0.5%,Forest,NA,,,
+299,oaktit,0.37,0.5%,Forest,NA,,,
+253,lewwoo,0.37,0.3%,Forest,NA,,,
+473,yebmag,0.37,1.3%,Forest,Tipping Point,,,
+335,recwoo,0.37,1.1%,Forest,NA,,,
+396,steeid,0.37,42.8%,Water/wetland,NA,,,
+411,tribla,0.37,1.9%,Water/wetland,Tipping Point,,,
+24,arcwar1,NA,NA,Water/wetland,NA,,,
