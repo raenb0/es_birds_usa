@@ -1,19 +1,27 @@
+# Random sampling, birds and ES in USA
+# Richard Schuster and Rachel Neugarten
+# August 26 2023
+
+
 library(terra)
 library(sf)
 library(prioritizr)
 library(Matrix)
-library(tictoc)
+library(tictoc) #for tracking how much time a process takes
 
 setwd("C:/Users/raenb/Documents/GitHub/es_birds_usa")
+
+#load raster with bird pct population per group (6 groups, for testing)
+#pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
 
 #load raster with bird pct population per species (479 species)
 pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
 
-#load raster with bird pct population per group
-pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
-
 # load blank USA raster
 usa_raster <- rast("outputs/rasters/new_usa_raster.tif")
+
+#check raster for a single species
+plot(pct_pop_per_sp_rast, "abetow")
 
 FIRST <- FALSE
 
@@ -31,15 +39,44 @@ Matrix::rowSums(rij)
 cvec <- 1:ncol(rij)
 
 
-# Start sampling: this needs to go in a loop
+# Start sampling ----------------------
 
-# I want to randomly sample 44% of the pixels, this would be:
+# Test 10% of the pixels, only 100 runs
+# 1084595*0.1 = 108459.5 or 108460 pixels per sample
+
+#initialize a new data frame to hold the results
+names(pct_pop_per_sp_rast)
+result_10pct <- data.frame(matrix(nrow = 479, ncol = 101))
+colnames(result_10pct) <- c("species", paste0("iteration",c(1:100))) #column names
+result_10pct$species <- names(pct_pop_per_sp_rast) # each row is a species
+
+#for loop
+tic()
+for(i in 1:100) {
+  smpl <- sample(cvec, 108460) %>% sort()
+  rij_red <- rij[,smpl]
+  smpl_sums <- Matrix::rowSums(rij_red)
+  result_10pct[, i+1] <- smpl_sums # assign smpl_sums to result matrix
+}
+toc()
+
+write_csv(result_10pct, "outputs/random_sampling_result_10pct_100runs.csv")
+
+# check how many values are 0 for birds
+library(dplyr)
+
+tt <- read.csv("outputs/random_sampling_result_10pct_100runs.csv") %>%
+  mutate(sum = Matrix::rowSums(rij),
+         cnt_0 = Matrix::rowSums(rij == 0)) %>% #returns count of 0 values for each spp
+  dplyr::select(species, sum, cnt_0) # results look OK
+
+# I want to randomly sample 44% of the pixels in the USA, this would be:
 # 1084595*0.44 = 477221.8  or 477222 pixels per sample
 
 #initialize a data frame to hold the results
 result_44pct <- data.frame(matrix(nrow = 479, ncol = 1001))
 colnames(result_44pct) <- c("species", paste0("iteration",c(1:1000))) #column names
-result_44pct$species <- names(smpl_sums) # each row is a species
+result_44pct$species <- names(pct_pop_per_sp_rast) # each row is a species
 
 #for loop
 tic()
@@ -60,7 +97,7 @@ write_csv(result, "outputs/random_sampling_result_44pct.csv")
 #initialize a new data frame to hold the results
 result_37pct <- data.frame(matrix(nrow = 479, ncol = 1001))
 colnames(result_37pct) <- c("species", paste0("iteration",c(1:1000))) #column names
-result_37pct$species <- names(smpl_sums) # each row is a species
+result_37pct$species <- names(pct_pop_per_sp_rast) # each row is a species
 
 #for loop
 tic()
@@ -74,7 +111,32 @@ toc()
 
 write_csv(result_37pct, "outputs/random_sampling_result_37pct.csv")
 
-#calculate mean and SD for each species
+# calculate mean, SD, and confidence intervals
+
+#load data if necessary
+library(tidyverse)
+
+#load random sampling data, all species, all iterations
+result_10pct <- read_csv("outputs/random_sampling_result_10pct_100runs.csv") #test, only 100 runs
+result_44pct <- read_csv("outputs/random_sampling_result_44pct.csv") #1000 runs
+result_37pct <- read_csv("outputs/random_sampling_result_37pct.csv") #1000 runs
+
+# calculate mean and SD for each species, 10pct results -------------------
+
+#first, pivot 10pct results longer
+result_10pct_longer <- pivot_longer(result_10pct, cols=iteration1:iteration100, names_to="iteration", values_to="value")
+
+result_10pct_mean_sd <- result_10pct_longer %>%
+  group_by(species) %>%
+  summarize(avg=mean(value, na.rm=T), stdev=sd(value, na.rm=T)) 
+
+# add confidence intervals
+result_10pct_mean_sd_confint <- result_10pct_mean_sd %>%
+  mutate(lower95 = avg - (1.96*stdev), upper95 = avg + (1.96*stdev))
+
+write_csv(result_10pct_mean_sd_confint, "outputs/random_sampling_result_10pct_100runs_mean_sd_confint.csv")
+
+# calculate mean and SD for each species, 44pct results -------------------
 #first, pivot 44pct results longer
 result_44pct_longer <- pivot_longer(result_44pct, cols=iteration1:iteration1000, names_to="iteration", values_to="value")
 
@@ -82,16 +144,25 @@ result_44pct_mean_sd <- result_44pct_longer %>%
   group_by(species) %>%
   summarize(avg=mean(value, na.rm=T), stdev=sd(value, na.rm=T)) 
 
-write_csv(result_44pct_mean_sd, "outputs/random_sampling_result_44pct_mean_sd.csv")
+# add confidence intervals
+result_44pct_mean_sd_confint <- result_44pct_mean_sd %>%
+  mutate(lower95 = avg - (1.96*stdev), upper95 = avg + (1.96*stdev))
 
-#repeat for 37pct
+write_csv(result_44pct_mean_sd_confint, "outputs/random_sampling_result_44pct_mean_sd_confint.csv")
+
+#calculate mean and SD for each species, 37pct results ------------------
 result_37pct_longer <- pivot_longer(result_37pct, cols=iteration1:iteration1000, names_to="iteration", values_to="value")
 
 result_37pct_mean_sd <- result_37pct_longer %>%
   group_by(species) %>%
   summarize(avg=mean(value, na.rm=T), stdev=sd(value, na.rm=T)) 
 
-write_csv(result_37pct_mean_sd, "outputs/random_sampling_result_37pct_mean_sd.csv")
+# add confidence intervals
+result_37pct_mean_sd_confint <- result_37pct_mean_sd %>%
+  mutate(lower95 = avg - (1.96*stdev), upper95 = avg + (1.96*stdev))
+
+write_csv(result_37pct_mean_sd_confint, "outputs/random_sampling_result_37pct_mean_sd_confint.csv")
+
 
 # read in tables with habitat groups, tipping point spp
 library(tidyverse)
@@ -101,11 +172,24 @@ tp_sps_vars <- readRDS("data/tp_final_species_selection.rds") #updated with tipp
 #select only columns of interest
 names(biome_sps_vars)
 biome_sps <- biome_sps_vars %>%
-  select(species_code, sps_groups)
+  dplyr::select(species_code, sps_groups)
 tp_sps <- tp_sps_vars %>%
-  select(species_code, sps_groups)
+  dplyr::select(species_code, sps_groups)
 
-#join tables
+#join biome and tipping point columns to results tables
+
+# 10% results
+result_10pct_mean_sd_biomes <- left_join(result_10pct_mean_sd, biome_sps,  #add habitats
+                                         by=join_by(species == species_code))
+result_10pct_mean_sd_biomes <- left_join(result_10pct_mean_sd_biomes, tp_sps, #add TP species
+                                         by=join_by(species==species_code))
+result_10pct_mean_sd_biomes <- rename(result_10pct_mean_sd_biomes, 
+                                      habitat=sps_groups.x, 
+                                      tipping_pt = sps_groups.y)
+
+write_csv(result_10pct_mean_sd_biomes, "outputs/random_sampling_result_10pct_mean_sd_biomes.csv")
+
+# repeat for 44% results
 result_44pct_mean_sd_biomes <- left_join(result_44pct_mean_sd, biome_sps,  #add habitats
                                          by=join_by(species == species_code))
 result_44pct_mean_sd_biomes <- left_join(result_44pct_mean_sd_biomes, tp_sps,  #add TP species
@@ -127,125 +211,41 @@ result_37pct_mean_sd_biomes <- rename(result_37pct_mean_sd_biomes,
 
 write_csv(result_37pct_mean_sd_biomes_tp, "outputs/random_sampling_result_37pct_mean_sd_biomes.csv")
 
-#check raster for a single species
-#plot(pct_pop_per_sp_rast, "abetow")
+
+#summarize 10% results by habitat
+
+#load data if necessary
+result_10pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_10pct_mean_sd_biomes.csv")
+
+result_10pct_habitat <- result_10pct_mean_sd_biomes %>%
+  group_by(habitat) %>%
+  summarize(avg_representation = mean(avg),
+            stdev_representation = mean(stdev)) #ask Courtney: is this right? the mean of the standard deviations of the species in that habitat group?
+
+write_csv(result_10pct_habitat, "outputs/random_sampling_result_10pct_habitat_group.csv")
 
 #summarize 44% results by habitat
+
 #load data if necessary
 result_44pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_44pct_mean_sd_biomes.csv")
+
 result_44pct_habitat <- result_44pct_mean_sd_biomes %>%
   group_by(habitat) %>%
   summarize(avg_representation = mean(avg),
             stdev_representation = mean(stdev)) #ask Courtney: is this right? the mean of the standard deviations of the species in that habitat group?
 
+write_csv(result_44pct_habitat, "outputs/random_sampling_result_44pct_habitat_group.csv")
+
 #summarize 37% results by habitat
+
 #load data if necessary
 result_37pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_37pct_mean_sd_biomes.csv")
+
 result_37pct_habitat <- result_37pct_mean_sd_biomes %>%
   group_by(habitat) %>%
   summarize(avg_representation = mean(avg),
             stdev_representation = mean(stdev)) #ask Courtney: is this right? the mean of the standard deviations of the species in that habitat group?
 
-#plot 44pct result
-library(ggplot2)
-plot_44pct_habitats <- ggplot(result_44pct_habitat, aes(x=habitat, y=avg_representation, fill=habitat))+
-  geom_bar(position=position_dodge(), stat="identity")+
-  geom_errorbar(aes(ymin=avg_representation-stdev_representation, 
-                    ymax=avg_representation+stdev_representation, 
-                    width=0.2))+
-  ggtitle("Results of random sampling of 44% of land area, by habitat group")+
-  ylim(0, 0.5)
-plot_44pct_habitats
+write_csv(result_37pct_habitat, "outputs/random_sampling_result_37pct_habitat_group.csv")
 
-#plot 44pct result, Tipping Point species only
-result_44pct_tipping_pt <- result_44pct_mean_sd_biomes %>%
-  filter(tipping_pt=="Tipping Point")
-
-plot_44pct_tipping_pt <- ggplot(result_44pct_tipping_pt, aes(x=species, y=avg, fill=species))+
-  geom_bar(position=position_dodge(), stat="identity")+
-  geom_errorbar(aes(ymin=avg-stdev, 
-                    ymax=avg+stdev, 
-                    width=0.2))+
-  ggtitle("Results of random sampling of 44% of land area, Tipping Pt spp")+
-  ylim(0, 0.5)
-plot_44pct_tipping_pt
-
-#plot 44pct result, aridlands species only
-result_44pct_aridlands <- result_44pct_mean_sd_biomes %>%
-  filter(habitat=="Aridlands")
-
-plot_44pct_aridlands <- ggplot(result_44pct_aridlands, aes(x=species, y=avg, fill=species))+
-  geom_bar(position=position_dodge(), stat="identity")+
-  geom_errorbar(aes(ymin=avg-stdev, 
-                    ymax=avg+stdev, 
-                    width=0.2))+
-  ggtitle("Results of random sampling of 44% of land area, Aridland spp")+
-  ylim(0, 0.5)
-plot_44pct_aridlands
-
-#plot 44pct result, wetland species only
-result_44pct_wetlands <- result_44pct_mean_sd_biomes %>%
-  filter(habitat=="Water/wetland")
-
-plot_44pct_wetlands <- ggplot(result_44pct_wetlands, aes(x=species, y=avg))+
-  geom_bar(position=position_dodge(), stat="identity")+
-  geom_errorbar(aes(ymin=avg-stdev, 
-                    ymax=avg+stdev, 
-                    width=0.2))+
-  ggtitle("Results of random sampling of 44% of land area, Wetland/Water spp")+
-  ylim(0, 0.5)
-plot_44pct_wetlands
-
-
-#plot 37pct result
-library(ggplot2)
-plot_37pct_habitats <- ggplot(result_37pct_habitat, aes(x=habitat, y=avg_representation, fill=habitat))+
-  geom_bar(position=position_dodge(), stat="identity")+
-  geom_errorbar(aes(ymin=avg_representation-stdev_representation, 
-                    ymax=avg_representation+stdev_representation, 
-                    width=0.2))+
-  ggtitle("Results of random sampling of 37% of land area, by habitat group")+
-  ylim(0, 0.5)
-plot_37pct_habitats
-
-#plot 37pct result, Tipping Point species only
-result_37pct_tipping_pt <- result_37pct_mean_sd_biomes %>%
-  filter(tipping_pt=="Tipping Point")
-
-plot_37pct_tipping_pt <- ggplot(result_37pct_tipping_pt, aes(x=species, y=avg, fill=species))+
-  geom_bar(position=position_dodge(), stat="identity")+
-  geom_errorbar(aes(ymin=avg-stdev, 
-                    ymax=avg+stdev, 
-                    width=0.2))+
-  ggtitle("Results of random sampling of 37% of land area, Tipping Pt spp")+
-  ylim(0, 0.5)
-plot_37pct_tipping_pt
-
-
-#plot 37pct result, aridlands species only
-result_37pct_aridlands <- result_37pct_mean_sd_biomes %>%
-  filter(habitat=="Aridlands")
-
-plot_37pct_aridlands <- ggplot(result_37pct_aridlands, aes(x=species, y=avg, fill=species))+
-  geom_bar(position=position_dodge(), stat="identity")+
-  geom_errorbar(aes(ymin=avg-stdev, 
-                    ymax=avg+stdev, 
-                    width=0.2))+
-  ggtitle("Results of random sampling of 37% of land area, Aridland spp")+
-  ylim(0, 0.5)
-plot_37pct_aridlands
-
-#plot 44pct result, wetland species only
-result_44pct_wetlands <- result_44pct_mean_sd_biomes_tp %>%
-  filter(habitat=="Water/wetland")
-
-plot_44pct_wetlands <- ggplot(result_44pct_wetlands, aes(x=species, y=avg))+
-  geom_bar(position=position_dodge(), stat="identity")+
-  geom_errorbar(aes(ymin=avg-stdev, 
-                    ymax=avg+stdev, 
-                    width=0.2))+
-  ggtitle("Results of random sampling of 37% of land area, Wetland/Water spp")+
-  ylim(0, 0.5)
-plot_44pct_wetlands
-
-
+# compare random sampling results to actual results
