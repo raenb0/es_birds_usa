@@ -338,8 +338,25 @@ pct_pop_per_group_carbon_90pct_eck4
 # # save resulting raster
 # writeRaster(pct_pop_per_group_carbon_top30, "outputs/rasters/pct_pop_per_guild_carbon_top30.tif", overwrite=TRUE)
 
+# calculate pct of population within high carbon areas for all spp -------------------
 
-# calculate pct of population within high carbon areas for individual spp ------------------
+# load bird tifs raster, masked to high carbon areas, if necessary
+pct_pop_carbon_90pct_mask <- rast("outputs/rasters/pct_pop_carbon_90pct_mask.tif")
+
+# calculate sum of pixels (takes 1 minute)
+tic()
+pct_pop_per_spp_carbon_sum <- global(pct_pop_carbon_90pct_mask, fun='sum', na.rm=T)
+toc()
+
+#rowname to column
+pct_pop_per_spp_carbon_sum <- tibble::rownames_to_column(pct_pop_per_spp_carbon_sum, "species")
+pct_pop_per_spp_carbon_sum <- pct_pop_per_spp_carbon_sum %>%
+  rename("sum_carbon" = "sum") #rename "sum" to "sum_cna" for clarity
+
+write_csv(pct_pop_per_spp_carbon_sum, "outputs/pct_pop_per_spp_carbon_90pct_sum.csv") #save to csv
+
+
+# calculate pct of population within high carbon areas for spp in each group ------------------
 library(tidyverse)
 
 #filter tipping point species, forest spp, etc.

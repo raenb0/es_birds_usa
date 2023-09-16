@@ -239,6 +239,26 @@ writeRaster(pct_pop_per_group_cna_eck4, "outputs/rasters/pct_pop_per_group_cna_e
 pct_pop_per_group_cna_eck4
 
 
+# calculate the pct of each bird species population contained within CNA areas ------
+library(terra)
+library(tictoc)
+library(beepr)
+
+# load bird tifs raster, masked to CNA, if necessary
+pct_pop_mask <- rast("outputs/rasters/pct_pop_mask_cna.tif")
+
+# calculate sum of pixels (takes 1 minute)
+tic()
+pct_pop_per_spp_cna_sum <- global(pct_pop_mask, fun='sum', na.rm=T)
+toc()
+
+pct_pop_per_spp_cna_sum <- tibble::rownames_to_column(pct_pop_per_spp_cna_sum, "species") #rowname to col
+pct_pop_per_spp_cna_sum <- pct_pop_per_spp_cna_sum %>%
+  rename("sum_cna" = "sum") #rename "sum" to "sum_cna" for clarity
+
+write_csv(pct_pop_per_spp_cna_sum, "outputs/pct_pop_per_spp_cna_sum.csv") #save to csv
+
+
 # calculate the pct of each guild population contained with CNA areas --------------
 
 # load data if necessary
