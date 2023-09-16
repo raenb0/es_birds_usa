@@ -52,53 +52,54 @@ beep()
 plot(pct_pop_per_sp_rast, "acafly") #Acadian flycatcher?
 
 # below code only needs to be run once --------------------
-# # load the CNA layer (local NCP, 90% target, prioritized within USA) -----------------
-# cna <- rast("data/critical_natural_assets/solution_scenario-A_usa_target-90.tif")
-# 
-# # check projection, resolution
-# crs(cna, describe=F, proj=T) # "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
-# res(cna) #2 km
-# 
-# # look at it
-# plot(cna) #note it includes offshore territories so might need to mask the extent to match the birds data
-# 
-# #re-project and resample CNA layer to match birds data ------------------
-# cna_3km <- project(cna, pct_pop_per_sp_rast, method="near")
-# cna_3km <- resample(cna_3km, pct_pop_per_sp_rast, method="near")
-# crs(cna_3km, describe=F, proj=T) #good
-# res(cna_3km) #2962.809 good
-# 
-# plot(cna_3km) #looks distorted but matches bird data
-# ext(cna_3km) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax) #matches bird data
-# 
-# # load CNA for USA, 5%-95% targets, summed (for visualization) ---------------------
-# cna_usa_sum <- rast("data/critical_natural_assets/usa_targets_5_95_sum.tif")
-# plot(cna_usa_sum) #includes offshore territories
-# 
-# # load USA boundary vector created in birds_high_carbon_areas_20June2023.R script
-# usa_vect <- vect("outputs/rasters/usa_vect_eck4.shp")
-# 
-# # crop CNA data to USA (for visualization)
-# cna_usa_90_crop = crop(cna, usa_vect, mask=TRUE) #90% target version
-# cna_usa_sum_crop = crop(cna_usa_sum, usa_vect, mask=TRUE) #summed version
-# plot(cna_usa_90_crop) #looks good
-# plot(cna_usa_sum_crop) #looks good
-# #writeRaster(cna_usa_90_crop, "outputs/rasters/cna_usa_90_crop.tif", overwrite=F)
-# #writeRaster(cna_usa_sum_crop, "outputs/rasters/cna_usa_sum_crop.tif", overwrite=F)
-# 
-# # mask bird data with CNA 90% target data (takes a few minutes) -------------------
-# tic()
-# pct_pop_mask <- mask(pct_pop_per_sp_rast, cna_3km, maskvalues=c(0,NA)) #trying to mask in values=1 only
-# toc()
-# beep()
-# 
-# plot(pct_pop_mask, "acafly")
-# 
-# #save masked version (takes 2 min)
-# tic()
-# writeRaster(pct_pop_mask, "outputs/rasters/pct_pop_mask_cna.tif", overwrite=T)
-# toc()
-# beep()
+
+# load the CNA layer (local NCP, 90% target, prioritized within USA) -----------------
+cna <- rast("data/critical_natural_assets/solution_scenario-A_usa_target-90.tif")
+
+# check projection, resolution
+crs(cna, describe=F, proj=T) # "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs"
+res(cna) #2 km
+
+# look at it
+plot(cna) #note it includes offshore territories so might need to mask the extent to match the birds data
+
+#re-project and resample CNA layer to match birds data ------------------
+cna_3km <- project(cna, pct_pop_per_sp_rast, method="near")
+cna_3km <- resample(cna_3km, pct_pop_per_sp_rast, method="near")
+crs(cna_3km, describe=F, proj=T) #good
+res(cna_3km) #2962.809 good
+
+plot(cna_3km) #looks distorted but matches bird data
+ext(cna_3km) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax) #matches bird data
+
+# load CNA for USA, 5%-95% targets, summed (for visualization) ---------------------
+cna_usa_sum <- rast("data/critical_natural_assets/usa_targets_5_95_sum.tif")
+plot(cna_usa_sum) #includes offshore territories
+
+# load USA boundary vector created in birds_high_carbon_areas_20June2023.R script
+usa_vect <- vect("outputs/rasters/usa_vect_eck4.shp")
+
+# crop CNA data to USA (for visualization)
+cna_usa_90_crop = crop(cna, usa_vect, mask=TRUE) #90% target version
+cna_usa_sum_crop = crop(cna_usa_sum, usa_vect, mask=TRUE) #summed version
+plot(cna_usa_90_crop) #looks good
+plot(cna_usa_sum_crop) #looks good
+#writeRaster(cna_usa_90_crop, "outputs/rasters/cna_usa_90_crop.tif", overwrite=F)
+#writeRaster(cna_usa_sum_crop, "outputs/rasters/cna_usa_sum_crop.tif", overwrite=F)
+
+# mask bird data with CNA 90% target data (takes a few minutes) -------------------
+tic()
+pct_pop_mask <- mask(pct_pop_per_sp_rast, cna_3km, maskvalues=c(0,NA)) #trying to mask in values=1 only
+toc()
+beep()
+
+plot(pct_pop_mask, "acafly")
+
+#save masked version (takes 2 min)
+tic()
+writeRaster(pct_pop_mask, "outputs/rasters/pct_pop_mask_cna.tif", overwrite=T)
+toc()
+beep()
 
 # group bird tifs by guild, unmasked version ----------------
 
@@ -126,7 +127,6 @@ names(pct_pop_per_group_all) <- sps_groups
 
 #save resulting raster
 writeRaster(pct_pop_per_group_all, "outputs/rasters/pct_pop_per_group_all.tif", overwrite=TRUE)
-
 
 # visualize bird guild rasters ---------------------
 
@@ -203,13 +203,16 @@ pct_pop_per_group_cna <- rast(pct_pop_per_group_list_cna)
 # save resulting raster
 writeRaster(pct_pop_per_group_cna, "outputs/rasters/pct_pop_per_group_cna.tif", overwrite=TRUE)
 
+
 # visualize bird guilds, masked to CNA ----------------
+
 plot(pct_pop_per_group_cna, "Water/wetland", main="Sum of Water/wetland bird populations % within CNA")
 plot(pct_pop_per_group_cna, "Forest", main="Sum of Forest bird populations % within CNA")
 plot(pct_pop_per_group_cna, "Aridlands", main="Sum of Aridlands bird populations % within CNA")
 plot(pct_pop_per_group_cna, "Grasslands", main="Sum of Grasslands bird populations % within CNA")
 plot(pct_pop_per_group_cna, "Habitat Generalist", main="Sum of Habitat Generalist bird populations % within CNA")
 plot(pct_pop_per_group_cna, "Tipping Point", main="Sum of Tipping Point bird populations % within CNA")
+
 
 # re-project bird guild data, masked to CNA, to Eckert IV (for visualization) -----------
 
@@ -235,7 +238,8 @@ plot(pct_pop_per_group_cna_eck4, "Tipping Point", main="Tipping Point bird popul
 writeRaster(pct_pop_per_group_cna_eck4, "outputs/rasters/pct_pop_per_group_cna_eck4.tif", overwrite=TRUE)
 pct_pop_per_group_cna_eck4
 
-#calculate the pct of each guild population contained with CNA areas -----------
+
+# calculate the pct of each guild population contained with CNA areas --------------
 
 # load data if necessary
 pct_pop_per_group_cna <- rast("outputs/rasters/pct_pop_per_group_cna.tif")
@@ -360,7 +364,7 @@ pct_pop_generalist_spp_cna <- tibble::rownames_to_column(pct_pop_generalist_spp_
 write_csv(pct_pop_generalist_spp_cna, "outputs/pct_pop_generalist_spp_cna.csv")
 
 
-# calculate percent of spp that are >90 >75 >50 pct represented ---------------
+# calculate percent of spp that are >37 >50 >75 pct represented ---------------
 library(tidyverse)
 
 # load data if necessary
@@ -373,83 +377,83 @@ pct_pop_generalist_spp_cna <- read_csv("outputs/pct_pop_generalist_spp_cna.csv")
 
 # tipping point spp
 pct_pop_tipping_pt_spp_cna <- pct_pop_tipping_pt_spp_cna %>%
-  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
-  mutate(more50 = ifelse(sum>0.5,1,0))
+  mutate(more50 = ifelse(sum>0.5,1,0)) %>%
+  mutate(more37 = ifelse(sum>0.37,1,0))
 
 summary_tipping_pt_spp_cna <- pct_pop_tipping_pt_spp_cna %>%
-  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
   mutate(guild="tipping_point") %>%
   mutate(n=nrow(pct_pop_tipping_pt_spp_cna))
 
 # forest spp
 pct_pop_forest_spp_cna <- pct_pop_forest_spp_cna %>%
-  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
-  mutate(more50 = ifelse(sum>0.5,1,0))
+  mutate(more50 = ifelse(sum>0.5,1,0)) %>%
+  mutate(more37 = ifelse(sum>0.37,1,0))
 
 summary_forest_spp_cna <- pct_pop_forest_spp_cna %>%
-  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
   mutate(guild="forest") %>%
   mutate(n=nrow(pct_pop_forest_spp_cna))
 
 # grassland spp
 pct_pop_grassland_spp_cna <- pct_pop_grassland_spp_cna %>%
-  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
-  mutate(more50 = ifelse(sum>0.5,1,0))
+  mutate(more50 = ifelse(sum>0.5,1,0)) %>%
+  mutate(more37 = ifelse(sum>0.37,1,0))
 
 summary_grassland_spp_cna <- pct_pop_grassland_spp_cna %>%
-  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
   mutate(guild="grassland") %>%
   mutate(n=nrow(pct_pop_grassland_spp_cna))
 
 # aridland spp
 pct_pop_aridland_spp_cna <- pct_pop_aridland_spp_cna %>%
-  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
-  mutate(more50 = ifelse(sum>0.5,1,0))
+  mutate(more50 = ifelse(sum>0.5,1,0)) %>%
+  mutate(more37 = ifelse(sum>0.37,1,0))
 
 summary_aridland_spp_cna <- pct_pop_aridland_spp_cna %>%
-  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
   mutate(guild="aridland")%>%
   mutate(n=nrow(pct_pop_aridland_spp_cna))
 
 # wetland spp
 pct_pop_wetland_spp_cna <- pct_pop_wetland_spp_cna %>%
-  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
-  mutate(more50 = ifelse(sum>0.5,1,0))
+  mutate(more50 = ifelse(sum>0.5,1,0)) %>%
+  mutate(more37 = ifelse(sum>0.37,1,0))
 
 summary_wetland_spp_cna <- pct_pop_wetland_spp_cna %>%
-  summarize(more90 = mean(more90, na.rm=T), more75 = mean(more75, na.rm=T), more50 = mean(more50, na.rm=T)) %>%
+  summarize(more75 = mean(more75, na.rm=T), more50 = mean(more50, na.rm=T), more37 = mean(more37, na.rm=T)) %>%
   mutate(guild="wetland")%>%
   mutate(n=nrow(pct_pop_wetland_spp_cna))
 
 # generalist spp
 pct_pop_generalist_spp_cna <- pct_pop_generalist_spp_cna %>%
-  mutate(more90 = ifelse(sum>0.9,1,0)) %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
-  mutate(more50 = ifelse(sum>0.5,1,0))
+  mutate(more50 = ifelse(sum>0.5,1,0)) %>%
+  mutate(more37 = ifelse(sum>0.37,1,0))
 
 summary_generalist_spp_cna <- pct_pop_generalist_spp_cna %>%
-  summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
   mutate(guild="generalist") %>%
   mutate(n=nrow(pct_pop_generalist_spp_cna))
 
 # combine rows into single table
 summary_pct_pop_guild_cna <- rbind(summary_tipping_pt_spp_cna, summary_forest_spp_cna, summary_grassland_spp_cna, summary_aridland_spp_cna, summary_wetland_spp_cna, summary_generalist_spp_cna)
 
-write_csv(summary_pct_pop_guild_cna, "outputs/summary_pct_pop_guild_cna.csv")
+write_csv(summary_pct_pop_guild_cna, "outputs/summary_pct_pop_guild_cna_16Sept2023.csv")
 
 # pivot to make tidy and plot CNA results
 library(ggplot2)
 
 # make mutually exclusive categories for stacked bar chart
 summary_pct_pop_guild_cna_mutuallyexclusive <- summary_pct_pop_guild_cna %>%
-  mutate(more50_only = more50 - more75, more75_only = more75 - more90)
+  mutate(more37_only = more37 - more50, more50_only = more50 - more75)
 summary_pct_pop_guild_cna_select <- summary_pct_pop_guild_cna_mutuallyexclusive %>%
-  select(guild, n, more50_only, more75_only, more90)
+  select(guild, n, more37_only, more50_only, more75)
 
 summary_longer_cna <- pivot_longer(summary_pct_pop_guild_cna_select, cols=3:5, names_to="category", values_to="pct_spp")
 
@@ -458,7 +462,8 @@ plot_cna <- ggplot(summary_longer_cna, aes(x=guild, y=pct_spp, fill=category)) +
   ggtitle("Percent of species represented within Critical Natural Assets, by guild") +
   xlab("Guild") +
   ylab("Percent of species") +
-  scale_fill_discrete(labels=c('More than 50%', 'More than 75%', 'More than 90%')) +
+  scale_fill_discrete(labels=c('More than 37%', 'More than 50%', 'More than 75%'), 
+                      type=c("#88CCEE", "#44AA99", "#332288")) +
   scale_y_continuous(labels = scales::percent) +
   theme_minimal() +
   theme(legend.title=element_blank())

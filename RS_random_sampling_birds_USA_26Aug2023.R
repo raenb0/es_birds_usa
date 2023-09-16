@@ -211,6 +211,27 @@ result_37pct_mean_sd_biomes <- rename(result_37pct_mean_sd_biomes,
 
 write_csv(result_37pct_mean_sd_biomes_tp, "outputs/random_sampling_result_37pct_mean_sd_biomes.csv")
 
+#join species results with habitat data, confidence intervals --------------
+
+#load data if necessary
+result_37pct_mean_sd_confint <- read_csv("outputs/random_sampling_result_37pct_mean_sd_confint.csv")
+result_44pct_mean_sd_confint <- read_csv("outputs/random_sampling_result_44pct_mean_sd_confint.csv")
+result_37pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_37pct_mean_sd_biomes.csv")
+result_44pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_44pct_mean_sd_biomes.csv")
+
+
+# select columns of interest and join tables
+names(result_37pct_mean_sd_biomes)
+result_37pct_biomes <- result_37pct_mean_sd_biomes %>%
+  select(species, habitat, tipping_pt)
+result_37pct_join <- left_join(result_37pct_mean_sd_confint, result_37pct_biomes, by="species")
+
+result_44pct_biomes <- result_44pct_mean_sd_biomes %>%
+  select(species, habitat, tipping_pt)
+result_44pct_join <- left_join(result_44pct_mean_sd_confint, result_44pct_biomes, by="species")
+
+write_csv(result_37pct_join, "outputs/random_sampling_result_37pct_mean_sd_confint_biomes.csv")
+write_csv(result_44pct_join, "outputs/random_sampling_result_44pct_mean_sd_confint_biomes.csv")
 
 #summarize 10% results by habitat
 
@@ -248,4 +269,4 @@ result_37pct_habitat <- result_37pct_mean_sd_biomes %>%
 
 write_csv(result_37pct_habitat, "outputs/random_sampling_result_37pct_habitat_group.csv")
 
-# compare random sampling results to actual results
+
