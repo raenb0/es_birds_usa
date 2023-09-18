@@ -8,7 +8,7 @@ library(ggridges)
 
 
 # Create long data frame for easy plotting
-species_total_table <- read.csv(here("results_for_manuscript", "Species_Responsibility_Total_REFORMATTED_noSFW.csv"))
+species_total_table <- read.csv(here("data/Species_Responsibility_Total_REFORMATTED_noSFW.csv"))
 species_total_table_long_reformatted1 <- species_total_table[,c(1:4,6:10)]
 species_total_table_long_reformatted2 <- na.omit(species_total_table[,c(1:3,5:10)])
 colnames(species_total_table_long_reformatted1)[4] <- colnames(species_total_table_long_reformatted2)[4] <- "group"
