@@ -9,7 +9,7 @@ library(dplyr)
 library(beepr)
 library(tictoc)
 
-below code only needs to be run once -----------------------
+# below code only needs to be run once -----------------------
 #load vulnerable carbon (global) ---------------------------
 vuln_carbon_global <- rast("data/carbon/Vulnerable_C_Total_2018.tif")
 
@@ -511,7 +511,7 @@ beep()
 # 
 # write_csv(pct_pop_generalist_spp_carbon_top30, "outputs/pct_pop_generalist_spp_carbon_top30.csv")
 
-# calculate percent of spp that are >37 >50 >75 pct represented -----------------
+# calculate percent of spp that are >44 >50 >75 pct represented -----------------
 library(tidyverse)
 
 # load data if necessary
@@ -526,78 +526,78 @@ pct_pop_generalist_spp_carbon_90pct <- read_csv("outputs/pct_pop_generalist_spp_
 pct_pop_tipping_pt_spp_carbon_90pct <- pct_pop_tipping_pt_spp_carbon_90pct %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
   mutate(more50 = ifelse(sum>0.5,1,0)) %>%
-  mutate(more37 = ifelse(sum>0.37,1,0))
+  mutate(more44 = ifelse(sum>0.44,1,0))
 
 summary_tipping_pt_spp_carbon_90pct <- pct_pop_tipping_pt_spp_carbon_90pct %>%
-  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more44 = mean(more44)) %>%
   mutate(guild="tipping_point")
 
 # forest spp
 pct_pop_forest_spp_carbon_90pct <- pct_pop_forest_spp_carbon_90pct %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
   mutate(more50 = ifelse(sum>0.5,1,0)) %>%
-  mutate(more37 = ifelse(sum>0.37,1,0))
+  mutate(more44 = ifelse(sum>0.44,1,0))
 
 summary_forest_spp_carbon_90pct <- pct_pop_forest_spp_carbon_90pct %>%
-  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more44 = mean(more44)) %>%
   mutate(guild="forest")
 
 # grassland spp
 pct_pop_grassland_spp_carbon_90pct <- pct_pop_grassland_spp_carbon_90pct %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
   mutate(more50 = ifelse(sum>0.5,1,0)) %>%
-  mutate(more37 = ifelse(sum>0.37,1,0))
+  mutate(more44 = ifelse(sum>0.44,1,0))
 
 summary_grassland_spp_carbon_90pct <- pct_pop_grassland_spp_carbon_90pct %>%
-  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more44 = mean(more44)) %>%
   mutate(guild="grassland")
 
 # aridland spp
 pct_pop_aridland_spp_carbon_90pct <- pct_pop_aridland_spp_carbon_90pct %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
   mutate(more50 = ifelse(sum>0.5,1,0)) %>%
-  mutate(more37 = ifelse(sum>0.37,1,0))
+  mutate(more44 = ifelse(sum>0.44,1,0))
 
 summary_aridland_spp_carbon_90pct <- pct_pop_aridland_spp_carbon_90pct %>%
-  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more44 = mean(more44)) %>%
   mutate(guild="aridland")
 
 # wetland spp
 pct_pop_wetland_spp_carbon_90pct <- pct_pop_wetland_spp_carbon_90pct %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
   mutate(more50 = ifelse(sum>0.5,1,0)) %>%
-  mutate(more37 = ifelse(sum>0.37,1,0))
+  mutate(more44 = ifelse(sum>0.44,1,0))
 
 summary_wetland_spp_carbon_90pct <- pct_pop_wetland_spp_carbon_90pct %>%
-  summarize(more37 = mean(more37, na.rm=T), more50 = mean(more50, na.rm=T), more75 = mean(more75, na.rm=T)) %>%
+  summarize(more44 = mean(more44, na.rm=T), more50 = mean(more50, na.rm=T), more75 = mean(more75, na.rm=T)) %>%
   mutate(guild="wetland")
 
 # generalist spp
 pct_pop_generalist_spp_carbon_90pct <- pct_pop_generalist_spp_carbon_90pct %>%
   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
   mutate(more50 = ifelse(sum>0.5,1,0)) %>%
-  mutate(more37 = ifelse(sum>0.37,1,0))
+  mutate(more44 = ifelse(sum>0.44,1,0))
 
 summary_generalist_spp_carbon_90pct <- pct_pop_generalist_spp_carbon_90pct %>%
-  summarize(more75 = mean(more75), more50 = mean(more50), more37 = mean(more37)) %>%
+  summarize(more75 = mean(more75), more50 = mean(more50), more44 = mean(more44)) %>%
   mutate(guild="generalist")
 
 # combine rows into single table
 summary_pct_pop_guild_carbon_90pct <- rbind(summary_tipping_pt_spp_carbon_90pct, summary_forest_spp_carbon_90pct, summary_grassland_spp_carbon_90pct, summary_aridland_spp_carbon_90pct, summary_wetland_spp_carbon_90pct, summary_generalist_spp_carbon_90pct)
 
-write_csv(summary_pct_pop_guild_carbon_90pct, "outputs/summary_pct_pop_guild_carbon_16Sep2023.csv")
+write_csv(summary_pct_pop_guild_carbon_90pct, "outputs/summary_pct_pop_guild_carbon_21Sep2023.csv")
 
 # pivot to make tidy and plot 90pct results
 library(ggplot2)
 
 #load data if necessary
-summary_pct_pop_guild_carbon_90pct <- read_csv("outputs/summary_pct_pop_guild_carbon_16Sep2023.csv")
+summary_pct_pop_guild_carbon_90pct <- read_csv("outputs/summary_pct_pop_guild_carbon_21Sep2023.csv")
 
 # make mutually exclusive categories for stacked bar chart
 summary_pct_pop_carbon_mutuallyexclusive <- summary_pct_pop_guild_carbon_90pct %>%
-  mutate(more37_only = more37 - more50, more50_only = more50 - more75)
+  mutate(more44_only = more44 - more50, more50_only = more50 - more75)
 summary_pct_pop_carbon_select <- summary_pct_pop_carbon_mutuallyexclusive %>%
-  select(guild, more37_only, more50_only, more75)
+  select(guild, more44_only, more50_only, more75)
 
 summary_longer_carbon <- pivot_longer(summary_pct_pop_carbon_select, cols=2:4, names_to="category", values_to="pct_spp") #check column numbers!
 
@@ -606,7 +606,7 @@ plot_carbon <- ggplot(summary_longer_carbon, aes(x=guild, y=pct_spp, fill=catego
   ggtitle("Percent of species represented within high carbon areas") +
   xlab("Guild") +
   ylab("Percent of species") +
-  scale_fill_discrete(labels=c('More than 37%', 'More than 50%', 'More than 75%'), 
+  scale_fill_discrete(labels=c('More than 44%', 'More than 50%', 'More than 75%'), 
                       type=c("#DDCC77", "#CC6677", "#882255")) +
   scale_y_continuous(labels = scales::percent) +
   theme_minimal() +
