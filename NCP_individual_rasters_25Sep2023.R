@@ -62,9 +62,11 @@ terra::plot(ncp_stack_usa$Vulnerable_C_Total_2018, axes=F, main = "Vulnerable ca
 terra::writeRaster(ncp_stack_usa, "outputs/rasters/ncp_stack_usa.tif", overwrite=TRUE)
 
 #write individual NCP layers, cropped to USA, as TIF files #only do this once
+
 library(terra)
 fnames <- paste0(rastnames2, ".tif")
+getwd()
 setwd("outputs/rasters/ncp_usa/")
-terra::writeRaster(ncp_stack_USA, fnames, overwrite=FALSE) #takes a few min
+terra::writeRaster(ncp_stack_usa, fnames, overwrite=FALSE)
 
 
