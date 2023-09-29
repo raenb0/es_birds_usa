@@ -587,31 +587,7 @@ summary_pct_pop_guild_carbon_90pct <- rbind(summary_tipping_pt_spp_carbon_90pct,
 
 write_csv(summary_pct_pop_guild_carbon_90pct, "outputs/summary_pct_pop_guild_carbon_21Sep2023.csv")
 
-# pivot to make tidy and plot 90pct results
-library(ggplot2)
 
-#load data if necessary
-summary_pct_pop_guild_carbon_90pct <- read_csv("outputs/summary_pct_pop_guild_carbon_21Sep2023.csv")
-
-# make mutually exclusive categories for stacked bar chart
-summary_pct_pop_carbon_mutuallyexclusive <- summary_pct_pop_guild_carbon_90pct %>%
-  mutate(more44_only = more44 - more50, more50_only = more50 - more75)
-summary_pct_pop_carbon_select <- summary_pct_pop_carbon_mutuallyexclusive %>%
-  select(guild, more44_only, more50_only, more75)
-
-summary_longer_carbon <- pivot_longer(summary_pct_pop_carbon_select, cols=2:4, names_to="category", values_to="pct_spp") #check column numbers!
-
-plot_carbon <- ggplot(summary_longer_carbon, aes(x=guild, y=pct_spp, fill=category)) +
-  geom_bar(stat="identity", position="stack") +
-  ggtitle("Percent of species represented within high carbon areas") +
-  xlab("Guild") +
-  ylab("Percent of species") +
-  scale_fill_discrete(labels=c('More than 44%', 'More than 50%', 'More than 75%'), 
-                      type=c("#DDCC77", "#CC6677", "#882255")) +
-  scale_y_continuous(labels = scales::percent) +
-  theme_minimal() +
-  theme(legend.title=element_blank())
-plot_carbon
 
 # # repeat for top 30% of areas for carbon -----------------
 # # calculate percent of spp that are >90 >75 >50 pct represented

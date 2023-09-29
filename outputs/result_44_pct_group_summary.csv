@@ -1,0 +1,7 @@
+,group,sample_avg,sample_sd,lower95,upper95
+1,Aridlands,44.0%,0.4%,43.1%,44.9%
+2,Forest,44.0%,0.5%,43.1%,45.0%
+3,Grasslands,44.0%,0.3%,43.4%,44.6%
+4,Habitat Generalist,44.0%,0.8%,42.5%,45.5%
+5,Tipping Point,44.0%,1.6%,40.9%,47.1%
+6,Water/wetland,43.7%,5.8%,32.3%,55.1%

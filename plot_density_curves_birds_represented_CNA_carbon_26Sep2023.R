@@ -1,4 +1,6 @@
-# plot density curves
+# plot density curves, bird spp represented within CNA and high carbon areas
+# September 26 2023
+
 library(tidyverse)
 
 #load data if needed
@@ -9,10 +11,19 @@ result_44_pct_full <- read_csv("outputs/random_sampling_result_44pct_full.csv")
 result_37_pct_group_summary <- result_37_pct_full %>%
   group_by(group) %>%
   summarize(sample_avg = mean(sample_result), sample_sd = sd(sample_result))
+# add confidence intervals
+result_37_pct_group_summary_confint <- result_37_pct_group_summary %>%
+  mutate(lower95 = sample_avg - (1.96*sample_sd), upper95 = sample_avg + (1.96*sample_sd))
 
 result_44_pct_group_summary <- result_44_pct_full %>%
   group_by(group) %>%
   summarize(sample_avg = mean(sample_result), sample_sd = sd(sample_result))
+# add confidence intervals
+result_44_pct_group_summary_confint <- result_44_pct_group_summary %>%
+  mutate(lower95 = sample_avg - (1.96*sample_sd), upper95 = sample_avg + (1.96*sample_sd))
+
+write.csv(result_44_pct_group_summary_confint, "outputs/result_44_pct_group_summary.csv")
+write.csv(result_37_pct_group_summary_confint, "outputs/result_37_pct_group_summary.csv")
 
 # 37% data
 
@@ -46,21 +57,31 @@ ggplot(result_37_pct_full) +
   scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
   xlab("Percent of bird species represented by high NCP areas")
 
+#create data frame with mean, lower quantile and higher quantile
+result_37_pct_full_group <- result_37_pct_full %>%
+  group_by(group) %>%
+  summarize(mean = mean(sample_result*100), 
+            lq = quantile(sample_result*100, 0.025),
+            hq = quantile(sample_result*100, 0.975))
+
+write.csv(result_37_pct_full_group, "outputs/result_37_pct_full_group.csv")
+
 #plot both, 37% data
-ggplot(result_37_pct_full) + 
-  geom_density(aes(x=sum_cna*100, fill=group)) +
-  geom_density(aes(x=sample_result*100)) +
-  geom_vline(xintercept = 37, linetype = "dashed") +
+ggplot() + 
+  geom_density(data = result_37_pct_full, aes(x=sum_cna*100, fill=group)) +
+  geom_vline(data = result_37_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
+  geom_rect(data = result_37_pct_full_group, 
+            mapping = aes(xmin = lq, xmax = hq, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
   facet_wrap(~group, scales = "free_x") +
-  xlim(0,100) +
-  ylim(0,0.1)+
+  scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0,0.1))+
   theme_bw() + 
   theme(panel.grid.minor = element_blank(),
         legend.position = "none",
         axis.title.y = element_blank(),
         axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
   scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
-  xlab("Percent of bird species represented by high NCP areas, overlaid with random sampling result")
+  xlab("Percent of bird species represented by critical natural assets, overlaid with random sampling result")
 
 #plot 44% data
 
@@ -95,13 +116,21 @@ ggplot(result_44_pct_full) +
   xlab("Percent of bird species represented by high carbon areas")
 
 #plot both, 44% data
-ggplot(result_44_pct_full) + 
-  geom_density(aes(x=sum_carbon*100, fill=group)) +
-  geom_density(aes(x=sample_result*100)) +
-  geom_vline(xintercept = 44, linetype = "dashed") +
+result_44_pct_full_group <- result_44_pct_full %>%
+  group_by(group) %>%
+  summarize(mean = mean(sample_result*100), 
+            lq = quantile(sample_result*100, 0.025),
+            hq = quantile(sample_result*100, 0.975))
+write.csv(result_44_pct_full_group, "outputs/result_44_pct_full_group.csv")
+
+ggplot() + 
+  geom_density(data = result_44_pct_full, aes(x=sum_carbon*100, fill=group)) +
+  geom_vline(data = result_44_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
+  geom_rect(data = result_44_pct_full_group, 
+            mapping = aes(xmin = lq, xmax = hq, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
   facet_wrap(~group, scales = "free_x") +
-  xlim(0,100) +
-  ylim(0,0.1)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0,0.1))+
+  scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
   theme_bw() + 
   theme(panel.grid.minor = element_blank(),
         legend.position = "none",

@@ -466,27 +466,5 @@ summary_pct_pop_guild_cna <- rbind(summary_tipping_pt_spp_cna, summary_forest_sp
 
 write_csv(summary_pct_pop_guild_cna, "outputs/summary_pct_pop_guild_cna_16Sept2023.csv")
 
-# pivot to make tidy and plot CNA results
-library(ggplot2)
-
-# make mutually exclusive categories for stacked bar chart
-summary_pct_pop_guild_cna_mutuallyexclusive <- summary_pct_pop_guild_cna %>%
-  mutate(more37_only = more37 - more50, more50_only = more50 - more75)
-summary_pct_pop_guild_cna_select <- summary_pct_pop_guild_cna_mutuallyexclusive %>%
-  select(guild, n, more37_only, more50_only, more75)
-
-summary_longer_cna <- pivot_longer(summary_pct_pop_guild_cna_select, cols=3:5, names_to="category", values_to="pct_spp")
-
-plot_cna <- ggplot(summary_longer_cna, aes(x=guild, y=pct_spp, fill=category)) +
-  geom_bar(stat="identity", position="stack") +
-  ggtitle("Percent of species represented within Critical Natural Assets, by guild") +
-  xlab("Guild") +
-  ylab("Percent of species") +
-  scale_fill_discrete(labels=c('More than 37%', 'More than 50%', 'More than 75%'), 
-                      type=c("#88CCEE", "#44AA99", "#332288")) +
-  scale_y_continuous(labels = scales::percent) +
-  theme_minimal() +
-  theme(legend.title=element_blank())
-plot_cna
 
 
