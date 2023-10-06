@@ -177,10 +177,12 @@ write_csv(result_44_pct_full,"outputs/random_sampling_result_44pct_full.csv")
 
 
 # plot tipping point species, comparison of CNA results to random sampling -----------
+library(tidyverse)
 
 result_37pct_comparison <- read_csv("outputs/result_37pct_comparison.csv")
 result_44pct_comparison <- read_csv("outputs/result_44pct_comparison.csv")
 
+#filter tipping point species
 tp_sps_37pct_comparison <- result_37pct_comparison %>%
   filter(tipping_pt == "Tipping Point") %>%
   arrange(sum_cna) #arrange spp in descending order by representation level
@@ -221,5 +223,139 @@ ggplot(tp_sps_44pct_comparison, aes(x = species, y = sum_carbon*100)) +
   ylab("Percent of tipping point species represented within high carbon areas") +
   theme(legend.position = "none")
   
+# repeat plotting for forest species
+
+# filter forest species
+forest_sps_37pct_comparison <- result_37pct_comparison %>%
+  filter(habitat == "Forest") %>%
+  arrange(sum_cna) #arrange spp in descending order by representation level
+
+forest_sps_44pct_comparison <- result_44pct_comparison %>%
+  filter(habitat == "Forest") %>%
+  arrange(sum_carbon) #arrange spp in descending order by representation level
+
+# convert to factor to retain order of spp
+forest_sps_37pct_comparison$species <- factor(forest_sps_37pct_comparison$species, forest_sps_37pct_comparison$species)
+forest_sps_44pct_comparison$species <- factor(forest_sps_44pct_comparison$species, forest_sps_44pct_comparison$species)
+
+#create a color gradient red to blue
+library(scales)
+n_colors <- nrow(forest_sps_37pct_comparison) #count of colors you need
+red_blue_scale <- scales::seq_gradient_pal("red","blue","Lab")(seq(0,1,length.out=n_colors))
+
+#plot CNA 37% results, forest spp (too many spp to see)
+ggplot(forest_sps_37pct_comparison, aes(x = species, y = sum_cna*100)) +
+  geom_rect(mapping = aes(xmin = -Inf, xmax = Inf, ymin = 36, ymax = 38), #based on random sampling
+            col = "grey80", fill = "grey80", alpha = 0.5) +  
+  geom_bar(aes(fill = species), stat="identity") +
+  scale_fill_manual(values=red_blue_scale) +
+  coord_flip() +
+  geom_hline(yintercept=37, linetype="dashed") +
+  theme_minimal() +
+  ylab("Percent of forest species represented within critical natural assets") +
+  theme(legend.position = "none")
+
+#plot high carbon 44% results, forest spp (too many spp to see)
+ggplot(forest_sps_44pct_comparison, aes(x = species, y = sum_carbon*100)) +
+  geom_rect(mapping = aes(xmin = -Inf, xmax = Inf, ymin = 43, ymax = 45), #based on random sampling
+            col = "grey80", fill = "grey80", alpha = 0.5) +  
+  geom_bar(aes(fill = species), stat="identity") +
+  scale_fill_manual(values=red_blue_scale) +
+  coord_flip() +
+  geom_hline(yintercept=44, linetype="dashed") +
+  theme_minimal() +
+  ylab("Percent of forest species represented within high carbon areas") +
+  theme(legend.position = "none")
+
+
+# repeat plotting for aridland species
+
+# filter aridland species
+arid_sps_37pct_comparison <- result_37pct_comparison %>%
+  filter(habitat == "Aridlands") %>%
+  arrange(sum_cna) #arrange spp in descending order by representation level
+
+arid_sps_44pct_comparison <- result_44pct_comparison %>%
+  filter(habitat == "Aridlands") %>%
+  arrange(sum_carbon) #arrange spp in descending order by representation level
+
+# convert to factor to retain order of spp
+arid_sps_37pct_comparison$species <- factor(arid_sps_37pct_comparison$species, arid_sps_37pct_comparison$species)
+arid_sps_44pct_comparison$species <- factor(arid_sps_44pct_comparison$species, arid_sps_44pct_comparison$species)
+
+#create a color gradient red to blue
+library(scales)
+n_colors <- nrow(arid_sps_37pct_comparison) #count of colors you need
+red_blue_scale <- scales::seq_gradient_pal("red","blue","Lab")(seq(0,1,length.out=n_colors))
+
+#plot CNA 37% results, arid spp
+ggplot(arid_sps_37pct_comparison, aes(x = species, y = sum_cna*100)) +
+  geom_rect(mapping = aes(xmin = -Inf, xmax = Inf, ymin = 36, ymax = 38), #based on random sampling
+            col = "grey80", fill = "grey80", alpha = 0.5) +  
+  geom_bar(aes(fill = species), stat="identity") +
+  scale_fill_manual(values=red_blue_scale) +
+  coord_flip() +
+  geom_hline(yintercept=37, linetype="dashed") +
+  theme_minimal() +
+  ylab("Percent of aridland species represented within critical natural assets") +
+  theme(legend.position = "none")
+
+#plot high carbon 44% results, arid spp
+ggplot(arid_sps_44pct_comparison, aes(x = species, y = sum_carbon*100)) +
+  geom_rect(mapping = aes(xmin = -Inf, xmax = Inf, ymin = 43, ymax = 45), #based on random sampling
+            col = "grey80", fill = "grey80", alpha = 0.5) +  
+  geom_bar(aes(fill = species), stat="identity") +
+  scale_fill_manual(values=red_blue_scale) +
+  coord_flip() +
+  geom_hline(yintercept=44, linetype="dashed") +
+  theme_minimal() +
+  ylab("Percent of aridland species represented within high carbon areas") +
+  theme(legend.position = "none")
+
+# repeat plotting for grassland species
+
+# filter grassland species
+grass_sps_37pct_comparison <- result_37pct_comparison %>%
+  filter(habitat == "Grasslands") %>%
+  arrange(sum_cna) #arrange spp in descending order by representation level
+
+grass_sps_44pct_comparison <- result_44pct_comparison %>%
+  filter(habitat == "Grasslands") %>%
+  arrange(sum_carbon) #arrange spp in descending order by representation level
+
+# convert to factor to retain order of spp
+grass_sps_37pct_comparison$species <- factor(grass_sps_37pct_comparison$species, grass_sps_37pct_comparison$species)
+grass_sps_44pct_comparison$species <- factor(grass_sps_44pct_comparison$species, grass_sps_44pct_comparison$species)
+
+#create a color gradient red to blue
+library(scales)
+n_colors <- nrow(grass_sps_37pct_comparison) #count of colors you need
+red_blue_scale <- scales::seq_gradient_pal("red","blue","Lab")(seq(0,1,length.out=n_colors))
+
+#plot CNA 37% results, grass spp
+ggplot(grass_sps_37pct_comparison, aes(x = species, y = sum_cna*100)) +
+  geom_rect(mapping = aes(xmin = -Inf, xmax = Inf, ymin = 36.5, ymax = 37.5), #based on random sampling
+            col = "grey80", fill = "grey80", alpha = 0.5) +  
+  geom_bar(aes(fill = species), stat="identity") +
+  scale_fill_manual(values=red_blue_scale) +
+  coord_flip() +
+  geom_hline(yintercept=37, linetype="dashed") +
+  theme_minimal() +
+  ylab("Percent of grassland species represented within critical natural assets") +
+  theme(legend.position = "none")
+
+#plot high carbon 44% results, grass spp
+ggplot(grass_sps_44pct_comparison, aes(x = species, y = sum_carbon*100)) +
+  geom_rect(mapping = aes(xmin = -Inf, xmax = Inf, ymin = 43.4, ymax = 44.6), #based on random sampling
+            col = "grey80", fill = "grey80", alpha = 0.5) +  
+  geom_bar(aes(fill = species), stat="identity") +
+  scale_fill_manual(values=red_blue_scale) +
+  coord_flip() +
+  geom_hline(yintercept=44, linetype="dashed") +
+  theme_minimal() +
+  ylab("Percent of grassland species represented within high carbon areas") +
+  theme(legend.position = "none")
+
+
 
 
