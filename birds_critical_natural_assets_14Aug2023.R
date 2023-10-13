@@ -50,6 +50,13 @@ beep()
 
 # plot one layer
 plot(pct_pop_per_sp_rast, "acafly") #Acadian flycatcher?
+plot(pct_pop_per_sp_rast, "arcwar1") #Arctic Warbler
+
+#double check if spp abundances all add up to 1
+# calculate sum of pixels (takes 1 minute)
+tic()
+pct_pop_per_spp_all_sum <- global(pct_pop_per_sp_rast, fun='sum', na.rm=T)
+toc()
 
 # below code only needs to be run once --------------------
 
