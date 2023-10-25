@@ -36,7 +36,6 @@ toc()
 
 # Random sampling -------------------------------------
 
-
 library(terra)
 library(sf)
 library(prioritizr)
@@ -46,38 +45,47 @@ library(tictoc) #for tracking how much time a process takes
 setwd("C:/Users/raenb/Documents/GitHub/es_birds_usa")
 
 #load raster with bird pct population per group (6 groups, for testing)
-pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
+# pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
 
 #create a blank USA sampling raster that covers full extent of all bird species TIFs
-new_US <- c(pct_pop_per_group_all, usa_raster)
+# updated with corrected bird spp layers, new_USA raster, double checked Oct 25 2023
+new_US <- c(pct_pop_per_sp_rast, new_USA)
 new_US_added <- app(new_US, "sum", na.rm = T)
 new_US_reclass <- ifel(new_US_added > 0, 1, NA)
-freq_new_USA <- freq(new_US_reclass)
 
 #save raster as TIF file
-writeRaster(new_US_reclass, "outputs/rasters/new_USA_raster.tif", overwrite=FALSE)
+writeRaster(new_US_reclass, "outputs/rasters/new_USA_raster_25Oct2023.tif", overwrite=TRUE)
+
+ext(new_US_reclass)
+ext(new_USA) #appear the same
+freq_new_US_reclass <- freq(new_US_reclass) #1086943
+freq_new_USA <- freq(new_USA) #1084595 not the same**
+new_USA <- new_US_reclass #use updated version for below
 
 #load raster with bird pct population per species, if needed (479 species)
-pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
+# pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
 
 # load blank USA raster if necessary
-usa_raster <- rast("outputs/rasters/new_usa_raster.tif")
+# new_USA <- rast("outputs/rasters/new_usa_raster_25Oct2023.tif")
 
 #check raster for a single species
 plot(pct_pop_per_sp_rast, "abetow")
 plot(pct_pop_per_sp_rast, "arcwar1")
 
 #check USA raster
-plot(usa_raster)
+plot(new_USA)
 
-FIRST <- FALSE
+# create rij matrix to make bird spp data easier to work with
+FIRST <- TRUE
 
+tic()
 if(FIRST){
-  rij <- rij_matrix(usa_raster, pct_pop_per_sp_rast)  
+  rij <- rij_matrix(new_USA, pct_pop_per_sp_rast)  #update with new_USA
   rij %>% saveRDS("data/rij.rds", compress = FALSE) 
 } else {
   rij <- readRDS("data/rij.rds")
 }
+toc()
 
 # just checking that species information sums to 1 
 # something is wrong - ***arcwar1 sums to 0***
