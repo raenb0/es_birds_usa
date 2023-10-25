@@ -1,5 +1,5 @@
 # Bird populations represented within Critical Natural Assets (CNA) areas within USA
-# Aug 14 2023
+# Oct 23 2023
 # Rachel Neugarten
 
 # Notes from Courtney:
@@ -27,21 +27,25 @@ tp_sps_sel_all_vars <- readRDS("data/tp_final_species_selection.rds") #updated w
 #bind these two tables
 sps_sel_all_vars <- rbind(biome_sps_sel_all_vars, tp_sps_sel_all_vars)
 
-pct_pop_files <- list.files("data/pct_pop_sps",
+#load corrected bird spp population abundance rasters
+pct_pop_files <- list.files("data/pct_pop_corrected", #updated file path 
                             pattern = ".tif", full.names = T) #lists spp tiffs filenames
 
-tiffs_sps <- str_extract(pct_pop_files, "(?<=pct_pop_sps\\/)(.*)(?=_a)") #simplifies tiffs names
+tiffs_sps <- str_extract(pct_pop_files, "(?<=pct_pop_corrected\\/)(.*)(?=_a)") #simplifies tiffs names, updated file path 
 tifs_path_sel <- pct_pop_files[tiffs_sps %in% sps_sel_all_vars$species_code] #selects 479 files
 sps_sel <- tiffs_sps[tiffs_sps %in% sps_sel_all_vars$species_code] #selects 479 spp
 
 pct_pop_per_sp_rast <- rast(tifs_path_sel) #creates raster
 names(pct_pop_per_sp_rast) <- sps_sel #names layers in raster by spp codes
 
-#save resulting raster (only do this once!)
-tic()
-writeRaster(pct_pop_per_sp_rast, "outputs/rasters/pct_pop_per_sp_rast.tif", overwrite=FALSE)
-toc()
-beep()
+#save resulting raster (only do this once!) #takes 7 min
+#tic()
+#writeRaster(pct_pop_per_sp_rast, "outputs/rasters/pct_pop_per_sp_rast.tif", overwrite=TRUE)
+#toc()
+#beep()
+
+#load raster if needed
+pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
 
 # check projection, resolution
 # crs(pct_pop_per_sp_rast, describe=F, proj=T) #"+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +R=6371007.181 +units=m +no_defs"
@@ -51,6 +55,7 @@ beep()
 # plot one layer
 plot(pct_pop_per_sp_rast, "acafly") #Acadian flycatcher?
 plot(pct_pop_per_sp_rast, "arcwar1") #Arctic Warbler
+plot(pct_pop_per_sp_rast, "blksco2") #Black Scoter
 
 #double check if spp abundances all add up to 1
 # calculate sum of pixels (takes 1 minute)
@@ -58,7 +63,7 @@ tic()
 pct_pop_per_spp_all_sum <- global(pct_pop_per_sp_rast, fun='sum', na.rm=T)
 toc()
 
-# below code only needs to be run once --------------------
+
 
 # load the CNA layer (local NCP, 90% target, prioritized within USA) -----------------
 cna <- rast("data/critical_natural_assets/solution_scenario-A_usa_target-90.tif")
@@ -79,7 +84,11 @@ res(cna_3km) #2962.809 good
 plot(cna_3km) #looks distorted but matches bird data
 ext(cna_3km) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax) #matches bird data
 
-# load CNA for USA, 5%-95% targets, summed (for visualization) ---------------------
+#write to raster
+writeRaster(cna_3km, "outputs/rasters/cna_3km.tif", overwrite=TRUE)
+
+
+# load CNA for USA, 5%-95% targets, summed (for visualization only) ---------------------
 cna_usa_sum <- rast("data/critical_natural_assets/usa_targets_5_95_sum.tif")
 plot(cna_usa_sum) #includes offshore territories
 
@@ -94,19 +103,29 @@ plot(cna_usa_sum_crop) #looks good
 #writeRaster(cna_usa_90_crop, "outputs/rasters/cna_usa_90_crop.tif", overwrite=F)
 #writeRaster(cna_usa_sum_crop, "outputs/rasters/cna_usa_sum_crop.tif", overwrite=F)
 
-# mask bird data with CNA 90% target data (takes a few minutes) -------------------
+
+
+# mask bird data with CNA 90% target data (takes 10 minutes) -------------------
+#note this includes the non-cropped version to ensure we don't lose coastal areas
 tic()
 pct_pop_mask <- mask(pct_pop_per_sp_rast, cna_3km, maskvalues=c(0,NA)) #trying to mask in values=1 only
 toc()
 beep()
 
 plot(pct_pop_mask, "acafly")
+plot(pct_pop_mask, "arcwar1")
+plot(pct_pop_mask, "blksco2")
 
-#save masked version (takes 2 min)
+#save masked version (takes 4 min) #only do this once
 tic()
-writeRaster(pct_pop_mask, "outputs/rasters/pct_pop_mask_cna.tif", overwrite=T)
+writeRaster(pct_pop_mask, "outputs/rasters/pct_pop_mask_cna.tif", overwrite=TRUE)
 toc()
 beep()
+
+#load data if necessary
+pct_pop_mask <- rast("outputs/rasters/pct_pop_mask_cna.tif")
+
+
 
 # group bird tifs by guild, unmasked version ----------------
 
@@ -114,6 +133,7 @@ beep()
 
 sps_groups <- unique(sps_sel_all_vars$sps_groups)
 
+tic()
 pct_pop_per_group_list_all <- lapply(sps_groups,
                                      function(group_name){
                                        group_sps <- subset(
@@ -125,6 +145,7 @@ pct_pop_per_group_list_all <- lapply(sps_groups,
                                        pct_sps_per_group_cell <- app(group_raster, "sum", na.rm = T)
                                        return(pct_sps_per_group_cell)
                                      })
+toc()
 names(pct_pop_per_group_list_all) <- sps_groups
 
 #rasterize
@@ -152,7 +173,9 @@ plot(pct_pop_per_group_all, "Tipping Point", main="Tipping Point bird population
 pct_pop_per_group_all_sum <- global(pct_pop_per_group_all, fun='sum', na.rm=T)
 pct_pop_per_group_all_sum <- tibble::rownames_to_column(pct_pop_per_group_all_sum, "Guild")
 
+
 # re-project bird guild data to Eckert IV (for visualization) -----------
+# note I did NOT re-run this for corrected bird spp data***
 
 # load rasters if necessary
 pct_pop_per_group_all <- rast("outputs/rasters/pct_pop_per_group_all.tif")
@@ -181,6 +204,8 @@ plot(pct_pop_per_group_eck4, "Tipping Point", main="Tipping Point bird populatio
 writeRaster(pct_pop_per_group_eck4, "outputs/rasters/pct_pop_per_group_eck4.tif", overwrite=TRUE)
 pct_pop_per_group_eck4
 
+
+
 # group bird tifs, masked to CNA, by guild -----------------------
 
 # load bird tifs raster, masked to CNA, if necessary
@@ -188,7 +213,7 @@ pct_pop_mask <- rast("outputs/rasters/pct_pop_mask_cna.tif")
 
 sps_groups <- unique(sps_sel_all_vars$sps_groups)
 
-tic()
+tic() #takes 2 min
 pct_pop_per_group_list_cna <- lapply(sps_groups,
                                   function(group_name){
                                     group_sps <- subset(
@@ -222,6 +247,7 @@ plot(pct_pop_per_group_cna, "Tipping Point", main="Sum of Tipping Point bird pop
 
 
 # re-project bird guild data, masked to CNA, to Eckert IV (for visualization) -----------
+#note I did not re-run this for corrected bird spp data***
 
 # load data if necessary
 pct_pop_per_group_cna <- rast("outputs/rasters/pct_pop_per_group_cna.tif")
@@ -250,6 +276,7 @@ pct_pop_per_group_cna_eck4
 library(terra)
 library(tictoc)
 library(beepr)
+library(tidyverse)
 
 # load bird tifs raster, masked to CNA, if necessary
 pct_pop_mask <- rast("outputs/rasters/pct_pop_mask_cna.tif")
@@ -263,7 +290,7 @@ pct_pop_per_spp_cna_sum <- tibble::rownames_to_column(pct_pop_per_spp_cna_sum, "
 pct_pop_per_spp_cna_sum <- pct_pop_per_spp_cna_sum %>%
   rename("sum_cna" = "sum") #rename "sum" to "sum_cna" for clarity
 
-write_csv(pct_pop_per_spp_cna_sum, "outputs/pct_pop_per_spp_cna_sum.csv") #save to csv
+write_csv(pct_pop_per_spp_cna_sum, "outputs/pct_pop_per_spp_cna_sum_23Oct2023.csv") #save to csv
 
 
 # calculate the pct of each guild population contained with CNA areas --------------
@@ -324,8 +351,8 @@ sel_species <- raster_names[raster_names %in% tipping_pt_spp] #select tipping pt
 spp_raster <- subset(pct_pop_mask, sel_species) #subset tipping pt spp rasters only
 pct_pop_tipping_pt_spp_cna <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for tipping pt spp
 pct_pop_tipping_pt_spp_cna <- tibble::rownames_to_column(pct_pop_tipping_pt_spp_cna, "species_code")
-library(tidyverse)
-write_csv(pct_pop_tipping_pt_spp_cna, "outputs/pct_pop_tipping_pt_spp_cna.csv")
+
+write_csv(pct_pop_tipping_pt_spp_cna, "outputs/pct_pop_tipping_pt_spp_cna_23Oct2023.csv")
 
 # skip the above step and load original tipping pt csv
 #pct_pop_tipping_pt_spp_cna <- read_csv("outputs/pct_pop_tipping_pt_spp_cna.csv")
@@ -340,7 +367,7 @@ spp_raster <- subset(pct_pop_mask, sel_species) #subset forest spp rasters only
 pct_pop_forest_spp_cna <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for forest spp
 pct_pop_forest_spp_cna <- tibble::rownames_to_column(pct_pop_forest_spp_cna, "species_code")
 
-write_csv(pct_pop_forest_spp_cna, "outputs/pct_pop_forest_spp_cna.csv")
+write_csv(pct_pop_forest_spp_cna, "outputs/pct_pop_forest_spp_cna_23Oct2023.csv")
 
 # calculate pct of population within CNA for all Grassland spp ------------------
 #NOTE overwrites objects with same names
@@ -352,7 +379,7 @@ spp_raster <- subset(pct_pop_mask, sel_species)
 pct_pop_grassland_spp_cna <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for grassland spp
 pct_pop_grassland_spp_cna <- tibble::rownames_to_column(pct_pop_grassland_spp_cna, "species_code")
 
-write_csv(pct_pop_grassland_spp_cna, "outputs/pct_pop_grassland_spp_cna.csv")
+write_csv(pct_pop_grassland_spp_cna, "outputs/pct_pop_grassland_spp_cna_23Oct2023.csv")
 
 # calculate pct of population within CNA for all Aridland spp ------------------
 #NOTE overwrites objects with same names
@@ -364,7 +391,7 @@ spp_raster <- subset(pct_pop_mask, sel_species)
 pct_pop_aridland_spp_cna <- global(spp_raster, fun='sum', na.rm=T)
 pct_pop_aridland_spp_cna <- tibble::rownames_to_column(pct_pop_aridland_spp_cna, "species_code")
 
-write_csv(pct_pop_aridland_spp_cna, "outputs/pct_pop_aridland_spp_cna.csv")
+write_csv(pct_pop_aridland_spp_cna, "outputs/pct_pop_aridland_spp_cna_23Oct2023.csv")
 
 # calculate pct of population within CNA for all Wetland spp ------------------
 #NOTE overwrites objects with same names
@@ -376,7 +403,7 @@ spp_raster <- subset(pct_pop_mask, sel_species)
 pct_pop_wetland_spp_cna <- global(spp_raster, fun='sum', na.rm=T)
 pct_pop_wetland_spp_cna <- tibble::rownames_to_column(pct_pop_wetland_spp_cna, "species_code")
 
-write_csv(pct_pop_wetland_spp_cna, "outputs/pct_pop_wetland_spp_cna.csv")
+write_csv(pct_pop_wetland_spp_cna, "outputs/pct_pop_wetland_spp_cna_23Oct2023.csv")
 
 # calculate pct of population within CNA for all Habitat Generalist spp ------------------
 #NOTE overwrites objects with same names
@@ -388,10 +415,11 @@ spp_raster <- subset(pct_pop_mask, sel_species)
 pct_pop_generalist_spp_cna <- global(spp_raster, fun='sum', na.rm=T)
 pct_pop_generalist_spp_cna <- tibble::rownames_to_column(pct_pop_generalist_spp_cna, "species_code")
 
-write_csv(pct_pop_generalist_spp_cna, "outputs/pct_pop_generalist_spp_cna.csv")
+write_csv(pct_pop_generalist_spp_cna, "outputs/pct_pop_generalist_spp_cna_23Oct2023.csv")
 
 
 # calculate percent of spp that are >37 >50 >75 pct represented ---------------
+# note I did NOT re-run this code with corrected spp data
 library(tidyverse)
 
 # load data if necessary

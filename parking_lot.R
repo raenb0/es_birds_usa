@@ -1,5 +1,410 @@
 # parking lot code
 
+
+# calculate mean, SD, and confidence intervals
+
+#load data if necessary
+library(tidyverse)
+
+#load random sampling data, all species, all iterations
+result_10pct <- read_csv("outputs/random_sampling_result_10pct_100runs.csv") #test, only 100 runs
+result_44pct <- read_csv("outputs/random_sampling_result_44pct.csv") #1000 runs
+result_37pct <- read_csv("outputs/random_sampling_result_37pct.csv") #1000 runs
+
+# calculate mean and SD for each species, 10pct results -------------------
+
+#first, pivot 10pct results longer
+result_10pct_longer <- pivot_longer(result_10pct, cols=iteration1:iteration100, names_to="iteration", values_to="value")
+
+result_10pct_mean_sd <- result_10pct_longer %>%
+  group_by(species) %>%
+  summarize(avg=mean(value, na.rm=T), stdev=sd(value, na.rm=T)) 
+
+# add confidence intervals
+result_10pct_mean_sd_confint <- result_10pct_mean_sd %>%
+  mutate(lower95 = avg - (1.96*stdev), upper95 = avg + (1.96*stdev))
+
+write_csv(result_10pct_mean_sd_confint, "outputs/random_sampling_result_10pct_100runs_mean_sd_confint.csv")
+
+# calculate mean and SD for each species, 44pct results -------------------
+#first, pivot 44pct results longer
+result_44pct_longer <- pivot_longer(result_44pct, cols=iteration1:iteration1000, names_to="iteration", values_to="value")
+
+result_44pct_mean_sd <- result_44pct_longer %>%
+  group_by(species) %>%
+  summarize(avg=mean(value, na.rm=T), stdev=sd(value, na.rm=T)) 
+
+# add confidence intervals
+result_44pct_mean_sd_confint <- result_44pct_mean_sd %>%
+  mutate(lower95 = avg - (1.96*stdev), upper95 = avg + (1.96*stdev))
+
+write_csv(result_44pct_mean_sd_confint, "outputs/random_sampling_result_44pct_mean_sd_confint.csv")
+
+#calculate mean and SD for each species, 37pct results ------------------
+result_37pct_longer <- pivot_longer(result_37pct, cols=iteration1:iteration1000, names_to="iteration", values_to="value")
+
+result_37pct_mean_sd <- result_37pct_longer %>%
+  group_by(species) %>%
+  summarize(avg=mean(value, na.rm=T), stdev=sd(value, na.rm=T)) 
+
+# add confidence intervals
+result_37pct_mean_sd_confint <- result_37pct_mean_sd %>%
+  mutate(lower95 = avg - (1.96*stdev), upper95 = avg + (1.96*stdev))
+
+write_csv(result_37pct_mean_sd_confint, "outputs/random_sampling_result_37pct_mean_sd_confint.csv")
+
+
+# read in tables with habitat groups, tipping point spp
+library(tidyverse)
+biome_sps_vars <- readRDS("data/biome_final_species_selection.rds") #updated with biome groups
+tp_sps_vars <- readRDS("data/tp_final_species_selection.rds") #updated with tipping point spp
+
+#select only columns of interest
+names(biome_sps_vars)
+biome_sps <- biome_sps_vars %>%
+  dplyr::select(species_code, sps_groups)
+tp_sps <- tp_sps_vars %>%
+  dplyr::select(species_code, sps_groups)
+
+#join biome and tipping point columns to results tables
+
+# 10% results
+result_10pct_mean_sd_biomes <- left_join(result_10pct_mean_sd, biome_sps,  #add habitats
+                                         by=join_by(species == species_code))
+result_10pct_mean_sd_biomes <- left_join(result_10pct_mean_sd_biomes, tp_sps, #add TP species
+                                         by=join_by(species==species_code))
+result_10pct_mean_sd_biomes <- rename(result_10pct_mean_sd_biomes, 
+                                      habitat=sps_groups.x, 
+                                      tipping_pt = sps_groups.y)
+
+write_csv(result_10pct_mean_sd_biomes, "outputs/random_sampling_result_10pct_mean_sd_biomes.csv")
+
+# repeat for 44% results
+result_44pct_mean_sd_biomes <- left_join(result_44pct_mean_sd, biome_sps,  #add habitats
+                                         by=join_by(species == species_code))
+result_44pct_mean_sd_biomes <- left_join(result_44pct_mean_sd_biomes, tp_sps,  #add TP species
+                                         by=join_by(species==species_code))
+result_44pct_mean_sd_biomes <- rename(result_44pct_mean_sd_biomes, 
+                                      habitat=sps_groups.x, 
+                                      tipping_pt = sps_groups.y)
+
+write_csv(result_44pct_mean_sd_biomes, "outputs/random_sampling_result_44pct_mean_sd_biomes.csv")
+
+#repeat for 37% results
+result_37pct_mean_sd_biomes <- left_join(result_37pct_mean_sd, biome_sps,  #add habitats
+                                         by=join_by(species == species_code))
+result_37pct_mean_sd_biomes <- left_join(result_37pct_mean_sd_biomes, tp_sps, #add TP species
+                                         by=join_by(species==species_code))
+result_37pct_mean_sd_biomes <- rename(result_37pct_mean_sd_biomes, 
+                                      habitat=sps_groups.x, 
+                                      tipping_pt = sps_groups.y)
+
+write_csv(result_37pct_mean_sd_biomes_tp, "outputs/random_sampling_result_37pct_mean_sd_biomes.csv")
+
+#join species results with habitat data, confidence intervals --------------
+
+#load data if necessary
+result_37pct_mean_sd_confint <- read_csv("outputs/random_sampling_result_37pct_mean_sd_confint.csv")
+result_44pct_mean_sd_confint <- read_csv("outputs/random_sampling_result_44pct_mean_sd_confint.csv")
+result_37pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_37pct_mean_sd_biomes.csv")
+result_44pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_44pct_mean_sd_biomes.csv")
+
+
+# select columns of interest and join tables
+names(result_37pct_mean_sd_biomes)
+result_37pct_biomes <- result_37pct_mean_sd_biomes %>%
+  select(species, habitat, tipping_pt)
+result_37pct_join <- left_join(result_37pct_mean_sd_confint, result_37pct_biomes, by="species")
+
+result_44pct_biomes <- result_44pct_mean_sd_biomes %>%
+  select(species, habitat, tipping_pt)
+result_44pct_join <- left_join(result_44pct_mean_sd_confint, result_44pct_biomes, by="species")
+
+write_csv(result_37pct_join, "outputs/random_sampling_result_37pct_mean_sd_confint_biomes.csv")
+write_csv(result_44pct_join, "outputs/random_sampling_result_44pct_mean_sd_confint_biomes.csv")
+
+#summarize 10% results by habitat
+
+#load data if necessary
+result_10pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_10pct_mean_sd_biomes.csv")
+
+result_10pct_habitat <- result_10pct_mean_sd_biomes %>%
+  group_by(habitat) %>%
+  summarize(avg_representation = mean(avg),
+            stdev_representation = mean(stdev)) #ask Courtney: is this right? the mean of the standard deviations of the species in that habitat group?
+
+write_csv(result_10pct_habitat, "outputs/random_sampling_result_10pct_habitat_group.csv")
+
+#summarize 44% results by habitat
+
+#load data if necessary
+result_44pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_44pct_mean_sd_biomes.csv")
+
+result_44pct_habitat <- result_44pct_mean_sd_biomes %>%
+  group_by(habitat) %>%
+  summarize(avg_representation = mean(avg),
+            stdev_representation = mean(stdev)) #ask Courtney: is this right? the mean of the standard deviations of the species in that habitat group?
+
+write_csv(result_44pct_habitat, "outputs/random_sampling_result_44pct_habitat_group.csv")
+
+#summarize 37% results by habitat
+
+#load data if necessary
+result_37pct_mean_sd_biomes <- read_csv("outputs/random_sampling_result_37pct_mean_sd_biomes.csv")
+
+result_37pct_habitat <- result_37pct_mean_sd_biomes %>%
+  group_by(habitat) %>%
+  summarize(avg_representation = mean(avg),
+            stdev_representation = mean(stdev)) #ask Courtney: is this right? the mean of the standard deviations of the species in that habitat group?
+
+write_csv(result_37pct_habitat, "outputs/random_sampling_result_37pct_habitat_group.csv")
+
+# # identify top 30% of USA land areas, by carbon value ------------------
+# 
+# # calculate how much land area is 30% of area of USA
+# area_usa_30pct <- 0.3*area_usa
+# area_usa_30pct # 2,831,240 sq km
+# 
+# # calculate how many 2km x 2km pixels this is
+# area_usa_30pct / 4 #707810 2km pixels
+# 
+# #identify which carbon value corresponds to the 707810th pixel
+# vuln_carbon_usa_df_sort$vuln_carbon_usa[707810] #51 tonnes (threshold for top30)
+# 
+# # reclassify USA vulnerable carbon to include only pixels with value greater than 51 (threshold)
+# range(vuln_carbon_usa) #0, 535
+# m30 <- c(0, 51, 0) #reclassify values from 0 to 51 to be 0, all other values left alone
+# rcl_matrix30 <- matrix(m30, ncol=3, byrow=TRUE) #convert to a matrix
+# vuln_carbon_usa_top30 <- classify(vuln_carbon_usa, rcl_matrix30, include.lowest=TRUE)
+# 
+# #look at result
+# plot(vuln_carbon_usa, axes=F, main="Vulnerable carbon in USA (tonnes/ha)")
+# plot(vuln_carbon_usa_top30, axes=F, main="Top 30% of land area for vulnerable carbon (tonnes / ha)")
+# 
+# # save raster representing top 30% of land area for USA vulnerable carbon
+# writeRaster(vuln_carbon_usa_top30, "outputs/rasters/vuln_carbon_usa_top30.tif", overwrite=T)
+# 
+# # calculate how much carbon this represents
+# sum_vuln_carbon_usa_top30 <- global(vuln_carbon_usa_top30, fun="sum",  na.rm=TRUE)
+# sum_vuln_carbon_usa_top30 <- sum_vuln_carbon_usa_top30[1,1]
+# sum_vuln_carbon_usa_top30 #60461519 tonnes
+# sum_vuln_carbon_usa_top30 / sum_vuln_carbon_usa #0.7246803 so 72.5% of vulnerable caron
+# 
+# # reclassify top 30% of land areas for vulnerable carbon to 0/1 to use for masking bird data
+# range(vuln_carbon_usa_top30) #0, 535
+# m2 <- c(1, 535, 1) #reclassify values from 1 to 535 to be 1, leave other values alone
+# rcl_matrix2 <- matrix(m2, ncol=3, byrow=TRUE) #convert to a matrix
+# vuln_carbon_usa_top30_binary <- classify(vuln_carbon_usa_top30, rcl_matrix2, include.lowest=TRUE)
+# plot(vuln_carbon_usa_top30_binary, axes=F, main="Top 30% of land areas for vulnerable carbon") #looks good
+# 
+# # save raster representing top30 of USA vulnerable carbon (0/1 version)
+# writeRaster(vuln_carbon_usa_top30_binary, "outputs/rasters/vuln_carbon_usa_top30_binary.tif", overwrite=T)
+# 
+# #check area
+# #area_usa <- expanse(usa_vect, unit = "km")
+# #area_usa #9,437,467 sq km  Google says: 9.147 to 9.834 million km2 so close enough
+# area_vuln_carbon_top30_binary <- expanse(vuln_carbon_usa_top30_binary, byValue=TRUE, unit = "km") # takes a minute, byValue gives you area of 0, 1
+# beep()
+# area_vuln_carbon_top30 <- area_vuln_carbon_top30_binary[2,3]
+# area_vuln_carbon_top30 <- unname(area_vuln_carbon_top30) #removes name
+# area_vuln_carbon_top30 # 2800423
+# area_vuln_carbon_top30 / area_usa #0.2967347 or 29.7% close enough
+
+
+
+# ## group bird spp by habitat groups within top 30% of land area for carbon
+# sps_groups <- unique(sps_sel_all_vars$sps_groups)
+# 
+# tic()
+# pct_pop_per_group_list_carbon_top30 <- lapply(sps_groups,
+#                                               function(group_name){
+#                                                 group_sps <- subset(
+#                                                   sps_sel_all_vars, sps_groups == group_name)$species_code |> 
+#                                                   sort()
+#                                                 raster_names <- names(pct_pop_carbon_top30_mask) #replace this raster
+#                                                 sel_species <- raster_names[raster_names %in% group_sps]
+#                                                 group_raster <- subset(pct_pop_carbon_top30_mask, sel_species) #replace this raster
+#                                                 pct_sps_per_group_cell <- app(group_raster, "sum", na.rm = T)
+#                                                 return(pct_sps_per_group_cell)
+#                                               })
+# names(pct_pop_per_group_list_carbon_top30) <- sps_groups
+# toc()
+# beep()
+# 
+# # rasterize
+# pct_pop_per_group_carbon_top30 <- rast(pct_pop_per_group_list_carbon_top30)
+# 
+# # save resulting raster
+# writeRaster(pct_pop_per_group_carbon_top30, "outputs/rasters/pct_pop_per_guild_carbon_top30.tif", overwrite=TRUE)
+
+
+
+
+
+# # repeat for top 30% of land areas for carbon ---------------
+# 
+# # pct pop of tipping point spp within top 30% carbon areas
+# 
+# tipping_pt_spp <- unique(sps_vars_tipping_point$species_code) #unique tipping pt spp codes
+# raster_names <- names(pct_pop_carbon_top30_mask) #masked to 90% carbon areas
+# sel_species <- raster_names[raster_names %in% tipping_pt_spp] #select tipping pt spp
+# spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species) #subset tipping pt spp rasters only
+# pct_pop_tipping_pt_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for tipping pt spp
+# pct_pop_tipping_pt_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_tipping_pt_spp_carbon_top30, "species_code")
+# 
+# write_csv(pct_pop_tipping_pt_spp_carbon_top30, "outputs/pct_pop_tipping_pt_spp_carbon_top30.csv")
+# 
+# # pct pop of forest spp within top 30% carbon areas #NOTE overwrites objects
+# 
+# forest_spp <- unique(sps_vars_forest$species_code) #unique forest spp codes
+# raster_names <- names(pct_pop_carbon_top30_mask) #masked to 90% carbon areas
+# sel_species <- raster_names[raster_names %in% forest_spp] #select forest spp
+# spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species) #subset forest spp rasters only
+# pct_pop_forest_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T) #calculate sum for forest spp
+# pct_pop_forest_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_forest_spp_carbon_top30, "species_code")
+# 
+# write_csv(pct_pop_forest_spp_carbon_top30, "outputs/pct_pop_forest_spp_carbon_top30.csv")
+# 
+# # pct pop of grassland spp within top 30% carbon areas #NOTE overwrites objects
+# 
+# grassland_spp <- unique(sps_vars_grassland$species_code)
+# raster_names <- names(pct_pop_carbon_top30_mask)
+# sel_species <- raster_names[raster_names %in% grassland_spp]
+# spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species)
+# pct_pop_grassland_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T)
+# pct_pop_grassland_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_grassland_spp_carbon_top30, "species_code")
+# 
+# write_csv(pct_pop_grassland_spp_carbon_top30, "outputs/pct_pop_grassland_spp_carbon_top30.csv")
+# 
+# # pct pop of aridland spp within top 30% carbon areas #NOTE overwrites objects
+# 
+# aridland_spp <- unique(sps_vars_aridland$species_code)
+# raster_names <- names(pct_pop_carbon_top30_mask)
+# sel_species <- raster_names[raster_names %in% aridland_spp]
+# spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species)
+# pct_pop_aridland_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T)
+# pct_pop_aridland_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_aridland_spp_carbon_top30, "species_code")
+# 
+# write_csv(pct_pop_aridland_spp_carbon_top30, "outputs/pct_pop_aridland_spp_carbon_top30.csv")
+# 
+# # pct pop of wetland spp within top 30% carbon areas #NOTE overwrites objects
+# 
+# wetland_spp <- unique(sps_vars_wetland$species_code)
+# raster_names <- names(pct_pop_carbon_top30_mask)
+# sel_species <- raster_names[raster_names %in% wetland_spp]
+# spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species)
+# pct_pop_wetland_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T)
+# pct_pop_wetland_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_wetland_spp_carbon_top30, "species_code")
+# 
+# write_csv(pct_pop_wetland_spp_carbon_top30, "outputs/pct_pop_wetland_spp_carbon_top30.csv")
+# 
+# # pct pop of generalist spp within top 30% carbon areas #NOTE overwrites objects
+# 
+# generalist_spp <- unique(sps_vars_generalist$species_code)
+# raster_names <- names(pct_pop_carbon_top30_mask)
+# sel_species <- raster_names[raster_names %in% generalist_spp]
+# spp_raster <- subset(pct_pop_carbon_top30_mask, sel_species)
+# pct_pop_generalist_spp_carbon_top30 <- global(spp_raster, fun='sum', na.rm=T)
+# pct_pop_generalist_spp_carbon_top30 <- tibble::rownames_to_column(pct_pop_generalist_spp_carbon_top30, "species_code")
+# 
+# write_csv(pct_pop_generalist_spp_carbon_top30, "outputs/pct_pop_generalist_spp_carbon_top30.csv")
+
+
+# # repeat for top 30% of areas for carbon -----------------
+# # calculate percent of spp that are >90 >75 >50 pct represented
+# 
+# # tipping point spp
+# pct_pop_tipping_pt_spp_carbon_top30 <- pct_pop_tipping_pt_spp_carbon_top30 %>%
+#   mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+#   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+#   mutate(more50 = ifelse(sum>0.5,1,0))
+# 
+# summary_tipping_pt_spp_carbon_top30 <- pct_pop_tipping_pt_spp_carbon_top30 %>%
+#   summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+#   mutate(guild="tipping_point")
+# 
+# # forest spp
+# pct_pop_forest_spp_carbon_top30 <- pct_pop_forest_spp_carbon_top30 %>%
+#   mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+#   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+#   mutate(more50 = ifelse(sum>0.5,1,0))
+# 
+# summary_forest_spp_carbon_top30 <- pct_pop_forest_spp_carbon_top30 %>%
+#   summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+#   mutate(guild="forest")
+# 
+# # grassland spp
+# pct_pop_grassland_spp_carbon_top30 <- pct_pop_grassland_spp_carbon_top30 %>%
+#   mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+#   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+#   mutate(more50 = ifelse(sum>0.5,1,0))
+# 
+# summary_grassland_spp_carbon_top30 <- pct_pop_grassland_spp_carbon_top30 %>%
+#   summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+#   mutate(guild="grassland")
+# 
+# # aridland spp
+# pct_pop_aridland_spp_carbon_top30 <- pct_pop_aridland_spp_carbon_top30 %>%
+#   mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+#   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+#   mutate(more50 = ifelse(sum>0.5,1,0))
+# 
+# summary_aridland_spp_carbon_top30 <- pct_pop_aridland_spp_carbon_top30 %>%
+#   summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+#   mutate(guild="aridland")
+# 
+# # wetland spp
+# pct_pop_wetland_spp_carbon_top30 <- pct_pop_wetland_spp_carbon_top30 %>%
+#   mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+#   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+#   mutate(more50 = ifelse(sum>0.5,1,0))
+# 
+# summary_wetland_spp_carbon_top30 <- pct_pop_wetland_spp_carbon_top30 %>%
+#   summarize(more90 = mean(more90, na.rm=T), more75 = mean(more75, na.rm=T), more50 = mean(more50, na.rm=T)) %>%
+#   mutate(guild="wetland")
+# 
+# # generalist spp
+# pct_pop_generalist_spp_carbon_top30 <- pct_pop_generalist_spp_carbon_top30 %>%
+#   mutate(more90 = ifelse(sum>0.9,1,0)) %>%
+#   mutate(more75 = ifelse(sum>0.75,1,0)) %>%
+#   mutate(more50 = ifelse(sum>0.5,1,0))
+# 
+# summary_generalist_spp_carbon_top30 <- pct_pop_generalist_spp_carbon_top30 %>%
+#   summarize(more90 = mean(more90), more75 = mean(more75), more50 = mean(more50)) %>%
+#   mutate(guild="generalist")
+# 
+# # combine rows into single table
+# summary_pct_pop_guild_carbon_top30 <- rbind(summary_tipping_pt_spp_carbon_top30, summary_forest_spp_carbon_top30, summary_grassland_spp_carbon_top30, summary_aridland_spp_carbon_top30, summary_wetland_spp_carbon_top30, summary_generalist_spp_carbon_top30)
+# 
+# write_csv(summary_pct_pop_guild_carbon_top30, "outputs/summary_pct_pop_guild_carbon_top30.csv")
+# 
+# # pivot to make tidy and plot top30 results
+# library(ggplot2)
+# 
+# #load data if necessary
+# summary_pct_pop_guild_carbon_top30 <- read_csv("outputs/summary_pct_pop_guild_carbon_top30.csv")
+# 
+# # make mutually exclusive categories for stacked bar chart
+# summary_pct_pop_top30_mutuallyexclusive <- summary_pct_pop_guild_carbon_top30 %>%
+#   mutate(more50_only = more50 - more75, more75_only = more75 - more90)
+# summary_pct_pop_top30_select <- summary_pct_pop_top30_mutuallyexclusive %>%
+#   select(guild, more50_only, more75_only, more90)
+# 
+# summary_longer_top30 <- pivot_longer(summary_pct_pop_top30_select, cols=2:4, names_to="category", values_to="pct_spp") #check column numbers!
+# 
+# plot_top30 <- ggplot(summary_longer_top30, aes(x=guild, y=pct_spp, fill=category)) +
+#   geom_bar(stat="identity", position="stack") +
+#   ggtitle("Percent of species represented within top 30% of areas for vulnerable carbon") +
+#   xlab("Guild") +
+#   ylab("Percent of species") +
+#   scale_fill_discrete(labels=c('More than 50%', 'More than 75%', 'More than 90%')) +
+#   scale_y_continuous(labels = scales::percent) +
+#   theme_minimal() +
+#   theme(legend.title=element_blank())
+# plot_top30
+
+
+
 # Create an empty dataframe to store the results
 guild_results_cna <- data.frame(Guild = character(), sum = numeric(), stringsAsFactors = FALSE)
 
