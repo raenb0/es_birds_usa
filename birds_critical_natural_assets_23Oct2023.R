@@ -39,10 +39,10 @@ pct_pop_per_sp_rast <- rast(tifs_path_sel) #creates raster
 names(pct_pop_per_sp_rast) <- sps_sel #names layers in raster by spp codes
 
 #save resulting raster (only do this once!) #takes 7 min
-#tic()
-#writeRaster(pct_pop_per_sp_rast, "outputs/rasters/pct_pop_per_sp_rast.tif", overwrite=TRUE)
-#toc()
-#beep()
+tic()
+writeRaster(pct_pop_per_sp_rast, "outputs/rasters/pct_pop_per_sp_rast.tif", overwrite=TRUE)
+toc()
+beep()
 
 #load raster if needed
 pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
