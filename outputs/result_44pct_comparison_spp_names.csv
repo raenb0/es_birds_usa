@@ -1,0 +1,480 @@
+species_code,common_name,scientific_name,avg,stdev,lower95,upper95,habitat,tipping_pt,sum_carbon,over_upper95,under_lower95
+comred,Common Redpoll,Acanthis flammea,44.0%,0.10%,43.8%,44.2%,Water/wetland,NA,34.4%,0,1
+hoared,Hoary Redpoll,Acanthis hornemanni,43.8%,0.20%,43.4%,44.2%,Water/wetland,NA,6.8%,0,1
+coohaw,Cooper's Hawk,Accipiter cooperii,44.0%,0.05%,43.9%,44.1%,Forest,NA,41.6%,0,1
+norgos,Northern Goshawk,Accipiter gentilis,44.0%,0.09%,43.8%,44.1%,Forest,NA,33.9%,0,1
+shshaw,Sharp-shinned Hawk,Accipiter striatus,44.0%,0.06%,43.9%,44.1%,Forest,NA,52.0%,1,0
+sposan,Spotted Sandpiper,Actitis macularius,44.0%,0.07%,43.8%,44.1%,Water/wetland,NA,34.5%,0,1
+clagre,Clark's Grebe,Aechmophorus clarkii,44.0%,1.38%,41.3%,46.8%,Water/wetland,Tipping Point,26.8%,0,1
+wesgre,Western Grebe,Aechmophorus occidentalis,43.5%,1.21%,41.2%,45.9%,Water/wetland,Tipping Point,48.4%,1,0
+nswowl,Northern Saw-whet Owl,Aegolius acadicus,44.0%,0.15%,43.7%,44.3%,Forest,NA,75.1%,1,0
+whtswi,White-throated Swift,Aeronautes saxatalis,44.0%,0.19%,43.6%,44.4%,Aridlands,NA,32.8%,0,1
+rewbla,Red-winged Blackbird,Agelaius phoeniceus,44.0%,0.68%,42.7%,45.3%,Habitat Generalist,NA,31.1%,0,1
+tribla,Tricolored Blackbird,Agelaius tricolor,44.0%,1.93%,40.3%,47.8%,Water/wetland,Tipping Point,3.0%,0,1
+rucspa,Rufous-crowned Sparrow,Aimophila ruficeps,44.0%,0.36%,43.3%,44.7%,Aridlands,NA,20.8%,0,1
+wooduc,Wood Duck,Aix sponsa,44.0%,0.08%,43.8%,44.2%,Water/wetland,NA,47.7%,1,0
+graspa,Grasshopper Sparrow,Ammodramus savannarum,44.0%,0.11%,43.8%,44.2%,Grasslands,NA,52.5%,1,0
+lecspa,LeConte's Sparrow,Ammospiza leconteii,44.0%,0.19%,43.6%,44.4%,Grasslands,Tipping Point,25.2%,0,1
+nstspa,Nelson's Sparrow,Ammospiza nelsoni,43.9%,0.26%,43.4%,44.4%,Water/wetland,NA,24.9%,0,1
+bktspa,Black-throated Sparrow,Amphispiza bilineata,44.0%,0.17%,43.7%,44.3%,Aridlands,NA,2.1%,0,1
+norpin,Northern Pintail,Anas acuta,43.9%,0.21%,43.5%,44.3%,Water/wetland,NA,26.1%,0,1
+gnwtea,Green-winged Teal,Anas crecca,43.9%,0.31%,43.3%,44.6%,Water/wetland,NA,25.3%,0,1
+motduc,Mottled Duck,Anas fulvigula,43.6%,0.77%,42.1%,45.1%,Water/wetland,Tipping Point,46.5%,1,0
+mallar3,Mallard,Anas platyrhynchos,43.9%,0.31%,43.3%,44.5%,Water/wetland,NA,37.7%,0,1
+ambduc,American Black Duck,Anas rubripes,43.7%,0.86%,42.0%,45.4%,Water/wetland,NA,56.2%,1,0
+anhing,Anhinga,Anhinga anhinga,44.0%,0.36%,43.3%,44.7%,Water/wetland,NA,59.2%,1,0
+gwfgoo,Greater White-fronted Goose,Anser albifrons,44.0%,0.21%,43.6%,44.4%,Water/wetland,NA,15.2%,0,1
+snogoo,Snow Goose,Anser caerulescens,44.0%,0.28%,43.4%,44.5%,Water/wetland,NA,27.8%,0,1
+rosgoo,Ross's Goose,Anser rossii,44.0%,0.46%,43.1%,44.9%,Water/wetland,NA,21.4%,0,1
+amepip,American Pipit,Anthus rubescens,44.0%,0.09%,43.8%,44.1%,Water/wetland,NA,25.3%,0,1
+sprpip,Sprague's Pipit,Anthus spragueii,44.0%,0.20%,43.6%,44.4%,Grasslands,Tipping Point,43.3%,0,1
+sancra,Sandhill Crane,Antigone canadensis,44.0%,0.31%,43.4%,44.6%,Water/wetland,NA,26.0%,0,1
+chwwid,Chuck-will's-widow,Antrostomus carolinensis,44.0%,0.17%,43.7%,44.3%,Forest,NA,71.0%,1,0
+easwpw1,Eastern Whip-poor-will,Antrostomus vociferus,44.0%,0.21%,43.6%,44.4%,Forest,Tipping Point,87.7%,1,0
+cowscj1,California Scrub-Jay,Aphelocoma californica,44.0%,0.40%,43.2%,44.8%,Forest,NA,52.8%,1,0
+mexjay4,Mexican Jay,Aphelocoma wollweberi,44.0%,1.14%,41.7%,46.2%,Forest,NA,29.6%,0,1
+wooscj2,Woodhouse's Scrub-Jay,Aphelocoma woodhouseii,44.0%,0.24%,43.5%,44.5%,Forest,NA,20.0%,0,1
+goleag,Golden Eagle,Aquila chrysaetos,44.0%,0.16%,43.7%,44.3%,Habitat Generalist,NA,29.5%,0,1
+limpki,Limpkin,Aramus guarauna,44.0%,1.08%,41.9%,46.1%,Water/wetland,NA,60.5%,1,0
+bkchum,Black-chinned Hummingbird,Archilochus alexandri,44.0%,0.18%,43.6%,44.3%,Forest,NA,14.2%,0,1
+rthhum,Ruby-throated Hummingbird,Archilochus colubris,44.0%,0.09%,43.8%,44.2%,Forest,NA,65.9%,1,0
+greegr,Great Egret,Ardea alba,43.9%,0.26%,43.4%,44.4%,Water/wetland,NA,37.1%,0,1
+grbher3,Great Blue Heron,Ardea herodias,43.9%,0.09%,43.7%,44.1%,Water/wetland,NA,39.6%,0,1
+rudtur,Ruddy Turnstone,Arenaria interpres,41.7%,1.11%,39.5%,43.9%,Water/wetland,Tipping Point,16.8%,0,1
+olispa,Olive Sparrow,Arremonops rufivirgatus,44.0%,0.52%,43.0%,45.0%,Aridlands,NA,6.2%,0,1
+belspa2,Bell's Sparrow,Artemisiospiza belli,44.0%,0.53%,43.0%,45.0%,Aridlands,NA,9.2%,0,1
+sagspa1,Sagebrush Sparrow,Artemisiospiza nevadensis,44.0%,0.19%,43.6%,44.4%,Aridlands,NA,11.3%,0,1
+sheowl,Short-eared Owl,Asio flammeus,44.0%,0.12%,43.7%,44.2%,Habitat Generalist,NA,25.8%,0,1
+loeowl,Long-eared Owl,Asio otus,44.0%,0.19%,43.6%,44.4%,Forest,NA,31.6%,0,1
+burowl,Burrowing Owl,Athene cunicularia,44.0%,0.19%,43.6%,44.4%,Grasslands,NA,39.8%,0,1
+verdin,Verdin,Auriparus flaviceps,44.0%,0.28%,43.4%,44.6%,Aridlands,NA,1.1%,0,1
+lessca,Lesser Scaup,Aythya affinis,43.7%,0.57%,42.6%,44.8%,Water/wetland,NA,41.8%,0,1
+redhea,Redhead,Aythya americana,43.4%,0.86%,41.7%,45.1%,Water/wetland,NA,36.1%,0,1
+rinduc,Ring-necked Duck,Aythya collaris,44.0%,0.23%,43.5%,44.5%,Water/wetland,NA,40.9%,0,1
+gresca,Greater Scaup,Aythya marila,43.5%,0.70%,42.2%,44.9%,Water/wetland,NA,21.4%,0,1
+canvas,Canvasback,Aythya valisineria,43.9%,1.86%,40.3%,47.6%,Water/wetland,NA,47.2%,0,0
+blctit4,Black-crested Titmouse,Baeolophus atricristatus,44.0%,0.36%,43.3%,44.7%,Aridlands,NA,25.4%,0,1
+tuftit,Tufted Titmouse,Baeolophus bicolor,44.0%,0.09%,43.8%,44.2%,Forest,NA,73.7%,1,0
+oaktit,Oak Titmouse,Baeolophus inornatus,44.0%,0.57%,42.9%,45.1%,Forest,NA,66.7%,1,0
+juntit1,Juniper Titmouse,Baeolophus ridgwayi,44.0%,0.28%,43.4%,44.5%,Forest,NA,14.8%,0,1
+britit,Bridled Titmouse,Baeolophus wollweberi,44.0%,0.87%,42.3%,45.7%,Forest,NA,31.0%,0,1
+uplsan,Upland Sandpiper,Bartramia longicauda,44.0%,0.12%,43.8%,44.2%,Grasslands,NA,34.9%,0,1
+cedwax,Cedar Waxwing,Bombycilla cedrorum,44.0%,0.06%,43.9%,44.1%,Forest,NA,55.6%,1,0
+bohwax,Bohemian Waxwing,Bombycilla garrulus,44.0%,0.30%,43.4%,44.6%,Forest,NA,66.2%,1,0
+rufgro,Ruffed Grouse,Bonasa umbellus,44.0%,0.20%,43.6%,44.4%,Forest,NA,94.2%,1,0
+amebit,American Bittern,Botaurus lentiginosus,44.0%,0.18%,43.6%,44.3%,Water/wetland,NA,54.2%,1,0
+brant,Brant,Branta bernicla,43.6%,1.15%,41.3%,45.8%,Water/wetland,NA,1.8%,0,1
+cangoo,Canada Goose,Branta canadensis,44.0%,0.12%,43.8%,44.2%,Water/wetland,NA,44.1%,0,0
+cacgoo1,Cackling Goose,Branta hutchinsii,44.0%,0.34%,43.3%,44.6%,Water/wetland,NA,26.8%,0,1
+snoowl1,Snowy Owl,Bubo scandiacus,43.3%,0.31%,42.7%,44.0%,Water/wetland,Tipping Point,16.2%,0,1
+grhowl,Great Horned Owl,Bubo virginianus,44.0%,0.06%,43.9%,44.1%,Habitat Generalist,NA,38.7%,0,1
+categr,Cattle Egret,Bubulcus ibis,44.0%,0.55%,42.9%,45.0%,Water/wetland,NA,43.3%,0,0
+buffle,Bufflehead,Bucephala albeola,43.6%,0.27%,43.1%,44.2%,Water/wetland,NA,45.3%,1,0
+comgol,Common Goldeneye,Bucephala clangula,43.7%,0.43%,42.9%,44.6%,Water/wetland,NA,44.8%,1,0
+bargol,Barrow's Goldeneye,Bucephala islandica,43.1%,0.52%,42.1%,44.1%,Water/wetland,NA,48.2%,1,0
+rethaw,Red-tailed Hawk,Buteo jamaicensis,44.0%,0.05%,43.9%,44.1%,Habitat Generalist,NA,39.9%,0,1
+rolhaw,Rough-legged Hawk,Buteo lagopus,44.0%,0.09%,43.8%,44.1%,Water/wetland,NA,37.6%,0,1
+reshaw,Red-shouldered Hawk,Buteo lineatus,44.0%,0.10%,43.8%,44.2%,Forest,NA,64.1%,1,0
+brwhaw,Broad-winged Hawk,Buteo platypterus,44.0%,0.35%,43.3%,44.7%,Forest,NA,53.3%,1,0
+ferhaw,Ferruginous Hawk,Buteo regalis,44.0%,0.13%,43.7%,44.3%,Grasslands,NA,33.8%,0,1
+swahaw,Swainson's Hawk,Buteo swainsoni,44.0%,0.23%,43.6%,44.4%,Grasslands,NA,24.9%,0,1
+grnher,Green Heron,Butorides virescens,44.0%,0.11%,43.8%,44.2%,Water/wetland,NA,49.1%,1,0
+larbun,Lark Bunting,Calamospiza melanocorys,44.0%,0.18%,43.6%,44.3%,Grasslands,NA,25.4%,0,1
+laplon,Lapland Longspur,Calcarius lapponicus,43.8%,0.24%,43.3%,44.3%,Water/wetland,NA,28.1%,0,1
+chclon,Chestnut-collared Longspur,Calcarius ornatus,44.0%,0.22%,43.6%,44.4%,Grasslands,Tipping Point,35.5%,0,1
+smilon,Smith's Longspur,Calcarius pictus,44.0%,0.39%,43.2%,44.8%,Water/wetland,NA,22.0%,0,1
+sander,Sanderling,Calidris alba,42.6%,1.16%,40.3%,44.9%,Water/wetland,NA,22.1%,0,1
+dunlin,Dunlin,Calidris alpina,43.2%,0.97%,41.3%,45.1%,Water/wetland,NA,21.0%,0,1
+baisan,Baird's Sandpiper,Calidris bairdii,44.0%,0.22%,43.6%,44.4%,Water/wetland,NA,28.2%,0,1
+redkno,Red Knot,Calidris canutus,42.0%,3.99%,34.2%,49.8%,Water/wetland,Tipping Point,24.2%,0,1
+whrsan,White-rumped Sandpiper,Calidris fuscicollis,44.0%,0.28%,43.4%,44.5%,Water/wetland,NA,23.8%,0,1
+stisan,Stilt Sandpiper,Calidris himantopus,44.0%,0.29%,43.4%,44.6%,Water/wetland,Tipping Point,23.3%,0,1
+pursan,Purple Sandpiper,Calidris maritima,40.6%,3.72%,33.3%,47.9%,Water/wetland,NA,15.3%,0,1
+wessan,Western Sandpiper,Calidris mauri,43.5%,1.12%,41.3%,45.7%,Water/wetland,NA,17.7%,0,1
+pecsan,Pectoral Sandpiper,Calidris melanotos,43.9%,0.36%,43.2%,44.6%,Water/wetland,Tipping Point,12.1%,0,1
+leasan,Least Sandpiper,Calidris minutilla,44.0%,0.28%,43.4%,44.5%,Water/wetland,NA,16.6%,0,1
+rocsan,Rock Sandpiper,Calidris ptilocnemis,42.8%,1.77%,39.4%,46.3%,Water/wetland,Tipping Point,3.7%,0,1
+semsan,Semipalmated Sandpiper,Calidris pusilla,43.7%,0.76%,42.3%,45.2%,Water/wetland,Tipping Point,27.3%,0,1
+bubsan,Buff-breasted Sandpiper,Calidris subruficollis,44.0%,0.87%,42.3%,45.8%,Water/wetland,Tipping Point,7.6%,0,1
+surfbi,Surfbird,Calidris virgata,40.1%,0.97%,38.2%,42.0%,Water/wetland,Tipping Point,9.4%,0,1
+calqua,California Quail,Callipepla californica,44.0%,0.28%,43.5%,44.6%,Aridlands,NA,45.6%,1,0
+gamqua,Gambel's Quail,Callipepla gambelii,44.0%,0.32%,43.4%,44.6%,Aridlands,NA,0.7%,0,1
+scaqua,Scaled Quail,Callipepla squamata,44.0%,0.30%,43.4%,44.6%,Aridlands,NA,2.4%,0,1
+annhum,Anna's Hummingbird,Calypte anna,44.0%,0.31%,43.4%,44.6%,Aridlands,NA,39.6%,0,1
+coshum,Costa's Hummingbird,Calypte costae,44.0%,0.36%,43.3%,44.7%,Aridlands,NA,8.1%,0,1
+cacwre,Cactus Wren,Campylorhynchus brunneicapillus,44.0%,0.27%,43.5%,44.5%,Aridlands,NA,0.4%,0,1
+sprgro,spruce grouse,Canachites canadensis,44.0%,0.19%,43.6%,44.4%,Forest,NA,42.6%,0,1
+y00678,crested caracara,Caracara plancus,44.0%,0.37%,43.3%,44.7%,Aridlands,NA,11.3%,0,1
+canwar,Canada Warbler,Cardellina canadensis,44.0%,0.18%,43.6%,44.3%,Forest,Tipping Point,77.3%,1,0
+wlswar,Wilson's Warbler,Cardellina pusilla,44.0%,0.06%,43.9%,44.1%,Forest,NA,31.0%,0,1
+refwar,Red-faced Warbler,Cardellina rubrifrons,44.0%,1.03%,42.0%,46.0%,Forest,NA,89.4%,1,0
+norcar,Northern Cardinal,Cardinalis cardinalis,44.0%,0.07%,43.9%,44.1%,Forest,NA,54.9%,1,0
+pyrrhu,Pyrrhuloxia,Cardinalis sinuatus,44.0%,0.33%,43.4%,44.6%,Aridlands,NA,2.8%,0,1
+turvul,Turkey Vulture,Cathartes aura,44.0%,0.06%,43.9%,44.1%,Habitat Generalist,NA,45.8%,1,0
+veery,Veery,Catharus fuscescens,44.0%,0.16%,43.7%,44.3%,Forest,NA,82.0%,1,0
+herthr,Hermit Thrush,Catharus guttatus,43.9%,0.07%,43.8%,44.1%,Forest,NA,65.2%,1,0
+gycthr,Gray-cheeked Thrush,Catharus minimus,44.0%,0.13%,43.7%,44.2%,Forest,NA,20.3%,0,1
+swathr,Swainson's Thrush,Catharus ustulatus,44.0%,0.09%,43.8%,44.2%,Forest,NA,61.4%,1,0
+canwre,Canyon Wren,Catherpes mexicanus,44.0%,0.28%,43.4%,44.5%,Aridlands,NA,27.7%,0,1
+saggro,Greater Sage-Grouse,Centrocercus urophasianus,44.0%,0.29%,43.4%,44.6%,Aridlands,Tipping Point,66.8%,1,0
+baispa,Baird's Sparrow,Centronyx bairdii,44.0%,0.32%,43.4%,44.6%,Grasslands,Tipping Point,60.3%,1,0
+henspa,Henslow's Sparrow,Centronyx henslowii,44.0%,0.30%,43.4%,44.6%,Grasslands,Tipping Point,48.1%,1,0
+brncre,Brown Creeper,Certhia americana,44.0%,0.08%,43.8%,44.1%,Forest,NA,75.1%,1,0
+chiswi,Chimney Swift,Chaetura pelagica,44.0%,0.34%,43.3%,44.7%,Forest,Tipping Point,56.2%,1,0
+vauswi,Vaux's Swift,Chaetura vauxi,44.0%,0.70%,42.6%,45.4%,Forest,NA,62.8%,1,0
+wrenti,Wrentit,Chamaea fasciata,44.0%,0.52%,43.0%,45.0%,Aridlands,NA,84.0%,1,0
+mouplo,Mountain Plover,Charadrius montanus,44.0%,1.05%,42.0%,46.1%,Grasslands,Tipping Point,14.4%,0,1
+semplo,Semipalmated Plover,Charadrius semipalmatus,43.6%,0.80%,42.0%,45.1%,Water/wetland,NA,24.7%,0,1
+killde,Killdeer,Charadrius vociferus,44.0%,0.10%,43.8%,44.2%,Habitat Generalist,NA,25.8%,0,1
+blkter,Black Tern,Chlidonias niger,43.5%,0.60%,42.3%,44.6%,Water/wetland,NA,31.2%,0,1
+larspa,Lark Sparrow,Chondestes grammacus,44.0%,0.09%,43.8%,44.2%,Grasslands,NA,30.3%,0,1
+lesnig,Lesser Nighthawk,Chordeiles acutipennis,44.0%,0.25%,43.5%,44.5%,Aridlands,NA,0.9%,0,1
+comnig,Common Nighthawk,Chordeiles minor,44.0%,0.08%,43.8%,44.1%,Habitat Generalist,NA,55.3%,1,0
+bongul,Bonaparte's Gull,Chroicocephalus philadelphia,43.4%,0.63%,42.1%,44.6%,Water/wetland,NA,44.9%,1,0
+amedip,American Dipper,Cinclus mexicanus,44.0%,0.37%,43.3%,44.7%,Water/wetland,NA,87.6%,1,0
+norhar2,Northern Harrier,Circus hudsonius,44.0%,0.06%,43.9%,44.1%,Habitat Generalist,NA,29.1%,0,1
+marwre,Marsh Wren,Cistothorus palustris,44.0%,0.16%,43.6%,44.3%,Water/wetland,NA,29.4%,0,1
+sedwre1,sedge wren,Cistothorus stellaris,44.0%,0.14%,43.7%,44.3%,Grasslands,NA,33.9%,0,1
+lotduc,Long-tailed Duck,Clangula hyemalis,38.8%,1.37%,36.1%,41.5%,Water/wetland,NA,13.4%,0,1
+evegro,Evening Grosbeak,Coccothraustes vespertinus,44.0%,0.16%,43.7%,44.3%,Forest,Tipping Point,88.2%,1,0
+yebcuc,Yellow-billed Cuckoo,Coccyzus americanus,44.0%,0.08%,43.8%,44.2%,Forest,NA,57.8%,1,0
+bkbcuc,Black-billed Cuckoo,Coccyzus erythropthalmus,44.0%,0.19%,43.6%,44.4%,Forest,Tipping Point,74.7%,1,0
+norfli,Northern Flicker,Colaptes auratus,44.0%,0.03%,43.9%,44.1%,Forest,NA,53.5%,1,0
+gilfli,Gilded Flicker,Colaptes chrysoides,44.0%,0.64%,42.8%,45.3%,Aridlands,NA,0.0%,0,1
+norbob,Northern Bobwhite,Colinus virginianus,44.0%,0.13%,43.7%,44.3%,Forest,NA,34.7%,0,1
+incdov,Inca Dove,Columbina inca,43.9%,1.39%,41.2%,46.7%,Aridlands,NA,10.8%,0,1
+cogdov,Common Ground Dove,Columbina passerina,44.0%,0.34%,43.4%,44.7%,Aridlands,NA,27.8%,0,1
+olsfly,Olive-sided Flycatcher,Contopus cooperi,44.0%,0.07%,43.9%,44.1%,Forest,Tipping Point,52.5%,1,0
+wewpew,Western Wood-Pewee,Contopus sordidulus,44.0%,0.09%,43.8%,44.2%,Forest,NA,51.0%,1,0
+eawpew,Eastern Wood-Pewee,Contopus virens,44.0%,0.08%,43.8%,44.2%,Forest,NA,62.0%,1,0
+blkvul,Black Vulture,Coragyps atratus,44.0%,0.15%,43.7%,44.3%,Habitat Generalist,NA,56.6%,1,0
+ruckin,ruby-crowned kinglet,Corthylio calendula,44.0%,0.04%,43.9%,44.1%,Forest,NA,54.4%,1,0
+amecro,American Crow,Corvus brachyrhynchos,44.0%,0.10%,43.8%,44.2%,Habitat Generalist,NA,54.3%,1,0
+comrav,Common Raven,Corvus corax,43.9%,0.06%,43.8%,44.0%,Habitat Generalist,NA,34.6%,0,1
+chirav,Chihuahuan Raven,Corvus cryptoleucus,44.0%,0.34%,43.3%,44.7%,Aridlands,NA,4.3%,0,1
+fiscro,Fish Crow,Corvus ossifragus,43.9%,0.29%,43.4%,44.5%,Habitat Generalist,NA,56.4%,1,0
+grbani,Groove-billed Ani,Crotophaga sulcirostris,44.0%,0.84%,42.4%,45.7%,Habitat Generalist,NA,5.5%,0,1
+blujay,Blue Jay,Cyanocitta cristata,44.0%,0.07%,43.9%,44.1%,Forest,NA,59.1%,1,0
+stejay,Steller's Jay,Cyanocitta stelleri,44.0%,0.19%,43.6%,44.4%,Forest,NA,87.7%,1,0
+grnjay,Green Jay,Cyanocorax yncas,44.0%,0.59%,42.9%,45.2%,Aridlands,NA,5.8%,0,1
+truswa,Trumpeter Swan,Cygnus buccinator,44.0%,0.24%,43.5%,44.5%,Water/wetland,NA,46.9%,1,0
+tunswa,Tundra Swan,Cygnus columbianus,43.9%,0.43%,43.0%,44.7%,Water/wetland,NA,24.0%,0,1
+blkswi,Black Swift,Cypseloides niger,44.0%,0.60%,42.8%,45.2%,Forest,Tipping Point,79.7%,1,0
+soogro1,Sooty Grouse,Dendragapus fuliginosus,44.0%,0.48%,43.0%,44.9%,Forest,NA,86.7%,1,0
+dusgro,Dusky Grouse,Dendragapus obscurus,44.0%,0.28%,43.4%,44.5%,Forest,NA,91.1%,1,0
+fuwduc,Fulvous Whistling-Duck,Dendrocygna bicolor,44.0%,0.86%,42.4%,45.7%,Water/wetland,NA,26.0%,0,1
+boboli,Bobolink,Dolichonyx oryzivorus,44.0%,0.36%,43.3%,44.7%,Grasslands,Tipping Point,39.3%,0,1
+whhwoo,White-headed Woodpecker,Dryobates albolarvatus,44.0%,0.68%,42.7%,45.3%,Forest,NA,95.0%,1,0
+recwoo,Red-cockaded Woodpecker,Dryobates borealis,44.0%,1.05%,41.9%,46.0%,Forest,NA,83.0%,1,0
+nutwoo,Nuttall's Woodpecker,Dryobates nuttallii,44.0%,0.50%,43.0%,45.0%,Forest,NA,45.1%,1,0
+dowwoo,Downy Woodpecker,Dryobates pubescens,44.0%,0.07%,43.9%,44.1%,Forest,NA,62.5%,1,0
+labwoo,Ladder-backed Woodpecker,Dryobates scalaris,44.0%,0.18%,43.6%,44.4%,Aridlands,NA,10.1%,0,1
+haiwoo,Hairy Woodpecker,Dryobates villosus,44.0%,0.08%,43.9%,44.1%,Forest,NA,75.2%,1,0
+pilwoo,Pileated Woodpecker,Dryocopus pileatus,44.0%,0.09%,43.8%,44.2%,Forest,NA,79.8%,1,0
+grycat,Gray Catbird,Dumetella carolinensis,44.0%,0.08%,43.8%,44.1%,Forest,NA,54.8%,1,0
+libher,Little Blue Heron,Egretta caerulea,44.0%,0.31%,43.4%,44.6%,Water/wetland,NA,43.3%,0,1
+snoegr,Snowy Egret,Egretta thula,43.7%,0.63%,42.5%,44.9%,Water/wetland,NA,41.6%,0,1
+triher,Tricolored Heron,Egretta tricolor,42.8%,3.14%,36.6%,48.9%,Water/wetland,NA,57.6%,1,0
+swtkit,Swallow-tailed Kite,Elanoides forficatus,44.0%,0.73%,42.6%,45.4%,Forest,NA,55.7%,1,0
+whtkit,White-tailed Kite,Elanus leucurus,44.0%,0.95%,42.2%,45.9%,Habitat Generalist,NA,18.1%,0,1
+aldfly,Alder Flycatcher,Empidonax alnorum,44.0%,0.11%,43.8%,44.2%,Forest,NA,52.6%,1,0
+pasfly,Pacific-slope Flycatcher,Empidonax difficilis,44.0%,0.26%,43.4%,44.5%,Forest,NA,69.2%,1,0
+yebfly,Yellow-bellied Flycatcher,Empidonax flaviventris,44.0%,0.19%,43.6%,44.4%,Forest,NA,68.2%,1,0
+hamfly,Hammond's Flycatcher,Empidonax hammondii,44.0%,0.15%,43.7%,44.3%,Forest,NA,71.7%,1,0
+leafly,Least Flycatcher,Empidonax minimus,44.0%,0.09%,43.8%,44.2%,Forest,NA,53.6%,1,0
+dusfly,Dusky Flycatcher,Empidonax oberholseri,44.0%,0.12%,43.8%,44.2%,Forest,NA,67.9%,1,0
+corfly,Cordilleran Flycatcher,Empidonax occidentalis,44.0%,0.24%,43.5%,44.5%,Forest,NA,78.6%,1,0
+wilfly,Willow Flycatcher,Empidonax traillii,44.0%,0.09%,43.8%,44.2%,Forest,NA,39.1%,0,1
+acafly,Acadian Flycatcher,Empidonax virescens,44.0%,0.14%,43.7%,44.3%,Forest,NA,77.3%,1,0
+gryfly,Gray Flycatcher,Empidonax wrightii,44.0%,0.13%,43.7%,44.3%,Forest,NA,29.7%,0,1
+horlar,Horned Lark,Eremophila alpestris,44.0%,0.13%,43.7%,44.3%,Grasslands,NA,26.4%,0,1
+whiibi,White Ibis,Eudocimus albus,43.7%,0.54%,42.7%,44.8%,Water/wetland,NA,51.5%,1,0
+rusbla,Rusty Blackbird,Euphagus carolinus,44.0%,0.12%,43.8%,44.2%,Forest,NA,42.1%,0,1
+brebla,Brewer's Blackbird,Euphagus cyanocephalus,44.0%,0.12%,43.8%,44.2%,Habitat Generalist,NA,27.6%,0,1
+merlin,Merlin,Falco columbarius,44.0%,0.06%,43.9%,44.1%,Habitat Generalist,NA,28.3%,0,1
+prafal,Prairie Falcon,Falco mexicanus,44.0%,0.09%,43.8%,44.2%,Aridlands,NA,36.1%,0,1
+perfal,Peregrine Falcon,Falco peregrinus,43.5%,0.12%,43.2%,43.7%,Habitat Generalist,NA,26.7%,0,1
+amekes,American Kestrel,Falco sparverius,44.0%,0.05%,43.9%,44.1%,Habitat Generalist,NA,37.4%,0,1
+y00475,American Coot,Fulica americana,44.0%,0.39%,43.2%,44.7%,Water/wetland,NA,36.7%,0,1
+wilsni1,Wilson's Snipe,Gallinago delicata,44.0%,0.10%,43.8%,44.2%,Water/wetland,NA,26.4%,0,1
+comgal1,Common Gallinule,Gallinula galeata,44.0%,0.64%,42.8%,45.3%,Water/wetland,NA,55.8%,1,0
+yebloo,Yellow-billed Loon,Gavia adamsii,42.6%,0.40%,41.8%,43.4%,Water/wetland,Tipping Point,0.6%,0,1
+comloo,Common Loon,Gavia immer,43.3%,0.42%,42.4%,44.1%,Water/wetland,NA,51.4%,1,0
+retloo,Red-throated Loon,Gavia stellata,41.6%,0.85%,40.0%,43.3%,Water/wetland,NA,13.4%,0,1
+greroa,Greater Roadrunner,Geococcyx californianus,44.0%,0.21%,43.6%,44.4%,Aridlands,NA,11.0%,0,1
+kenwar,Kentucky Warbler,Geothlypis formosa,44.0%,0.17%,43.7%,44.3%,Forest,NA,82.1%,1,0
+mouwar,Mourning Warbler,Geothlypis philadelphia,44.0%,0.23%,43.5%,44.4%,Forest,Tipping Point,80.1%,1,0
+macwar,MacGillivray's Warbler,Geothlypis tolmiei,44.0%,0.10%,43.8%,44.2%,Forest,NA,55.8%,1,0
+comyel,Common Yellowthroat,Geothlypis trichas,44.0%,0.06%,43.9%,44.1%,Habitat Generalist,NA,49.8%,1,0
+nopowl,Northern Pygmy-Owl,Glaucidium gnoma,44.0%,0.25%,43.5%,44.5%,Forest,NA,92.6%,1,0
+pinjay,Pinyon Jay,Gymnorhinus cyanocephalus,44.0%,0.28%,43.4%,44.5%,Forest,Tipping Point,12.7%,0,1
+casfin,Cassin's Finch,Haemorhous cassinii,44.0%,0.15%,43.7%,44.3%,Forest,NA,73.2%,1,0
+houfin,House Finch,Haemorhous mexicanus,44.0%,0.15%,43.7%,44.3%,Habitat Generalist,NA,13.7%,0,1
+purfin,Purple Finch,Haemorhous purpureus,44.0%,0.09%,43.8%,44.2%,Forest,NA,68.5%,1,0
+baleag,Bald Eagle,Haliaeetus leucocephalus,43.6%,0.14%,43.3%,43.8%,Water/wetland,NA,40.7%,0,1
+woewar1,Worm-eating Warbler,Helmitheros vermivorum,44.0%,0.23%,43.5%,44.4%,Forest,NA,87.7%,1,0
+bknsti,Black-necked Stilt,Himantopus mexicanus,43.9%,1.05%,41.9%,46.0%,Water/wetland,NA,12.4%,0,1
+barswa,Barn Swallow,Hirundo rustica,44.0%,0.55%,42.9%,45.1%,Habitat Generalist,NA,32.7%,0,1
+harduc,Harlequin Duck,Histrionicus histrionicus,37.4%,0.61%,36.2%,38.5%,Water/wetland,NA,11.2%,0,1
+caster1,Caspian Tern,Hydroprogne caspia,41.4%,1.31%,38.8%,43.9%,Water/wetland,NA,35.5%,0,1
+woothr,Wood Thrush,Hylocichla mustelina,44.0%,0.12%,43.8%,44.2%,Forest,Tipping Point,75.3%,1,0
+yebcha,Yellow-breasted Chat,Icteria virens,44.0%,0.10%,43.8%,44.2%,Forest,NA,53.4%,1,0
+bulori,Bullock's Oriole,Icterus bullockii,44.0%,0.11%,43.8%,44.2%,Forest,NA,25.0%,0,1
+hooori,Hooded Oriole,Icterus cucullatus,44.0%,0.33%,43.3%,44.6%,Aridlands,NA,7.0%,0,1
+balori,Baltimore Oriole,Icterus galbula,44.0%,0.09%,43.8%,44.2%,Forest,NA,42.8%,0,1
+scoori,Scott's Oriole,Icterus parisorum,44.0%,0.25%,43.5%,44.5%,Forest,NA,5.3%,0,1
+orcori,Orchard Oriole,Icterus spurius,44.0%,0.09%,43.8%,44.1%,Forest,NA,49.3%,1,0
+miskit,Mississippi Kite,Ictinia mississippiensis,44.0%,0.16%,43.7%,44.3%,Forest,NA,40.0%,0,1
+leabit,Least Bittern,Ixobrychus exilis,43.8%,0.47%,42.9%,44.7%,Water/wetland,NA,54.4%,1,0
+varthr,Varied Thrush,Ixoreus naevius,43.9%,0.17%,43.6%,44.2%,Forest,NA,63.7%,1,0
+daejun,Dark-eyed Junco,Junco hyemalis,44.0%,0.04%,43.9%,44.1%,Forest,NA,52.1%,1,0
+wilpta,Willow Ptarmigan,Lagopus lagopus,43.9%,0.18%,43.6%,44.3%,Water/wetland,NA,5.3%,0,1
+norshr4,Northern Shrike,Lanius borealis,44.0%,0.08%,43.8%,44.1%,Water/wetland,NA,32.1%,0,1
+logshr,Loggerhead Shrike,Lanius ludovicianus,44.0%,0.09%,43.8%,44.2%,Grasslands,NA,23.6%,0,1
+hergul,Herring Gull,Larus argentatus,43.3%,0.90%,41.5%,45.0%,Water/wetland,NA,60.6%,1,0
+calgul,California Gull,Larus californicus,44.1%,4.65%,34.9%,53.2%,Water/wetland,NA,18.5%,0,1
+mewgul,Common Gull,Larus canus,39.4%,2.21%,35.0%,43.7%,Water/wetland,NA,0.0%,0,1
+ribgul,Ring-billed Gull,Larus delawarensis,43.9%,0.43%,43.0%,44.7%,Water/wetland,NA,35.7%,0,1
+gbbgul,Great Black-backed Gull,Larus marinus,39.7%,1.66%,36.4%,42.9%,Water/wetland,Tipping Point,18.9%,0,1
+orcwar,orange-crowned warbler,Leiothlypis celata,44.0%,0.05%,43.9%,44.1%,Forest,NA,40.7%,0,1
+lucwar,lucy's warbler,Leiothlypis luciae,44.0%,0.35%,43.3%,44.7%,Aridlands,NA,1.8%,0,1
+tenwar,tennessee warbler,Leiothlypis peregrina,44.0%,0.09%,43.8%,44.2%,Forest,NA,61.3%,1,0
+naswar,nashville warbler,Leiothlypis ruficapilla,44.0%,0.09%,43.8%,44.2%,Forest,NA,58.1%,1,0
+virwar,virginia's warbler,Leiothlypis virginiae,44.0%,0.21%,43.6%,44.4%,Forest,NA,39.4%,0,1
+fragul,Franklin's Gull,Leucophaeus pipixcan,44.0%,0.91%,42.2%,45.8%,Water/wetland,NA,49.4%,1,0
+shbdow,Short-billed Dowitcher,Limnodromus griseus,43.3%,1.86%,39.7%,47.0%,Water/wetland,Tipping Point,33.8%,0,1
+lobdow,Long-billed Dowitcher,Limnodromus scolopaceus,43.9%,0.47%,43.0%,44.8%,Water/wetland,Tipping Point,17.3%,0,1
+swawar,Swainson's Warbler,Limnothlypis swainsonii,44.0%,0.23%,43.5%,44.5%,Forest,NA,76.7%,1,0
+margod,Marbled Godwit,Limosa fedoa,43.8%,1.83%,40.2%,47.4%,Water/wetland,NA,27.1%,0,1
+hudgod,Hudsonian Godwit,Limosa haemastica,44.0%,0.38%,43.3%,44.7%,Water/wetland,Tipping Point,19.6%,0,1
+hoomer,Hooded Merganser,Lophodytes cucullatus,44.0%,0.23%,43.5%,44.4%,Water/wetland,NA,56.4%,1,0
+redcro,Red Crossbill,Loxia curvirostra,43.9%,0.14%,43.6%,44.2%,Forest,NA,85.6%,1,0
+whwcro,White-winged Crossbill,Loxia leucoptera,43.9%,0.15%,43.6%,44.2%,Forest,NA,25.9%,0,1
+amewig,American Wigeon,Mareca americana,44.0%,0.38%,43.2%,44.7%,Water/wetland,NA,27.2%,0,1
+gadwal,Gadwall,Mareca strepera,44.0%,0.20%,43.6%,44.4%,Water/wetland,NA,33.2%,0,1
+belkin1,Belted Kingfisher,Megaceryle alcyon,44.0%,0.06%,43.8%,44.1%,Water/wetland,NA,58.6%,1,0
+easowl1,Eastern Screech-Owl,Megascops asio,44.0%,0.11%,43.8%,44.2%,Forest,NA,65.2%,1,0
+wesowl1,Western Screech-Owl,Megascops kennicottii,44.0%,0.32%,43.4%,44.6%,Forest,NA,35.6%,0,1
+gofwoo,Golden-fronted Woodpecker,Melanerpes aurifrons,44.0%,0.35%,43.3%,44.7%,Aridlands,NA,9.4%,0,1
+rebwoo,Red-bellied Woodpecker,Melanerpes carolinus,44.0%,0.08%,43.8%,44.2%,Forest,NA,62.3%,1,0
+rehwoo,Red-headed Woodpecker,Melanerpes erythrocephalus,44.0%,0.09%,43.8%,44.2%,Forest,Tipping Point,51.6%,1,0
+acowoo,Acorn Woodpecker,Melanerpes formicivorus,44.0%,0.48%,43.1%,44.9%,Forest,NA,67.8%,1,0
+lewwoo,Lewis's Woodpecker,Melanerpes lewis,44.0%,0.28%,43.5%,44.6%,Forest,NA,61.8%,1,0
+gilwoo,Gila Woodpecker,Melanerpes uropygialis,44.0%,0.53%,43.0%,45.1%,Aridlands,NA,0.5%,0,1
+blksco2,Black Scoter,Melanitta americana,38.1%,0.75%,36.7%,39.6%,Water/wetland,Tipping Point,5.3%,0,1
+whwsco2,white-winged scoter,Melanitta deglandi,40.3%,0.93%,38.5%,42.2%,Water/wetland,NA,16.2%,0,1
+sursco,Surf Scoter,Melanitta perspicillata,39.0%,0.96%,37.1%,40.8%,Water/wetland,NA,20.6%,0,1
+wiltur,Wild Turkey,Meleagris gallopavo,44.0%,0.09%,43.8%,44.2%,Forest,NA,58.1%,1,0
+swaspa,Swamp Sparrow,Melospiza georgiana,44.0%,0.09%,43.8%,44.2%,Water/wetland,NA,49.4%,1,0
+linspa,Lincoln's Sparrow,Melospiza lincolnii,44.0%,0.05%,43.9%,44.1%,Forest,NA,37.7%,0,1
+sonspa,Song Sparrow,Melospiza melodia,44.0%,0.05%,43.9%,44.1%,Habitat Generalist,NA,50.6%,1,0
+abetow,Abert's Towhee,Melozone aberti,44.0%,0.91%,42.2%,45.8%,Aridlands,NA,2.4%,0,1
+caltow,California Towhee,Melozone crissalis,44.0%,0.51%,43.0%,45.0%,Aridlands,NA,53.6%,1,0
+cantow,Canyon Towhee,Melozone fusca,44.0%,0.33%,43.4%,44.6%,Aridlands,NA,3.2%,0,1
+commer,Common Merganser,Mergus merganser,44.0%,0.85%,42.3%,45.6%,Water/wetland,NA,58.7%,1,0
+rebmer,Red-breasted Merganser,Mergus serrator,43.1%,1.50%,40.2%,46.1%,Water/wetland,NA,30.4%,0,1
+normoc,Northern Mockingbird,Mimus polyglottos,44.0%,0.08%,43.8%,44.2%,Habitat Generalist,NA,31.7%,0,1
+bawwar,Black-and-white Warbler,Mniotilta varia,44.0%,0.09%,43.8%,44.2%,Forest,NA,73.3%,1,0
+brocow,Bronzed Cowbird,Molothrus aeneus,44.0%,0.67%,42.7%,45.4%,Aridlands,NA,4.7%,0,1
+bnhcow,Brown-headed Cowbird,Molothrus ater,44.0%,0.26%,43.5%,44.5%,Habitat Generalist,NA,31.7%,0,1
+towsol,Townsend's Solitaire,Myadestes townsendi,44.0%,0.11%,43.8%,44.2%,Forest,NA,68.3%,1,0
+woosto,Wood Stork,Mycteria americana,44.0%,0.58%,42.9%,45.2%,Water/wetland,NA,47.8%,1,0
+astfly,Ash-throated Flycatcher,Myiarchus cinerascens,44.0%,0.12%,43.8%,44.2%,Aridlands,NA,13.3%,0,1
+grcfly,Great Crested Flycatcher,Myiarchus crinitus,44.0%,0.08%,43.8%,44.2%,Forest,NA,60.1%,1,0
+bncfly,Brown-crested Flycatcher,Myiarchus tyrannulus,44.0%,0.32%,43.4%,44.6%,Aridlands,NA,4.9%,0,1
+doccor,double-crested cormorant,Nannopterum auritum,43.4%,0.78%,41.9%,44.9%,Water/wetland,NA,40.0%,0,1
+clanut,Clark's Nutcracker,Nucifraga columbiana,44.0%,0.21%,43.6%,44.4%,Forest,NA,84.5%,1,0
+lobcur,Long-billed Curlew,Numenius americanus,44.0%,0.44%,43.1%,44.9%,Grasslands,NA,15.7%,0,1
+whimbr,Whimbrel,Numenius phaeopus,43.8%,0.60%,42.6%,45.0%,Water/wetland,Tipping Point,11.7%,0,1
+bcnher,Black-crowned Night-Heron,Nycticorax nycticorax,43.9%,0.30%,43.3%,44.5%,Water/wetland,NA,27.9%,0,1
+conwar,Connecticut Warbler,Oporornis agilis,44.0%,0.52%,43.0%,45.0%,Forest,NA,80.2%,1,0
+mouqua,Mountain Quail,Oreortyx pictus,44.0%,0.43%,43.2%,44.8%,Forest,NA,91.5%,1,0
+sagthr,Sage Thrasher,Oreoscoptes montanus,44.0%,0.14%,43.7%,44.3%,Aridlands,NA,28.6%,0,1
+rudduc,Ruddy Duck,Oxyura jamaicensis,44.0%,0.48%,43.0%,44.9%,Water/wetland,NA,35.6%,0,1
+osprey,Osprey,Pandion haliaetus,43.6%,0.21%,43.2%,44.1%,Water/wetland,NA,52.9%,1,0
+hrshaw,Harris's Hawk,Parabuteo unicinctus,44.0%,0.55%,42.9%,45.1%,Aridlands,NA,3.1%,0,1
+louwat,Louisiana Waterthrush,Parkesia motacilla,44.0%,0.15%,43.7%,44.3%,Forest,NA,83.0%,1,0
+norwat,Northern Waterthrush,Parkesia noveboracensis,44.0%,0.09%,43.8%,44.2%,Forest,NA,41.8%,0,1
+savspa,Savannah Sparrow,Passerculus sandwichensis,43.9%,0.07%,43.8%,44.1%,Grasslands,NA,25.2%,0,1
+foxspa,Fox Sparrow,Passerella iliaca,43.9%,0.08%,43.8%,44.1%,Forest,NA,39.0%,0,1
+lazbun,Lazuli Bunting,Passerina amoena,44.0%,0.11%,43.8%,44.2%,Forest,NA,45.9%,1,0
+blugrb1,Blue Grosbeak,Passerina caerulea,44.0%,0.08%,43.8%,44.2%,Forest,NA,37.7%,0,1
+paibun,Painted Bunting,Passerina ciris,44.0%,0.17%,43.7%,44.3%,Forest,NA,30.4%,0,1
+indbun,Indigo Bunting,Passerina cyanea,44.0%,0.09%,43.8%,44.2%,Forest,NA,57.8%,1,0
+varbun,Varied Bunting,Passerina versicolor,44.0%,0.64%,42.8%,45.2%,Aridlands,NA,1.1%,0,1
+batpig1,Band-tailed Pigeon,Patagioenas fasciata,44.0%,0.35%,43.3%,44.7%,Forest,NA,87.5%,1,0
+amwpel,American White Pelican,Pelecanus erythrorhynchos,43.9%,0.54%,42.8%,45.0%,Water/wetland,NA,45.2%,1,0
+gryjay,Canada Jay,Perisoreus canadensis,44.0%,0.16%,43.7%,44.3%,Forest,NA,51.8%,1,0
+cavswa,Cave Swallow,Petrochelidon fulva,44.0%,0.22%,43.6%,44.4%,Aridlands,NA,15.2%,0,1
+cliswa,Cliff Swallow,Petrochelidon pyrrhonota,44.0%,0.08%,43.8%,44.2%,Habitat Generalist,NA,33.5%,0,1
+bacspa,Bachman's Sparrow,Peucaea aestivalis,44.0%,0.67%,42.7%,45.3%,Forest,Tipping Point,67.8%,1,0
+casspa,Cassin's Sparrow,Peucaea cassinii,44.0%,0.18%,43.6%,44.4%,Grasslands,NA,12.5%,0,1
+phaino,Phainopepla,Phainopepla nitens,44.0%,0.33%,43.4%,44.7%,Aridlands,NA,7.8%,0,1
+compoo,Common Poorwill,Phalaenoptilus nuttallii,44.0%,0.15%,43.7%,44.3%,Aridlands,NA,40.2%,0,1
+renpha,Red-necked Phalarope,Phalaropus lobatus,43.0%,1.47%,40.1%,45.9%,Water/wetland,NA,5.4%,0,1
+wilpha,Wilson's Phalarope,Phalaropus tricolor,43.9%,1.85%,40.2%,47.5%,Water/wetland,NA,8.9%,0,1
+robgro,Rose-breasted Grosbeak,Pheucticus ludovicianus,44.0%,0.09%,43.8%,44.2%,Forest,NA,59.1%,1,0
+bkhgro,Black-headed Grosbeak,Pheucticus melanocephalus,44.0%,0.12%,43.8%,44.2%,Forest,NA,53.5%,1,0
+arcwar1,Arctic Warbler,Phylloscopus borealis,43.8%,0.25%,43.3%,44.3%,Water/wetland,NA,4.7%,0,1
+bkbmag1,Black-billed Magpie,Pica hudsonia,44.0%,0.14%,43.7%,44.3%,Habitat Generalist,NA,50.3%,1,0
+yebmag,Yellow-billed Magpie,Pica nuttalli,44.0%,1.40%,41.2%,46.8%,Forest,Tipping Point,27.6%,0,1
+bkbwoo,Black-backed Woodpecker,Picoides arcticus,44.0%,0.43%,43.2%,44.9%,Forest,NA,98.4%,1,0
+attwoo1,American Three-toed Woodpecker,Picoides dorsalis,44.0%,0.24%,43.5%,44.5%,Forest,NA,74.3%,1,0
+pingro,Pine Grosbeak,Pinicola enucleator,44.0%,0.12%,43.8%,44.2%,Forest,NA,35.5%,0,1
+gnttow,Green-tailed Towhee,Pipilo chlorurus,44.0%,0.13%,43.8%,44.2%,Aridlands,NA,45.5%,1,0
+eastow,Eastern Towhee,Pipilo erythrophthalmus,44.0%,0.10%,43.8%,44.2%,Forest,NA,69.9%,1,0
+spotow,Spotted Towhee,Pipilo maculatus,44.0%,0.09%,43.8%,44.2%,Forest,NA,52.1%,1,0
+heptan,Hepatic Tanager,Piranga flava,44.0%,0.50%,43.0%,45.0%,Forest,NA,38.8%,0,1
+westan,Western Tanager,Piranga ludoviciana,44.0%,0.10%,43.8%,44.2%,Forest,NA,57.1%,1,0
+scatan,Scarlet Tanager,Piranga olivacea,44.0%,0.13%,43.7%,44.2%,Forest,NA,82.0%,1,0
+sumtan,Summer Tanager,Piranga rubra,44.0%,0.11%,43.8%,44.2%,Forest,NA,62.2%,1,0
+rosspo1,Roseate Spoonbill,Platalea ajaja,43.6%,0.53%,42.5%,44.6%,Water/wetland,NA,44.4%,0,0
+snobun,Snow Bunting,Plectrophenax nivalis,43.8%,0.14%,43.5%,44.1%,Water/wetland,NA,24.4%,0,1
+whfibi,White-faced Ibis,Plegadis chihi,44.0%,0.51%,43.0%,45.0%,Water/wetland,NA,18.5%,0,1
+gloibi,Glossy Ibis,Plegadis falcinellus,44.0%,0.77%,42.5%,45.5%,Water/wetland,NA,51.3%,1,0
+amgplo,American Golden-Plover,Pluvialis dominica,44.0%,0.42%,43.2%,44.8%,Water/wetland,Tipping Point,7.7%,0,1
+pagplo,Pacific Golden-Plover,Pluvialis fulva,43.1%,0.49%,42.2%,44.1%,Water/wetland,NA,0.4%,0,1
+bkbplo,Black-bellied Plover,Pluvialis squatarola,43.3%,1.07%,41.2%,45.4%,Water/wetland,NA,16.6%,0,1
+horgre,Horned Grebe,Podiceps auritus,43.1%,0.43%,42.3%,44.0%,Water/wetland,NA,43.6%,0,0
+rengre,Red-necked Grebe,Podiceps grisegena,42.9%,0.48%,41.9%,43.8%,Water/wetland,NA,35.3%,0,1
+eargre,Eared Grebe,Podiceps nigricollis,43.8%,1.82%,40.3%,47.4%,Water/wetland,NA,10.9%,0,1
+pibgre,Pied-billed Grebe,Podilymbus podiceps,44.0%,0.14%,43.7%,44.3%,Water/wetland,NA,43.4%,0,1
+bkcchi,Black-capped Chickadee,Poecile atricapillus,44.0%,0.12%,43.8%,44.2%,Forest,NA,72.2%,1,0
+carchi,Carolina Chickadee,Poecile carolinensis,44.0%,0.10%,43.8%,44.2%,Forest,NA,70.5%,1,0
+mouchi,Mountain Chickadee,Poecile gambeli,44.0%,0.18%,43.6%,44.4%,Forest,NA,85.8%,1,0
+borchi2,Boreal Chickadee,Poecile hudsonicus,44.0%,0.19%,43.6%,44.4%,Forest,NA,39.6%,0,1
+chbchi,Chestnut-backed Chickadee,Poecile rufescens,44.0%,0.30%,43.4%,44.6%,Forest,NA,89.9%,1,0
+buggna,Blue-gray Gnatcatcher,Polioptila caerulea,44.0%,0.07%,43.9%,44.1%,Habitat Generalist,NA,56.7%,1,0
+bktgna,Black-tailed Gnatcatcher,Polioptila melanura,44.0%,0.35%,43.3%,44.7%,Aridlands,NA,0.3%,0,1
+steeid,Steller's Eider,Polysticta stelleri,39.4%,1.05%,37.3%,41.5%,Water/wetland,NA,0.0%,0,1
+vesspa,Vesper Sparrow,Pooecetes gramineus,44.0%,0.08%,43.8%,44.2%,Grasslands,NA,39.2%,0,1
+purgal2,purple gallinule,Porphyrio martinica,44.0%,0.74%,42.5%,45.4%,Water/wetland,NA,68.8%,1,0
+sora,Sora,Porzana carolina,44.0%,0.14%,43.7%,44.3%,Water/wetland,NA,29.5%,0,1
+purmar,Purple Martin,Progne subis,44.1%,2.87%,38.5%,49.7%,Habitat Generalist,NA,38.9%,0,0
+prowar,Prothonotary Warbler,Protonotaria citrea,44.0%,0.27%,43.5%,44.5%,Forest,NA,69.1%,1,0
+bushti,Bushtit,Psaltriparus minimus,44.0%,0.22%,43.6%,44.4%,Forest,NA,33.8%,0,1
+verfly,Vermilion Flycatcher,Pyrocephalus rubinus,44.0%,0.26%,43.5%,44.5%,Aridlands,NA,5.9%,0,1
+botgra,Boat-tailed Grackle,Quiscalus major,43.8%,0.94%,42.0%,45.7%,Water/wetland,NA,64.6%,1,0
+grtgra,Great-tailed Grackle,Quiscalus mexicanus,43.9%,0.41%,43.1%,44.8%,Habitat Generalist,NA,10.6%,0,1
+comgra,Common Grackle,Quiscalus quiscula,44.0%,1.29%,41.5%,46.5%,Habitat Generalist,NA,37.9%,0,1
+kinrai4,King Rail,Rallus elegans,43.9%,0.63%,42.7%,45.1%,Water/wetland,Tipping Point,72.6%,1,0
+virrai,Virginia Rail,Rallus limicola,44.0%,0.16%,43.7%,44.3%,Water/wetland,NA,33.2%,0,1
+ameavo,American Avocet,Recurvirostra americana,43.8%,1.52%,40.8%,46.8%,Water/wetland,NA,8.4%,0,1
+gockin,Golden-crowned Kinglet,Regulus satrapa,44.0%,0.08%,43.8%,44.1%,Forest,NA,74.4%,1,0
+mcclon,Thick-billed Longspur,Rhynchophanes mccownii,44.0%,0.36%,43.3%,44.7%,Grasslands,Tipping Point,30.7%,0,1
+banswa,Bank Swallow,Riparia riparia,43.9%,0.39%,43.2%,44.7%,Habitat Generalist,NA,26.4%,0,1
+rocwre,Rock Wren,Salpinctes obsoletus,44.0%,0.12%,43.8%,44.2%,Aridlands,NA,33.2%,0,1
+blkpho,Black Phoebe,Sayornis nigricans,44.0%,0.25%,43.5%,44.5%,Water/wetland,NA,17.4%,0,1
+easpho,Eastern Phoebe,Sayornis phoebe,44.0%,0.07%,43.8%,44.1%,Forest,NA,62.0%,1,0
+saypho,Say's Phoebe,Sayornis saya,44.0%,0.09%,43.8%,44.2%,Habitat Generalist,NA,22.6%,0,1
+amewoo,American Woodcock,Scolopax minor,44.0%,0.11%,43.8%,44.2%,Forest,NA,70.1%,1,0
+ovenbi1,Ovenbird,Seiurus aurocapilla,44.0%,0.14%,43.7%,44.3%,Forest,NA,85.8%,1,0
+calhum,Calliope Hummingbird,Selasphorus calliope,44.0%,0.24%,43.5%,44.5%,Forest,NA,72.8%,1,0
+brthum,Broad-tailed Hummingbird,Selasphorus platycercus,44.0%,0.22%,43.6%,44.4%,Forest,NA,60.0%,1,0
+rufhum,Rufous Hummingbird,Selasphorus rufus,44.0%,0.15%,43.7%,44.3%,Forest,Tipping Point,56.9%,1,0
+allhum,Allen's Hummingbird,Selasphorus sasin,44.0%,1.13%,41.8%,46.2%,Aridlands,Tipping Point,36.2%,0,1
+norpar,Northern Parula,Setophaga americana,44.0%,0.11%,43.8%,44.2%,Forest,NA,74.0%,1,0
+btbwar,Black-throated Blue Warbler,Setophaga caerulescens,44.0%,0.21%,43.6%,44.4%,Forest,NA,85.2%,1,0
+babwar,Bay-breasted Warbler,Setophaga castanea,44.0%,0.13%,43.7%,44.2%,Forest,NA,65.8%,1,0
+cerwar,Cerulean Warbler,Setophaga cerulea,44.0%,0.38%,43.3%,44.8%,Forest,Tipping Point,93.6%,1,0
+hoowar,Hooded Warbler,Setophaga citrina,44.0%,0.17%,43.7%,44.3%,Forest,NA,80.5%,1,0
+yerwar,Yellow-rumped Warbler,Setophaga coronata,44.0%,0.04%,43.9%,44.1%,Forest,NA,50.9%,1,0
+prawar,Prairie Warbler,Setophaga discolor,44.0%,0.15%,43.7%,44.3%,Forest,Tipping Point,75.5%,1,0
+yetwar,Yellow-throated Warbler,Setophaga dominica,44.0%,0.15%,43.7%,44.3%,Forest,NA,76.3%,1,0
+bkbwar,Blackburnian Warbler,Setophaga fusca,44.0%,0.14%,43.7%,44.3%,Forest,NA,76.8%,1,0
+grawar,Grace's Warbler,Setophaga graciae,44.0%,0.48%,43.1%,44.9%,Forest,Tipping Point,65.1%,1,0
+magwar,Magnolia Warbler,Setophaga magnolia,44.0%,0.10%,43.8%,44.2%,Forest,NA,66.3%,1,0
+btywar,Black-throated Gray Warbler,Setophaga nigrescens,44.0%,0.16%,43.7%,44.3%,Forest,NA,44.1%,0,0
+herwar,Hermit Warbler,Setophaga occidentalis,44.0%,0.34%,43.3%,44.7%,Forest,NA,83.9%,1,0
+palwar,Palm Warbler,Setophaga palmarum,44.0%,0.15%,43.7%,44.3%,Forest,NA,55.3%,1,0
+chswar,Chestnut-sided Warbler,Setophaga pensylvanica,44.0%,0.13%,43.7%,44.2%,Forest,NA,78.3%,1,0
+yelwar,Yellow Warbler,Setophaga petechia,44.0%,0.05%,43.9%,44.1%,Forest,NA,42.1%,0,1
+pinwar,Pine Warbler,Setophaga pinus,44.0%,0.13%,43.7%,44.2%,Forest,NA,72.3%,1,0
+amered,American Redstart,Setophaga ruticilla,44.0%,0.08%,43.8%,44.1%,Forest,NA,62.5%,1,0
+bkpwar,Blackpoll Warbler,Setophaga striata,44.0%,0.09%,43.8%,44.2%,Forest,NA,45.2%,1,0
+camwar,Cape May Warbler,Setophaga tigrina,44.0%,0.15%,43.7%,44.3%,Forest,NA,76.1%,1,0
+towwar,Townsend's Warbler,Setophaga townsendi,44.0%,0.17%,43.6%,44.3%,Forest,NA,66.4%,1,0
+btnwar,Black-throated Green Warbler,Setophaga virens,44.0%,0.13%,43.7%,44.2%,Forest,NA,77.2%,1,0
+moublu,Mountain Bluebird,Sialia currucoides,44.0%,0.10%,43.8%,44.2%,Forest,NA,34.1%,0,1
+wesblu,Western Bluebird,Sialia mexicana,44.0%,0.18%,43.6%,44.3%,Forest,NA,39.1%,0,1
+easblu,Eastern Bluebird,Sialia sialis,44.0%,0.08%,43.9%,44.1%,Forest,NA,61.2%,1,0
+rebnut,Red-breasted Nuthatch,Sitta canadensis,44.0%,0.10%,43.8%,44.2%,Forest,NA,82.6%,1,0
+whbnut,White-breasted Nuthatch,Sitta carolinensis,44.0%,0.10%,43.8%,44.2%,Forest,NA,68.5%,1,0
+bnhnut,Brown-headed Nuthatch,Sitta pusilla,44.0%,0.25%,43.5%,44.5%,Forest,NA,67.2%,1,0
+pygnut,Pygmy Nuthatch,Sitta pygmaea,44.0%,0.43%,43.1%,44.8%,Forest,NA,79.9%,1,0
+kineid,King Eider,Somateria spectabilis,39.4%,0.79%,37.9%,40.9%,Water/wetland,Tipping Point,0.0%,0,1
+norsho,Northern Shoveler,Spatula clypeata,44.0%,0.46%,43.1%,44.9%,Water/wetland,NA,21.5%,0,1
+cintea,Cinnamon Teal,Spatula cyanoptera,44.0%,0.28%,43.4%,44.5%,Water/wetland,NA,15.5%,0,1
+buwtea,Blue-winged Teal,Spatula discors,44.0%,0.17%,43.6%,44.3%,Water/wetland,NA,28.1%,0,1
+rensap,Red-naped Sapsucker,Sphyrapicus nuchalis,44.0%,0.13%,43.7%,44.3%,Forest,NA,56.9%,1,0
+rebsap,Red-breasted Sapsucker,Sphyrapicus ruber,44.0%,0.28%,43.4%,44.5%,Forest,NA,83.1%,1,0
+wilsap,Williamson's Sapsucker,Sphyrapicus thyroideus,44.0%,0.23%,43.6%,44.4%,Forest,NA,83.0%,1,0
+yebsap,Yellow-bellied Sapsucker,Sphyrapicus varius,44.0%,0.09%,43.8%,44.2%,Forest,NA,72.4%,1,0
+lawgol,Lawrence's Goldfinch,Spinus lawrencei,44.0%,0.38%,43.3%,44.8%,Aridlands,NA,34.1%,0,1
+pinsis,Pine Siskin,Spinus pinus,44.0%,0.09%,43.8%,44.1%,Forest,NA,64.1%,1,0
+lesgol,Lesser Goldfinch,Spinus psaltria,44.0%,0.15%,43.7%,44.3%,Forest,NA,22.9%,0,1
+amegfi,American Goldfinch,Spinus tristis,44.0%,0.05%,43.9%,44.1%,Forest,NA,52.8%,1,0
+dickci,Dickcissel,Spiza americana,44.0%,0.13%,43.8%,44.3%,Grasslands,NA,29.8%,0,1
+bkcspa,Black-chinned Sparrow,Spizella atrogularis,44.0%,0.44%,43.2%,44.9%,Aridlands,Tipping Point,26.4%,0,1
+brespa,Brewer's Sparrow,Spizella breweri,44.0%,0.12%,43.8%,44.2%,Aridlands,NA,26.2%,0,1
+clcspa,Clay-colored Sparrow,Spizella pallida,44.0%,0.10%,43.8%,44.2%,Grasslands,NA,37.9%,0,1
+chispa,Chipping Sparrow,Spizella passerina,44.0%,0.05%,43.9%,44.1%,Forest,NA,50.6%,1,0
+fiespa,Field Sparrow,Spizella pusilla,44.0%,0.08%,43.8%,44.2%,Forest,NA,55.0%,1,0
+amtspa,American Tree Sparrow,Spizelloides arborea,44.0%,0.08%,43.8%,44.2%,Water/wetland,NA,36.3%,0,1
+nrwswa,Northern Rough-winged Swallow,Stelgidopteryx serripennis,43.9%,0.15%,43.6%,44.2%,Habitat Generalist,NA,39.0%,0,1
+forter,Forster's Tern,Sterna forsteri,42.8%,0.59%,41.7%,44.0%,Water/wetland,NA,46.6%,1,0
+comter,Common Tern,Sterna hirundo,38.6%,2.45%,33.8%,43.4%,Water/wetland,NA,19.2%,0,1
+arcter,Arctic Tern,Sterna paradisaea,42.3%,0.28%,41.8%,42.9%,Water/wetland,NA,8.2%,0,1
+brdowl,Barred Owl,Strix varia,44.0%,0.11%,43.8%,44.2%,Forest,NA,73.1%,1,0
+easmea,Eastern Meadowlark,Sturnella magna,44.0%,0.11%,43.8%,44.2%,Grasslands,NA,36.8%,0,1
+wesmea,Western Meadowlark,Sturnella neglecta,44.0%,0.09%,43.8%,44.2%,Grasslands,NA,43.3%,0,1
+treswa,Tree Swallow,Tachycineta bicolor,44.0%,2.89%,38.3%,49.6%,Habitat Generalist,NA,42.1%,0,0
+vigswa,Violet-green Swallow,Tachycineta thalassina,44.0%,0.12%,43.8%,44.2%,Forest,NA,51.5%,1,0
+bewwre,Bewick's Wren,Thryomanes bewickii,44.0%,0.13%,43.8%,44.2%,Aridlands,NA,22.4%,0,1
+carwre,Carolina Wren,Thryothorus ludovicianus,44.0%,0.09%,43.8%,44.2%,Forest,NA,67.5%,1,0
+benthr,Bendire's Thrasher,Toxostoma bendirei,44.0%,0.55%,42.9%,45.1%,Aridlands,Tipping Point,0.1%,0,1
+crithr,Crissal Thrasher,Toxostoma crissale,44.0%,0.31%,43.4%,44.6%,Aridlands,NA,2.3%,0,1
+cubthr,Curve-billed Thrasher,Toxostoma curvirostre,44.0%,0.29%,43.4%,44.6%,Aridlands,NA,0.8%,0,1
+lecthr,LeConte's Thrasher,Toxostoma lecontei,44.0%,0.70%,42.6%,45.3%,Aridlands,Tipping Point,0.1%,0,1
+lobthr,Long-billed Thrasher,Toxostoma longirostre,44.0%,0.53%,43.0%,45.0%,Aridlands,NA,6.7%,0,1
+calthr,California Thrasher,Toxostoma redivivum,44.0%,0.64%,42.8%,45.3%,Aridlands,NA,63.8%,1,0
+brnthr,Brown Thrasher,Toxostoma rufum,44.0%,0.07%,43.9%,44.1%,Forest,NA,53.7%,1,0
+lesyel,Lesser Yellowlegs,Tringa flavipes,44.0%,0.29%,43.4%,44.5%,Water/wetland,Tipping Point,18.0%,0,1
+wantat1,Wandering Tattler,Tringa incana,43.0%,0.33%,42.3%,43.6%,Water/wetland,Tipping Point,4.8%,0,1
+greyel,Greater Yellowlegs,Tringa melanoleuca,44.0%,0.17%,43.6%,44.3%,Water/wetland,NA,18.8%,0,1
+willet1,Willet,Tringa semipalmata,43.4%,0.70%,42.0%,44.8%,Water/wetland,NA,33.6%,0,1
+solsan,Solitary Sandpiper,Tringa solitaria,44.0%,0.09%,43.8%,44.2%,Water/wetland,NA,32.1%,0,1
+houwre,House Wren,Troglodytes aedon,44.0%,0.05%,43.9%,44.1%,Forest,NA,47.0%,1,0
+winwre3,Winter Wren,Troglodytes hiemalis,44.0%,0.11%,43.8%,44.2%,Forest,NA,76.0%,1,0
+pacwre1,Pacific Wren,Troglodytes pacificus,43.4%,0.27%,42.9%,43.9%,Forest,NA,81.2%,1,0
+amerob,American Robin,Turdus migratorius,44.0%,0.15%,43.7%,44.3%,Forest,NA,55.1%,1,0
+grpchi,Greater Prairie-Chicken,Tympanuchus cupido,44.0%,0.36%,43.3%,44.7%,Grasslands,NA,67.9%,1,0
+shtgro,Sharp-tailed Grouse,Tympanuchus phasianellus,44.0%,0.21%,43.6%,44.4%,Grasslands,NA,67.9%,1,0
+coukin,Couch's Kingbird,Tyrannus couchii,44.0%,0.56%,42.9%,45.1%,Aridlands,NA,6.9%,0,1
+grykin,Gray Kingbird,Tyrannus dominicensis,43.9%,2.90%,38.2%,49.5%,Forest,NA,24.5%,0,1
+sctfly,Scissor-tailed Flycatcher,Tyrannus forficatus,44.0%,0.18%,43.7%,44.4%,Grasslands,NA,25.1%,0,1
+easkin,Eastern Kingbird,Tyrannus tyrannus,44.0%,0.09%,43.8%,44.2%,Grasslands,NA,50.8%,1,0
+weskin,Western Kingbird,Tyrannus verticalis,44.0%,0.13%,43.7%,44.2%,Grasslands,NA,22.0%,0,1
+caskin,Cassin's Kingbird,Tyrannus vociferans,44.0%,0.21%,43.6%,44.4%,Forest,NA,11.0%,0,1
+brnowl,Barn Owl,Tyto alba,44.0%,0.29%,43.4%,44.6%,Habitat Generalist,NA,19.1%,0,1
+gowwar,Golden-winged Warbler,Vermivora chrysoptera,44.0%,0.23%,43.5%,44.4%,Forest,Tipping Point,77.3%,1,0
+buwwar,Blue-winged Warbler,Vermivora cyanoptera,44.0%,0.19%,43.6%,44.4%,Forest,NA,77.4%,1,0
+bkwvir,Black-whiskered Vireo,Vireo altiloquus,43.8%,4.90%,34.2%,53.4%,Forest,NA,55.0%,1,0
+belvir,Bell's Vireo,Vireo bellii,44.0%,0.16%,43.7%,44.3%,Aridlands,NA,26.3%,0,1
+casvir,Cassin's Vireo,Vireo cassinii,44.0%,0.16%,43.7%,44.3%,Forest,NA,67.6%,1,0
+yetvir,Yellow-throated Vireo,Vireo flavifrons,44.0%,0.10%,43.8%,44.2%,Forest,NA,70.1%,1,0
+warvir,Warbling Vireo,Vireo gilvus,44.0%,0.07%,43.9%,44.1%,Forest,NA,56.7%,1,0
+whevir,White-eyed Vireo,Vireo griseus,44.0%,0.11%,43.8%,44.2%,Forest,NA,66.0%,1,0
+hutvir,Hutton's Vireo,Vireo huttoni,44.0%,0.35%,43.3%,44.7%,Forest,NA,73.5%,1,0
+reevir1,Red-eyed Vireo,Vireo olivaceus,44.0%,0.09%,43.8%,44.2%,Forest,NA,76.8%,1,0
+phivir,Philadelphia Vireo,Vireo philadelphicus,44.0%,0.10%,43.8%,44.2%,Forest,NA,61.4%,1,0
+plsvir,Plumbeous Vireo,Vireo plumbeus,44.0%,0.20%,43.6%,44.4%,Forest,NA,39.8%,0,1
+buhvir,Blue-headed Vireo,Vireo solitarius,44.0%,0.11%,43.8%,44.2%,Forest,NA,74.8%,1,0
+gryvir,Gray Vireo,Vireo vicinior,44.0%,0.29%,43.4%,44.6%,Forest,NA,8.5%,0,1
+yehbla,Yellow-headed Blackbird,Xanthocephalus xanthocephalus,44.0%,0.44%,43.1%,44.9%,Water/wetland,NA,16.1%,0,1
+whwdov,White-winged Dove,Zenaida asiatica,44.0%,0.26%,43.5%,44.5%,Aridlands,NA,5.5%,0,1
+moudov,Mourning Dove,Zenaida macroura,44.0%,0.06%,43.9%,44.1%,Habitat Generalist,NA,36.3%,0,1
+whtspa,White-throated Sparrow,Zonotrichia albicollis,44.0%,0.08%,43.8%,44.1%,Forest,NA,58.8%,1,0
+gocspa,Golden-crowned Sparrow,Zonotrichia atricapilla,43.9%,0.18%,43.5%,44.2%,Water/wetland,NA,39.8%,0,1
+whcspa,White-crowned Sparrow,Zonotrichia leucophrys,44.0%,0.06%,43.9%,44.1%,Habitat Generalist,NA,26.9%,0,1
+harspa,Harris's Sparrow,Zonotrichia querula,44.0%,0.16%,43.7%,44.3%,Water/wetland,Tipping Point,37.2%,0,1

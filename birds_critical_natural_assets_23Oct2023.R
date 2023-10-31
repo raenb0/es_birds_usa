@@ -53,9 +53,10 @@ pct_pop_per_sp_rast <- rast("outputs/rasters/pct_pop_per_sp_rast.tif")
 # ext(pct_pop_per_sp_rast) #-12285146.776671, -5132931.49814578, 2727933.01326386, 7939514.00899519 (xmin, xmax, ymin, ymax)
 
 # plot one layer
-plot(pct_pop_per_sp_rast, "acafly") #Acadian flycatcher?
-plot(pct_pop_per_sp_rast, "arcwar1") #Arctic Warbler
-plot(pct_pop_per_sp_rast, "blksco2") #Black Scoter
+plot(pct_pop_per_sp_rast, "acafly", main="Acadian Flycatcher")
+plot(pct_pop_per_sp_rast, "arcwar1", main="Arctic Warbler")
+plot(pct_pop_per_sp_rast, "blksco2", main="Black Scoter")
+plot(pct_pop_per_sp_rast, "wantat1", main="Wandering Tattler")
 
 #double check if spp abundances all add up to 1
 # calculate sum of pixels (takes 1 minute)

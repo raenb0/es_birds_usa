@@ -25,7 +25,7 @@ write_csv(result_37pct_comparison, "outputs/result_37pct_comparison.csv")
 write_csv(result_44pct_comparison, "outputs/result_44pct_comparison.csv")
 
 
-# calculate count of spp that are over- or under-represented compared to random sample
+# calculate count of spp that are over- or under-represented compared to random sample --------------
 #result_37pct_comparison <- read_csv("outputs/result_37pct_comparison.csv")
 #result_44pct_comparison <- read_csv("outputs/result_44pct_comparison.csv")
 
@@ -44,7 +44,27 @@ result_37pct_comparison$over_upper95 <- as.integer(result_37pct_comparison$over_
 write_csv(result_37pct_comparison, "outputs/result_37pct_comparison.csv")
 write_csv(result_44pct_comparison, "outputs/result_44pct_comparison.csv")
 
-#summarize by habitat
+
+# bring in species common and scientific names ------------------
+library(tidyverse)
+
+biome_sps_sel_all_vars <- readRDS("data/biome_final_species_selection.rds") #updated with biome groups
+
+spp_names <- biome_sps_sel_all_vars %>%
+  select(species_code, common_name, scientific_name)
+
+#load data if necessary
+result_37pct_comparison <- read_csv("outputs/result_37pct_comparison.csv")
+result_44pct_comparison <- read_csv("outputs/result_44pct_comparison.csv")
+
+result_37pct_comparison_spp_names <- left_join(spp_names, result_37pct_comparison, by=join_by(species_code == species))
+result_44pct_comparison_spp_names <- left_join(spp_names, result_44pct_comparison, by=join_by(species_code == species))
+
+write_csv(result_37pct_comparison_spp_names, "outputs/result_37pct_comparison_spp_names.csv")
+write_csv(result_44pct_comparison_spp_names, "outputs/result_44pct_comparison_spp_names.csv")
+
+
+#summarize by habitat -----------------------------
 summary_37pct_spp_represented_by_group <- result_37pct_comparison %>%
   group_by(habitat) %>%
   summarize(count_spp = n(),
