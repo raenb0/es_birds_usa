@@ -1,0 +1,480 @@
+"","species_code","common_name","scientific_name","habitat","tipping_pt","avg_37pct","stdev_37pct","lower95_37pct","upper95_37pct","sum_cna","over_upper95_37pct","under_lower95_37pct","avg_44pct","stdev_44pct","lower95_44pct","upper95_44pct","sum_carbon","over_upper95_44pct","under_lower95_44pct","p_value_37pct","p_value_44pct"
+"1","abetow","Abert's Towhee","Melozone aberti","Aridlands",NA,0.371,0.0089,0.353,0.388,0.484,1,0,0.44,0.0091,0.422,0.458,0.024,0,1,0,0
+"2","acafly","Acadian Flycatcher","Empidonax virescens","Forest",NA,0.37,0.0014,0.367,0.373,0.77,1,0,0.44,0.0014,0.437,0.443,0.773,1,0,0,0
+"3","acowoo","Acorn Woodpecker","Melanerpes formicivorus","Forest",NA,0.37,0.0043,0.362,0.378,0.712,1,0,0.44,0.0048,0.431,0.449,0.678,1,0,0,0
+"4","aldfly","Alder Flycatcher","Empidonax alnorum","Forest",NA,0.37,0.0011,0.368,0.372,0.28,0,1,0.44,0.0011,0.438,0.442,0.526,1,0,0,0
+"5","allhum","Allen's Hummingbird","Selasphorus sasin","Aridlands","Tipping Point",0.37,0.0109,0.349,0.391,0.316,0,1,0.44,0.0113,0.418,0.462,0.362,0,1,0,0
+"6","ambduc","American Black Duck","Anas rubripes","Water/wetland",NA,0.367,0.0091,0.349,0.385,0.506,1,0,0.437,0.0086,0.42,0.454,0.562,1,0,0,0
+"7","ameavo","American Avocet","Recurvirostra americana","Water/wetland",NA,0.37,0.0146,0.342,0.399,0.086,0,1,0.438,0.0152,0.408,0.468,0.084,0,1,0,0
+"8","amebit","American Bittern","Botaurus lentiginosus","Water/wetland",NA,0.37,0.0017,0.367,0.373,0.413,1,0,0.44,0.0018,0.436,0.443,0.542,1,0,0,0
+"9","amecro","American Crow","Corvus brachyrhynchos","Habitat Generalist",NA,0.37,0.0011,0.368,0.372,0.53,1,0,0.44,0.001,0.438,0.442,0.543,1,0,0,0
+"10","amedip","American Dipper","Cinclus mexicanus","Water/wetland",NA,0.37,0.0036,0.363,0.377,0.368,0,0,0.44,0.0037,0.433,0.447,0.876,1,0,1.02310856434058e-60,0
+"11","amegfi","American Goldfinch","Spinus tristis","Forest",NA,0.37,5e-04,0.369,0.371,0.528,1,0,0.44,5e-04,0.439,0.441,0.528,1,0,0,0
+"12","amekes","American Kestrel","Falco sparverius","Habitat Generalist",NA,0.37,5e-04,0.369,0.371,0.382,1,0,0.44,5e-04,0.439,0.441,0.374,0,1,0,0
+"13","amepip","American Pipit","Anthus rubescens","Water/wetland",NA,0.37,9e-04,0.368,0.371,0.244,0,1,0.44,9e-04,0.438,0.441,0.253,0,1,0,0
+"14","amered","American Redstart","Setophaga ruticilla","Forest",NA,0.37,8e-04,0.368,0.371,0.539,1,0,0.44,8e-04,0.438,0.441,0.625,1,0,0,0
+"15","amerob","American Robin","Turdus migratorius","Forest",NA,0.37,0.0015,0.367,0.373,0.503,1,0,0.44,0.0015,0.437,0.443,0.551,1,0,0,0
+"16","amewig","American Wigeon","Mareca americana","Water/wetland",NA,0.37,0.0037,0.363,0.377,0.256,0,1,0.44,0.0038,0.432,0.447,0.272,0,1,0,0
+"17","amewoo","American Woodcock","Scolopax minor","Forest",NA,0.37,0.0011,0.368,0.372,0.647,1,0,0.44,0.0011,0.438,0.442,0.701,1,0,0,0
+"18","amgplo","American Golden-Plover","Pluvialis dominica","Water/wetland","Tipping Point",0.37,0.0041,0.362,0.378,0.099,0,1,0.44,0.0042,0.432,0.448,0.077,0,1,0,0
+"19","amtspa","American Tree Sparrow","Spizelloides arborea","Water/wetland",NA,0.37,8e-04,0.368,0.372,0.317,0,1,0.44,8e-04,0.438,0.442,0.363,0,1,0,0
+"20","amwpel","American White Pelican","Pelecanus erythrorhynchos","Water/wetland",NA,0.369,0.0056,0.358,0.38,0.395,1,0,0.439,0.0054,0.428,0.45,0.452,1,0,0,0
+"21","anhing","Anhinga","Anhinga anhinga","Water/wetland",NA,0.37,0.0037,0.363,0.377,0.575,1,0,0.44,0.0036,0.433,0.447,0.592,1,0,0,0
+"22","annhum","Anna's Hummingbird","Calypte anna","Aridlands",NA,0.37,0.0028,0.364,0.376,0.533,1,0,0.44,0.0031,0.434,0.446,0.396,0,1,0,0
+"23","arcter","Arctic Tern","Sterna paradisaea","Water/wetland",NA,0.356,0.0027,0.351,0.361,0.13,0,1,0.423,0.0028,0.418,0.429,0.082,0,1,0,0
+"24","arcwar1","Arctic Warbler","Phylloscopus borealis","Water/wetland",NA,0.369,0.0022,0.364,0.373,0.006,0,1,0.438,0.0025,0.433,0.443,0.047,0,1,0,0
+"25","astfly","Ash-throated Flycatcher","Myiarchus cinerascens","Aridlands",NA,0.37,0.0011,0.368,0.372,0.351,0,1,0.44,0.0012,0.438,0.442,0.133,0,1,0,0
+"26","attwoo1","American Three-toed Woodpecker","Picoides dorsalis","Forest",NA,0.37,0.0023,0.366,0.374,0.196,0,1,0.44,0.0024,0.435,0.445,0.743,1,0,0,0
+"27","babwar","Bay-breasted Warbler","Setophaga castanea","Forest",NA,0.37,0.0012,0.368,0.372,0.595,1,0,0.44,0.0013,0.437,0.442,0.658,1,0,0,0
+"28","bacspa","Bachman's Sparrow","Peucaea aestivalis","Forest","Tipping Point",0.37,0.0068,0.357,0.383,0.846,1,0,0.44,0.0067,0.427,0.453,0.678,1,0,0,0
+"29","baisan","Baird's Sandpiper","Calidris bairdii","Water/wetland",NA,0.37,0.0021,0.366,0.374,0.283,0,1,0.44,0.0022,0.436,0.444,0.282,0,1,0,0
+"30","baispa","Baird's Sparrow","Centronyx bairdii","Grasslands","Tipping Point",0.37,0.003,0.364,0.376,0.296,0,1,0.44,0.0032,0.434,0.446,0.603,1,0,0,0
+"31","baleag","Bald Eagle","Haliaeetus leucocephalus","Water/wetland",NA,0.366,0.0014,0.364,0.369,0.272,0,1,0.436,0.0014,0.433,0.438,0.407,0,1,0,0
+"32","balori","Baltimore Oriole","Icterus galbula","Forest",NA,0.37,9e-04,0.368,0.372,0.433,1,0,0.44,9e-04,0.438,0.442,0.428,0,1,0,0
+"33","banswa","Bank Swallow","Riparia riparia","Habitat Generalist",NA,0.37,0.0036,0.363,0.377,0.217,0,1,0.439,0.0039,0.432,0.447,0.264,0,1,0,0
+"34","bargol","Barrow's Goldeneye","Bucephala islandica","Water/wetland",NA,0.362,0.005,0.352,0.372,0.309,0,1,0.431,0.0052,0.421,0.441,0.482,1,0,0,0
+"35","barswa","Barn Swallow","Hirundo rustica","Habitat Generalist",NA,0.37,0.0055,0.359,0.381,0.386,1,0,0.44,0.0055,0.429,0.451,0.327,0,1,0,0
+"36","batpig1","Band-tailed Pigeon","Patagioenas fasciata","Forest",NA,0.37,0.0033,0.364,0.377,0.62,1,0,0.44,0.0035,0.433,0.447,0.875,1,0,0,0
+"37","bawwar","Black-and-white Warbler","Mniotilta varia","Forest",NA,0.37,9e-04,0.368,0.372,0.646,1,0,0.44,9e-04,0.438,0.442,0.733,1,0,0,0
+"38","bcnher","Black-crowned Night-Heron","Nycticorax nycticorax","Water/wetland",NA,0.369,0.0028,0.364,0.375,0.31,0,1,0.439,0.003,0.433,0.445,0.279,0,1,0,0
+"39","belkin1","Belted Kingfisher","Megaceryle alcyon","Water/wetland",NA,0.37,6e-04,0.368,0.371,0.518,1,0,0.44,6e-04,0.438,0.441,0.586,1,0,0,0
+"40","belspa2","Bell's Sparrow","Artemisiospiza belli","Aridlands",NA,0.37,0.0048,0.361,0.38,0.187,0,1,0.44,0.0053,0.43,0.45,0.092,0,1,0,0
+"41","belvir","Bell's Vireo","Vireo bellii","Aridlands",NA,0.37,0.0015,0.367,0.373,0.541,1,0,0.44,0.0016,0.437,0.443,0.263,0,1,0,0
+"42","benthr","Bendire's Thrasher","Toxostoma bendirei","Aridlands","Tipping Point",0.37,0.0054,0.36,0.381,0.204,0,1,0.44,0.0055,0.429,0.451,0.001,0,1,0,0
+"43","bewwre","Bewick's Wren","Thryomanes bewickii","Aridlands",NA,0.37,0.0011,0.368,0.372,0.434,1,0,0.44,0.0013,0.438,0.442,0.224,0,1,0,0
+"44","bkbcuc","Black-billed Cuckoo","Coccyzus erythropthalmus","Forest","Tipping Point",0.37,0.0019,0.366,0.374,0.546,1,0,0.44,0.0019,0.436,0.444,0.747,1,0,0,0
+"45","bkbmag1","Black-billed Magpie","Pica hudsonia","Habitat Generalist",NA,0.37,0.0014,0.367,0.372,0.258,0,1,0.44,0.0014,0.437,0.443,0.503,1,0,0,0
+"46","bkbplo","Black-bellied Plover","Pluvialis squatarola","Water/wetland",NA,0.365,0.0106,0.344,0.386,0.222,0,1,0.433,0.0107,0.412,0.454,0.166,0,1,0,0
+"47","bkbwar","Blackburnian Warbler","Setophaga fusca","Forest",NA,0.37,0.0014,0.367,0.373,0.633,1,0,0.44,0.0014,0.437,0.443,0.768,1,0,0,0
+"48","bkbwoo","Black-backed Woodpecker","Picoides arcticus","Forest",NA,0.37,0.0043,0.362,0.378,0.44,1,0,0.44,0.0043,0.432,0.449,0.984,1,0,0,0
+"49","bkcchi","Black-capped Chickadee","Poecile atricapillus","Forest",NA,0.37,0.0012,0.368,0.372,0.54,1,0,0.44,0.0012,0.438,0.442,0.722,1,0,0,0
+"50","bkchum","Black-chinned Hummingbird","Archilochus alexandri","Forest",NA,0.37,0.0017,0.367,0.373,0.45,1,0,0.44,0.0018,0.436,0.443,0.142,0,1,0,0
+"51","bkcspa","Black-chinned Sparrow","Spizella atrogularis","Aridlands","Tipping Point",0.37,0.0042,0.362,0.378,0.413,1,0,0.44,0.0044,0.432,0.449,0.264,0,1,0,0
+"52","bkhgro","Black-headed Grosbeak","Pheucticus melanocephalus","Forest",NA,0.37,0.0011,0.368,0.372,0.427,1,0,0.44,0.0012,0.438,0.442,0.535,1,0,0,0
+"53","bknsti","Black-necked Stilt","Himantopus mexicanus","Water/wetland",NA,0.37,0.0099,0.351,0.39,0.153,0,1,0.439,0.0105,0.419,0.46,0.124,0,1,0,0
+"54","bkpwar","Blackpoll Warbler","Setophaga striata","Forest",NA,0.37,8e-04,0.368,0.372,0.353,0,1,0.44,9e-04,0.438,0.442,0.452,1,0,0,0
+"55","bktgna","Black-tailed Gnatcatcher","Polioptila melanura","Aridlands",NA,0.37,0.0034,0.364,0.377,0.226,0,1,0.44,0.0035,0.433,0.447,0.003,0,1,0,0
+"56","bktspa","Black-throated Sparrow","Amphispiza bilineata","Aridlands",NA,0.37,0.0016,0.367,0.373,0.23,0,1,0.44,0.0017,0.437,0.443,0.021,0,1,0,0
+"57","bkwvir","Black-whiskered Vireo","Vireo altiloquus","Forest",NA,0.371,0.048,0.277,0.465,0.165,0,1,0.438,0.049,0.342,0.534,0.55,1,0,0,0
+"58","blctit4","Black-crested Titmouse","Baeolophus atricristatus","Aridlands",NA,0.37,0.0034,0.363,0.377,0.632,1,0,0.44,0.0036,0.433,0.447,0.254,0,1,0,0
+"59","blkpho","Black Phoebe","Sayornis nigricans","Water/wetland",NA,0.37,0.0023,0.365,0.374,0.386,1,0,0.44,0.0025,0.435,0.445,0.174,0,1,0,0
+"60","blksco2","Black Scoter","Melanitta americana","Water/wetland","Tipping Point",0.32,0.0072,0.306,0.334,0.547,1,0,0.381,0.0075,0.367,0.396,0.053,0,1,0,0
+"61","blkswi","Black Swift","Cypseloides niger","Forest","Tipping Point",0.37,0.0059,0.358,0.381,0.387,1,0,0.44,0.006,0.428,0.452,0.797,1,0,0,0
+"62","blkter","Black Tern","Chlidonias niger","Water/wetland",NA,0.366,0.0057,0.355,0.377,0.376,0,0,0.435,0.006,0.423,0.446,0.312,0,1,1.22068427417072e-307,0
+"63","blkvul","Black Vulture","Coragyps atratus","Habitat Generalist",NA,0.37,0.0015,0.367,0.373,0.707,1,0,0.44,0.0015,0.437,0.443,0.566,1,0,0,0
+"64","blugrb1","Blue Grosbeak","Passerina caerulea","Forest",NA,0.37,8e-04,0.368,0.372,0.513,1,0,0.44,8e-04,0.438,0.442,0.377,0,1,0,0
+"65","blujay","Blue Jay","Cyanocitta cristata","Forest",NA,0.37,6e-04,0.369,0.371,0.579,1,0,0.44,7e-04,0.439,0.441,0.591,1,0,0,0
+"66","bncfly","Brown-crested Flycatcher","Myiarchus tyrannulus","Aridlands",NA,0.37,0.0031,0.364,0.376,0.326,0,1,0.44,0.0032,0.434,0.446,0.049,0,1,0,0
+"67","bnhcow","Brown-headed Cowbird","Molothrus ater","Habitat Generalist",NA,0.37,0.0025,0.365,0.375,0.372,0,0,0.44,0.0026,0.435,0.445,0.317,0,1,8.04113908787534e-110,0
+"68","bnhnut","Brown-headed Nuthatch","Sitta pusilla","Forest",NA,0.37,0.0024,0.365,0.375,0.756,1,0,0.44,0.0025,0.435,0.445,0.672,1,0,0,0
+"69","boboli","Bobolink","Dolichonyx oryzivorus","Grasslands","Tipping Point",0.37,0.0037,0.363,0.377,0.348,0,1,0.44,0.0036,0.433,0.447,0.393,0,1,0,0
+"70","bohwax","Bohemian Waxwing","Bombycilla garrulus","Forest",NA,0.37,0.0031,0.364,0.376,0.203,0,1,0.44,0.003,0.434,0.446,0.662,1,0,0,0
+"71","bongul","Bonaparte's Gull","Chroicocephalus philadelphia","Water/wetland",NA,0.365,0.0063,0.353,0.377,0.402,1,0,0.434,0.0063,0.421,0.446,0.449,1,0,0,0
+"72","borchi2","Boreal Chickadee","Poecile hudsonicus","Forest",NA,0.37,0.0018,0.367,0.374,0.019,0,1,0.44,0.0019,0.436,0.444,0.396,0,1,0,0
+"73","botgra","Boat-tailed Grackle","Quiscalus major","Water/wetland",NA,0.369,0.0092,0.351,0.387,0.358,0,0,0.438,0.0094,0.42,0.457,0.646,1,0,3.27227723484053e-195,0
+"74","brant","Brant","Branta bernicla","Water/wetland",NA,0.366,0.0115,0.344,0.389,0.354,0,0,0.436,0.0115,0.413,0.458,0.018,0,1,2.16508797862163e-162,0
+"75","brdowl","Barred Owl","Strix varia","Forest",NA,0.37,0.001,0.368,0.372,0.71,1,0,0.44,0.0011,0.438,0.442,0.731,1,0,0,0
+"76","brebla","Brewer's Blackbird","Euphagus cyanocephalus","Habitat Generalist",NA,0.37,0.0012,0.368,0.372,0.336,0,1,0.44,0.0012,0.438,0.442,0.276,0,1,0,0
+"77","brespa","Brewer's Sparrow","Spizella breweri","Aridlands",NA,0.37,0.0011,0.368,0.372,0.205,0,1,0.44,0.0012,0.438,0.442,0.262,0,1,0,0
+"78","britit","Bridled Titmouse","Baeolophus wollweberi","Forest",NA,0.37,0.0082,0.354,0.386,0.456,1,0,0.44,0.0087,0.423,0.457,0.31,0,1,0,0
+"79","brncre","Brown Creeper","Certhia americana","Forest",NA,0.37,7e-04,0.369,0.371,0.548,1,0,0.44,8e-04,0.438,0.441,0.751,1,0,0,0
+"80","brnowl","Barn Owl","Tyto alba","Habitat Generalist",NA,0.37,0.003,0.364,0.376,0.361,0,1,0.44,0.0029,0.434,0.446,0.191,0,1,0,0
+"81","brnthr","Brown Thrasher","Toxostoma rufum","Forest",NA,0.37,7e-04,0.369,0.371,0.545,1,0,0.44,7e-04,0.439,0.441,0.537,1,0,0,0
+"82","brocow","Bronzed Cowbird","Molothrus aeneus","Aridlands",NA,0.37,0.0066,0.357,0.383,0.269,0,1,0.44,0.0067,0.427,0.454,0.047,0,1,0,0
+"83","brthum","Broad-tailed Hummingbird","Selasphorus platycercus","Forest",NA,0.37,0.0022,0.366,0.374,0.377,1,0,0.44,0.0022,0.436,0.444,0.6,1,0,0,0
+"84","brwhaw","Broad-winged Hawk","Buteo platypterus","Forest",NA,0.37,0.0034,0.363,0.377,0.646,1,0,0.44,0.0035,0.433,0.447,0.533,1,0,0,0
+"85","btbwar","Black-throated Blue Warbler","Setophaga caerulescens","Forest",NA,0.37,0.002,0.366,0.374,0.698,1,0,0.44,0.0021,0.436,0.444,0.852,1,0,0,0
+"86","btnwar","Black-throated Green Warbler","Setophaga virens","Forest",NA,0.37,0.0012,0.368,0.372,0.653,1,0,0.44,0.0013,0.437,0.442,0.772,1,0,0,0
+"87","btywar","Black-throated Gray Warbler","Setophaga nigrescens","Forest",NA,0.37,0.0015,0.367,0.373,0.337,0,1,0.44,0.0016,0.437,0.443,0.441,0,0,0,6.0406779919128e-74
+"88","bubsan","Buff-breasted Sandpiper","Calidris subruficollis","Water/wetland","Tipping Point",0.37,0.0085,0.353,0.386,0.238,0,1,0.44,0.0087,0.423,0.458,0.076,0,1,0,0
+"89","buffle","Bufflehead","Bucephala albeola","Water/wetland",NA,0.367,0.0028,0.361,0.372,0.36,0,1,0.436,0.0027,0.431,0.442,0.453,1,0,0,0
+"90","buggna","Blue-gray Gnatcatcher","Polioptila caerulea","Habitat Generalist",NA,0.37,7e-04,0.369,0.371,0.614,1,0,0.44,7e-04,0.439,0.441,0.567,1,0,0,0
+"91","buhvir","Blue-headed Vireo","Vireo solitarius","Forest",NA,0.37,0.0011,0.368,0.372,0.66,1,0,0.44,0.0011,0.438,0.442,0.748,1,0,0,0
+"92","bulori","Bullock's Oriole","Icterus bullockii","Forest",NA,0.37,0.001,0.368,0.372,0.354,0,1,0.44,0.0011,0.438,0.442,0.25,0,1,0,0
+"93","burowl","Burrowing Owl","Athene cunicularia","Grasslands",NA,0.37,0.0018,0.367,0.374,0.397,1,0,0.44,0.0019,0.436,0.444,0.398,0,1,0,0
+"94","bushti","Bushtit","Psaltriparus minimus","Forest",NA,0.37,0.0019,0.366,0.374,0.303,0,1,0.44,0.0022,0.436,0.444,0.338,0,1,0,0
+"95","buwtea","Blue-winged Teal","Spatula discors","Water/wetland",NA,0.37,0.0016,0.367,0.373,0.291,0,1,0.44,0.0017,0.436,0.443,0.281,0,1,0,0
+"96","buwwar","Blue-winged Warbler","Vermivora cyanoptera","Forest",NA,0.37,0.0019,0.366,0.374,0.745,1,0,0.44,0.0019,0.436,0.444,0.774,1,0,0,0
+"97","cacgoo1","Cackling Goose","Branta hutchinsii","Water/wetland",NA,0.369,0.0035,0.363,0.376,0.267,0,1,0.44,0.0034,0.433,0.446,0.268,0,1,0,0
+"98","cacwre","Cactus Wren","Campylorhynchus brunneicapillus","Aridlands",NA,0.37,0.0026,0.365,0.375,0.326,0,1,0.44,0.0027,0.435,0.445,0.004,0,1,0,0
+"99","calgul","California Gull","Larus californicus","Water/wetland",NA,0.369,0.0445,0.282,0.456,0.117,0,1,0.441,0.0465,0.349,0.532,0.185,0,1,0,0
+"100","calhum","Calliope Hummingbird","Selasphorus calliope","Forest",NA,0.37,0.0023,0.366,0.375,0.44,1,0,0.44,0.0024,0.435,0.445,0.728,1,0,0,0
+"101","calqua","California Quail","Callipepla californica","Aridlands",NA,0.37,0.0026,0.365,0.375,0.48,1,0,0.44,0.0028,0.435,0.446,0.456,1,0,0,0
+"102","calthr","California Thrasher","Toxostoma redivivum","Aridlands",NA,0.37,0.0061,0.358,0.382,0.724,1,0,0.44,0.0064,0.428,0.453,0.638,1,0,0,0
+"103","caltow","California Towhee","Melozone crissalis","Aridlands",NA,0.37,0.0046,0.361,0.379,0.661,1,0,0.44,0.0051,0.43,0.45,0.536,1,0,0,0
+"104","camwar","Cape May Warbler","Setophaga tigrina","Forest",NA,0.37,0.0014,0.367,0.373,0.662,1,0,0.44,0.0015,0.437,0.443,0.761,1,0,0,0
+"105","cangoo","Canada Goose","Branta canadensis","Water/wetland",NA,0.37,0.0012,0.368,0.372,0.363,0,1,0.44,0.0012,0.438,0.442,0.441,0,0,0,6.39489581738265e-117
+"106","cantow","Canyon Towhee","Melozone fusca","Aridlands",NA,0.37,0.0031,0.364,0.376,0.466,1,0,0.44,0.0033,0.434,0.446,0.032,0,1,0,0
+"107","canvas","Canvasback","Aythya valisineria","Water/wetland",NA,0.37,0.0188,0.333,0.407,0.369,0,0,0.439,0.0186,0.403,0.476,0.472,0,0,0.0464346105034708,2.50009458689274e-311
+"108","canwar","Canada Warbler","Cardellina canadensis","Forest","Tipping Point",0.37,0.0017,0.366,0.373,0.563,1,0,0.44,0.0018,0.436,0.443,0.773,1,0,0,0
+"109","canwre","Canyon Wren","Catherpes mexicanus","Aridlands",NA,0.37,0.0028,0.365,0.375,0.387,1,0,0.44,0.0028,0.434,0.445,0.277,0,1,0,0
+"110","carchi","Carolina Chickadee","Poecile carolinensis","Forest",NA,0.37,0.0011,0.368,0.372,0.757,1,0,0.44,0.001,0.438,0.442,0.705,1,0,0,0
+"111","carwre","Carolina Wren","Thryothorus ludovicianus","Forest",NA,0.37,9e-04,0.368,0.372,0.72,1,0,0.44,9e-04,0.438,0.442,0.675,1,0,0,0
+"112","casfin","Cassin's Finch","Haemorhous cassinii","Forest",NA,0.37,0.0015,0.367,0.373,0.323,0,1,0.44,0.0015,0.437,0.443,0.732,1,0,0,0
+"113","caskin","Cassin's Kingbird","Tyrannus vociferans","Forest",NA,0.37,0.002,0.366,0.374,0.341,0,1,0.44,0.0021,0.436,0.444,0.11,0,1,0,0
+"114","casspa","Cassin's Sparrow","Peucaea cassinii","Grasslands",NA,0.37,0.0017,0.367,0.373,0.432,1,0,0.44,0.0018,0.436,0.444,0.125,0,1,0,0
+"115","caster1","Caspian Tern","Hydroprogne caspia","Water/wetland",NA,0.348,0.0129,0.323,0.373,0.497,1,0,0.414,0.0131,0.388,0.439,0.355,0,1,0,0
+"116","casvir","Cassin's Vireo","Vireo cassinii","Forest",NA,0.37,0.0015,0.367,0.373,0.476,1,0,0.44,0.0016,0.437,0.443,0.676,1,0,0,0
+"117","categr","Cattle Egret","Bubulcus ibis","Water/wetland",NA,0.37,0.005,0.36,0.379,0.599,1,0,0.44,0.0055,0.429,0.45,0.433,0,0,0,1.39008484701443e-211
+"118","cavswa","Cave Swallow","Petrochelidon fulva","Aridlands",NA,0.37,0.0022,0.366,0.374,0.558,1,0,0.44,0.0022,0.436,0.444,0.152,0,1,0,0
+"119","cedwax","Cedar Waxwing","Bombycilla cedrorum","Forest",NA,0.37,6e-04,0.369,0.371,0.575,1,0,0.44,6e-04,0.439,0.441,0.556,1,0,0,0
+"120","cerwar","Cerulean Warbler","Setophaga cerulea","Forest","Tipping Point",0.37,0.0038,0.363,0.377,0.906,1,0,0.44,0.0038,0.433,0.448,0.936,1,0,0,0
+"121","chbchi","Chestnut-backed Chickadee","Poecile rufescens","Forest",NA,0.37,0.003,0.364,0.376,0.559,1,0,0.44,0.003,0.434,0.446,0.899,1,0,0,0
+"122","chclon","Chestnut-collared Longspur","Calcarius ornatus","Grasslands","Tipping Point",0.37,0.002,0.366,0.374,0.374,0,0,0.44,0.0022,0.436,0.444,0.355,0,1,0,0
+"123","chirav","Chihuahuan Raven","Corvus cryptoleucus","Aridlands",NA,0.37,0.0031,0.364,0.376,0.327,0,1,0.44,0.0034,0.433,0.447,0.043,0,1,0,0
+"124","chispa","Chipping Sparrow","Spizella passerina","Forest",NA,0.37,5e-04,0.369,0.371,0.506,1,0,0.44,5e-04,0.439,0.441,0.506,1,0,0,0
+"125","chiswi","Chimney Swift","Chaetura pelagica","Forest","Tipping Point",0.37,0.0034,0.363,0.377,0.571,1,0,0.44,0.0034,0.433,0.447,0.562,1,0,0,0
+"126","chswar","Chestnut-sided Warbler","Setophaga pensylvanica","Forest",NA,0.37,0.0012,0.368,0.372,0.649,1,0,0.44,0.0013,0.437,0.442,0.783,1,0,0,0
+"127","chwwid","Chuck-will's-widow","Antrostomus carolinensis","Forest",NA,0.37,0.0017,0.367,0.373,0.823,1,0,0.44,0.0017,0.437,0.443,0.71,1,0,0,0
+"128","cintea","Cinnamon Teal","Spatula cyanoptera","Water/wetland",NA,0.37,0.0027,0.365,0.375,0.172,0,1,0.44,0.0028,0.434,0.445,0.155,0,1,0,0
+"129","clagre","Clark's Grebe","Aechmophorus clarkii","Water/wetland","Tipping Point",0.37,0.0128,0.344,0.395,0.35,0,0,0.44,0.0138,0.413,0.468,0.268,0,1,8.35080576207724e-271,0
+"130","clanut","Clark's Nutcracker","Nucifraga columbiana","Forest",NA,0.37,0.0022,0.366,0.374,0.257,0,1,0.44,0.0021,0.436,0.444,0.845,1,0,0,0
+"131","clcspa","Clay-colored Sparrow","Spizella pallida","Grasslands",NA,0.37,0.001,0.368,0.372,0.432,1,0,0.44,0.001,0.438,0.442,0.379,0,1,0,0
+"132","cliswa","Cliff Swallow","Petrochelidon pyrrhonota","Habitat Generalist",NA,0.37,8e-04,0.368,0.371,0.354,0,1,0.44,8e-04,0.438,0.442,0.335,0,1,0,0
+"133","cogdov","Common Ground Dove","Columbina passerina","Aridlands",NA,0.37,0.0035,0.363,0.377,0.495,1,0,0.44,0.0034,0.434,0.447,0.278,0,1,0,0
+"134","comgal1","Common Gallinule","Gallinula galeata","Water/wetland",NA,0.37,0.0065,0.357,0.382,0.503,1,0,0.44,0.0064,0.428,0.453,0.558,1,0,0,0
+"135","comgol","Common Goldeneye","Bucephala clangula","Water/wetland",NA,0.368,0.0042,0.36,0.376,0.298,0,1,0.437,0.0043,0.429,0.446,0.448,1,0,0,0
+"136","comgra","Common Grackle","Quiscalus quiscula","Habitat Generalist",NA,0.37,0.0123,0.345,0.394,0.348,0,0,0.44,0.0129,0.415,0.465,0.379,0,1,5.31135765898695e-314,0
+"137","comloo","Common Loon","Gavia immer","Water/wetland",NA,0.364,0.004,0.356,0.372,0.422,1,0,0.433,0.0042,0.424,0.441,0.514,1,0,0,0
+"138","commer","Common Merganser","Mergus merganser","Water/wetland",NA,0.369,0.0081,0.353,0.385,0.435,1,0,0.44,0.0085,0.423,0.456,0.587,1,0,0,0
+"139","comnig","Common Nighthawk","Chordeiles minor","Habitat Generalist",NA,0.37,7e-04,0.369,0.371,0.467,1,0,0.44,8e-04,0.438,0.441,0.553,1,0,0,0
+"140","compoo","Common Poorwill","Phalaenoptilus nuttallii","Aridlands",NA,0.37,0.0014,0.367,0.373,0.325,0,1,0.44,0.0015,0.437,0.443,0.402,0,1,0,0
+"141","comrav","Common Raven","Corvus corax","Habitat Generalist",NA,0.369,6e-04,0.368,0.37,0.207,0,1,0.439,6e-04,0.438,0.44,0.346,0,1,0,0
+"142","comred","Common Redpoll","Acanthis flammea","Water/wetland",NA,0.37,0.001,0.368,0.372,0.144,0,1,0.44,0.001,0.438,0.442,0.344,0,1,0,0
+"143","comter","Common Tern","Sterna hirundo","Water/wetland",NA,0.324,0.023,0.279,0.369,0.685,1,0,0.386,0.0245,0.338,0.434,0.192,0,1,0,0
+"144","comyel","Common Yellowthroat","Geothlypis trichas","Habitat Generalist",NA,0.37,6e-04,0.369,0.371,0.445,1,0,0.44,6e-04,0.439,0.441,0.498,1,0,0,0
+"145","conwar","Connecticut Warbler","Oporornis agilis","Forest",NA,0.37,0.0055,0.359,0.381,0.401,1,0,0.44,0.0052,0.43,0.45,0.802,1,0,0,0
+"146","coohaw","Cooper's Hawk","Accipiter cooperii","Forest",NA,0.37,5e-04,0.369,0.371,0.391,1,0,0.44,5e-04,0.439,0.441,0.416,0,1,0,0
+"147","corfly","Cordilleran Flycatcher","Empidonax occidentalis","Forest",NA,0.37,0.0024,0.365,0.375,0.403,1,0,0.44,0.0024,0.435,0.445,0.786,1,0,0,0
+"148","coshum","Costa's Hummingbird","Calypte costae","Aridlands",NA,0.37,0.0033,0.364,0.377,0.217,0,1,0.44,0.0036,0.433,0.447,0.081,0,1,0,0
+"149","coukin","Couch's Kingbird","Tyrannus couchii","Aridlands",NA,0.37,0.0055,0.359,0.381,0.322,0,1,0.44,0.0056,0.429,0.451,0.069,0,1,0,0
+"150","cowscj1","California Scrub-Jay","Aphelocoma californica","Forest",NA,0.37,0.0036,0.363,0.377,0.6,1,0,0.44,0.004,0.432,0.448,0.528,1,0,0,0
+"151","crithr","Crissal Thrasher","Toxostoma crissale","Aridlands",NA,0.37,0.003,0.364,0.376,0.279,0,1,0.44,0.0031,0.434,0.446,0.023,0,1,0,0
+"152","cubthr","Curve-billed Thrasher","Toxostoma curvirostre","Aridlands",NA,0.37,0.0029,0.365,0.376,0.401,1,0,0.44,0.0029,0.434,0.446,0.008,0,1,0,0
+"153","daejun","Dark-eyed Junco","Junco hyemalis","Forest",NA,0.37,4e-04,0.369,0.371,0.443,1,0,0.44,4e-04,0.439,0.441,0.521,1,0,0,0
+"154","dickci","Dickcissel","Spiza americana","Grasslands",NA,0.37,0.0013,0.367,0.373,0.381,1,0,0.44,0.0013,0.438,0.443,0.298,0,1,0,0
+"155","doccor","double-crested cormorant","Nannopterum auritum","Water/wetland",NA,0.365,0.0079,0.349,0.381,0.487,1,0,0.434,0.0078,0.419,0.449,0.4,0,1,0,0
+"156","dowwoo","Downy Woodpecker","Dryobates pubescens","Forest",NA,0.37,7e-04,0.369,0.371,0.611,1,0,0.44,7e-04,0.439,0.441,0.625,1,0,0,0
+"157","dunlin","Dunlin","Calidris alpina","Water/wetland",NA,0.364,0.0097,0.345,0.383,0.32,0,1,0.432,0.0097,0.413,0.451,0.21,0,1,0,0
+"158","dusfly","Dusky Flycatcher","Empidonax oberholseri","Forest",NA,0.37,0.0012,0.368,0.372,0.325,0,1,0.44,0.0012,0.438,0.442,0.679,1,0,0,0
+"159","dusgro","Dusky Grouse","Dendragapus obscurus","Forest",NA,0.37,0.0028,0.365,0.376,0.286,0,1,0.44,0.0028,0.434,0.445,0.911,1,0,0,0
+"160","eargre","Eared Grebe","Podiceps nigricollis","Water/wetland",NA,0.371,0.0177,0.336,0.405,0.068,0,1,0.438,0.0182,0.403,0.474,0.109,0,1,0,0
+"161","easblu","Eastern Bluebird","Sialia sialis","Forest",NA,0.37,7e-04,0.369,0.371,0.657,1,0,0.44,8e-04,0.439,0.441,0.612,1,0,0,0
+"162","easkin","Eastern Kingbird","Tyrannus tyrannus","Grasslands",NA,0.37,9e-04,0.368,0.372,0.46,1,0,0.44,9e-04,0.438,0.442,0.508,1,0,0,0
+"163","easmea","Eastern Meadowlark","Sturnella magna","Grasslands",NA,0.37,0.001,0.368,0.372,0.502,1,0,0.44,0.0011,0.438,0.442,0.368,0,1,0,0
+"164","easowl1","Eastern Screech-Owl","Megascops asio","Forest",NA,0.37,0.0011,0.368,0.372,0.682,1,0,0.44,0.0011,0.438,0.442,0.652,1,0,0,0
+"165","easpho","Eastern Phoebe","Sayornis phoebe","Forest",NA,0.37,7e-04,0.369,0.371,0.67,1,0,0.44,7e-04,0.438,0.441,0.62,1,0,0,0
+"166","eastow","Eastern Towhee","Pipilo erythrophthalmus","Forest",NA,0.37,0.001,0.368,0.372,0.71,1,0,0.44,0.001,0.438,0.442,0.699,1,0,0,0
+"167","easwpw1","Eastern Whip-poor-will","Antrostomus vociferus","Forest","Tipping Point",0.37,0.0021,0.366,0.374,0.833,1,0,0.44,0.0021,0.436,0.444,0.877,1,0,0,0
+"168","eawpew","Eastern Wood-Pewee","Contopus virens","Forest",NA,0.37,8e-04,0.369,0.372,0.607,1,0,0.44,8e-04,0.438,0.442,0.62,1,0,0,0
+"169","evegro","Evening Grosbeak","Coccothraustes vespertinus","Forest","Tipping Point",0.37,0.0015,0.367,0.373,0.548,1,0,0.44,0.0016,0.437,0.443,0.882,1,0,0,0
+"170","ferhaw","Ferruginous Hawk","Buteo regalis","Grasslands",NA,0.37,0.0013,0.368,0.373,0.348,0,1,0.44,0.0013,0.437,0.443,0.338,0,1,0,0
+"171","fiespa","Field Sparrow","Spizella pusilla","Forest",NA,0.37,8e-04,0.368,0.372,0.594,1,0,0.44,8e-04,0.438,0.442,0.55,1,0,0,0
+"172","fiscro","Fish Crow","Corvus ossifragus","Habitat Generalist",NA,0.37,0.0028,0.364,0.375,0.587,1,0,0.439,0.0029,0.434,0.445,0.564,1,0,0,0
+"173","forter","Forster's Tern","Sterna forsteri","Water/wetland",NA,0.36,0.0057,0.349,0.371,0.467,1,0,0.428,0.0059,0.417,0.44,0.466,1,0,0,0
+"174","foxspa","Fox Sparrow","Passerella iliaca","Forest",NA,0.369,8e-04,0.368,0.371,0.291,0,1,0.439,8e-04,0.438,0.441,0.39,0,1,0,0
+"175","fragul","Franklin's Gull","Leucophaeus pipixcan","Water/wetland",NA,0.37,0.0083,0.353,0.386,0.477,1,0,0.44,0.0091,0.422,0.458,0.494,1,0,0,0
+"176","fuwduc","Fulvous Whistling-Duck","Dendrocygna bicolor","Water/wetland",NA,0.37,0.0083,0.354,0.386,0.216,0,1,0.44,0.0086,0.424,0.457,0.26,0,1,0,0
+"177","gadwal","Gadwall","Mareca strepera","Water/wetland",NA,0.37,0.0019,0.366,0.374,0.31,0,1,0.44,0.002,0.436,0.444,0.332,0,1,0,0
+"178","gamqua","Gambel's Quail","Callipepla gambelii","Aridlands",NA,0.37,0.0031,0.364,0.376,0.209,0,1,0.44,0.0032,0.434,0.446,0.007,0,1,0,0
+"179","gbbgul","Great Black-backed Gull","Larus marinus","Water/wetland","Tipping Point",0.333,0.0148,0.304,0.362,0.783,1,0,0.397,0.0166,0.364,0.429,0.189,0,1,0,0
+"180","gilfli","Gilded Flicker","Colaptes chrysoides","Aridlands",NA,0.37,0.0062,0.358,0.383,0.225,0,1,0.44,0.0064,0.428,0.453,0,0,1,0,0
+"181","gilwoo","Gila Woodpecker","Melanerpes uropygialis","Aridlands",NA,0.37,0.0052,0.36,0.381,0.324,0,1,0.44,0.0053,0.43,0.451,0.005,0,1,0,0
+"182","gloibi","Glossy Ibis","Plegadis falcinellus","Water/wetland",NA,0.369,0.0076,0.355,0.384,0.553,1,0,0.44,0.0077,0.425,0.455,0.513,1,0,0,0
+"183","gnttow","Green-tailed Towhee","Pipilo chlorurus","Aridlands",NA,0.37,0.0012,0.368,0.372,0.25,0,1,0.44,0.0013,0.438,0.442,0.455,1,0,0,0
+"184","gnwtea","Green-winged Teal","Anas crecca","Water/wetland",NA,0.37,0.0029,0.364,0.375,0.214,0,1,0.439,0.0031,0.433,0.446,0.253,0,1,0,0
+"185","gockin","Golden-crowned Kinglet","Regulus satrapa","Forest",NA,0.37,8e-04,0.368,0.371,0.568,1,0,0.44,8e-04,0.438,0.441,0.744,1,0,0,0
+"186","gocspa","Golden-crowned Sparrow","Zonotrichia atricapilla","Water/wetland",NA,0.369,0.0017,0.366,0.372,0.306,0,1,0.439,0.0018,0.435,0.442,0.398,0,1,0,0
+"187","gofwoo","Golden-fronted Woodpecker","Melanerpes aurifrons","Aridlands",NA,0.37,0.0035,0.363,0.377,0.411,1,0,0.44,0.0035,0.433,0.447,0.094,0,1,0,0
+"188","goleag","Golden Eagle","Aquila chrysaetos","Habitat Generalist",NA,0.37,0.0015,0.367,0.373,0.126,0,1,0.44,0.0016,0.437,0.443,0.295,0,1,0,0
+"189","gowwar","Golden-winged Warbler","Vermivora chrysoptera","Forest","Tipping Point",0.37,0.0023,0.366,0.375,0.645,1,0,0.44,0.0023,0.435,0.444,0.773,1,0,0,0
+"190","graspa","Grasshopper Sparrow","Ammodramus savannarum","Grasslands",NA,0.37,0.0011,0.368,0.372,0.502,1,0,0.44,0.0011,0.438,0.442,0.525,1,0,0,0
+"191","grawar","Grace's Warbler","Setophaga graciae","Forest","Tipping Point",0.37,0.0047,0.36,0.379,0.433,1,0,0.44,0.0048,0.431,0.449,0.651,1,0,0,0
+"192","grbani","Groove-billed Ani","Crotophaga sulcirostris","Habitat Generalist",NA,0.37,0.0079,0.355,0.386,0.169,0,1,0.44,0.0084,0.424,0.457,0.055,0,1,0,0
+"193","grbher3","Great Blue Heron","Ardea herodias","Water/wetland",NA,0.369,9e-04,0.368,0.371,0.414,1,0,0.439,9e-04,0.437,0.441,0.396,0,1,0,0
+"194","grcfly","Great Crested Flycatcher","Myiarchus crinitus","Forest",NA,0.37,8e-04,0.368,0.371,0.627,1,0,0.44,8e-04,0.438,0.442,0.601,1,0,0,0
+"195","greegr","Great Egret","Ardea alba","Water/wetland",NA,0.369,0.0025,0.364,0.374,0.363,0,1,0.439,0.0026,0.434,0.444,0.371,0,1,0,0
+"196","greroa","Greater Roadrunner","Geococcyx californianus","Aridlands",NA,0.37,0.002,0.366,0.374,0.458,1,0,0.44,0.0021,0.436,0.444,0.11,0,1,0,0
+"197","gresca","Greater Scaup","Aythya marila","Water/wetland",NA,0.366,0.0069,0.352,0.38,0.242,0,1,0.435,0.007,0.422,0.449,0.214,0,1,0,0
+"198","greyel","Greater Yellowlegs","Tringa melanoleuca","Water/wetland",NA,0.37,0.0017,0.366,0.373,0.194,0,1,0.44,0.0017,0.436,0.443,0.188,0,1,0,0
+"199","grhowl","Great Horned Owl","Bubo virginianus","Habitat Generalist",NA,0.37,6e-04,0.369,0.371,0.367,0,1,0.44,6e-04,0.439,0.441,0.387,0,1,0,0
+"200","grnher","Green Heron","Butorides virescens","Water/wetland",NA,0.37,0.001,0.368,0.372,0.506,1,0,0.44,0.0011,0.438,0.442,0.491,1,0,0,0
+"201","grnjay","Green Jay","Cyanocorax yncas","Aridlands",NA,0.37,0.0059,0.359,0.382,0.311,0,1,0.44,0.0059,0.429,0.452,0.058,0,1,0,0
+"202","grpchi","Greater Prairie-Chicken","Tympanuchus cupido","Grasslands",NA,0.37,0.0034,0.363,0.377,0.667,1,0,0.44,0.0036,0.433,0.447,0.679,1,0,0,0
+"203","grtgra","Great-tailed Grackle","Quiscalus mexicanus","Habitat Generalist",NA,0.37,0.0039,0.362,0.377,0.308,0,1,0.439,0.0041,0.431,0.448,0.106,0,1,0,0
+"204","grycat","Gray Catbird","Dumetella carolinensis","Forest",NA,0.37,8e-04,0.368,0.371,0.515,1,0,0.44,8e-04,0.438,0.441,0.548,1,0,0,0
+"205","gryfly","Gray Flycatcher","Empidonax wrightii","Forest",NA,0.37,0.0013,0.367,0.373,0.188,0,1,0.44,0.0013,0.437,0.443,0.297,0,1,0,0
+"206","gryjay","Canada Jay","Perisoreus canadensis","Forest",NA,0.37,0.0014,0.367,0.373,0.118,0,1,0.44,0.0016,0.437,0.443,0.518,1,0,0,0
+"207","grykin","Gray Kingbird","Tyrannus dominicensis","Forest",NA,0.369,0.0271,0.316,0.423,0.297,0,1,0.439,0.029,0.382,0.495,0.245,0,1,0,0
+"208","gryvir","Gray Vireo","Vireo vicinior","Forest",NA,0.37,0.0031,0.364,0.376,0.237,0,1,0.44,0.0029,0.434,0.446,0.085,0,1,0,0
+"209","gwfgoo","Greater White-fronted Goose","Anser albifrons","Water/wetland",NA,0.37,0.0022,0.366,0.374,0.142,0,1,0.44,0.0021,0.436,0.444,0.152,0,1,0,0
+"210","gycthr","Gray-cheeked Thrush","Catharus minimus","Forest",NA,0.37,0.0012,0.367,0.372,0.13,0,1,0.44,0.0013,0.437,0.442,0.203,0,1,0,0
+"211","haiwoo","Hairy Woodpecker","Dryobates villosus","Forest",NA,0.37,7e-04,0.369,0.371,0.58,1,0,0.44,8e-04,0.439,0.441,0.752,1,0,0,0
+"212","hamfly","Hammond's Flycatcher","Empidonax hammondii","Forest",NA,0.37,0.0015,0.367,0.373,0.404,1,0,0.44,0.0015,0.437,0.443,0.717,1,0,0,0
+"213","harduc","Harlequin Duck","Histrionicus histrionicus","Water/wetland",NA,0.314,0.0061,0.302,0.326,0.447,1,0,0.374,0.0061,0.362,0.385,0.112,0,1,0,0
+"214","harspa","Harris's Sparrow","Zonotrichia querula","Water/wetland","Tipping Point",0.37,0.0017,0.367,0.373,0.428,1,0,0.44,0.0016,0.437,0.443,0.372,0,1,0,0
+"215","henspa","Henslow's Sparrow","Centronyx henslowii","Grasslands","Tipping Point",0.37,0.0028,0.364,0.376,0.503,1,0,0.44,0.003,0.434,0.446,0.481,1,0,0,0
+"216","heptan","Hepatic Tanager","Piranga flava","Forest",NA,0.37,0.0049,0.361,0.38,0.441,1,0,0.44,0.005,0.43,0.45,0.388,0,1,0,0
+"217","hergul","Herring Gull","Larus argentatus","Water/wetland",NA,0.364,0.0082,0.348,0.38,0.248,0,1,0.433,0.009,0.415,0.45,0.606,1,0,0,0
+"218","herthr","Hermit Thrush","Catharus guttatus","Forest",NA,0.37,7e-04,0.368,0.371,0.487,1,0,0.439,7e-04,0.438,0.441,0.652,1,0,0,0
+"219","herwar","Hermit Warbler","Setophaga occidentalis","Forest",NA,0.37,0.0033,0.364,0.377,0.611,1,0,0.44,0.0034,0.433,0.447,0.839,1,0,0,0
+"220","hoared","Hoary Redpoll","Acanthis hornemanni","Water/wetland",NA,0.368,0.0019,0.365,0.372,0.019,0,1,0.438,0.002,0.434,0.442,0.068,0,1,0,0
+"221","hoomer","Hooded Merganser","Lophodytes cucullatus","Water/wetland",NA,0.37,0.0023,0.365,0.375,0.449,1,0,0.44,0.0023,0.435,0.444,0.564,1,0,0,0
+"222","hooori","Hooded Oriole","Icterus cucullatus","Aridlands",NA,0.37,0.0031,0.364,0.376,0.335,0,1,0.44,0.0033,0.433,0.446,0.07,0,1,0,0
+"223","hoowar","Hooded Warbler","Setophaga citrina","Forest",NA,0.37,0.0017,0.367,0.373,0.878,1,0,0.44,0.0017,0.437,0.443,0.805,1,0,0,0
+"224","horgre","Horned Grebe","Podiceps auritus","Water/wetland",NA,0.363,0.0043,0.354,0.371,0.404,1,0,0.431,0.0043,0.423,0.44,0.436,0,0,0,3.59351083053445e-188
+"225","horlar","Horned Lark","Eremophila alpestris","Grasslands",NA,0.37,0.0013,0.368,0.372,0.237,0,1,0.44,0.0013,0.437,0.443,0.264,0,1,0,0
+"226","houfin","House Finch","Haemorhous mexicanus","Habitat Generalist",NA,0.37,0.0014,0.367,0.373,0.353,0,1,0.44,0.0015,0.437,0.443,0.137,0,1,0,0
+"227","houwre","House Wren","Troglodytes aedon","Forest",NA,0.37,5e-04,0.369,0.371,0.423,1,0,0.44,5e-04,0.439,0.441,0.47,1,0,0,0
+"228","hrshaw","Harris's Hawk","Parabuteo unicinctus","Aridlands",NA,0.37,0.0056,0.359,0.381,0.311,0,1,0.44,0.0055,0.429,0.451,0.031,0,1,0,0
+"229","hudgod","Hudsonian Godwit","Limosa haemastica","Water/wetland","Tipping Point",0.37,0.0034,0.363,0.377,0.196,0,1,0.44,0.0038,0.433,0.447,0.196,0,1,0,0
+"230","hutvir","Hutton's Vireo","Vireo huttoni","Forest",NA,0.37,0.0033,0.363,0.376,0.606,1,0,0.44,0.0035,0.433,0.447,0.735,1,0,0,0
+"231","incdov","Inca Dove","Columbina inca","Aridlands",NA,0.37,0.0134,0.344,0.396,0.372,0,0,0.439,0.0139,0.412,0.467,0.108,0,1,1.34846686760331e-06,0
+"232","indbun","Indigo Bunting","Passerina cyanea","Forest",NA,0.37,9e-04,0.368,0.372,0.589,1,0,0.44,9e-04,0.438,0.442,0.578,1,0,0,0
+"233","juntit1","Juniper Titmouse","Baeolophus ridgwayi","Forest",NA,0.37,0.0028,0.364,0.376,0.225,0,1,0.44,0.0028,0.434,0.445,0.148,0,1,0,0
+"234","kenwar","Kentucky Warbler","Geothlypis formosa","Forest",NA,0.37,0.0017,0.367,0.373,0.852,1,0,0.44,0.0017,0.437,0.443,0.821,1,0,0,0
+"235","killde","Killdeer","Charadrius vociferus","Habitat Generalist",NA,0.37,0.001,0.368,0.372,0.271,0,1,0.44,0.001,0.438,0.442,0.258,0,1,0,0
+"236","kineid","King Eider","Somateria spectabilis","Water/wetland","Tipping Point",0.331,0.0075,0.317,0.346,0.131,0,1,0.394,0.0079,0.379,0.409,0,0,1,0,0
+"237","kinrai4","King Rail","Rallus elegans","Water/wetland","Tipping Point",0.369,0.0059,0.358,0.381,0.455,1,0,0.439,0.0063,0.427,0.451,0.726,1,0,0,0
+"238","labwoo","Ladder-backed Woodpecker","Dryobates scalaris","Aridlands",NA,0.37,0.0017,0.367,0.373,0.44,1,0,0.44,0.0018,0.436,0.444,0.101,0,1,0,0
+"239","laplon","Lapland Longspur","Calcarius lapponicus","Water/wetland",NA,0.368,0.0024,0.364,0.373,0.269,0,1,0.438,0.0024,0.433,0.443,0.281,0,1,0,0
+"240","larbun","Lark Bunting","Calamospiza melanocorys","Grasslands",NA,0.37,0.0017,0.367,0.373,0.427,1,0,0.44,0.0018,0.436,0.443,0.254,0,1,0,0
+"241","larspa","Lark Sparrow","Chondestes grammacus","Grasslands",NA,0.37,8e-04,0.368,0.372,0.44,1,0,0.44,9e-04,0.438,0.442,0.303,0,1,0,0
+"242","lawgol","Lawrence's Goldfinch","Spinus lawrencei","Aridlands",NA,0.37,0.0036,0.363,0.377,0.539,1,0,0.44,0.0038,0.433,0.448,0.341,0,1,0,0
+"243","lazbun","Lazuli Bunting","Passerina amoena","Forest",NA,0.37,0.001,0.368,0.372,0.314,0,1,0.44,0.0011,0.438,0.442,0.459,1,0,0,0
+"244","leabit","Least Bittern","Ixobrychus exilis","Water/wetland",NA,0.369,0.0045,0.36,0.378,0.368,0,0,0.438,0.0047,0.429,0.447,0.544,1,0,1.94721133773619e-12,0
+"245","leafly","Least Flycatcher","Empidonax minimus","Forest",NA,0.37,9e-04,0.368,0.372,0.453,1,0,0.44,9e-04,0.438,0.442,0.536,1,0,0,0
+"246","leasan","Least Sandpiper","Calidris minutilla","Water/wetland",NA,0.37,0.0027,0.364,0.375,0.208,0,1,0.44,0.0028,0.434,0.445,0.166,0,1,0,0
+"247","lecspa","LeConte's Sparrow","Ammospiza leconteii","Grasslands","Tipping Point",0.37,0.0018,0.366,0.374,0.272,0,1,0.44,0.0019,0.436,0.444,0.252,0,1,0,0
+"248","lecthr","LeConte's Thrasher","Toxostoma lecontei","Aridlands","Tipping Point",0.371,0.0066,0.358,0.384,0.062,0,1,0.44,0.007,0.426,0.453,0.001,0,1,0,0
+"249","lesgol","Lesser Goldfinch","Spinus psaltria","Forest",NA,0.37,0.0013,0.367,0.373,0.399,1,0,0.44,0.0015,0.437,0.443,0.229,0,1,0,0
+"250","lesnig","Lesser Nighthawk","Chordeiles acutipennis","Aridlands",NA,0.37,0.0025,0.365,0.375,0.293,0,1,0.44,0.0025,0.435,0.445,0.009,0,1,0,0
+"251","lessca","Lesser Scaup","Aythya affinis","Water/wetland",NA,0.368,0.0056,0.357,0.379,0.357,0,1,0.437,0.0057,0.426,0.448,0.418,0,1,0,0
+"252","lesyel","Lesser Yellowlegs","Tringa flavipes","Water/wetland","Tipping Point",0.37,0.0028,0.364,0.375,0.143,0,1,0.44,0.0029,0.434,0.445,0.18,0,1,0,0
+"253","lewwoo","Lewis's Woodpecker","Melanerpes lewis","Forest",NA,0.37,0.0026,0.365,0.375,0.383,1,0,0.44,0.0028,0.435,0.446,0.618,1,0,0,0
+"254","libher","Little Blue Heron","Egretta caerulea","Water/wetland",NA,0.37,0.0028,0.364,0.375,0.433,1,0,0.44,0.0031,0.434,0.446,0.433,0,1,0,0
+"255","limpki","Limpkin","Aramus guarauna","Water/wetland",NA,0.37,0.0103,0.35,0.391,0.635,1,0,0.44,0.0108,0.419,0.461,0.605,1,0,0,0
+"256","linspa","Lincoln's Sparrow","Melospiza lincolnii","Forest",NA,0.37,5e-04,0.369,0.371,0.324,0,1,0.44,5e-04,0.439,0.441,0.377,0,1,0,0
+"257","lobcur","Long-billed Curlew","Numenius americanus","Grasslands",NA,0.37,0.0044,0.361,0.379,0.237,0,1,0.44,0.0044,0.431,0.449,0.157,0,1,0,0
+"258","lobdow","Long-billed Dowitcher","Limnodromus scolopaceus","Water/wetland","Tipping Point",0.37,0.0043,0.361,0.378,0.176,0,1,0.439,0.0047,0.43,0.448,0.173,0,1,0,0
+"259","lobthr","Long-billed Thrasher","Toxostoma longirostre","Aridlands",NA,0.37,0.0054,0.36,0.381,0.357,0,1,0.44,0.0053,0.43,0.45,0.067,0,1,0,0
+"260","loeowl","Long-eared Owl","Asio otus","Forest",NA,0.37,0.0018,0.366,0.374,0.216,0,1,0.44,0.0019,0.436,0.444,0.316,0,1,0,0
+"261","logshr","Loggerhead Shrike","Lanius ludovicianus","Grasslands",NA,0.37,9e-04,0.368,0.372,0.352,0,1,0.44,9e-04,0.438,0.442,0.236,0,1,0,0
+"262","lotduc","Long-tailed Duck","Clangula hyemalis","Water/wetland",NA,0.326,0.0134,0.3,0.353,0.449,1,0,0.388,0.0137,0.361,0.415,0.134,0,1,0,0
+"263","louwat","Louisiana Waterthrush","Parkesia motacilla","Forest",NA,0.37,0.0014,0.367,0.373,0.845,1,0,0.44,0.0015,0.437,0.443,0.83,1,0,0,0
+"264","lucwar","lucy's warbler","Leiothlypis luciae","Aridlands",NA,0.37,0.0033,0.364,0.377,0.257,0,1,0.44,0.0035,0.433,0.447,0.018,0,1,0,0
+"265","macwar","MacGillivray's Warbler","Geothlypis tolmiei","Forest",NA,0.37,0.001,0.368,0.372,0.346,0,1,0.44,0.001,0.438,0.442,0.558,1,0,0,0
+"266","magwar","Magnolia Warbler","Setophaga magnolia","Forest",NA,0.37,0.001,0.368,0.372,0.565,1,0,0.44,0.001,0.438,0.442,0.663,1,0,0,0
+"267","mallar3","Mallard","Anas platyrhynchos","Water/wetland",NA,0.369,0.0032,0.363,0.376,0.308,0,1,0.439,0.0031,0.433,0.445,0.377,0,1,0,0
+"268","margod","Marbled Godwit","Limosa fedoa","Water/wetland",NA,0.37,0.0179,0.335,0.405,0.221,0,1,0.438,0.0183,0.402,0.474,0.271,0,1,0,0
+"269","marwre","Marsh Wren","Cistothorus palustris","Water/wetland",NA,0.37,0.0015,0.367,0.372,0.277,0,1,0.44,0.0016,0.436,0.443,0.294,0,1,0,0
+"270","mcclon","Thick-billed Longspur","Rhynchophanes mccownii","Grasslands","Tipping Point",0.37,0.0034,0.363,0.377,0.333,0,1,0.44,0.0036,0.433,0.447,0.307,0,1,0,0
+"271","merlin","Merlin","Falco columbarius","Habitat Generalist",NA,0.37,6e-04,0.369,0.371,0.216,0,1,0.44,6e-04,0.439,0.441,0.283,0,1,0,0
+"272","mewgul","Common Gull","Larus canus","Water/wetland",NA,0.332,0.0218,0.29,0.375,0.09,0,1,0.394,0.0221,0.35,0.437,0,0,1,0,0
+"273","mexjay4","Mexican Jay","Aphelocoma wollweberi","Forest",NA,0.37,0.0113,0.348,0.392,0.394,1,0,0.44,0.0114,0.417,0.462,0.296,0,1,0,0
+"274","miskit","Mississippi Kite","Ictinia mississippiensis","Forest",NA,0.37,0.0016,0.367,0.373,0.582,1,0,0.44,0.0016,0.437,0.443,0.4,0,1,0,0
+"275","motduc","Mottled Duck","Anas fulvigula","Water/wetland","Tipping Point",0.367,0.0077,0.352,0.382,0.347,0,1,0.436,0.0077,0.421,0.451,0.465,1,0,0,0
+"276","moublu","Mountain Bluebird","Sialia currucoides","Forest",NA,0.37,0.001,0.368,0.372,0.319,0,1,0.44,0.001,0.438,0.442,0.341,0,1,0,0
+"277","mouchi","Mountain Chickadee","Poecile gambeli","Forest",NA,0.37,0.0018,0.367,0.374,0.384,1,0,0.44,0.0018,0.436,0.444,0.858,1,0,0,0
+"278","moudov","Mourning Dove","Zenaida macroura","Habitat Generalist",NA,0.37,6e-04,0.369,0.371,0.424,1,0,0.44,6e-04,0.439,0.441,0.363,0,1,0,0
+"279","mouplo","Mountain Plover","Charadrius montanus","Grasslands","Tipping Point",0.37,0.0107,0.349,0.391,0.209,0,1,0.44,0.0105,0.42,0.461,0.144,0,1,0,0
+"280","mouqua","Mountain Quail","Oreortyx pictus","Forest",NA,0.37,0.0041,0.362,0.378,0.651,1,0,0.44,0.0043,0.432,0.448,0.915,1,0,0,0
+"281","mouwar","Mourning Warbler","Geothlypis philadelphia","Forest","Tipping Point",0.37,0.0021,0.366,0.374,0.577,1,0,0.44,0.0023,0.435,0.444,0.801,1,0,0,0
+"282","naswar","nashville warbler","Leiothlypis ruficapilla","Forest",NA,0.37,9e-04,0.368,0.372,0.498,1,0,0.44,9e-04,0.438,0.442,0.581,1,0,0,0
+"283","nopowl","Northern Pygmy-Owl","Glaucidium gnoma","Forest",NA,0.37,0.0025,0.365,0.375,0.576,1,0,0.44,0.0025,0.435,0.445,0.926,1,0,0,0
+"284","norbob","Northern Bobwhite","Colinus virginianus","Forest",NA,0.37,0.0013,0.368,0.372,0.495,1,0,0.44,0.0013,0.437,0.443,0.347,0,1,0,0
+"285","norcar","Northern Cardinal","Cardinalis cardinalis","Forest",NA,0.37,7e-04,0.369,0.371,0.631,1,0,0.44,7e-04,0.439,0.441,0.549,1,0,0,0
+"286","norfli","Northern Flicker","Colaptes auratus","Forest",NA,0.37,3e-04,0.369,0.371,0.474,1,0,0.44,3e-04,0.439,0.441,0.535,1,0,0,0
+"287","norgos","Northern Goshawk","Accipiter gentilis","Forest",NA,0.37,8e-04,0.368,0.371,0.118,0,1,0.44,9e-04,0.438,0.441,0.339,0,1,0,0
+"288","norhar2","Northern Harrier","Circus hudsonius","Habitat Generalist",NA,0.37,6e-04,0.369,0.371,0.274,0,1,0.44,6e-04,0.439,0.441,0.291,0,1,0,0
+"289","normoc","Northern Mockingbird","Mimus polyglottos","Habitat Generalist",NA,0.37,8e-04,0.368,0.371,0.506,1,0,0.44,8e-04,0.438,0.442,0.317,0,1,0,0
+"290","norpar","Northern Parula","Setophaga americana","Forest",NA,0.37,0.0011,0.368,0.372,0.691,1,0,0.44,0.0011,0.438,0.442,0.74,1,0,0,0
+"291","norpin","Northern Pintail","Anas acuta","Water/wetland",NA,0.369,0.0021,0.365,0.373,0.207,0,1,0.439,0.0021,0.435,0.443,0.261,0,1,0,0
+"292","norsho","Northern Shoveler","Spatula clypeata","Water/wetland",NA,0.37,0.0044,0.361,0.379,0.198,0,1,0.44,0.0046,0.431,0.449,0.215,0,1,0,0
+"293","norshr4","Northern Shrike","Lanius borealis","Water/wetland",NA,0.37,7e-04,0.369,0.371,0.187,0,1,0.44,8e-04,0.438,0.441,0.321,0,1,0,0
+"294","norwat","Northern Waterthrush","Parkesia noveboracensis","Forest",NA,0.37,9e-04,0.368,0.372,0.256,0,1,0.44,9e-04,0.438,0.442,0.418,0,1,0,0
+"295","nrwswa","Northern Rough-winged Swallow","Stelgidopteryx serripennis","Habitat Generalist",NA,0.369,0.0014,0.367,0.372,0.385,1,0,0.439,0.0015,0.436,0.442,0.39,0,1,0,0
+"296","nstspa","Nelson's Sparrow","Ammospiza nelsoni","Water/wetland",NA,0.369,0.0025,0.364,0.374,0.175,0,1,0.439,0.0026,0.434,0.444,0.249,0,1,0,0
+"297","nswowl","Northern Saw-whet Owl","Aegolius acadicus","Forest",NA,0.37,0.0014,0.367,0.373,0.345,0,1,0.44,0.0015,0.437,0.443,0.751,1,0,0,0
+"298","nutwoo","Nuttall's Woodpecker","Dryobates nuttallii","Forest",NA,0.37,0.0043,0.362,0.378,0.602,1,0,0.44,0.005,0.43,0.45,0.451,1,0,0,0
+"299","oaktit","Oak Titmouse","Baeolophus inornatus","Forest",NA,0.37,0.0051,0.36,0.38,0.742,1,0,0.44,0.0057,0.429,0.451,0.667,1,0,0,0
+"300","olispa","Olive Sparrow","Arremonops rufivirgatus","Aridlands",NA,0.37,0.0052,0.36,0.38,0.361,0,0,0.44,0.0052,0.43,0.45,0.062,0,1,3.25443228102842e-303,0
+"301","olsfly","Olive-sided Flycatcher","Contopus cooperi","Forest","Tipping Point",0.37,7e-04,0.369,0.371,0.349,0,1,0.44,7e-04,0.439,0.441,0.525,1,0,0,0
+"302","orcori","Orchard Oriole","Icterus spurius","Forest",NA,0.37,9e-04,0.368,0.371,0.543,1,0,0.44,9e-04,0.438,0.441,0.493,1,0,0,0
+"303","orcwar","orange-crowned warbler","Leiothlypis celata","Forest",NA,0.37,5e-04,0.369,0.371,0.31,0,1,0.44,5e-04,0.439,0.441,0.407,0,1,0,0
+"304","osprey","Osprey","Pandion haliaetus","Water/wetland",NA,0.367,0.0021,0.363,0.371,0.425,1,0,0.436,0.0021,0.432,0.441,0.529,1,0,0,0
+"305","ovenbi1","Ovenbird","Seiurus aurocapilla","Forest",NA,0.37,0.0014,0.367,0.373,0.716,1,0,0.44,0.0014,0.437,0.443,0.858,1,0,0,0
+"306","pacwre1","Pacific Wren","Troglodytes pacificus","Forest",NA,0.365,0.0026,0.36,0.37,0.445,1,0,0.434,0.0027,0.429,0.439,0.812,1,0,0,0
+"307","pagplo","Pacific Golden-Plover","Pluvialis fulva","Water/wetland",NA,0.363,0.0051,0.353,0.373,0.146,0,1,0.431,0.0049,0.422,0.441,0.004,0,1,0,0
+"308","paibun","Painted Bunting","Passerina ciris","Forest",NA,0.37,0.0017,0.367,0.373,0.644,1,0,0.44,0.0017,0.437,0.443,0.304,0,1,0,0
+"309","palwar","Palm Warbler","Setophaga palmarum","Forest",NA,0.37,0.0014,0.367,0.373,0.531,1,0,0.44,0.0015,0.437,0.443,0.553,1,0,0,0
+"310","pasfly","Pacific-slope Flycatcher","Empidonax difficilis","Forest",NA,0.37,0.0025,0.365,0.375,0.413,1,0,0.44,0.0026,0.434,0.445,0.692,1,0,0,0
+"311","pecsan","Pectoral Sandpiper","Calidris melanotos","Water/wetland","Tipping Point",0.369,0.0035,0.362,0.376,0.117,0,1,0.439,0.0036,0.432,0.446,0.121,0,1,0,0
+"312","perfal","Peregrine Falcon","Falco peregrinus","Habitat Generalist",NA,0.366,0.0011,0.363,0.368,0.222,0,1,0.435,0.0012,0.432,0.437,0.267,0,1,0,0
+"313","phaino","Phainopepla","Phainopepla nitens","Aridlands",NA,0.37,0.0032,0.364,0.376,0.29,0,1,0.44,0.0033,0.434,0.447,0.078,0,1,0,0
+"314","phivir","Philadelphia Vireo","Vireo philadelphicus","Forest",NA,0.37,0.001,0.368,0.372,0.537,1,0,0.44,0.001,0.438,0.442,0.614,1,0,0,0
+"315","pibgre","Pied-billed Grebe","Podilymbus podiceps","Water/wetland",NA,0.37,0.0014,0.367,0.373,0.412,1,0,0.44,0.0014,0.437,0.443,0.434,0,1,0,0
+"316","pilwoo","Pileated Woodpecker","Dryocopus pileatus","Forest",NA,0.37,9e-04,0.368,0.372,0.756,1,0,0.44,9e-04,0.438,0.442,0.798,1,0,0,0
+"317","pingro","Pine Grosbeak","Pinicola enucleator","Forest",NA,0.37,0.0011,0.368,0.372,0.081,0,1,0.44,0.0012,0.438,0.442,0.355,0,1,0,0
+"318","pinjay","Pinyon Jay","Gymnorhinus cyanocephalus","Forest","Tipping Point",0.37,0.0027,0.365,0.375,0.14,0,1,0.44,0.0028,0.434,0.445,0.127,0,1,0,0
+"319","pinsis","Pine Siskin","Spinus pinus","Forest",NA,0.37,8e-04,0.368,0.371,0.458,1,0,0.44,9e-04,0.438,0.441,0.641,1,0,0,0
+"320","pinwar","Pine Warbler","Setophaga pinus","Forest",NA,0.37,0.0013,0.367,0.372,0.774,1,0,0.44,0.0013,0.437,0.442,0.723,1,0,0,0
+"321","plsvir","Plumbeous Vireo","Vireo plumbeus","Forest",NA,0.37,0.0021,0.366,0.374,0.329,0,1,0.44,0.002,0.436,0.444,0.398,0,1,0,0
+"322","prafal","Prairie Falcon","Falco mexicanus","Aridlands",NA,0.37,8e-04,0.368,0.372,0.293,0,1,0.44,9e-04,0.438,0.442,0.361,0,1,0,0
+"323","prawar","Prairie Warbler","Setophaga discolor","Forest","Tipping Point",0.37,0.0016,0.367,0.373,0.791,1,0,0.44,0.0015,0.437,0.443,0.755,1,0,0,0
+"324","prowar","Prothonotary Warbler","Protonotaria citrea","Forest",NA,0.37,0.0027,0.365,0.375,0.626,1,0,0.44,0.0027,0.435,0.445,0.691,1,0,0,0
+"325","purfin","Purple Finch","Haemorhous purpureus","Forest",NA,0.37,9e-04,0.368,0.372,0.595,1,0,0.44,9e-04,0.438,0.442,0.685,1,0,0,0
+"326","purgal2","purple gallinule","Porphyrio martinica","Water/wetland",NA,0.37,0.0073,0.356,0.384,0.502,1,0,0.44,0.0074,0.425,0.454,0.688,1,0,0,0
+"327","purmar","Purple Martin","Progne subis","Habitat Generalist",NA,0.369,0.0276,0.315,0.423,0.379,0,0,0.441,0.0287,0.385,0.497,0.389,0,0,6.06432010180488e-29,2.7845144547096e-318
+"328","pursan","Purple Sandpiper","Calidris maritima","Water/wetland",NA,0.339,0.0377,0.265,0.413,0.809,1,0,0.406,0.0372,0.333,0.479,0.153,0,1,0,0
+"329","pygnut","Pygmy Nuthatch","Sitta pygmaea","Forest",NA,0.37,0.0044,0.361,0.378,0.518,1,0,0.44,0.0043,0.431,0.448,0.799,1,0,0,0
+"330","pyrrhu","Pyrrhuloxia","Cardinalis sinuatus","Aridlands",NA,0.37,0.0033,0.364,0.377,0.48,1,0,0.44,0.0033,0.434,0.446,0.028,0,1,0,0
+"331","rebmer","Red-breasted Merganser","Mergus serrator","Water/wetland",NA,0.363,0.0151,0.334,0.393,0.372,0,0,0.431,0.015,0.402,0.461,0.304,0,1,2.45565462517745e-68,0
+"332","rebnut","Red-breasted Nuthatch","Sitta canadensis","Forest",NA,0.37,0.001,0.368,0.372,0.535,1,0,0.44,0.001,0.438,0.442,0.826,1,0,0,0
+"333","rebsap","Red-breasted Sapsucker","Sphyrapicus ruber","Forest",NA,0.37,0.0027,0.365,0.375,0.446,1,0,0.44,0.0028,0.434,0.445,0.831,1,0,0,0
+"334","rebwoo","Red-bellied Woodpecker","Melanerpes carolinus","Forest",NA,0.37,8e-04,0.369,0.371,0.654,1,0,0.44,8e-04,0.438,0.442,0.623,1,0,0,0
+"335","recwoo","Red-cockaded Woodpecker","Dryobates borealis","Forest",NA,0.37,0.0101,0.35,0.39,0.883,1,0,0.44,0.0105,0.419,0.46,0.83,1,0,0,0
+"336","redcro","Red Crossbill","Loxia curvirostra","Forest",NA,0.369,0.0014,0.367,0.372,0.508,1,0,0.439,0.0014,0.436,0.442,0.856,1,0,0,0
+"337","redhea","Redhead","Aythya americana","Water/wetland",NA,0.365,0.0081,0.35,0.381,0.474,1,0,0.434,0.0086,0.417,0.451,0.361,0,1,0,0
+"338","redkno","Red Knot","Calidris canutus","Water/wetland","Tipping Point",0.356,0.0402,0.277,0.434,0.486,1,0,0.42,0.0399,0.342,0.498,0.242,0,1,0,0
+"339","reevir1","Red-eyed Vireo","Vireo olivaceus","Forest",NA,0.37,9e-04,0.368,0.372,0.706,1,0,0.44,9e-04,0.438,0.442,0.768,1,0,0,0
+"340","refwar","Red-faced Warbler","Cardellina rubrifrons","Forest",NA,0.37,0.01,0.35,0.389,0.471,1,0,0.44,0.0103,0.42,0.46,0.894,1,0,0,0
+"341","rehwoo","Red-headed Woodpecker","Melanerpes erythrocephalus","Forest","Tipping Point",0.37,9e-04,0.368,0.372,0.55,1,0,0.44,9e-04,0.438,0.442,0.516,1,0,0,0
+"342","rengre","Red-necked Grebe","Podiceps grisegena","Water/wetland",NA,0.361,0.0049,0.351,0.37,0.338,0,1,0.429,0.0048,0.419,0.438,0.353,0,1,0,0
+"343","renpha","Red-necked Phalarope","Phalaropus lobatus","Water/wetland",NA,0.363,0.0142,0.335,0.391,0.143,0,1,0.43,0.0147,0.401,0.459,0.054,0,1,0,0
+"344","rensap","Red-naped Sapsucker","Sphyrapicus nuchalis","Forest",NA,0.37,0.0013,0.368,0.373,0.328,0,1,0.44,0.0013,0.437,0.443,0.569,1,0,0,0
+"345","reshaw","Red-shouldered Hawk","Buteo lineatus","Forest",NA,0.37,9e-04,0.368,0.372,0.693,1,0,0.44,0.001,0.438,0.442,0.641,1,0,0,0
+"346","rethaw","Red-tailed Hawk","Buteo jamaicensis","Habitat Generalist",NA,0.37,5e-04,0.369,0.371,0.377,1,0,0.44,5e-04,0.439,0.441,0.399,0,1,0,0
+"347","retloo","Red-throated Loon","Gavia stellata","Water/wetland",NA,0.35,0.0082,0.334,0.366,0.424,1,0,0.416,0.0085,0.4,0.433,0.134,0,1,0,0
+"348","rewbla","Red-winged Blackbird","Agelaius phoeniceus","Habitat Generalist",NA,0.37,0.0065,0.357,0.382,0.307,0,1,0.44,0.0068,0.427,0.453,0.311,0,1,0,0
+"349","ribgul","Ring-billed Gull","Larus delawarensis","Water/wetland",NA,0.369,0.0042,0.361,0.377,0.329,0,1,0.439,0.0043,0.43,0.447,0.357,0,1,0,0
+"350","rinduc","Ring-necked Duck","Aythya collaris","Water/wetland",NA,0.37,0.0022,0.366,0.374,0.352,0,1,0.44,0.0023,0.435,0.445,0.409,0,1,0,0
+"351","robgro","Rose-breasted Grosbeak","Pheucticus ludovicianus","Forest",NA,0.37,9e-04,0.368,0.372,0.542,1,0,0.44,9e-04,0.438,0.442,0.591,1,0,0,0
+"352","rocsan","Rock Sandpiper","Calidris ptilocnemis","Water/wetland","Tipping Point",0.36,0.0172,0.326,0.393,0.423,1,0,0.428,0.0177,0.394,0.463,0.037,0,1,0,0
+"353","rocwre","Rock Wren","Salpinctes obsoletus","Aridlands",NA,0.37,0.0011,0.368,0.372,0.255,0,1,0.44,0.0012,0.438,0.442,0.332,0,1,0,0
+"354","rolhaw","Rough-legged Hawk","Buteo lagopus","Water/wetland",NA,0.37,9e-04,0.368,0.371,0.244,0,1,0.44,9e-04,0.438,0.441,0.376,0,1,0,0
+"355","rosgoo","Ross's Goose","Anser rossii","Water/wetland",NA,0.37,0.0047,0.361,0.379,0.21,0,1,0.44,0.0046,0.431,0.449,0.214,0,1,0,0
+"356","rosspo1","Roseate Spoonbill","Platalea ajaja","Water/wetland",NA,0.367,0.005,0.357,0.376,0.397,1,0,0.436,0.0053,0.425,0.446,0.444,0,0,0,2.86011336552924e-260
+"357","rthhum","Ruby-throated Hummingbird","Archilochus colubris","Forest",NA,0.37,8e-04,0.368,0.372,0.664,1,0,0.44,9e-04,0.438,0.442,0.659,1,0,0,0
+"358","ruckin","ruby-crowned kinglet","Corthylio calendula","Forest",NA,0.37,4e-04,0.369,0.371,0.446,1,0,0.44,4e-04,0.439,0.441,0.544,1,0,0,0
+"359","rucspa","Rufous-crowned Sparrow","Aimophila ruficeps","Aridlands",NA,0.37,0.0032,0.364,0.376,0.568,1,0,0.44,0.0036,0.433,0.447,0.208,0,1,0,0
+"360","rudduc","Ruddy Duck","Oxyura jamaicensis","Water/wetland",NA,0.37,0.0045,0.361,0.379,0.333,0,1,0.44,0.0048,0.43,0.449,0.356,0,1,0,0
+"361","rudtur","Ruddy Turnstone","Arenaria interpres","Water/wetland","Tipping Point",0.351,0.0115,0.328,0.373,0.291,0,1,0.417,0.0111,0.395,0.439,0.168,0,1,0,0
+"362","rufgro","Ruffed Grouse","Bonasa umbellus","Forest",NA,0.37,0.002,0.366,0.374,0.609,1,0,0.44,0.002,0.436,0.444,0.942,1,0,0,0
+"363","rufhum","Rufous Hummingbird","Selasphorus rufus","Forest","Tipping Point",0.37,0.0014,0.367,0.373,0.367,0,1,0.44,0.0015,0.437,0.443,0.569,1,0,0,0
+"364","rusbla","Rusty Blackbird","Euphagus carolinus","Forest",NA,0.37,0.0012,0.368,0.372,0.339,0,1,0.44,0.0012,0.438,0.442,0.421,0,1,0,0
+"365","saggro","Greater Sage-Grouse","Centrocercus urophasianus","Aridlands","Tipping Point",0.37,0.0028,0.364,0.376,0.119,0,1,0.44,0.0029,0.434,0.446,0.668,1,0,0,0
+"366","sagspa1","Sagebrush Sparrow","Artemisiospiza nevadensis","Aridlands",NA,0.37,0.0018,0.366,0.374,0.117,0,1,0.44,0.0019,0.436,0.444,0.113,0,1,0,0
+"367","sagthr","Sage Thrasher","Oreoscoptes montanus","Aridlands",NA,0.37,0.0013,0.367,0.373,0.188,0,1,0.44,0.0014,0.437,0.443,0.286,0,1,0,0
+"368","sancra","Sandhill Crane","Antigone canadensis","Water/wetland",NA,0.37,0.0031,0.364,0.376,0.296,0,1,0.44,0.0031,0.434,0.446,0.26,0,1,0,0
+"369","sander","Sanderling","Calidris alba","Water/wetland",NA,0.359,0.011,0.337,0.381,0.526,1,0,0.426,0.0116,0.403,0.449,0.221,0,1,0,0
+"370","savspa","Savannah Sparrow","Passerculus sandwichensis","Grasslands",NA,0.369,7e-04,0.368,0.371,0.296,0,1,0.439,7e-04,0.438,0.441,0.252,0,1,0,0
+"371","saypho","Say's Phoebe","Sayornis saya","Habitat Generalist",NA,0.37,9e-04,0.368,0.372,0.311,0,1,0.44,9e-04,0.438,0.442,0.226,0,1,0,0
+"372","scaqua","Scaled Quail","Callipepla squamata","Aridlands",NA,0.37,0.0027,0.365,0.375,0.49,1,0,0.44,0.003,0.434,0.446,0.024,0,1,0,0
+"373","scatan","Scarlet Tanager","Piranga olivacea","Forest",NA,0.37,0.0013,0.367,0.372,0.78,1,0,0.44,0.0013,0.437,0.442,0.82,1,0,0,0
+"374","scoori","Scott's Oriole","Icterus parisorum","Forest",NA,0.37,0.0024,0.365,0.375,0.303,0,1,0.44,0.0025,0.435,0.445,0.053,0,1,0,0
+"375","sctfly","Scissor-tailed Flycatcher","Tyrannus forficatus","Grasslands",NA,0.37,0.0018,0.367,0.374,0.545,1,0,0.44,0.0018,0.437,0.444,0.251,0,1,0,0
+"376","sedwre1","sedge wren","Cistothorus stellaris","Grasslands",NA,0.37,0.0014,0.367,0.373,0.306,0,1,0.44,0.0014,0.437,0.443,0.339,0,1,0,0
+"377","semplo","Semipalmated Plover","Charadrius semipalmatus","Water/wetland",NA,0.367,0.0077,0.351,0.382,0.228,0,1,0.436,0.008,0.42,0.451,0.247,0,1,0,0
+"378","semsan","Semipalmated Sandpiper","Calidris pusilla","Water/wetland","Tipping Point",0.368,0.0075,0.353,0.383,0.21,0,1,0.437,0.0076,0.423,0.452,0.273,0,1,0,0
+"379","shbdow","Short-billed Dowitcher","Limnodromus griseus","Water/wetland","Tipping Point",0.364,0.0184,0.328,0.4,0.309,0,1,0.433,0.0186,0.397,0.47,0.338,0,1,0,0
+"380","sheowl","Short-eared Owl","Asio flammeus","Habitat Generalist",NA,0.37,0.0013,0.367,0.372,0.232,0,1,0.44,0.0012,0.437,0.442,0.258,0,1,0,0
+"381","shshaw","Sharp-shinned Hawk","Accipiter striatus","Forest",NA,0.37,6e-04,0.369,0.371,0.377,1,0,0.44,6e-04,0.439,0.441,0.52,1,0,0,0
+"382","shtgro","Sharp-tailed Grouse","Tympanuchus phasianellus","Grasslands",NA,0.37,0.002,0.366,0.374,0.451,1,0,0.44,0.0021,0.436,0.444,0.679,1,0,0,0
+"383","smilon","Smith's Longspur","Calcarius pictus","Water/wetland",NA,0.37,0.0035,0.363,0.377,0.257,0,1,0.44,0.0039,0.432,0.448,0.22,0,1,0,0
+"384","snobun","Snow Bunting","Plectrophenax nivalis","Water/wetland",NA,0.368,0.0014,0.366,0.371,0.136,0,1,0.438,0.0014,0.435,0.441,0.244,0,1,0,0
+"385","snoegr","Snowy Egret","Egretta thula","Water/wetland",NA,0.368,0.0061,0.356,0.38,0.361,0,0,0.437,0.0063,0.425,0.449,0.416,0,1,6.81320815681436e-185,0
+"386","snogoo","Snow Goose","Anser caerulescens","Water/wetland",NA,0.37,0.0028,0.364,0.375,0.238,0,1,0.44,0.0028,0.434,0.445,0.278,0,1,0,0
+"387","snoowl1","Snowy Owl","Bubo scandiacus","Water/wetland","Tipping Point",0.365,0.0028,0.359,0.37,0.135,0,1,0.433,0.0031,0.427,0.44,0.162,0,1,0,0
+"388","solsan","Solitary Sandpiper","Tringa solitaria","Water/wetland",NA,0.37,9e-04,0.368,0.372,0.284,0,1,0.44,9e-04,0.438,0.442,0.321,0,1,0,0
+"389","sonspa","Song Sparrow","Melospiza melodia","Habitat Generalist",NA,0.37,5e-04,0.369,0.371,0.478,1,0,0.44,5e-04,0.439,0.441,0.506,1,0,0,0
+"390","soogro1","Sooty Grouse","Dendragapus fuliginosus","Forest",NA,0.37,0.0046,0.361,0.379,0.297,0,1,0.44,0.0048,0.43,0.449,0.867,1,0,0,0
+"391","sora","Sora","Porzana carolina","Water/wetland",NA,0.37,0.0013,0.367,0.373,0.26,0,1,0.44,0.0014,0.437,0.443,0.295,0,1,0,0
+"392","sposan","Spotted Sandpiper","Actitis macularius","Water/wetland",NA,0.37,7e-04,0.368,0.371,0.238,0,1,0.44,7e-04,0.438,0.441,0.345,0,1,0,0
+"393","spotow","Spotted Towhee","Pipilo maculatus","Forest",NA,0.37,9e-04,0.368,0.372,0.458,1,0,0.44,9e-04,0.438,0.442,0.521,1,0,0,0
+"394","sprgro","spruce grouse","Canachites canadensis","Forest",NA,0.37,0.0017,0.367,0.373,0.033,0,1,0.44,0.0019,0.436,0.444,0.426,0,1,0,0
+"395","sprpip","Sprague's Pipit","Anthus spragueii","Grasslands","Tipping Point",0.37,0.0019,0.366,0.374,0.339,0,1,0.44,0.002,0.436,0.444,0.433,0,1,0,0
+"396","steeid","Steller's Eider","Polysticta stelleri","Water/wetland",NA,0.332,0.0105,0.311,0.352,0.522,1,0,0.394,0.0105,0.373,0.415,0,0,1,0,0
+"397","stejay","Steller's Jay","Cyanocitta stelleri","Forest",NA,0.37,0.0019,0.366,0.374,0.53,1,0,0.44,0.0019,0.436,0.444,0.877,1,0,0,0
+"398","stisan","Stilt Sandpiper","Calidris himantopus","Water/wetland","Tipping Point",0.37,0.0028,0.364,0.375,0.211,0,1,0.44,0.0029,0.434,0.446,0.233,0,1,0,0
+"399","sumtan","Summer Tanager","Piranga rubra","Forest",NA,0.37,0.0011,0.368,0.372,0.736,1,0,0.44,0.0011,0.438,0.442,0.622,1,0,0,0
+"400","surfbi","Surfbird","Calidris virgata","Water/wetland","Tipping Point",0.338,0.0092,0.32,0.355,0.557,1,0,0.401,0.0097,0.382,0.42,0.094,0,1,0,0
+"401","sursco","Surf Scoter","Melanitta perspicillata","Water/wetland",NA,0.327,0.0095,0.309,0.346,0.722,1,0,0.39,0.0096,0.371,0.408,0.206,0,1,0,0
+"402","swahaw","Swainson's Hawk","Buteo swainsoni","Grasslands",NA,0.37,0.0022,0.366,0.375,0.434,1,0,0.44,0.0023,0.436,0.444,0.249,0,1,0,0
+"403","swaspa","Swamp Sparrow","Melospiza georgiana","Water/wetland",NA,0.37,9e-04,0.368,0.372,0.463,1,0,0.44,9e-04,0.438,0.442,0.494,1,0,0,0
+"404","swathr","Swainson's Thrush","Catharus ustulatus","Forest",NA,0.37,8e-04,0.368,0.372,0.392,1,0,0.44,9e-04,0.438,0.442,0.614,1,0,0,0
+"405","swawar","Swainson's Warbler","Limnothlypis swainsonii","Forest",NA,0.37,0.0022,0.366,0.374,0.854,1,0,0.44,0.0023,0.435,0.445,0.767,1,0,0,0
+"406","swtkit","Swallow-tailed Kite","Elanoides forficatus","Forest",NA,0.37,0.0072,0.356,0.384,0.662,1,0,0.44,0.0073,0.426,0.454,0.557,1,0,0,0
+"407","tenwar","tennessee warbler","Leiothlypis peregrina","Forest",NA,0.37,9e-04,0.368,0.372,0.564,1,0,0.44,9e-04,0.438,0.442,0.613,1,0,0,0
+"408","towsol","Townsend's Solitaire","Myadestes townsendi","Forest",NA,0.37,0.0011,0.368,0.372,0.365,0,1,0.44,0.0011,0.438,0.442,0.683,1,0,0,0
+"409","towwar","Townsend's Warbler","Setophaga townsendi","Forest",NA,0.37,0.0017,0.367,0.373,0.393,1,0,0.44,0.0017,0.436,0.443,0.664,1,0,0,0
+"410","treswa","Tree Swallow","Tachycineta bicolor","Habitat Generalist",NA,0.37,0.0277,0.316,0.424,0.339,0,0,0.44,0.0289,0.383,0.496,0.421,0,0,9.01785695447517e-179,2.32611993286102e-80
+"411","tribla","Tricolored Blackbird","Agelaius tricolor","Water/wetland","Tipping Point",0.37,0.0185,0.334,0.406,0.645,1,0,0.44,0.0193,0.403,0.478,0.03,0,1,0,0
+"412","triher","Tricolored Heron","Egretta tricolor","Water/wetland",NA,0.36,0.0313,0.299,0.422,0.46,1,0,0.428,0.0314,0.366,0.489,0.576,1,0,0,0
+"413","truswa","Trumpeter Swan","Cygnus buccinator","Water/wetland",NA,0.37,0.0024,0.365,0.375,0.175,0,1,0.44,0.0024,0.435,0.445,0.469,1,0,0,0
+"414","tuftit","Tufted Titmouse","Baeolophus bicolor","Forest",NA,0.37,0.001,0.368,0.372,0.756,1,0,0.44,9e-04,0.438,0.442,0.737,1,0,0,0
+"415","tunswa","Tundra Swan","Cygnus columbianus","Water/wetland",NA,0.369,0.0041,0.361,0.377,0.12,0,1,0.439,0.0043,0.43,0.447,0.24,0,1,0,0
+"416","turvul","Turkey Vulture","Cathartes aura","Habitat Generalist",NA,0.37,6e-04,0.369,0.371,0.542,1,0,0.44,6e-04,0.439,0.441,0.458,1,0,0,0
+"417","uplsan","Upland Sandpiper","Bartramia longicauda","Grasslands",NA,0.37,0.0012,0.368,0.372,0.462,1,0,0.44,0.0012,0.438,0.442,0.349,0,1,0,0
+"418","varbun","Varied Bunting","Passerina versicolor","Aridlands",NA,0.37,0.0062,0.358,0.382,0.409,1,0,0.44,0.0064,0.428,0.452,0.011,0,1,0,0
+"419","varthr","Varied Thrush","Ixoreus naevius","Forest",NA,0.369,0.0016,0.366,0.372,0.275,0,1,0.439,0.0017,0.436,0.442,0.637,1,0,0,0
+"420","vauswi","Vaux's Swift","Chaetura vauxi","Forest",NA,0.37,0.0069,0.356,0.383,0.472,1,0,0.44,0.007,0.426,0.454,0.628,1,0,0,0
+"421","veery","Veery","Catharus fuscescens","Forest",NA,0.37,0.0015,0.367,0.373,0.635,1,0,0.44,0.0016,0.437,0.443,0.82,1,0,0,0
+"422","verdin","Verdin","Auriparus flaviceps","Aridlands",NA,0.37,0.0026,0.365,0.375,0.291,0,1,0.44,0.0028,0.434,0.446,0.011,0,1,0,0
+"423","verfly","Vermilion Flycatcher","Pyrocephalus rubinus","Aridlands",NA,0.37,0.0026,0.365,0.375,0.5,1,0,0.44,0.0026,0.435,0.445,0.059,0,1,0,0
+"424","vesspa","Vesper Sparrow","Pooecetes gramineus","Grasslands",NA,0.37,8e-04,0.369,0.372,0.368,0,1,0.44,8e-04,0.438,0.442,0.392,0,1,0,0
+"425","vigswa","Violet-green Swallow","Tachycineta thalassina","Forest",NA,0.37,0.0012,0.368,0.372,0.337,0,1,0.44,0.0012,0.438,0.442,0.515,1,0,0,0
+"426","virrai","Virginia Rail","Rallus limicola","Water/wetland",NA,0.37,0.0014,0.367,0.373,0.319,0,1,0.44,0.0016,0.437,0.443,0.332,0,1,0,0
+"427","virwar","virginia's warbler","Leiothlypis virginiae","Forest",NA,0.37,0.0021,0.366,0.374,0.332,0,1,0.44,0.0021,0.436,0.444,0.394,0,1,0,0
+"428","wantat1","Wandering Tattler","Tringa incana","Water/wetland","Tipping Point",0.361,0.0031,0.355,0.367,0.078,0,1,0.43,0.0033,0.423,0.436,0.048,0,1,0,0
+"429","warvir","Warbling Vireo","Vireo gilvus","Forest",NA,0.37,7e-04,0.369,0.371,0.371,0,0,0.44,7e-04,0.439,0.441,0.567,1,0,6.13820885230274e-244,0
+"430","wesblu","Western Bluebird","Sialia mexicana","Forest",NA,0.37,0.0016,0.367,0.373,0.445,1,0,0.44,0.0018,0.436,0.443,0.391,0,1,0,0
+"431","wesgre","Western Grebe","Aechmophorus occidentalis","Water/wetland","Tipping Point",0.366,0.0114,0.344,0.389,0.514,1,0,0.435,0.0121,0.412,0.459,0.484,1,0,0,0
+"432","weskin","Western Kingbird","Tyrannus verticalis","Grasslands",NA,0.37,0.0012,0.368,0.372,0.367,0,1,0.44,0.0013,0.437,0.442,0.22,0,1,0,0
+"433","wesmea","Western Meadowlark","Sturnella neglecta","Grasslands",NA,0.37,9e-04,0.368,0.372,0.417,1,0,0.44,9e-04,0.438,0.442,0.433,0,1,0,0
+"434","wesowl1","Western Screech-Owl","Megascops kennicottii","Forest",NA,0.37,0.0029,0.364,0.376,0.421,1,0,0.44,0.0032,0.434,0.446,0.356,0,1,0,0
+"435","wessan","Western Sandpiper","Calidris mauri","Water/wetland",NA,0.365,0.011,0.344,0.387,0.347,0,0,0.435,0.0112,0.413,0.457,0.177,0,1,3.21460218248199e-285,0
+"436","westan","Western Tanager","Piranga ludoviciana","Forest",NA,0.37,9e-04,0.368,0.372,0.367,0,1,0.44,0.001,0.438,0.442,0.571,1,0,0,0
+"437","wewpew","Western Wood-Pewee","Contopus sordidulus","Forest",NA,0.37,9e-04,0.368,0.372,0.377,1,0,0.44,9e-04,0.438,0.442,0.51,1,0,0,0
+"438","whbnut","White-breasted Nuthatch","Sitta carolinensis","Forest",NA,0.37,9e-04,0.368,0.372,0.634,1,0,0.44,0.001,0.438,0.442,0.685,1,0,0,0
+"439","whcspa","White-crowned Sparrow","Zonotrichia leucophrys","Habitat Generalist",NA,0.37,6e-04,0.369,0.371,0.299,0,1,0.44,6e-04,0.439,0.441,0.269,0,1,0,0
+"440","whevir","White-eyed Vireo","Vireo griseus","Forest",NA,0.37,0.0011,0.368,0.372,0.752,1,0,0.44,0.0011,0.438,0.442,0.66,1,0,0,0
+"441","whfibi","White-faced Ibis","Plegadis chihi","Water/wetland",NA,0.37,0.005,0.36,0.38,0.16,0,1,0.44,0.0051,0.43,0.45,0.185,0,1,0,0
+"442","whhwoo","White-headed Woodpecker","Dryobates albolarvatus","Forest",NA,0.37,0.0067,0.357,0.383,0.731,1,0,0.44,0.0068,0.427,0.453,0.95,1,0,0,0
+"443","whiibi","White Ibis","Eudocimus albus","Water/wetland",NA,0.368,0.0051,0.358,0.378,0.468,1,0,0.437,0.0054,0.427,0.448,0.515,1,0,0,0
+"444","whimbr","Whimbrel","Numenius phaeopus","Water/wetland","Tipping Point",0.369,0.0057,0.358,0.38,0.173,0,1,0.438,0.006,0.426,0.45,0.117,0,1,0,0
+"445","whrsan","White-rumped Sandpiper","Calidris fuscicollis","Water/wetland",NA,0.37,0.0026,0.365,0.375,0.237,0,1,0.44,0.0028,0.434,0.445,0.238,0,1,0,0
+"446","whtkit","White-tailed Kite","Elanus leucurus","Habitat Generalist",NA,0.37,0.0092,0.352,0.388,0.32,0,1,0.44,0.0095,0.422,0.459,0.181,0,1,0,0
+"447","whtspa","White-throated Sparrow","Zonotrichia albicollis","Forest",NA,0.37,7e-04,0.368,0.371,0.567,1,0,0.44,8e-04,0.438,0.441,0.588,1,0,0,0
+"448","whtswi","White-throated Swift","Aeronautes saxatalis","Aridlands",NA,0.37,0.0018,0.366,0.374,0.293,0,1,0.44,0.0019,0.436,0.444,0.328,0,1,0,0
+"449","whwcro","White-winged Crossbill","Loxia leucoptera","Forest",NA,0.369,0.0014,0.367,0.372,0.092,0,1,0.439,0.0015,0.436,0.442,0.259,0,1,0,0
+"450","whwdov","White-winged Dove","Zenaida asiatica","Aridlands",NA,0.37,0.0024,0.365,0.375,0.389,1,0,0.44,0.0026,0.435,0.445,0.055,0,1,0,0
+"451","whwsco2","white-winged scoter","Melanitta deglandi","Water/wetland",NA,0.339,0.0084,0.323,0.356,0.495,1,0,0.403,0.0093,0.385,0.422,0.162,0,1,0,0
+"452","wilfly","Willow Flycatcher","Empidonax traillii","Forest",NA,0.37,9e-04,0.368,0.372,0.351,0,1,0.44,9e-04,0.438,0.442,0.391,0,1,0,0
+"453","willet1","Willet","Tringa semipalmata","Water/wetland",NA,0.366,0.0068,0.352,0.379,0.32,0,1,0.434,0.007,0.42,0.448,0.336,0,1,0,0
+"454","wilpha","Wilson's Phalarope","Phalaropus tricolor","Water/wetland",NA,0.37,0.0177,0.336,0.405,0.083,0,1,0.439,0.0185,0.402,0.475,0.089,0,1,0,0
+"455","wilpta","Willow Ptarmigan","Lagopus lagopus","Water/wetland",NA,0.369,0.0018,0.366,0.373,0.003,0,1,0.439,0.0018,0.436,0.443,0.053,0,1,0,0
+"456","wilsap","Williamson's Sapsucker","Sphyrapicus thyroideus","Forest",NA,0.37,0.0022,0.366,0.374,0.464,1,0,0.44,0.0023,0.436,0.444,0.83,1,0,0,0
+"457","wilsni1","Wilson's Snipe","Gallinago delicata","Water/wetland",NA,0.37,9e-04,0.368,0.372,0.19,0,1,0.44,0.001,0.438,0.442,0.264,0,1,0,0
+"458","wiltur","Wild Turkey","Meleagris gallopavo","Forest",NA,0.37,9e-04,0.368,0.372,0.617,1,0,0.44,9e-04,0.438,0.442,0.581,1,0,0,0
+"459","winwre3","Winter Wren","Troglodytes hiemalis","Forest",NA,0.37,0.0011,0.368,0.372,0.654,1,0,0.44,0.0011,0.438,0.442,0.76,1,0,0,0
+"460","wlswar","Wilson's Warbler","Cardellina pusilla","Forest",NA,0.37,6e-04,0.369,0.371,0.266,0,1,0.44,6e-04,0.439,0.441,0.31,0,1,0,0
+"461","woewar1","Worm-eating Warbler","Helmitheros vermivorum","Forest",NA,0.37,0.0021,0.366,0.374,0.858,1,0,0.44,0.0023,0.435,0.444,0.877,1,0,0,0
+"462","wooduc","Wood Duck","Aix sponsa","Water/wetland",NA,0.37,8e-04,0.368,0.372,0.463,1,0,0.44,8e-04,0.438,0.442,0.477,1,0,0,0
+"463","wooscj2","Woodhouse's Scrub-Jay","Aphelocoma woodhouseii","Forest",NA,0.37,0.0023,0.365,0.374,0.293,0,1,0.44,0.0024,0.435,0.445,0.2,0,1,0,0
+"464","woosto","Wood Stork","Mycteria americana","Water/wetland",NA,0.37,0.0058,0.359,0.382,0.475,1,0,0.44,0.0058,0.429,0.452,0.478,1,0,0,0
+"465","woothr","Wood Thrush","Hylocichla mustelina","Forest","Tipping Point",0.37,0.0011,0.368,0.372,0.75,1,0,0.44,0.0012,0.438,0.442,0.753,1,0,0,0
+"466","wrenti","Wrentit","Chamaea fasciata","Aridlands",NA,0.37,0.0047,0.361,0.379,0.726,1,0,0.44,0.0052,0.43,0.45,0.84,1,0,0,0
+"467","y00475","American Coot","Fulica americana","Water/wetland",NA,0.37,0.0039,0.362,0.377,0.28,0,1,0.44,0.0039,0.432,0.447,0.367,0,1,0,0
+"468","y00678","crested caracara","Caracara plancus","Aridlands",NA,0.37,0.0037,0.363,0.377,0.446,1,0,0.44,0.0037,0.433,0.447,0.113,0,1,0,0
+"469","yebcha","Yellow-breasted Chat","Icteria virens","Forest",NA,0.37,9e-04,0.368,0.372,0.619,1,0,0.44,0.001,0.438,0.442,0.534,1,0,0,0
+"470","yebcuc","Yellow-billed Cuckoo","Coccyzus americanus","Forest",NA,0.37,8e-04,0.369,0.371,0.659,1,0,0.44,8e-04,0.438,0.442,0.578,1,0,0,0
+"471","yebfly","Yellow-bellied Flycatcher","Empidonax flaviventris","Forest",NA,0.37,0.0018,0.366,0.373,0.43,1,0,0.44,0.0019,0.436,0.444,0.682,1,0,0,0
+"472","yebloo","Yellow-billed Loon","Gavia adamsii","Water/wetland","Tipping Point",0.358,0.0038,0.351,0.366,0.067,0,1,0.426,0.004,0.418,0.434,0.006,0,1,0,0
+"473","yebmag","Yellow-billed Magpie","Pica nuttalli","Forest","Tipping Point",0.37,0.0138,0.343,0.397,0.576,1,0,0.44,0.014,0.412,0.468,0.276,0,1,0,0
+"474","yebsap","Yellow-bellied Sapsucker","Sphyrapicus varius","Forest",NA,0.37,9e-04,0.368,0.372,0.682,1,0,0.44,9e-04,0.438,0.442,0.724,1,0,0,0
+"475","yehbla","Yellow-headed Blackbird","Xanthocephalus xanthocephalus","Water/wetland",NA,0.37,0.0044,0.362,0.379,0.321,0,1,0.44,0.0044,0.431,0.449,0.161,0,1,0,0
+"476","yelwar","Yellow Warbler","Setophaga petechia","Forest",NA,0.37,5e-04,0.369,0.371,0.341,0,1,0.44,5e-04,0.439,0.441,0.421,0,1,0,0
+"477","yerwar","Yellow-rumped Warbler","Setophaga coronata","Forest",NA,0.37,4e-04,0.369,0.371,0.429,1,0,0.44,4e-04,0.439,0.441,0.509,1,0,0,0
+"478","yetvir","Yellow-throated Vireo","Vireo flavifrons","Forest",NA,0.37,0.001,0.368,0.372,0.719,1,0,0.44,0.001,0.438,0.442,0.701,1,0,0,0
+"479","yetwar","Yellow-throated Warbler","Setophaga dominica","Forest",NA,0.37,0.0015,0.367,0.373,0.778,1,0,0.44,0.0015,0.437,0.443,0.763,1,0,0,0

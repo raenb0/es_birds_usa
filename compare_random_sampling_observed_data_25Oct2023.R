@@ -376,6 +376,68 @@ ggplot(grass_sps_44pct_comparison, aes(x = species, y = sum_carbon*100)) +
   ylab("Percent of grassland species represented within high carbon areas") +
   theme(legend.position = "none")
 
+# calculate p-values
+#load all results (combined and modified manually in Excel)
+results_combined <- read_csv("outputs/results_combined_RAN.csv")
+
+#what is the cutoff for >95% CI?
+over_represented_threshold <- mean(results_combined$upper95_37pct)
+over_represented_threshold #0.375977 or 37.6%  on average, but varies by species
+max(results_combined$upper95_37pct) #maximum value is 0.465  so any bird represented more than 46.5%
+min(results_combined$upper95_37pct)
+
+#code from chatGPT:
+# Assuming avg_37pct is the mean and stdev_37pct is the standard deviation
+# and we want to calculate the p-value for an observed value of 0.75
+
+mean_value <- mean(results_combined$avg_37pct, na.rm=T)
+std_deviation <- mean(results_combined$stdev_37pct)
+sample_size <- 1000
+observed_value <- 0.75
+observed_value2 <- 0.50
+
+# Calculate the t-statistic
+t_stat <- (observed_value - mean_value) / (std_deviation / sqrt(sample_size))
+
+# Calculate the degrees of freedom
+df <- sample_size - 1
+
+# Calculate the p-value for an observed value of 0.75 or greater
+p_value <- pt(t_stat, df, lower.tail = FALSE)
+
+# Print the p-value
+cat("P-Value (T-Test):", p_value, "\n") #p-value of 0.75 or greater is 0
 
 
+# Calculate the p-value for an observed value of 0.50 or greater
+t_stat2 <- (observed_value2 - mean_value) / (std_deviation / sqrt(sample_size))
+p_value2 <- pt(t_stat, df, lower.tail = FALSE)
+
+# Print the p-value
+cat("P-Value (T-Test):", p_value2, "\n") #p-value of 0.50 or greater is 0
+
+# code from Courtney to add p values to all spp
+sample_size <- 1000
+df <- sample_size - 1 # Calculate the degrees of freedom
+p_value_df <- c()
+for(i in 1:nrow(results_combined)){
+  mean_value_37pct <- results_combined$avg_37pct[i]
+  std_deviation_37pct <- results_combined$stdev_37pct[i]
+  mean_value_44pct <- results_combined$avg_44pct[i]
+  std_deviation_44pct <- results_combined$stdev_44pct[i]
+  observed_value_37pct <- results_combined$sum_cna[i]
+  observed_value_44pct <- results_combined$sum_carbon[i]
+  # Calculate the t-statistic
+  t_stat_37pct <- (observed_value_37pct - mean_value_37pct) / (std_deviation_37pct / sqrt(sample_size))
+  t_stat_44pct <- (observed_value_44pct - mean_value_44pct) / (std_deviation_44pct / sqrt(sample_size))
+  # Calculate the p-value for an observed value of 0.75 or greater
+  p_value_37pct <- pt(abs(t_stat_37pct), df, lower.tail = FALSE)
+  p_value_44pct <- pt(abs(t_stat_44pct), df, lower.tail = FALSE)
+  p_value_df <- rbind(p_value_df, cbind(p_value_37pct, p_value_44pct))
+}
+
+results_combined_pval <- cbind(results_combined, p_value_df)
+
+
+write.csv(results_combined_pval, "outputs/results_combined_pval.csv")
 

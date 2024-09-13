@@ -134,7 +134,7 @@ pct_pop_mask <- rast("outputs/rasters/pct_pop_mask_cna.tif")
 
 sps_groups <- unique(sps_sel_all_vars$sps_groups)
 
-tic()
+tic() #takes 2.5 min
 pct_pop_per_group_list_all <- lapply(sps_groups,
                                      function(group_name){
                                        group_sps <- subset(
