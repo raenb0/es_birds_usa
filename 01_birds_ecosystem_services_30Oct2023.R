@@ -1,4 +1,4 @@
-# Bird populations represented within Critical Natural Assets (CNA) areas within USA
+# Bird populations represented within ES priority areas in the U.S.
 # Oct 23 2023
 # Rachel Neugarten
 
