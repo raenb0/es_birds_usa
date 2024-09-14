@@ -1,5 +1,5 @@
 # compare random sampling results to actual results
-# October 25 2023 #update Sept 13 2024
+# October 25 2023
 
 library(tidyverse)
 library(reshape)

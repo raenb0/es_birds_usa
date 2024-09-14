@@ -2,7 +2,7 @@
 # Oct 23 2023
 # Rachel Neugarten
 
-# Notes from Courtney:
+# Notes:
 # The "final_species_selection.rds" table has a bunch of columns for the 479 species of the analysis. It has all the columns of ebirdst_runs plus our guild groups. 
 # Our guilds groups are in a column named "sps_groups" (the last column of the table).
 # The tiff files in the zip are for all the species with abundnace > 0 in our study area (more than our 479 species). 
