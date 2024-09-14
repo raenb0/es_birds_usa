@@ -1,9 +1,8 @@
+# plot density curves, bird spp represented within CNA and high carbon areas
+# October 31 2023 #updated Sept 13 2024
 
 library(ggplot2)
 library(tidyverse)
-
-# plot density curves, bird spp represented within CNA and high carbon areas
-# October 31 2023 #updated Sept 13 2024
 
 #load data if needed
 result_37_pct_full <- read_csv("outputs/random_sampling_result_37pct_full.csv")
@@ -97,40 +96,40 @@ result_44_pct_full_group <- result_44_pct_full %>%
 #   xlab("Percent of bird species represented by high NCP areas")
 
 
-#plot both observed and random sampling data, 37% data, density curves, QUARTILES, NOT CIs
-ggplot() + 
-  geom_density(data = result_37_pct_full, aes(x=sum_cna*100, fill=group)) +
-  geom_vline(data = result_37_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
-  geom_rect(data = result_37_pct_full_group, 
-            mapping = aes(xmin = lq, xmax = hq, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
-  facet_wrap(~group, scales = "free_x") +
-  scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
-  scale_y_continuous(expand = c(0, 0), limits = c(0,0.1))+
-  theme_bw() + 
-  theme(panel.grid.minor = element_blank(),
-        legend.position = "none",
-        axis.title.y = element_blank(),
-        axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
-  scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
-  xlab("Percent of bird species represented by critical natural assets, overlaid with random sampling result")
-
-#play with histogram, change gray rectangle to 95% CIs instead of quartiles
-ggplot() + 
-  geom_histogram(data = result_37_pct_full, aes(x=sum_cna*100, y=after_stat(count/1000), fill=group)) +
-  geom_vline(data = result_37_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
-  geom_rect(data = result_37_pct_group_summary_confint, 
-            mapping = aes(xmin = lower95*100, xmax = upper95*100, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
-  facet_wrap(~group, scales = "free_x") +
-  scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
-  scale_y_continuous(expand = c(0, 0), limits = c(0,21))+
-  theme_bw() + 
-  theme(panel.grid.minor = element_blank(),
-        legend.position = "none",
-        #axis.title.y = element_blank(),
-        axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
-  scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
-  xlab("Percent of bird species abundance represented by critical natural assets, overlaid with random sampling result") +
-  ylab("Count of species")
+# #plot both observed and random sampling data, 37% data, density curves, QUARTILES, NOT CIs
+# ggplot() + 
+#   geom_density(data = result_37_pct_full, aes(x=sum_cna*100, fill=group)) +
+#   geom_vline(data = result_37_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
+#   geom_rect(data = result_37_pct_full_group, 
+#             mapping = aes(xmin = lq, xmax = hq, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
+#   facet_wrap(~group, scales = "free_x") +
+#   scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
+#   scale_y_continuous(expand = c(0, 0), limits = c(0,0.1))+
+#   theme_bw() + 
+#   theme(panel.grid.minor = element_blank(),
+#         legend.position = "none",
+#         axis.title.y = element_blank(),
+#         axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
+#   scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
+#   xlab("Percent of bird species represented by critical natural assets, overlaid with random sampling result")
+# 
+# #play with histogram, change gray rectangle to 95% CIs instead of quartiles
+# ggplot() + 
+#   geom_histogram(data = result_37_pct_full, aes(x=sum_cna*100, y=after_stat(count/1000), fill=group)) +
+#   geom_vline(data = result_37_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
+#   geom_rect(data = result_37_pct_group_summary_confint, 
+#             mapping = aes(xmin = lower95*100, xmax = upper95*100, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
+#   facet_wrap(~group, scales = "free_x") +
+#   scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
+#   scale_y_continuous(expand = c(0, 0), limits = c(0,21))+
+#   theme_bw() + 
+#   theme(panel.grid.minor = element_blank(),
+#         legend.position = "none",
+#         #axis.title.y = element_blank(),
+#         axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
+#   scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
+#   xlab("Percent of bird species abundance represented by critical natural assets, overlaid with random sampling result") +
+#   ylab("Count of species")
 
 #plot 44% data
 
@@ -180,46 +179,45 @@ ggplot() +
 #   scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
 #   xlab("Percent of bird species represented by high carbon areas")
 
-#plot both observed and random sampling results, 44% data, density curves, QUARTILES NOT CIs
-ggplot() + 
-  geom_density(data = result_44_pct_full, aes(x=sum_carbon*100, fill=group)) +
-  geom_vline(data = result_44_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
-  geom_rect(data = result_44_pct_full_group, 
-            mapping = aes(xmin = lq, xmax = hq, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
-  facet_wrap(~group, scales = "free_x") +
-  scale_y_continuous(expand = c(0, 0), limits = c(0,0.1))+
-  scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
-  theme_bw() + 
-  theme(panel.grid.minor = element_blank(),
-        legend.position = "none",
-        axis.title.y = element_blank(),
-        axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
-  scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
-  xlab("Percent of bird species represented by high carbon areas, overlaid with random sampling result")
+# #plot both observed and random sampling results, 44% data, density curves, QUARTILES NOT CIs
+# ggplot() + 
+#   geom_density(data = result_44_pct_full, aes(x=sum_carbon*100, fill=group)) +
+#   geom_vline(data = result_44_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
+#   geom_rect(data = result_44_pct_full_group, 
+#             mapping = aes(xmin = lq, xmax = hq, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
+#   facet_wrap(~group, scales = "free_x") +
+#   scale_y_continuous(expand = c(0, 0), limits = c(0,0.1))+
+#   scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
+#   theme_bw() + 
+#   theme(panel.grid.minor = element_blank(),
+#         legend.position = "none",
+#         axis.title.y = element_blank(),
+#         axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
+#   scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
+#   xlab("Percent of bird species represented by high carbon areas, overlaid with random sampling result")
+# 
+# #play with histograms, change gray rectangle to 95% CIs instead of quartiles
+# ggplot() + 
+#   geom_histogram(data = result_44_pct_full, aes(x=sum_carbon*100, y=..count../1000, fill=group)) +
+#   geom_vline(data = result_44_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
+#   geom_rect(data = result_44_pct_group_summary_confint, 
+#             mapping = aes(xmin = lower95*100, xmax = upper95*100, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
+#   facet_wrap(~group, scales = "free_x") +
+#   scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
+#   scale_y_continuous(expand = c(0, 0), limits = c(0,21))+
+#   theme_bw() + 
+#   theme(panel.grid.minor = element_blank(),
+#         legend.position = "none",
+#         #axis.title.y = element_blank(),
+#         axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
+#   scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
+#   xlab("Percent of bird species abundance represented by high carbon areas, overlaid with random sampling result")+
+#   ylab("Count of species")
+# 
 
-#play with histograms, change gray rectangle to 95% CIs instead of quartiles
-ggplot() + 
-  geom_histogram(data = result_44_pct_full, aes(x=sum_carbon*100, y=..count../1000, fill=group)) +
-  geom_vline(data = result_44_pct_full_group, mapping = aes(xintercept = mean, group = group), linetype = "dashed") +
-  geom_rect(data = result_44_pct_group_summary_confint, 
-            mapping = aes(xmin = lower95*100, xmax = upper95*100, ymin = -Inf, ymax = Inf), col = "grey80", fill = "grey80", alpha = 0.5) +
-  facet_wrap(~group, scales = "free_x") +
-  scale_x_continuous(expand = c(0,0), limits = c(0,100)) + 
-  scale_y_continuous(expand = c(0, 0), limits = c(0,21))+
-  theme_bw() + 
-  theme(panel.grid.minor = element_blank(),
-        legend.position = "none",
-        #axis.title.y = element_blank(),
-        axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
-  scale_fill_manual(values = c("#CC6677", "#117733","#DDCC77","#AB9DEF","#882255","#88CCEE")) + 
-  xlab("Percent of bird species abundance represented by high carbon areas, overlaid with random sampling result")+
-  ylab("Count of species")
 
-
-
-
-####### COMBINE 37 AND 44 PCT RESULTS INTO A SINGLE SET OF PLOTS
-### Code from Courtney Davis 12/11/2023
+# COMBINE 37 AND 44 PCT RESULTS INTO A SINGLE SET OF PLOTS ---------------------
+###  12/11/2023
 
 #load data if needed
 result_37_pct_full <- read_csv("outputs/random_sampling_result_37pct_full.csv")
@@ -294,6 +292,7 @@ ggplot() +
         axis.text.x = element_text(margin = margin(t = 1, r = 0, b = 5, l = 0))) + 
   xlab("Percent of bird species abundance represented")+
   ylab("Count of species")
+
 
 # separate plots --------------
 
